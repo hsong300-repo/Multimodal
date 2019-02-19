@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./artyom-source/artyom.window.js"></script>
+
+</head>
+<body>
+
+<input type="button" onclick="startRecognition();" value="Recognize text" />
+<input type="button" onclick="stopRecognition();" value="stop recognition" />
+<script>
+    const artyom = new Artyom();
+
+
+    var settings = {
+        continuous:true, // Don't stop never because i have https connection
+        onResult:function(text){
+            // text = the recognized text
+            console.log(text);
+        },
+        onStart:function(){
+            console.log("Dictation started by the user");
+        },
+        onEnd:function(){
+            alert("Dictation stopped by the user");
+        }
+    };
+
+    var UserDictation = artyom.newDictation(settings);
+
+    function startRecognition(){
+        UserDictation.start();
+    }
+
+    function stopRecognition(){
+        UserDictation.stop();
+    }</script>
+
+
+
+</body>
+</html>

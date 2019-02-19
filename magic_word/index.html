@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h3>
+Say "system" to choose a color.
+</h3>
+
+
+<span id="status_" class="inactive">SpeechRecognition is </span>
+<pre id="log_"></pre>
+    <canvas id="canvas" width="500" height="400" >
+      This text is displayed if your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <br>
+    <input onClick="EnableSpeech();" type="image" id ="speech" src="./img/speech.svg"  width="66" height="66" />
+    <button id="start-record-btn"   title="Start Recording">Start Recognition</button>
+    <!--<button id="pause-record-btn" title="Pause Recording">Pause Recognition</button>-->
+    <input  onClick="EnableTouch();" type="image" id="touch" src="./img/touch.png"  width="66" height="66"/>
+
+
+    <label id ="speech_color" style="display:none;">Color:</label>
+    <select id ="color" style="display:none;" >
+      <option value="pink">pink</option>
+      <option value="peru">peru</option>
+      <option value="salmon">salmon</option>
+      <option value="magenta">magenta</option>
+      <option value="wheat">wheat</option>
+      <option value="violet">violet</option>
+      <option value="plum">plum</option>
+      <option value="tomato">tomato</option>
+      <option value="teal">teal</option>
+      <option value="silver">silver</option>
+      <option value="darkred">darkred</option>
+
+    </select>
+
+    <label for="width">Width (20-100):</label>
+    <input type="number" id="width" name="tentacles"
+           min="20" max="100">
+
+    <label for="height">Height (20-100):</label>
+    <input type="number" id="height" name="tentacles"
+           min="20" max="100">
+    <div id="touch_color" style="display:none;">
+      <h4> Say a colour</h4>
+      <!--<p>Easy</p>-->
+
+      <span style="background:PINK;">PINK</span>
+      <span style="background:PERU;">PERU</span>
+      <span style="background:SALMON;">SALMON</span>
+      <span style="background:MAGENTA;">MAGENTA</span>
+      <span style="background:WHEAT;">WHEAT</span>
+      <span style="background:VIOLET;">VIOLET</span>
+      <span style="background:PLUM;">PLUM</span>
+      <span style="background:TOMATO;">TOMATO</span>
+      <span style="background:TEAL;">TEAL</span>
+      <span style="background:Silver;">Silver</span>
+      <span style="background:DARKRED;">DARKRED</span>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script src="./main.js"></script>-->
+    <script src="./shapes.js"></script>
+  </body>
+
+</html>

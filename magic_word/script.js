@@ -1,9 +1,109 @@
-// By Simon Sarris
-// www.simonsarris.com
-// sarris@acm.org
-//
-// Last update December 2011
-//
+if(!window.webkitSpeechRecognition){
+  log('Sorry this will work only in Chrome for now...');
+}
+const magic_word = 'system';
+// initialize our SpeechRecognition object
+let recognition = new webkitSpeechRecognition();
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+recognition.continuous = true;
+
+// detect the magic word
+recognition.onresult = e => {
+	var transcripts  = [].concat.apply([], [...e.results].map(res => [...res].map(alt => alt.transcript)));
+  if(transcripts.some(t=>t.indexOf(magic_word)>-1)){
+  	log('!!!Set the color!!!');
+      speech_flag = true;
+      touch_flag = false;
+      document.getElementById('touch_color').style.display = "block";
+
+      document.getElementById('speech_color').style.display = "none";
+      document.getElementById('color').style.display = "none";
+
+
+  }
+  else{
+	  log('understood ' + JSON.stringify(transcripts));
+
+
+      // colour = JSON.stringify(transcripts);
+      colour = transcripts.toString();
+      colour = colour.toLowerCase();
+      // strip the spaces out of it
+      colour = colour.replace(/\s/gi,'');
+      console.log('color',colour);
+      // colour = colour.toString();
+      // $('body').css('background',colour);
+      // $('svg').css('background',colour);
+      // $('rect').css('fill',colour);
+      $('h4').text(colour);
+
+      speech_flag = true;
+      touch_flag = false;
+
+  }
+};
+// called when we detect silence
+function stopSpeech(){
+	recognition.stop();
+  status_.className = 'inactive';
+}
+// called when we detect sound
+function startSpeech(){
+	try{ // calling it twice will throw...
+	  recognition.start();
+  }
+  catch(e){}
+  status_.className = 'active';
+}
+// request a LocalMediaStream
+navigator.mediaDevices.getUserMedia({audio:true})
+// add our listeners
+.then(stream => detectSilence(stream, stopSpeech, startSpeech))
+.catch(e => log(e.message));
+
+
+function detectSilence(
+  stream,
+  onSoundEnd = _=>{},
+  onSoundStart = _=>{},
+  silence_delay = 500,
+  min_decibels = -80
+  ) {
+  const ctx = new AudioContext();
+  const analyser = ctx.createAnalyser();
+  const streamNode = ctx.createMediaStreamSource(stream);
+  streamNode.connect(analyser);
+  analyser.minDecibels = min_decibels;
+
+  const data = new Uint8Array(analyser.frequencyBinCount); // will hold our data
+  let silence_start = performance.now();
+  let triggered = false; // trigger only once per silence event
+
+  function loop(time) {
+    requestAnimationFrame(loop); // we'll loop every 60th of a second to check
+    analyser.getByteFrequencyData(data); // get current data
+    if (data.some(v => v)) { // if there is data above the given db limit
+      if(triggered){
+        triggered = false;
+        onSoundStart();
+        }
+      silence_start = time; // set it to now
+    }
+    if (!triggered && time - silence_start > silence_delay) {
+      onSoundEnd();
+      triggered = true;
+    }
+  }
+  loop();
+}
+function log(txt){
+	log_.textContent += txt + '\n';
+}
+
+
+
 // Free to use and distribute at will
 // So long as you are nice to people, etc
 
@@ -39,7 +139,6 @@ Shape.prototype.contains = function(mx, my) {
 
 function CanvasState(canvas) {
     // **** First some setup! ****
-
     this.canvas = canvas;
     this.width = canvas.width;
     this.height = canvas.height;
@@ -69,6 +168,8 @@ function CanvasState(canvas) {
     this.dragoffx = 0; // See mousedown and mousemove events for explanation
     this.dragoffy = 0;
     colorChange = false;
+    touch_flag = false;
+    speech_flag = false;
 
 
     // **** Then events! ****
@@ -130,25 +231,20 @@ function CanvasState(canvas) {
         var select_color = document.getElementById("color");
         var fillColor = select_color.options[select_color.selectedIndex].value;
 
+        if(speech_flag === true){
+            fillColor = colour;
+            console.log("colour inside",colour);
+        }
+
+        // if(typeof colour === undefined){
+        //     fillColor = select_color.options[select_color.selectedIndex].value;
+        // }else{
+        //     fillColor = colour;
+        // }
+
         var width = document.getElementById("width");
         var height = document.getElementById("height");
         myState.addShape(new Shape(mouse.x - 10, mouse.y - 10, width.value, height.value, fillColor));
-
-        // const color = Math.round(Math.random() * 0xFFFFFF);
-        // // Let's format the color to fit CSS requirements
-        // var fillColor = '#' + color.toString(16).padStart(6,'0');
-        // myState.addShape(new Shape(mouse.x - 10, mouse.y - 10, 20, 20, 'rgba(0,255,0,.6)'));
-        // myState.addShape(new Shape(mouse.x - 10, mouse.y - 10, 40, 40, fillColor));
-        // be able to change color here
-
-        // var mouse = myState.getMouse(e);
-        // myState.selection.x = mouse.x - myState.dragoffx;
-        // myState.selection.y = mouse.y - myState.dragoffy;
-        // // myState.addShape(new Shape(mouse.x - 10, mouse.y - 10, 40, 40, 'rgba(0,255,0,.6)'));
-        // ctx.fillStyle = '#CC0000';
-        // ctx.fillRect(myState.selection.x ,myState.selection.y ,myState.selection.w,myState.selection.h);
-
-
 
     }, true);
 
@@ -156,6 +252,7 @@ function CanvasState(canvas) {
     this.selectionColor = '#CC0000';
     this.selectionWidth = 2;
     this.interval = 30;
+
 
     //randomly change color
     const color = Math.round(Math.random() * 0xFFFFFF)
@@ -167,7 +264,7 @@ function CanvasState(canvas) {
     //
     // // Let's apply our color in the
     // // element we actually clicked on
-    // this.fillStyle = fill_color;
+    // this.fillStyle = colour;
     setInterval(function() { myState.draw(); }, myState.interval);
 }
 
@@ -208,7 +305,11 @@ CanvasState.prototype.draw = function() {
             ctx.lineWidth = this.selectionWidth;
             var mySel = this.selection;
             ctx.strokeRect(mySel.x,mySel.y,mySel.w,mySel.h);
+            //change fillcolor
+            // ctx.fillStyle= colour;
+            // ctx.fillRect(mySel.x,mySel.y,mySel.w,mySel.h);
         }
+
 
 
         // ** Add stuff you want drawn on top all the time here **
@@ -257,7 +358,89 @@ function init() {
     // s.addShape(new Shape(80,150,60,30, 'rgba(127, 255, 212, .5)'));
     // s.addShape(new Shape(125,80,30,80, 'rgba(245, 222, 179, .7)'));
 
+
 }
 
+// var speech  = function(){
+//     var x = "lol";
+//
+//     recognition = new webkitSpeechRecognition();
+//     // var recognition = new webkitSpeechRecognition();
+//     // recognition.continuous = true;
+//     recognition.continuous = false; // the recognition will stop when input stops
+//
+//     recognition.interimResults = true;
+//
+//     recognition.onresult = function(event) {
+//         colour = event.results[event.results.length - 1][0].transcript;
+//         // var colour = event.results[event.results.length - 1][0].transcript;
+//
+//
+//         // var colour = event.results[event.results.length - 1][0].transcript;
+//         // make it lowercase
+//         colour = colour.toLowerCase();
+//         // strip the spaces out of it
+//         colour = colour.replace(/\s/gi,'');
+//         console.log('color')
+//         // $('body').css('background',colour);
+//         // $('svg').css('background',colour);
+//         // $('rect').css('fill',colour);
+//         $('h4').text(colour);
+//         // ctx.fillStyle= colour;
+//         // ctx.fillRect(last_mousex,last_mousey,width,height);
+//     };
+//
+//     // recognition.start();
+//
+// };
+
 init();
+
+// $('#start-record-btn').on('click', function(e) {
+//     recognition.start();
+// });
+// $('#pause-record-btn').on('click', function(e) {
+//     recognition.stop();
+// });
+
+function EnableTouch(){
+    touch_flag = true;
+    speech_flag = false;
+    document.getElementById('speech_color').style.display = "inline";
+    document.getElementById('color').style.display = "inline";
+
+    document.getElementById('touch_color').style.display = "none";
+
+
+    console.log('touch true');
+
+}
+
+function EnableSpeech(){
+    speech_flag = true;
+    touch_flag = false;
+    document.getElementById('touch_color').style.display = "block";
+
+    document.getElementById('speech_color').style.display = "none";
+    document.getElementById('color').style.display = "none";
+
+
+    console.log('speech true');
+
+}
+
+
+// if (!('webkitSpeechRecognition' in window)) {
+//     alert("Sorry you require a browser that supports speech recognition");
+// }
+// else {
+//     speech();
+// }
+
+
+
+
+
+// init();
+// speech();
 // Now go make something amazing!
