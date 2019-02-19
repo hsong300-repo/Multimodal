@@ -6,8 +6,17 @@
 }
 
 /*html,body,svg { height:100% }*/
-
-
+/*ear image disply placement*/
+#content {
+    position: relative;
+}
+#content img {
+    position: absolute;
+    /*top: 0px;*/
+    /*right: 0px;*/
+    top: 0px;
+    right: 300px;
+}
 
 /*html,body,svg { height:100% }*/
 

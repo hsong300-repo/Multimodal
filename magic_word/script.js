@@ -17,6 +17,8 @@ recognition.onresult = e => {
       speech_flag = true;
       touch_flag = false;
       document.getElementById('touch_color').style.display = "block";
+      document.getElementById('listen').style.display = "block";
+
 
       document.getElementById('speech_color').style.display = "none";
       document.getElementById('color').style.display = "none";
@@ -48,6 +50,8 @@ recognition.onresult = e => {
 function stopSpeech(){
 	recognition.stop();
   status_.className = 'inactive';
+  document.getElementById('listen').style.display = "none";
+
 }
 // called when we detect sound
 function startSpeech(){
