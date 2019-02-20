@@ -6,15 +6,18 @@
   </head>
 
   <body>
-    <h3>
-Say "system" to choose a color.
-</h3>
 
+
+
+<h3>Say "system" to choose a color.</h3>
 
 <span id="status_" class="inactive">SpeechRecognition is </span>
 <pre id="log_"></pre>
     <div id="content"><img src="./img/listen.png" id="listen"  width="66" height="66" style="display:none;">
     </div>
+    <h3 id="say_color" style="display:none;">Say a color.</h3>
+
+
 
     <canvas id="canvas" width="500" height="400" >
       This text is displayed if your browser does not support HTML5 Canvas.
@@ -22,14 +25,16 @@ Say "system" to choose a color.
 
     <br>
     <input onClick="EnableSpeech();" type="image" id ="speech" src="./img/speech.svg"  width="66" height="66" />
-    <button id="start-record-btn"   title="Start Recording">Start Recognition</button>
+    <!--<button id="start-record-btn"   title="Start Recording">Start Recognition</button>-->
     <!--<button id="pause-record-btn" title="Pause Recording">Pause Recognition</button>-->
     <input  onClick="EnableTouch();" type="image" id="touch" src="./img/touch.png"  width="66" height="66"/>
 
 
 
-    <label id ="speech_color" style="display:none;">Color:</label>
-    <select id ="color" style="display:none;" >
+    <label id ="touch_color" style="display:none;">Color:</label>
+    <select id ="touch_color_option" style="display:none;" >
+    <!--<label id ="touch_color">Color:</label>-->
+    <!--<select id ="touch_color_option">-->
       <option value="pink">pink</option>
       <option value="peru">peru</option>
       <option value="salmon">salmon</option>
@@ -44,6 +49,7 @@ Say "system" to choose a color.
 
     </select>
 
+    <br>
     <label for="width">Width (20-100):</label>
     <input type="number" id="width" name="tentacles"
            min="20" max="100">
@@ -51,7 +57,7 @@ Say "system" to choose a color.
     <label for="height">Height (20-100):</label>
     <input type="number" id="height" name="tentacles"
            min="20" max="100">
-    <div id="touch_color" style="display:none;">
+    <div id="speech_color" style="display:none;">
       <h4> Say a colour</h4>
       <!--<p>Easy</p>-->
 
@@ -72,7 +78,7 @@ Say "system" to choose a color.
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <!--<script src="./main.js"></script>-->
-    <script src="./shapes.js"></script>
+    <!--<script src="./shapes.js"></script>-->
   </body>
 
 </html>
