@@ -76,13 +76,15 @@ function startSpeech(){
 	    if(check_flag === true){
             speech_flag = true;
             touch_flag = false;
+            status_.className = 'active';
+
 
         }
 	  recognition.start();
 
   }
   catch(e){}
-  status_.className = 'active';
+  // status_.className = 'active';
 }
 // request a LocalMediaStream
 navigator.mediaDevices.getUserMedia({audio:true})
