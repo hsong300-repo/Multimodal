@@ -9,23 +9,27 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 recognition.continuous = true;
 
+check_flag = false;
+
+
 // detect the magic word
 recognition.onresult = e => {
 	var transcripts  = [].concat.apply([], [...e.results].map(res => [...res].map(alt => alt.transcript)));
   if(transcripts.some(t=>t.indexOf(magic_word)>-1)){
       // log('Say a color');
-      speech_flag = true;
-      touch_flag = false;
+        check_flag = true;
       document.getElementById('speech_color').style.display = "block";
       document.getElementById('listen').style.display = "block";
       document.getElementById('say_color').style.display = "block";
-
-
 
   }
   else{
 	  // log('understood ' + JSON.stringify(transcripts));
       document.getElementById('listen').style.display = "block";
+      document.getElementById('speech_color').style.display = "block";
+      document.getElementById('say_color').style.display = "block";
+
+
       // colour = JSON.stringify(transcripts);
       colour = transcripts.toString();
       colour = colour.toLowerCase();
@@ -40,25 +44,42 @@ recognition.onresult = e => {
       // $('rect').css('fill',colour);
       $('h4').text(colour);
 
-      speech_flag = true;
-      touch_flag = false;
-
-
 
   }
 };
 // called when we detect silence
 function stopSpeech(){
-	recognition.stop();
-    status_.className = 'inactive';
-    document.getElementById('listen').style.display = "none";
+    setTimeout(function(){recognition.stop();
+    },5000);
+    setTimeout(function(){status_.className = 'inactive';
+    },5000);
+    setTimeout(function(){document.getElementById('listen').style.display = "none";
+    },5000);
+    setTimeout(function(){document.getElementById('speech_color').style.display = "none";
+    },5000);
+
+
+
+
+
+    // recognition.stop();
+    // status_.className = 'inactive';
+    // document.getElementById('listen').style.display = "none";
+
+
 
 
 }
 // called when we detect sound
 function startSpeech(){
 	try{ // calling it twice will throw...
+	    if(check_flag === true){
+            speech_flag = true;
+            touch_flag = false;
+
+        }
 	  recognition.start();
+
   }
   catch(e){}
   status_.className = 'active';
@@ -75,9 +96,11 @@ function detectSilence(
   onSoundEnd = _=>{},
   onSoundStart = _=>{},
   silence_delay = 500,
-  // silence_delay = 5000,
+  // silence_delay = 500,
+  // min_decibels = -80
   min_decibels = -80
-  ) {
+
+) {
   const ctx = new AudioContext();
   const analyser = ctx.createAnalyser();
   const streamNode = ctx.createMediaStreamSource(stream);
@@ -234,16 +257,15 @@ function CanvasState(canvas) {
         var select_color = document.getElementById("touch_color_option");
         var fillColor = select_color.options[select_color.selectedIndex].value;
 
-        if(speech_flag === true){
-            fillColor = colour;
-            console.log("colour inside",colour);
-        }
+        console.log('fillColor shape',fillColor);
 
-        // if(typeof colour === undefined){
-        //     fillColor = select_color.options[select_color.selectedIndex].value;
-        // }else{
-        //     fillColor = colour;
-        // }
+        if(speech_flag === true) {
+            if (typeof colour === 'undefined') {
+                fillColor = select_color.options[select_color.selectedIndex].value;
+            } else {
+                fillColor = colour;
+            }
+        }
 
         var width = document.getElementById("width");
         var height = document.getElementById("height");
@@ -409,7 +431,6 @@ init();
 function EnableTouch(){
     touch_flag = true;
     speech_flag = false;
-    recognition.stop();
     document.getElementById('touch_color').style.display = "inline";
     document.getElementById('touch_color_option').style.display = "inline";
 
@@ -420,6 +441,7 @@ function EnableTouch(){
 
 
     console.log('touch true');
+    check_flag=false;
 
 }
 
@@ -438,6 +460,7 @@ function EnableSpeech(){
 
 
     console.log('speech true');
+    check_flag = true;
 
 }
 
@@ -446,14 +469,39 @@ document.body.onclick = function(event) {
         // recognition.start();
     // recognition.stop();
     // recognition.start();
-    speech_flag = true;
-    touch_flag = false;
+
 
     if( $(event.target).closest("#speech").length > 0 ) {
         return false;
     }
 
     if( $(event.target).closest("#touch").length > 0 ) {
+        touch_flag = true;
+        speech_flag = false;
+        return false;
+    }
+
+    if( $(event.target).closest("#touch_color").length > 0 ) {
+        touch_flag = true;
+        speech_flag = false;
+        return false;
+    }
+
+    if( $(event.target).closest("#touch_color_option").length > 0 ) {
+        touch_flag = true;
+        speech_flag = false;
+        return false;
+    }
+
+    if( $(event.target).closest("#width").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#height").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#canvas").length > 0 ) {
         return false;
     }
 
@@ -466,6 +514,9 @@ document.body.onclick = function(event) {
 
     document.getElementById('touch_color').style.display = "none";
     document.getElementById('touch_color_option').style.display = "none";
+    speech_flag = true;
+    touch_flag = false;
+    check_flag = true;
 
 
     console.log('Ready to receive a color command.');
