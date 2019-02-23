@@ -4,33 +4,29 @@
 
 <head>
     <!-- USE DEVELOPMENT VERSION -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
     <title>Multimodal Simple Canvas</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #F0F0F0;
-        }
-    </style>
+
 </head>
 
 <body>
 
-<input onClick="drawRect();" type="image" id ="rect" src="./img/rect.png"  width="66" height="66" />
-<input  onClick="drawCircle();" type="image" id="circle" src="./img/circle.svg"  width="66" height="66"/>
-<input  onClick="drawTriangle();" type="image" id="triangle" src="./img/triangle.png"  width="66" height="66"/>
+    <input onClick="drawRect();" type="image" id ="rect" src="./img/rect.png"  width="66" height="66" />
+    <input onClick="drawCircle();" type="image" id="circle" src="./img/circle.svg"  width="66" height="66"/>
+    <input onClick="drawTriangle();" type="image" id="triangle" src="./img/triangle.png"  width="66" height="66"/>
+
+<div class="center" id="container"></div>
 
 
-<div id="container"></div>
+
 <script>
 
 </script>
 
 <script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 </body>
 

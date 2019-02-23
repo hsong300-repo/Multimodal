@@ -1,60 +1,16 @@
-function drawCircle(){
-    var new_circle = new Konva.Circle({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: 30 + Math.random() * 30,
-        fill: 'yellow',
-        name:'rect',
-        // stroke: 'black',
-        // strokeWidth: 4,
-        draggable: true
-    });
-    layer.add(new_circle);
-    layer.draw();
-}
-
-function drawRect(){
-    var new_rect = new Konva.Rect({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        width: 30 + Math.random() * 30,
-        height: 30 + Math.random() * 30,
-        fill: 'grey',
-        name: 'rect',
-        draggable: true
-    });
-
-    layer.add(new_rect);
-    layer.draw();
-
-}
-
-function drawTriangle(){
-    var new_triangle = new Konva.RegularPolygon({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        sides: 3,
-        radius: 50,
-        fill: '#00D2FF',
-        // stroke: 'black',
-        // strokeWidth: 4
-        name: 'rect',
-        draggable: true,
-    });
-
-    layer.add(new_triangle);
-    layer.draw();
-
-}
+// var width = window.innerWidth;
+// var height = window.innerHeight;
 
 
-var width = window.innerWidth;
-var height = window.innerHeight;
+var width = 800;
+var height = 600;
 
 var stage = new Konva.Stage({
     container: 'container',
-    width: width,
-    height: height
+    // width: width,
+    // height: height
+    width: 800,
+    height: 600
 });
 
 var layer = new Konva.Layer();
@@ -104,3 +60,53 @@ stage.on('click tap', function (e) {
     tr.attachTo(e.target);
     layer.draw();
 });
+
+
+function drawCircle(){
+    var new_circle = new Konva.Circle({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: 30 + Math.random() * 30,
+        fill: 'yellow',
+        name:'rect',
+        // stroke: 'black',
+        // strokeWidth: 4,
+        draggable: true
+    });
+    layer.add(new_circle);
+    layer.draw();
+}
+
+function drawRect(){
+    var new_rect = new Konva.Rect({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        width: 30 + Math.random() * 30,
+        height: 30 + Math.random() * 30,
+        fill: 'grey',
+        name: 'rect',
+        draggable: true
+    });
+
+    layer.add(new_rect);
+    layer.draw();
+
+}
+
+function drawTriangle(){
+    var new_triangle = new Konva.RegularPolygon({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        sides: 3,
+        radius: 50,
+        fill: '#00D2FF',
+        // stroke: 'black',
+        // strokeWidth: 4
+        name: 'rect',
+        draggable: true,
+    });
+
+    layer.add(new_triangle);
+    layer.draw();
+
+}

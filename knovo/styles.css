@@ -1,0 +1,29 @@
+#container {
+    border: 1px solid grey;
+    background-color: lightgrey;
+    width:800px;
+    height:600px;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+input.c {
+    display: block;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 5px;
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F0F0F0;
+}
