@@ -58,16 +58,9 @@ function stopSpeech(){
     setTimeout(function(){document.getElementById('speech_color').style.display = "none";
     },5000);
 
-
-
-
-
     // recognition.stop();
     // status_.className = 'inactive';
     // document.getElementById('listen').style.display = "none";
-
-
-
 
 }
 // called when we detect sound
@@ -77,7 +70,6 @@ function startSpeech(){
             speech_flag = true;
             touch_flag = false;
             status_.className = 'active';
-
 
         }
 	  recognition.start();
