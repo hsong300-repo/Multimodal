@@ -17,17 +17,20 @@ recognition.onresult = e => {
     var transcripts  = [].concat.apply([], [...e.results].map(res => [...res].map(alt => alt.transcript)));
     if(transcripts.some(t=>t.indexOf(magic_word)>-1)){
         // log('Say a color');
+
+        console.log('magic word');
         check_flag = true;
-        if(check_flag === true){
-            document.getElementById('listen').style.display = "block";
-            document.getElementById('say_color').style.display = "block";
-        }
+        document.getElementById('listen').style.display = "block";
+        document.getElementById('say_color').style.display = "block";
 
 
     }
     else{
         // log('understood ' + JSON.stringify(transcripts));
         check_flag = true;
+
+        console.log('just anything');
+
 
         if(check_flag === true){
             document.getElementById('listen').style.display = "block";
@@ -43,12 +46,6 @@ recognition.onresult = e => {
         $('h3').text(colour);
 
         console.log('color',colour);
-        // colour = colour.toString();
-        // $('body').css('background',colour);
-        // $('svg').css('background',colour);
-        // $('rect').css('fill',colour);
-        // $('h4').text(colour);
-
         color = colour;
 
 

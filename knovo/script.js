@@ -117,8 +117,9 @@ function drawTriangle(){
 
 $("button").click(function() {
     var fired_button = $(this).val();
-    // alert(fired_button);
+    alert(fired_button);
     check_flag = false;
+
 
     color = fired_button;
 });
