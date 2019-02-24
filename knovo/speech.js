@@ -18,14 +18,21 @@ recognition.onresult = e => {
     if(transcripts.some(t=>t.indexOf(magic_word)>-1)){
         // log('Say a color');
         check_flag = true;
-        document.getElementById('listen').style.display = "block";
-        document.getElementById('say_color').style.display = "block";
+        if(check_flag === true){
+            document.getElementById('listen').style.display = "block";
+            document.getElementById('say_color').style.display = "block";
+        }
+
 
     }
     else{
         // log('understood ' + JSON.stringify(transcripts));
-        document.getElementById('listen').style.display = "block";
-        document.getElementById('say_color').style.display = "block";
+        check_flag = true;
+
+        if(check_flag === true){
+            document.getElementById('listen').style.display = "block";
+            document.getElementById('say_color').style.display = "block";
+        }
 
 
         // colour = JSON.stringify(transcripts);
@@ -50,6 +57,7 @@ recognition.onresult = e => {
 // called when we detect silence
 function stopSpeech(){
     console.log('no more input');
+
 
     setTimeout(function(){recognition.stop();
     },5000);
@@ -187,6 +195,17 @@ document.body.onclick = function(event) {
     if( $(event.target).closest("#height").length > 0 ) {
         return false;
     }
+
+    if( $(event.target).closest("#height").length > 0 ) {
+        return false;
+    }
+    //buttons
+    if( $(event.target).closest(".button").length > 0 ) {
+        return false;
+    }
+
+
+
 
 
     document.getElementById('say_color').style.display = "block";
