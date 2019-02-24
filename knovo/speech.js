@@ -49,11 +49,13 @@ recognition.onresult = e => {
 };
 // called when we detect silence
 function stopSpeech(){
+    console.log('no more input');
+
     setTimeout(function(){recognition.stop();
     },5000);
-    setTimeout(function(){status_.className = 'inactive';
-    },5000);
     setTimeout(function(){document.getElementById('listen').style.display = "none";
+    },5000);
+    setTimeout(function(){document.getElementById('say_color').style.display = "none";
     },5000);
 
 
@@ -68,7 +70,7 @@ function startSpeech(){
         if(check_flag === true){
             speech_flag = true;
             touch_flag = false;
-            status_.className = 'active';
+            // status_.className = 'active';
 
         }
         recognition.start();
@@ -131,13 +133,8 @@ function EnableSpeech(){
     // recognition.start();
     speech_flag = true;
     touch_flag = false;
-    document.getElementById('speech_color').style.display = "block";
+    document.getElementById('say_color').style.display = "block";
     document.getElementById('listen').style.display = "block";
-
-
-    document.getElementById('touch_color').style.display = "none";
-    document.getElementById('touch_color_option').style.display = "none";
-
 
     console.log('speech true');
     check_flag = true;
@@ -155,21 +152,31 @@ document.body.onclick = function(event) {
         return false;
     }
 
-    if( $(event.target).closest("#touch").length > 0 ) {
-        touch_flag = true;
-        speech_flag = false;
+    if( $(event.target).closest("#rect").length > 0 ) {
         return false;
     }
 
-    if( $(event.target).closest("#touch_color").length > 0 ) {
-        touch_flag = true;
-        speech_flag = false;
+    if( $(event.target).closest("#circle").length > 0 ) {
         return false;
     }
 
-    if( $(event.target).closest("#touch_color_option").length > 0 ) {
-        touch_flag = true;
-        speech_flag = false;
+    if( $(event.target).closest("#triangle").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#container").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#say_color").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#content").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#listen").length > 0 ) {
         return false;
     }
 
@@ -181,19 +188,18 @@ document.body.onclick = function(event) {
         return false;
     }
 
-    if( $(event.target).closest("#canvas").length > 0 ) {
-        return false;
-    }
 
-    // if( $(event.target).closest("#canvas").length > 0 ) {
-    //     return false;
-    // }
-
+    document.getElementById('say_color').style.display = "block";
     document.getElementById('listen').style.display = "block";
-    document.getElementById('speech_color').style.display = "block";
 
-    document.getElementById('touch_color').style.display = "none";
-    document.getElementById('touch_color_option').style.display = "none";
+    // document.getElementById('listen').style.display = "block";
+    // setTimeout(function(){recognition.stop();
+    // },5000);
+    // setTimeout(function(){document.getElementById('listen').style.display = "none";
+    // },5000);
+    // setTimeout(function(){document.getElementById('say_color').style.display = "none";
+    // },5000);
+
     speech_flag = true;
     touch_flag = false;
     check_flag = true;

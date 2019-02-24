@@ -60,4 +60,6 @@ div.b {
     /*display: inline-block;*/
     display: block;
     font-size: 12px;
+    width:86px;
+    height:40px;
 }
