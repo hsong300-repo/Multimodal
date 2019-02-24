@@ -16,28 +16,28 @@ var stage = new Konva.Stage({
 var layer = new Konva.Layer();
 stage.add(layer);
 
-var rect1 = new Konva.Rect({
-    x: 60,
-    y: 60,
-    width: 100,
-    height: 90,
-    fill: 'red',
-    name: 'rect',
-    draggable: true
-});
-layer.add(rect1);
-
-var rect2 = new Konva.Rect({
-    x: 250,
-    y: 100,
-    width: 150,
-    height: 90,
-    fill: 'green',
-    name: 'rect',
-    draggable: true
-});
-layer.add(rect2);
-layer.draw();
+// var rect1 = new Konva.Rect({
+//     x: 60,
+//     y: 60,
+//     width: 100,
+//     height: 90,
+//     fill: 'red',
+//     name: 'rect',
+//     draggable: true
+// });
+// layer.add(rect1);
+//
+// var rect2 = new Konva.Rect({
+//     x: 250,
+//     y: 100,
+//     width: 150,
+//     height: 90,
+//     fill: 'green',
+//     name: 'rect',
+//     draggable: true
+// });
+// layer.add(rect2);
+// layer.draw();
 
 stage.on('click tap', function (e) {
     // if click on empty area - remove all transformers
@@ -67,7 +67,8 @@ function drawCircle(){
         x: Math.random() * width,
         y: Math.random() * height,
         radius: 30 + Math.random() * 30,
-        fill: 'yellow',
+        // fill: 'yellow',
+        fill: color,
         name:'rect',
         // stroke: 'black',
         // strokeWidth: 4,
@@ -83,7 +84,8 @@ function drawRect(){
         y: Math.random() * height,
         width: 30 + Math.random() * 30,
         height: 30 + Math.random() * 30,
-        fill: 'grey',
+        // fill: 'grey',
+        fill: color,
         name: 'rect',
         draggable: true
     });
@@ -94,12 +96,14 @@ function drawRect(){
 }
 
 function drawTriangle(){
+
     var new_triangle = new Konva.RegularPolygon({
         x: Math.random() * width,
         y: Math.random() * height,
         sides: 3,
         radius: 50,
-        fill: '#00D2FF',
+        fill: color,
+        // fill: '#00D2FF',
         // stroke: 'black',
         // strokeWidth: 4
         name: 'rect',
@@ -110,3 +114,10 @@ function drawTriangle(){
     layer.draw();
 
 }
+
+$("button").click(function() {
+    var fired_button = $(this).val();
+    alert(fired_button);
+
+    color = fired_button;
+});
