@@ -32,6 +32,7 @@ recognition.onresult = e => {
     }
     else{
         // log('understood ' + JSON.stringify(transcripts));
+
         check_flag = true;
 
         console.log('just anything');
@@ -157,6 +158,8 @@ document.body.onclick = function(event) {
     // recognition.start();
     // recognition.stop();
     // recognition.start();
+
+
 
 
     if( $(event.target).closest("#speech").length > 0 ) {

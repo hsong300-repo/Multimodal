@@ -17,6 +17,38 @@
     border: 3px solid #73AD21;
     padding: 10px;
     display: inline-block;
+    /*display: inline-block;*/
+    position: absolute;
+    left:22.5%;
+    top:15%;
+
+
+}
+
+.listen_center {
+    margin: auto;
+    width: 60%;
+    display: inline-block;
+    /*display: block;*/
+    text-align: center;
+    position: absolute;
+    left:22.5%;
+
+
+}
+
+.listen_ear {
+    margin: auto;
+    width: 60%;
+    display: inline-block;
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    position: absolute;
+    left:65%;
+    top:2.5%;
+
+
+
 }
 
 input.c {
@@ -40,7 +72,14 @@ span.c {
     display: block;
     /*width: 100px;*/
     /*height: 100px;*/
-    padding: 5px;
+    /*padding: 5px;*/
+    padding: 12px 20px;
+    position: absolute;
+    right:10%;
+    top:15%;
+
+
+
     /*border: 1px solid blue;*/
     /*background-color: yellow;*/
 }
@@ -48,9 +87,26 @@ span.c {
 
 div.b {
     display: inline-block;
+    position: absolute;
+    left:81%;
     /*width: 100px;*/
     /*height: 100px;*/
     padding: 5px;
+    top:15%;
+
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+div.d {
+    display: inline-block;
+    position: absolute;
+    left:15%;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 5px;
+    top:15%;
+
     /*border: 1px solid blue;*/
     /*background-color: yellow;*/
 }
@@ -67,4 +123,5 @@ div.b {
     font-size: 12px;
     width:86px;
     height:40px;
+
 }
