@@ -5,12 +5,14 @@ const magic_word = 'system';
 // initialize our SpeechRecognition object
 let recognition = new webkitSpeechRecognition();
 recognition.lang = 'en-US';
-recognition.interimResults = false;
+// recognition.interimResults = false;
+recognition.interimResults = true;
+
 recognition.maxAlternatives = 1;
 recognition.continuous = true;
 
 check_flag = false;
-
+magic_flag = false;
 
 // detect the magic word
 recognition.onresult = e => {
@@ -22,6 +24,9 @@ recognition.onresult = e => {
         check_flag = true;
         document.getElementById('listen').style.display = "block";
         document.getElementById('say_color').style.display = "block";
+
+        magic_flag = true;
+
 
 
     }
@@ -50,18 +55,18 @@ recognition.onresult = e => {
 
 
     }
+
 };
 // called when we detect silence
 function stopSpeech(){
-    console.log('no more input');
 
-
+    console.log('no input');
     setTimeout(function(){recognition.stop();
-    },5000);
+    },3000);
     setTimeout(function(){document.getElementById('listen').style.display = "none";
-    },5000);
+    },3000);
     setTimeout(function(){document.getElementById('say_color').style.display = "none";
-    },5000);
+    },3000);
 
 
     // recognition.stop();
@@ -78,6 +83,7 @@ function startSpeech(){
             // status_.className = 'active';
 
         }
+
         recognition.start();
 
     }
