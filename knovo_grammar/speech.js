@@ -1,9 +1,23 @@
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
+var colors = [ 'peru' , 'salmon' , 'magenta', 'wheat', 'violet', 'plum', 'tomato', 'silver', 'teal', 'darkred'];
+var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
+
+
+
+
 if(!window.webkitSpeechRecognition){
     log('Sorry this will work only in Chrome for now...');
 }
 const magic_word = 'system';
 // initialize our SpeechRecognition object
 let recognition = new webkitSpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 // recognition.interimResults = true;
@@ -25,6 +39,12 @@ recognition.onerror = function (event) {
     recognizing = false;
 };
 
+recognition.onnomatch = function(event) {
+    diagnostic.textContent = "I didn't recognise that color.";
+};
+
+
+diagnostic = document.getElementById('output');
 
 // if (recognizing) {
 //     // Do stuff
@@ -65,6 +85,13 @@ recognition.onresult = e => {
             color = transcripts[1].toString();
             $('h3').text(color);
 
+            var last = e.results.length - 1;
+            var color_test = e.results[last][0].transcript;
+            color = color_test;
+
+            diagnostic.textContent = 'Result received: ' + color_test + '.';
+
+
         }
 
         if(!recognizing){
@@ -86,8 +113,17 @@ recognition.onresult = e => {
         colour = colour.replace(/\s/gi,'');
         $('h3').text(colour);
 
+
         console.log('color',colour);
         color = colour;
+
+        var last = e.results.length - 1;
+        var color_test = e.results[last][0].transcript;
+
+        diagnostic.textContent = 'Result received: ' + color_test + '.';
+
+        color = color_test;
+
 
         // if(!recognizing){
         //     recognition.start();

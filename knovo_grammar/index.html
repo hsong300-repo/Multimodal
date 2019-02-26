@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- USE DEVELOPMENT VERSION -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Multimodal Simple Canvas</title>
+
+</head>
+
+<body>
+
+
+<div class="listen_center">
+    <!--<h1 class ="b" id="debug">log.</h1>-->
+    <h4 class ="b">Say "system" to choose a color.</h4>
+    <h3 class ="b" id="say_color" style="display:none;">Say a color.</h3>
+    <p class="b" id="output"><em>...diagnostic messages</em></p>
+
+</div>
+<!--<span id="status_" class="inactive">SpeechRecognition is </span>-->
+<!--<span id="status_" class="inactive">SpeechRecognition is </span>-->
+<!--<pre id="log_"></pre>-->
+<div class ="listen_ear" id="content"><img src="./img/listen.png" id="listen"  width="66" height="66" style="display:none;"></div>
+
+<div class="center" id="container"></div>
+
+
+
+<div class="b" id="color" >
+    <!--<h4> Say a colour</h4>-->
+    <button class="button" style="background-color:PERU;" id ="Peru" value ="Peru">PERU</button>
+    <button class="button" style="background-color:SALMON;" id ="Salmon" value ="Salmon">SALMON</button>
+    <button class="button" style="background-color:MAGENTA;" id ="Magenta" value ="Magenta">MAGENTA</button>
+    <button class="button" style="background-color:WHEAT;" id ="Wheat" value ="Wheat">WHEAT</button>
+    <button class="button" style="background-color:VIOLET;" id ="Violet" value ="Violet">VIOLET</button>
+    <button class="button" style="background-color:PLUM;" id ="Plum" value ="Plum">PLUM</button>
+    <button class="button" style="background-color:TOMATO;" id ="Tomato" value ="Tomato">TOMATO</button>
+    <button class="button" style="background-color:Silver;" id ="Silver" value ="Silver">Silver</button>
+    <button class="button" style="background-color:TEAL;" id ="Teal" value ="Teal">TEAL</button>
+    <button class="button" style="background-color:DARKRED;" id ="Darkred" value ="Darkred">DARKRED</button>
+    <!--<button class="button button2">Blue</button>-->
+    <!--<button class="button button3">Red</button>-->
+    <!--<button class="button button4">Gray</button>-->
+    <!--<button class="button button5">Black</button>-->
+    <!--<span class ="c" style="background:PERU;">PERU</span>-->
+    <!--<span class ="c" style="background:SALMON;">SALMON</span>-->
+    <!--<span class ="c" style="background:MAGENTA;">MAGENTA</span>-->
+    <!--<span class ="c" style="background:WHEAT;">WHEAT</span>-->
+    <!--<span class ="c" style="background:VIOLET;">VIOLET</span>-->
+    <!--<span class ="c" style="background:PLUM;">PLUM</span>-->
+    <!--<span class ="c" style="background:TOMATO;">TOMATO</span>-->
+    <!--<span class ="c" style="background:TEAL;">TEAL</span>-->
+    <!--<span class ="c" style="background:Silver;">Silver</span>-->
+    <!--<span class ="c" style="background:DARKRED;">DARKRED</span>-->
+</div>
+
+<div class="d">
+    <input class ="c" onClick="EnableSpeech();" type="image" id ="speech" src="./img/speech.svg"  width="66" height="66" />
+    <input class = "c" onClick="drawRect();" type="image" id ="rect" src="./img/rect.png"  width="66" height="66" />
+    <input class = "c" onClick="drawCircle();" type="image" id="circle" src="./img/circle.svg"  width="66" height="66"/>
+    <input class = "c" onClick="drawTriangle();" type="image" id="triangle" src="./img/triangle.png"  width="66" height="66"/>
+
+</div>
+<!--<div>-->
+    <!--<p class="output"><em>...diagnostic messages</em></p>-->
+<!--</div>-->
+
+
+
+
+
+<script>
+
+</script>
+
+<script src="script.js"></script>
+<script src="speech.js"></script>
+
+
+</body>
+
+</html>
