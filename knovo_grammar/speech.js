@@ -41,6 +41,7 @@ recognition.onerror = function (event) {
 
 recognition.onnomatch = function(event) {
     diagnostic.textContent = "I didn't recognise that color.";
+    console.log('no match!!!!');
 };
 
 
@@ -87,9 +88,16 @@ recognition.onresult = e => {
 
             var last = e.results.length - 1;
             var color_test = e.results[last][0].transcript;
-            color = color_test;
+            var color_test = color_test.toLowerCase();
+            color_test = color_test.replace(/\s/gi,'');
 
-            diagnostic.textContent = 'Result received: ' + color_test + '.';
+            console.log('color_test',color_test);
+
+            if(color_test === 'peru' || color_test === 'salmon' || color_test === 'magenta' || color_test === 'wheat'|| color_test === 'violet'||color_test === 'plum'||color_test === 'tomato'||color_test === 'silver'||color_test === 'teal'||color_test === 'darkred'){
+                diagnostic.textContent = 'Result received: ' + color_test + '.';
+
+                color = color_test;
+            }
 
 
         }
@@ -119,10 +127,19 @@ recognition.onresult = e => {
 
         var last = e.results.length - 1;
         var color_test = e.results[last][0].transcript;
+        var color_test = color_test.toLowerCase();
+        color_test = color_test.replace(/\s/gi,'');
 
-        diagnostic.textContent = 'Result received: ' + color_test + '.';
+        console.log('color_test',color_test);
 
-        color = color_test;
+        if(color_test === 'peru' || color_test === 'salmon' || color_test === 'magenta' || color_test === 'wheat'|| color_test === 'violet'||color_test === 'plum'||color_test === 'tomato'||color_test === 'silver'||color_test === 'teal'||color_test === 'darkred'){
+            diagnostic.textContent = 'Result received: ' + color_test + '.';
+
+            color = color_test;
+
+        }
+
+
 
 
         // if(!recognizing){
@@ -187,6 +204,15 @@ document.body.onclick = function(event) {
     if( $(event.target).closest("#listen").length > 0 ) {
         return false;
     }
+
+    if( $(event.target).closest("#width").length > 0 ) {
+        return false;
+    }
+
+    if( $(event.target).closest("#height").length > 0 ) {
+        return false;
+    }
+
     //buttons
     if( $(event.target).closest(".button").length > 0 ) {
         return false;
