@@ -5,14 +5,42 @@ const magic_word = 'system';
 // initialize our SpeechRecognition object
 let recognition = new webkitSpeechRecognition();
 recognition.lang = 'en-US';
-// recognition.interimResults = false;
-recognition.interimResults = true;
+recognition.interimResults = false;
+// recognition.interimResults = true;
 
 recognition.maxAlternatives = 1;
 recognition.continuous = true;
 
+var recongizing = false;
+
+recognition.onstart = function () {
+    recognizing = true;
+};
+
+recognition.onend = function () {
+    recognizing = false;
+};
+
+recognition.onerror = function (event) {
+    recognizing = false;
+};
+
+
+// if (recognizing) {
+//     // Do stuff
+// }
+
 check_flag = false;
 magic_flag = false;
+
+recognition.start();
+
+recognition.onspeechend = function() {
+    recognition.stop();
+    document.getElementById('listen').style.display = "none";
+    document.getElementById('say_color').style.display = "none";
+    console.log('Speech recognition has stopped.');
+};
 
 // detect the magic word
 recognition.onresult = e => {
@@ -27,6 +55,24 @@ recognition.onresult = e => {
 
         magic_flag = true;
 
+        command = transcripts.toString();
+
+        command = command.replace(/\s/gi,'');
+        $('h3').text(command);
+
+        if(command==="system"){
+            console.log('system called');
+        }else{
+            color = transcripts[1].toString();
+            $('h3').text(color);
+
+        }
+
+
+        if(!recognizing){
+            recognition.start();
+        }
+
 
 
     }
@@ -38,21 +84,28 @@ recognition.onresult = e => {
         console.log('just anything');
 
 
-        if(check_flag === true){
-            document.getElementById('listen').style.display = "block";
-            document.getElementById('say_color').style.display = "block";
-        }
+        // if(check_flag === true){
+        document.getElementById('listen').style.display = "block";
+        document.getElementById('say_color').style.display = "block";
+        // }
 
 
         // colour = JSON.stringify(transcripts);
-        colour = transcripts.toString();
-        colour = colour.toLowerCase();
+        var colour = transcripts.toString();
+        var colour = colour.toLowerCase();
         // strip the spaces out of it
         colour = colour.replace(/\s/gi,'');
         $('h3').text(colour);
 
         console.log('color',colour);
         color = colour;
+
+        // if(!recognizing){
+        //     recognition.start();
+        // }
+        if(!recognizing){
+            recognition.start();
+        }
 
 
     }
@@ -62,12 +115,18 @@ recognition.onresult = e => {
 function stopSpeech(){
 
     console.log('no input');
-    setTimeout(function(){recognition.stop();
-    },3000);
-    setTimeout(function(){document.getElementById('listen').style.display = "none";
-    },3000);
-    setTimeout(function(){document.getElementById('say_color').style.display = "none";
-    },3000);
+
+    recognition.stop();
+    document.getElementById('listen').style.display = "none";
+    document.getElementById('say_color').style.display = "none";
+
+
+    // setTimeout(function(){document.getElementById('listen').style.display = "none";
+    // },3000);
+    // setTimeout(function(){document.getElementById('say_color').style.display = "none";
+    // },3000);
+    // setTimeout(function(){recognition.stop();
+    // },3000);
 
 
     // recognition.stop();
@@ -77,6 +136,11 @@ function stopSpeech(){
 }
 // called when we detect sound
 function startSpeech(){
+
+    recognition.start();
+
+    console.log('recognition start');
+
     try{ // calling it twice will throw...
         if(check_flag === true){
             speech_flag = true;
@@ -88,56 +152,63 @@ function startSpeech(){
         recognition.start();
 
     }
-    catch(e){}
-    // status_.className = 'active';
+    catch(e){
+        console.log('does this gets called?');
+    }
+    status_.className = 'active';
 }
 // request a LocalMediaStream
-navigator.mediaDevices.getUserMedia({audio:true})
-// add our listeners
-    .then(stream => detectSilence(stream, stopSpeech, startSpeech))
-    .catch(e => log(e.message));
-
-
-function detectSilence(
-    stream,
-    onSoundEnd = _=>{},
-    onSoundStart = _=>{},
-    silence_delay = 500,
-    // silence_delay = 500,
-    // min_decibels = -80
-    min_decibels = -80
-
-) {
-    const ctx = new AudioContext();
-    const analyser = ctx.createAnalyser();
-    const streamNode = ctx.createMediaStreamSource(stream);
-    streamNode.connect(analyser);
-    analyser.minDecibels = min_decibels;
-
-    const data = new Uint8Array(analyser.frequencyBinCount); // will hold our data
-    let silence_start = performance.now();
-    let triggered = false; // trigger only once per silence event
-
-    function loop(time) {
-        requestAnimationFrame(loop); // we'll loop every 60th of a second to check
-        analyser.getByteFrequencyData(data); // get current data
-        if (data.some(v => v)) { // if there is data above the given db limit
-            if(triggered){
-                triggered = false;
-                onSoundStart();
-            }
-            silence_start = time; // set it to now
-        }
-        if (!triggered && time - silence_start > silence_delay) {
-            onSoundEnd();
-            triggered = true;
-        }
-    }
-    loop();
-}
-function log(txt){
-    log_.textContent += txt + '\n';
-}
+// navigator.mediaDevices.getUserMedia({audio:true})
+// // add our listeners
+//     .then(stream => detectSilence(stream, stopSpeech, startSpeech))
+//     .catch(e => log(e.message));
+//
+//
+// function detectSilence(
+//     stream,
+//     onSoundEnd = _=>{},
+//     onSoundStart = _=>{},
+//     // silence_delay = 500,
+//     // silence_delay = 5000,
+//     silence_delay = 500,
+//     // min_decibels = -80
+//     min_decibels = -80
+//
+// ) {
+//     const ctx = new AudioContext();
+//     const analyser = ctx.createAnalyser();
+//     const streamNode = ctx.createMediaStreamSource(stream);
+//     streamNode.connect(analyser);
+//     analyser.minDecibels = min_decibels;
+//
+//     const data = new Uint8Array(analyser.frequencyBinCount); // will hold our data
+//     let silence_start = performance.now();
+//     let triggered = false; // trigger only once per silence event
+//
+//     function loop(time) {
+//         requestAnimationFrame(loop); // we'll loop every 60th of a second to check
+//         analyser.getByteFrequencyData(data); // get current data
+//         if (data.some(v => v)) { // if there is data above the given db limit
+//             if(triggered){
+//                 console.log('onSoundStart');
+//                 triggered = false;
+//                 onSoundStart();
+//             }
+//             silence_start = time; // set it to now
+//         }
+//         if (!triggered && time - silence_start > silence_delay) {
+//             onSoundEnd();
+//             triggered = true;
+//             console.log('onSoundEnd');
+//
+//         }
+//     }
+//     loop();
+// }
+//
+// function log(txt){
+//     log_.textContent += txt + '\n';
+// }
 
 function EnableSpeech(){
 
@@ -151,6 +222,14 @@ function EnableSpeech(){
     console.log('speech true');
     check_flag = true;
 
+    if(!recognizing){
+        recognition.start();
+    }
+
+
+
+
+
 }
 
 // document.body.onclick = function() {
@@ -159,7 +238,7 @@ document.body.onclick = function(event) {
     // recognition.stop();
     // recognition.start();
 
-
+    console.log('Ready to receive a color command.');
 
 
     if( $(event.target).closest("#speech").length > 0 ) {
@@ -194,28 +273,33 @@ document.body.onclick = function(event) {
         return false;
     }
 
-    if( $(event.target).closest("#width").length > 0 ) {
-        return false;
-    }
+    // if( $(event.target).closest("#width").length > 0 ) {
+    //     return false;
+    // }
+    //
+    // if( $(event.target).closest("#height").length > 0 ) {
+    //     return false;
+    // }
 
-    if( $(event.target).closest("#height").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#height").length > 0 ) {
-        return false;
-    }
+    // if( $(event.target).closest("#height").length > 0 ) {
+    //     return false;
+    // }
     //buttons
     if( $(event.target).closest(".button").length > 0 ) {
         return false;
     }
 
 
+    if(!recognizing){
+        recognition.start();
+    }
 
 
 
     document.getElementById('say_color').style.display = "block";
     document.getElementById('listen').style.display = "block";
+
+
 
     // document.getElementById('listen').style.display = "block";
     // setTimeout(function(){recognition.stop();
@@ -230,5 +314,4 @@ document.body.onclick = function(event) {
     check_flag = true;
 
 
-    console.log('Ready to receive a color command.');
 };
