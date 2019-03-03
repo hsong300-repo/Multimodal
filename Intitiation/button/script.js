@@ -40,6 +40,31 @@ stage.add(layer);
 // layer.draw();
 
 stage.on('click tap', function (e) {
+    console.log('here change in position');
+    // if click on empty area - remove all transformers
+    if (e.target === stage) {
+        stage.find('Transformer').destroy();
+        layer.draw();
+        return;
+    }
+    // do nothing if clicked NOT on our rectangles
+    if (!e.target.hasName('rect')) {
+        return;
+    }
+    // remove old transformers
+    // TODO: we can skip it if current rect is already selected
+    stage.find('Transformer').destroy();
+
+    // create new transformer
+    var tr = new Konva.Transformer();
+    layer.add(tr);
+    tr.attachTo(e.target);
+    layer.draw();
+});
+
+//when click the object
+stage.on('click', function (e) {
+    console.log('click the object');
     // if click on empty area - remove all transformers
     if (e.target === stage) {
         stage.find('Transformer').destroy();
@@ -76,6 +101,8 @@ function drawCircle(){
         // strokeWidth: 4,
         draggable: true
     });
+
+
     layer.add(new_circle);
     layer.draw();
 }
@@ -116,6 +143,7 @@ function drawTriangle(){
     layer.draw();
 
 }
+
 
 diagnostic = document.getElementById('output');
 

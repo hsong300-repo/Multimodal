@@ -28,18 +28,18 @@ recognition.continuous = true;
 var recongizing = false;
 
 recognition.onstart = function () {
-    recognizing = true;
+    recongizing = true;
 };
 
 recognition.onend = function () {
     console.log('here');
     document.getElementById('listen').style.display = "none";
     document.getElementById('say_color').style.display = "none";
-    recognizing = false;
+    recongizing = false;
 };
 
 recognition.onerror = function (event) {
-    recognizing = false;
+    recongizing = false;
 };
 
 recognition.onnomatch = function(event) {
@@ -57,7 +57,7 @@ diagnostic = document.getElementById('output');
 check_flag = false;
 magic_flag = false;
 
-recognition.start();
+// recognition.start();
 
 recognition.onspeechend = function() {
 
@@ -68,26 +68,22 @@ recognition.onspeechend = function() {
 };
 
 //arjun code start
+count = 0;
 
 let final_transcript = '';
 recognition.onresult = function(event) {
     var interim_transcript = '';
-    console.log('here');
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
-        console.log('in the loop');
-
         interim_transcript += event.results[i][0].transcript;
-        console.log('interim_transcript_before loop',interim_transcript);
         if (event.results[i].isFinal) {
-            console.log('is it?');
-            recognition.stop();
-
             final_transcript += event.results[i][0].transcript;
-            console.log('final_transcript',final_transcript);
             // $("#output").val(final_transcript);
-            $("h3").val(final_transcript);
-            recognition.stop();
+            // $("h3").val(final_transcript);
+            $("h3").text(final_transcript);
+
+
+            // recognition.stop();
 
 
             // let query = final_transcript;
@@ -96,11 +92,101 @@ recognition.onresult = function(event) {
     }
     if(interim_transcript!=''){
         console.log('interim_transcript',interim_transcript);
-        // $("#output").val(interim_transcript);
-        $("h3").val(interim_transcript);
+        console.log('split objects',interim_transcript.split(' '));
 
-    }
+        var temp = interim_transcript.split(' ');
+        if (count === 0){
+            var shape = temp[0];
+            var clr = temp[1]
+        }else{
+            var shape = temp[1];
+            var clr = temp[2]
+        }
+        count +=1;
+        color = clr;
+
+
+
+        // console.log('shape color',shape, input_color);
+
+        $("h3").text(interim_transcript);
+        // color = input_color;
+
+
+        if(shape === "all") {
+            console.log('all shape change color');
+            drawAllShapes();
+        }else if(shape === "triangle" || shape === "Triangle"){
+            drawTriangle();
+        }else if(shape === "circle" || shape === "Circle"){
+            drawCircle();
+        }else if(shape === "rectangle" || shape === "Rectangle"){
+            drawRect();
+        }
+
+
+        // $("#output").val(interim_transcript);
+        // $("h3").val(interim_transcript);
+
+        }
 };
+
+if(!recongizing){
+    recognition.start();
+}
+
+function drawAllShapes(){
+
+    var new_circle = new Konva.Circle({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: 30 + Math.random() * 30,
+        // fill: 'yellow',
+        fill: color,
+        name:'rect',
+        // stroke: 'black',
+        // strokeWidth: 4,
+        draggable: true
+    });
+
+
+    layer.add(new_circle);
+    layer.draw();
+
+    var new_rect = new Konva.Rect({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        width: 30 + Math.random() * 30,
+        height: 30 + Math.random() * 30,
+        // fill: 'grey',
+        fill: color,
+        name: 'rect',
+        draggable: true
+    });
+
+    layer.add(new_rect);
+    layer.draw();
+
+    var new_triangle = new Konva.RegularPolygon({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        sides: 3,
+        radius: 50,
+        fill: color,
+        // fill: '#00D2FF',
+        // stroke: 'black',
+        // strokeWidth: 4
+        name: 'rect',
+        draggable: true,
+    });
+
+    layer.add(new_triangle);
+    layer.draw();
+
+}
+
+
+
 // if(globalVars.recognizingSpeech==false){
 //     recognizer.start();
 // }
@@ -219,173 +305,14 @@ function EnableSpeech(){
     console.log('speech true');
     check_flag = true;
 
-    if(!recognizing){
-        recognition.start();
-    }
-
-}
-
-// document.body.onclick = function() {
-document.body.onclick = function(event) {
-    console.log('Ready to receive a color command.');
-
-    if( $(event.target).closest("#speech").length > 0 ) {
-        console.log('speech clicked');
-        return false;
-    }
-
-    if( $(event.target).closest("#rect").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#circle").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#triangle").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#container").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#say_color").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#content").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#listen").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#width").length > 0 ) {
-        return false;
-    }
-
-    if( $(event.target).closest("#height").length > 0 ) {
-        return false;
-    }
-
-    //buttons
-    if( $(event.target).closest(".button").length > 0 ) {
-        return false;
-    }
-
-    if(!recognizing){
-        recognition.start();
-    }
-
-    document.getElementById('say_color').style.display = "block";
-    document.getElementById('listen').style.display = "block";
-
-    speech_flag = true;
-    touch_flag = false;
-    check_flag = true;
-
-
-};
-
-
-//temporarily removed
-// called when we detect silence
-function stopSpeech(){
-
-    console.log('no input');
-
-    recognition.stop();
-    document.getElementById('listen').style.display = "none";
-    document.getElementById('say_color').style.display = "none";
-
-
-    // setTimeout(function(){document.getElementById('listen').style.display = "none";
-    // },3000);
-    // setTimeout(function(){document.getElementById('say_color').style.display = "none";
-    // },3000);
-    // setTimeout(function(){recognition.stop();
-    // },3000);
-
-
-    // recognition.stop();
-    // status_.className = 'inactive';
-    // document.getElementById('listen').style.display = "none";
-
-}
-// called when we detect sound
-function startSpeech(){
-
     recognition.start();
 
-    console.log('recognition start');
+    // if(!recognizing){
+    //     recognition.start();
+    // }
 
-    try{ // calling it twice will throw...
-        if(check_flag === true){
-            speech_flag = true;
-            touch_flag = false;
-            // status_.className = 'active';
-
-        }
-
-        recognition.start();
-
-    }
-    catch(e){
-        console.log('does this gets called?');
-    }
-    status_.className = 'active';
 }
-// request a LocalMediaStream
-// navigator.mediaDevices.getUserMedia({audio:true})
-// // add our listeners
-//     .then(stream => detectSilence(stream, stopSpeech, startSpeech))
-//     .catch(e => log(e.message));
-//
-//
-// function detectSilence(
-//     stream,
-//     onSoundEnd = _=>{},
-//     onSoundStart = _=>{},
-//     // silence_delay = 500,
-//     // silence_delay = 5000,
-//     silence_delay = 500,
-//     // min_decibels = -80
-//     min_decibels = -80
-//
-// ) {
-//     const ctx = new AudioContext();
-//     const analyser = ctx.createAnalyser();
-//     const streamNode = ctx.createMediaStreamSource(stream);
-//     streamNode.connect(analyser);
-//     analyser.minDecibels = min_decibels;
-//
-//     const data = new Uint8Array(analyser.frequencyBinCount); // will hold our data
-//     let silence_start = performance.now();
-//     let triggered = false; // trigger only once per silence event
-//
-//     function loop(time) {
-//         requestAnimationFrame(loop); // we'll loop every 60th of a second to check
-//         analyser.getByteFrequencyData(data); // get current data
-//         if (data.some(v => v)) { // if there is data above the given db limit
-//             if(triggered){
-//                 console.log('onSoundStart');
-//                 triggered = false;
-//                 onSoundStart();
-//             }
-//             silence_start = time; // set it to now
-//         }
-//         if (!triggered && time - silence_start > silence_delay) {
-//             onSoundEnd();
-//             triggered = true;
-//             console.log('onSoundEnd');
-//
-//         }
-//     }
-//     loop();
-// }
-//
-// function log(txt){
-//     log_.textContent += txt + '\n';
-// }
+
+
+
+
