@@ -78,22 +78,14 @@ recognition.onresult = function(event) {
         interim_transcript += event.results[i][0].transcript;
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
-            // $("#output").val(final_transcript);
             // $("h3").val(final_transcript);
-            $("h3").text(final_transcript);
-
-
+            // $("h3").text(final_transcript);
             // recognition.stop();
-
-
             // let query = final_transcript;
             // speechQueryProcessor.process(query,invokedBy);
         }
     }
     if(interim_transcript!=''){
-        console.log('interim_transcript',interim_transcript);
-        console.log('split objects',interim_transcript.split(' '));
-
         var temp = interim_transcript.split(' ');
         if (count === 0){
             var shape = temp[0];
@@ -105,13 +97,7 @@ recognition.onresult = function(event) {
         count +=1;
         color = clr;
 
-
-
-        // console.log('shape color',shape, input_color);
-
         $("h3").text(interim_transcript);
-        // color = input_color;
-
 
         if(shape === "all") {
             console.log('all shape change color');
@@ -122,11 +108,9 @@ recognition.onresult = function(event) {
             drawCircle();
         }else if(shape === "rectangle" || shape === "Rectangle"){
             drawRect();
+        }else if(shape==="change"){
+            color = clr;
         }
-
-
-        // $("#output").val(interim_transcript);
-        // $("h3").val(interim_transcript);
 
         }
 };

@@ -66,24 +66,25 @@ stage.on('click tap', function (e) {
 stage.on('click', function (e) {
     console.log('click the object');
     // if click on empty area - remove all transformers
-    if (e.target === stage) {
-        stage.find('Transformer').destroy();
-        layer.draw();
-        return;
-    }
+    // if (e.target === stage) {
+    //     stage.find('Transformer').destroy();
+    //     layer.draw();
+    //     return;
+    // }
     // do nothing if clicked NOT on our rectangles
-    if (!e.target.hasName('rect')) {
-        return;
+    if (e.target.hasName('rect')) {
+        var fill = color;
+        e.target.fill(fill);
+
+        layer.add(e.target);
+        layer.draw();
+
+        // stage.add(layer);
+        // return;
     }
     // remove old transformers
     // TODO: we can skip it if current rect is already selected
-    stage.find('Transformer').destroy();
 
-    // create new transformer
-    var tr = new Konva.Transformer();
-    layer.add(tr);
-    tr.attachTo(e.target);
-    layer.draw();
 });
 
 
