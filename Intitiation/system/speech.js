@@ -81,7 +81,7 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             // $("h3").val(final_transcript);
-            // $("h3").text(final_transcript);
+            $("h3").text(final_transcript);
             // recognition.stop();
             // let query = final_transcript;
             // speechQueryProcessor.process(query,invokedBy);
@@ -104,21 +104,32 @@ recognition.onresult = function(event) {
         if (shape === "all") {
             console.log('all shape change color');
             drawAllShapes();
+            $("#output").text("System is listening");
         } else if (shape === "triangle" || shape === "Triangle") {
             drawTriangle();
+            $("#output").text("System is listening");
+
         } else if (shape === "circle" || shape === "Circle") {
             drawCircle();
+            $("#output").text("System is listening");
+
         } else if (shape === "rectangle" || shape === "Rectangle") {
             drawRect();
+            $("#output").text("System is listening");
+
         } else if (shape === "change") {
             color = clr;
+            $("#output").text("System is listening");
+
         } else if (shape === "system") {
-            $("h3").text("system is listening");
+            $("#output").text("System is listening");
             recongizing = false;
         } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
                 color = clr;
+            $("#output").text("System is listening");
+
         } else {
-                $("h3").text("Sorry I don't understand");
+                $("#output").text("Sorry I don't understand");
             }
 
         }
