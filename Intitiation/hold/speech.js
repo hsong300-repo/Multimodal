@@ -68,7 +68,6 @@ recognition.onspeechend = function() {
 
 //arjun code start
 count = 0;
-
 let final_transcript = '';
 recognition.onresult = function(event) {
     var interim_transcript = '';
@@ -78,48 +77,57 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             // $("h3").val(final_transcript);
-            // $("h3").text(final_transcript);
+            $("h3").text(final_transcript);
             // recognition.stop();
             // let query = final_transcript;
             // speechQueryProcessor.process(query,invokedBy);
         }
     }
-    if(interim_transcript!=''){
+    if(interim_transcript!='') {
         var temp = interim_transcript.split(' ');
-        if (count === 0){
+        if (count === 0) {
             var shape = temp[0];
             var clr = temp[1]
-        }else{
+        } else {
             var shape = temp[1];
             var clr = temp[2]
         }
-        count +=1;
+        count += 1;
         color = clr;
 
         $("h3").text(interim_transcript);
 
-        if(shape === "all") {
+        if (shape === "all") {
             console.log('all shape change color');
             drawAllShapes();
-        }else if(shape === "triangle" || shape === "Triangle"){
+            $("#output").text("System is listening");
+        } else if (shape === "triangle" || shape === "Triangle") {
             drawTriangle();
-        }else if(shape === "circle" || shape === "Circle"){
+            $("#output").text("System is listening");
+
+        } else if (shape === "circle" || shape === "Circle") {
             drawCircle();
-        }else if(shape === "rectangle" || shape === "Rectangle"){
+            $("#output").text("System is listening");
+
+        } else if (shape === "rectangle" || shape === "Rectangle") {
             drawRect();
-        }else if(shape==="change"){
+            $("#output").text("System is listening");
+
+        } else if (shape === "change") {
             color = clr;
-        }else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
+            $("#output").text("System is listening");
+
+        } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
             color = clr;
-            $("#output").text(interim_transcript);
+            $("#output").text("System is listening");
 
         } else {
             $("#output").text("Sorry I don't understand");
         }
+
     }
 
 };
-
 // $('#container').on("touchstart",function(e){
 //     console.log('being touchstart');
 //     recognition.start();
