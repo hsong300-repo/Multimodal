@@ -109,16 +109,22 @@ recognition.onresult = function(event) {
             drawRect();
         }else if(shape==="change"){
             color = clr;
-        }
+        }else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
+            color = clr;
+            $("#output").text(interim_transcript);
 
+        } else {
+            $("#output").text("Sorry I don't understand");
         }
+    }
+
 };
 
-$('#container').on("touchstart",function(e){
-    console.log('being touchstart');
-    recognition.start();
-
-});
+// $('#container').on("touchstart",function(e){
+//     console.log('being touchstart');
+//     recognition.start();
+//
+// });
 
 // $('#container').on("touchend",function(e){
 //     console.log('touchend');
@@ -126,18 +132,18 @@ $('#container').on("touchstart",function(e){
 //
 // });
 
-var container = document.getElementById("container");
-
-container.addEventListener("touchend", makeTouchEnd, false);
-container.addEventListener("touchcancel", makeTouchEnd, false);
-
-
-function makeTouchEnd(event){
-    console.log('end touch');
-    event.preventDefault();
-    recognition.stop();
-    return false;
-}
+// var container = document.getElementById("container");
+//
+// container.addEventListener("touchend", makeTouchEnd, false);
+// container.addEventListener("touchcancel", makeTouchEnd, false);
+//
+//
+// function makeTouchEnd(event){
+//     console.log('end touch');
+//     event.preventDefault();
+//     recognition.stop();
+//     return false;
+// }
 
 
 // recognition.stop();
