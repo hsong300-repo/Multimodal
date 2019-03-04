@@ -70,6 +70,8 @@ recognition.onspeechend = function() {
 //arjun code start
 count = 0;
 
+recognition.start();
+
 let final_transcript = '';
 recognition.onresult = function(event) {
     var interim_transcript = '';
@@ -85,34 +87,42 @@ recognition.onresult = function(event) {
             // speechQueryProcessor.process(query,invokedBy);
         }
     }
-    if(interim_transcript!=''){
+    if(interim_transcript!='') {
         var temp = interim_transcript.split(' ');
-        if (count === 0){
+        if (count === 0) {
             var shape = temp[0];
             var clr = temp[1]
-        }else{
+        } else {
             var shape = temp[1];
             var clr = temp[2]
         }
-        count +=1;
+        count += 1;
         color = clr;
 
         $("h3").text(interim_transcript);
 
-        if(shape === "all") {
+        if (shape === "all") {
             console.log('all shape change color');
             drawAllShapes();
-        }else if(shape === "triangle" || shape === "Triangle"){
+        } else if (shape === "triangle" || shape === "Triangle") {
             drawTriangle();
-        }else if(shape === "circle" || shape === "Circle"){
+        } else if (shape === "circle" || shape === "Circle") {
             drawCircle();
-        }else if(shape === "rectangle" || shape === "Rectangle"){
+        } else if (shape === "rectangle" || shape === "Rectangle") {
             drawRect();
-        }else if(shape==="change"){
+        } else if (shape === "change") {
             color = clr;
-        }
+        } else if (shape === "system") {
+            $("h3").text("system is listening");
+            recongizing = false;
+        } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
+                color = clr;
+        } else {
+                $("h3").text("Sorry I don't understand");
+            }
 
         }
+
 };
 
 if(!recongizing){
@@ -279,23 +289,6 @@ function drawAllShapes(){
 //
 // };
 
-
-function EnableSpeech(){
-    speech_flag = true;
-    touch_flag = false;
-    document.getElementById('say_color').style.display = "block";
-    document.getElementById('listen').style.display = "block";
-
-    console.log('speech true');
-    check_flag = true;
-
-    recognition.start();
-
-    // if(!recognizing){
-    //     recognition.start();
-    // }
-
-}
 
 
 
