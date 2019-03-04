@@ -19,8 +19,8 @@ speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 
 recognition.lang = 'en-US';
-recognition.interimResults = false;
-// recognition.interimResults = true;
+// recognition.interimResults = false;
+recognition.interimResults = true;
 
 recognition.maxAlternatives = 1;
 recognition.continuous = true;
@@ -33,8 +33,6 @@ recognition.onstart = function () {
 
 recognition.onend = function () {
     console.log('here');
-    document.getElementById('listen').style.display = "none";
-    document.getElementById('say_color').style.display = "none";
     recongizing = false;
 };
 
@@ -62,8 +60,7 @@ magic_flag = false;
 recognition.onspeechend = function() {
 
     recognition.stop();
-    document.getElementById('listen').style.display = "none";
-    document.getElementById('say_color').style.display = "none";
+
     console.log('Speech recognition has stopped.');
 };
 
@@ -80,6 +77,7 @@ recognition.onresult = function(event) {
         interim_transcript += event.results[i][0].transcript;
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
+            console.log('final transcript',final_transcript);
             // $("h3").val(final_transcript);
             $("h3").text(final_transcript);
             // recognition.stop();
@@ -88,6 +86,10 @@ recognition.onresult = function(event) {
         }
     }
     if(interim_transcript!='') {
+        console.log('interim transcript',interim_transcript);
+        $("h3").text(interim_transcript);
+
+
         var temp = interim_transcript.split(' ');
         if (count === 0) {
             if(temp[0] === 'system' || temp[0] === "System"){
@@ -105,7 +107,6 @@ recognition.onresult = function(event) {
         count += 1;
         color = clr;
 
-        $("h3").text(interim_transcript);
 
         if (shape === "all") {
             console.log('all shape change color');
