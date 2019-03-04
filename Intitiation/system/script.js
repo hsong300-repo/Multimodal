@@ -94,7 +94,8 @@ function drawCircle(){
     var new_circle = new Konva.Circle({
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: 30 + Math.random() * 30,
+        // radius: 30 + Math.random() * 30,
+        radius: 30,
         // fill: 'yellow',
         fill: color,
         name:'rect',
@@ -112,8 +113,10 @@ function drawRect(){
     var new_rect = new Konva.Rect({
         x: Math.random() * width,
         y: Math.random() * height,
-        width: 30 + Math.random() * 30,
-        height: 30 + Math.random() * 30,
+        width: 50,
+        height: 50,
+        // width: 30 + Math.random() * 30,
+        // height: 30 + Math.random() * 30,
         // fill: 'grey',
         fill: color,
         name: 'rect',

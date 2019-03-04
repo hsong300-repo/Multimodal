@@ -90,11 +90,17 @@ recognition.onresult = function(event) {
     if(interim_transcript!='') {
         var temp = interim_transcript.split(' ');
         if (count === 0) {
-            var shape = temp[0];
-            var clr = temp[1]
+            if(temp[0] === 'system' || temp[0] === "System"){
+                var shape = temp[1];
+                var clr = temp[2];
+                $("#output").text("System is listening");
+            }
         } else {
-            var shape = temp[1];
-            var clr = temp[2]
+            if(temp[1] === 'system' || temp[1] === "System"){
+                var shape = temp[2];
+                var clr = temp[3];
+                $("#output").text("System is listening");
+            }
         }
         count += 1;
         color = clr;
@@ -108,12 +114,12 @@ recognition.onresult = function(event) {
         } else if (shape === "triangle" || shape === "Triangle") {
             drawTriangle();
             $("#output").text("System is listening");
-
         } else if (shape === "circle" || shape === "Circle") {
             drawCircle();
             $("#output").text("System is listening");
 
         } else if (shape === "rectangle" || shape === "Rectangle") {
+            console.log('does it go here?');
             drawRect();
             $("#output").text("System is listening");
 
@@ -121,9 +127,6 @@ recognition.onresult = function(event) {
             color = clr;
             $("#output").text("System is listening");
 
-        } else if (shape === "system") {
-            $("#output").text("System is listening");
-            recongizing = false;
         } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
                 color = clr;
             $("#output").text("System is listening");

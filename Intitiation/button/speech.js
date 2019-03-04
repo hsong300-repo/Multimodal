@@ -27,14 +27,22 @@ recognition.continuous = true;
 
 var recongizing = false;
 
+recognition.onaudioend = function() {
+    console.log('Audio capturing ended');
+}
+
+recognition.onsoundend = function() {
+    console.log('Sound has stopped being received');
+}
+
 recognition.onstart = function () {
     recongizing = true;
 };
 
 recognition.onend = function () {
     console.log('here');
-    document.getElementById('listen').style.display = "none";
-    document.getElementById('say_color').style.display = "none";
+    // document.getElementById('listen').style.display = "none";
+    // document.getElementById('say_color').style.display = "none";
     recongizing = false;
 };
 
@@ -62,8 +70,8 @@ magic_flag = false;
 recognition.onspeechend = function() {
 
     recognition.stop();
-    document.getElementById('listen').style.display = "none";
-    document.getElementById('say_color').style.display = "none";
+    // document.getElementById('listen').style.display = "none";
+    // document.getElementById('say_color').style.display = "none";
     console.log('Speech recognition has stopped.');
 };
 
@@ -76,48 +84,74 @@ recognition.onresult = function(event) {
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         interim_transcript += event.results[i][0].transcript;
+        console.log('co',i);
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             // $("h3").val(final_transcript);
-            // $("h3").text(final_transcript);
+            $("h3").text(final_transcript);
+            console.log('is final');
+
+            // setTimeout(function(){recognition.stop();
+            // },5000);
+            // setTimeout(function(){$("#output").text("Recognition Stopped")
+            // },5000);
             // recognition.stop();
+            // $("h3").text("Recognition Stopped");
+
             // let query = final_transcript;
             // speechQueryProcessor.process(query,invokedBy);
         }
     }
-    if(interim_transcript!=''){
+    if(interim_transcript!='') {
+        console.log('intertim results');
         var temp = interim_transcript.split(' ');
-        if (count === 0){
+        if (count === 0) {
             var shape = temp[0];
             var clr = temp[1]
-        }else{
+        } else {
             var shape = temp[1];
             var clr = temp[2]
         }
-        count +=1;
+        count += 1;
         color = clr;
 
         $("h3").text(interim_transcript);
 
-        if(shape === "all") {
+        if (shape === "all") {
             console.log('all shape change color');
             drawAllShapes();
-        }else if(shape === "triangle" || shape === "Triangle"){
+            $("#output").text("System is listening");
+        } else if (shape === "triangle" || shape === "Triangle") {
             drawTriangle();
-        }else if(shape === "circle" || shape === "Circle"){
+            $("#output").text("System is listening");
+
+        } else if (shape === "circle" || shape === "Circle") {
             drawCircle();
-        }else if(shape === "rectangle" || shape === "Rectangle"){
+            $("#output").text("System is listening");
+
+        } else if (shape === "rectangle" || shape === "Rectangle") {
             drawRect();
-        }else if(shape==="change"){
+            $("#output").text("System is listening");
+
+        } else if (shape === "change") {
             color = clr;
+            $("#output").text("System is listening");
+
+        } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
+            color = clr;
+            $("#output").text("System is listening");
+
+        } else {
+            $("#output").text("Sorry I don't understand");
         }
 
-        }
+    }
+
 };
 
-if(!recongizing){
-    recognition.start();
-}
+// if(!recongizing){
+//     recognition.start();
+// }
 
 function drawAllShapes(){
 
@@ -283,17 +317,12 @@ function drawAllShapes(){
 function EnableSpeech(){
     speech_flag = true;
     touch_flag = false;
-    document.getElementById('say_color').style.display = "block";
-    document.getElementById('listen').style.display = "block";
+
 
     console.log('speech true');
     check_flag = true;
 
     recognition.start();
-
-    // if(!recognizing){
-    //     recognition.start();
-    // }
 
 }
 
