@@ -80,6 +80,52 @@ recognition.onresult = function(event) {
             console.log('final transcript',final_transcript);
             // $("h3").val(final_transcript);
             $("h3").text(final_transcript);
+
+            var temp = final_transcript.split(' ');
+            if (count === 0) {
+                if(temp[0] === 'system' || temp[0] === "System"){
+                    var shape = temp[1];
+                    var clr = temp[2];
+                    $("#output").text("System is listening");
+                }
+            } else {
+                if(temp[1] === 'system' || temp[1] === "System"){
+                    var shape = temp[2];
+                    var clr = temp[3];
+                    $("#output").text("System is listening");
+                }
+            }
+            count += 1;
+            color = clr;
+
+
+            if (shape === "all") {
+                console.log('all shape change color');
+                drawAllShapes();
+                $("#output").text("System is listening");
+            } else if (shape === "triangle" || shape === "Triangle") {
+                drawTriangle();
+                $("#output").text("System is listening");
+            } else if (shape === "circle" || shape === "Circle") {
+                drawCircle();
+                $("#output").text("System is listening");
+
+            } else if (shape === "rectangle" || shape === "Rectangle") {
+                console.log('does it go here?');
+                drawRect();
+                $("#output").text("System is listening");
+
+            } else if (shape === "change") {
+                color = clr;
+                $("#output").text("System is listening");
+
+            } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
+                color = clr;
+                $("#output").text("System is listening");
+
+            } else {
+                $("#output").text("Sorry I don't understand");
+            }
             // recognition.stop();
             // let query = final_transcript;
             // speechQueryProcessor.process(query,invokedBy);
@@ -90,51 +136,7 @@ recognition.onresult = function(event) {
         $("h3").text(interim_transcript);
 
 
-        var temp = interim_transcript.split(' ');
-        if (count === 0) {
-            if(temp[0] === 'system' || temp[0] === "System"){
-                var shape = temp[1];
-                var clr = temp[2];
-                $("#output").text("System is listening");
-            }
-        } else {
-            if(temp[1] === 'system' || temp[1] === "System"){
-                var shape = temp[2];
-                var clr = temp[3];
-                $("#output").text("System is listening");
-            }
-        }
-        count += 1;
-        color = clr;
 
-
-        if (shape === "all") {
-            console.log('all shape change color');
-            drawAllShapes();
-            $("#output").text("System is listening");
-        } else if (shape === "triangle" || shape === "Triangle") {
-            drawTriangle();
-            $("#output").text("System is listening");
-        } else if (shape === "circle" || shape === "Circle") {
-            drawCircle();
-            $("#output").text("System is listening");
-
-        } else if (shape === "rectangle" || shape === "Rectangle") {
-            console.log('does it go here?');
-            drawRect();
-            $("#output").text("System is listening");
-
-        } else if (shape === "change") {
-            color = clr;
-            $("#output").text("System is listening");
-
-        } else if (clr === 'peru' || clr === 'salmon' || clr === 'magenta' || clr === 'wheat' || clr === 'violet' || clr === 'plum' || clr === 'tomato' || clr === 'silver' || clr === 'teal' || clr === 'red') {
-                color = clr;
-            $("#output").text("System is listening");
-
-        } else {
-                $("#output").text("Sorry I don't understand");
-            }
 
         }
 
