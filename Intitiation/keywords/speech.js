@@ -1,6 +1,3 @@
-
-
-
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
@@ -138,13 +135,16 @@ recognition.onresult = function(event) {
         console.log('interim transcript',interim_transcript);
         $("h3").text(interim_transcript);
 
+
+
+
         }
 
 };
 
-if(!recongizing){
-    recognition.start();
-}
+// if(!recongizing){
+//     recognition.start();
+// }
 
 function drawAllShapes(){
 
