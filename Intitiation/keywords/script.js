@@ -13,6 +13,12 @@ var stage = new Konva.Stage({
     height: 600
 });
 
+// var group = new Konva.Group({
+//     x: Math.random() * width,
+//     y: Math.random() * height,
+//     draggable: true
+// });
+
 var layer = new Konva.Layer();
 stage.add(layer);
 
@@ -51,6 +57,14 @@ stage.on('click tap', function (e) {
     if (!e.target.hasName('rect')) {
         return;
     }
+
+    if (!e.target.hasName('circle')) {
+        return;
+    }
+
+    if (!e.target.hasName('triangle')) {
+        return;
+    }
     // remove old transformers
     // TODO: we can skip it if current rect is already selected
     stage.find('Transformer').destroy();
@@ -82,6 +96,28 @@ stage.on('click', function (e) {
         // stage.add(layer);
         // return;
     }
+
+    if (e.target.hasName('circle')) {
+        var fill = color;
+        e.target.fill(fill);
+
+        layer.add(e.target);
+        layer.draw();
+
+        // stage.add(layer);
+        // return;
+    }
+
+    if (e.target.hasName('triangle')) {
+        var fill = color;
+        e.target.fill(fill);
+
+        layer.add(e.target);
+        layer.draw();
+
+        // stage.add(layer);
+        // return;
+    }
     // remove old transformers
     // TODO: we can skip it if current rect is already selected
 
@@ -104,7 +140,7 @@ function drawCircle(color){
         radius: 30,
         // fill: 'yellow',
         fill: color,
-        name:'rect',
+        name:'circle',
         // stroke: 'black',
         // strokeWidth: 4,
         draggable: true
@@ -145,7 +181,7 @@ function drawTriangle(color){
         color = "black";
     }
 
-    var new_triangle = new Konva.RegularPolygon({
+    new_triangle = new Konva.RegularPolygon({
         x: Math.random() * width,
         y: Math.random() * height,
         sides: 3,
@@ -154,12 +190,53 @@ function drawTriangle(color){
         // fill: '#00D2FF',
         // stroke: 'black',
         // strokeWidth: 4
-        name: 'rect',
+        name: 'triangle',
         draggable: true,
     });
 
     layer.add(new_triangle);
     layer.draw();
+
+}
+
+function removeTriangle(){
+
+
+    // if(object.hasName('traiangle')){
+
+    layer.findOne('.triangle').fill('grey');
+
+
+
+        // new_triangle.visible(false);
+        //
+        // // layer.add(e.target);
+        // layer.add(new_triangle);
+        // layer.draw();
+
+    // }
+
+
+
+
+    // stage.on('click', function (e) {
+    //     console.log('click the object');
+    //
+    //     if (e.target.hasName('triangle')) {
+    //         // var fill = color;
+    //         e.target.visible(false);
+    //
+    //         layer.add(e.target);
+    //         layer.draw();
+    //
+    //         // stage.add(layer);
+    //         // return;
+    //     }
+    //
+    // });
+
+
+
 
 }
 
