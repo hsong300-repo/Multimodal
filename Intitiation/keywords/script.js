@@ -133,7 +133,7 @@ function drawCircle(color){
         color = "black";
     }
 
-    var new_circle = new Konva.Circle({
+    new_circle = new Konva.Circle({
         x: Math.random() * width,
         y: Math.random() * height,
         // radius: 30 + Math.random() * 30,
@@ -157,7 +157,7 @@ function drawRect(color){
         color = "black";
     }
     console.log(color);
-    var new_rect = new Konva.Rect({
+    new_rect = new Konva.Rect({
         x: Math.random() * width,
         y: Math.random() * height,
         width: 50,
@@ -199,43 +199,82 @@ function drawTriangle(color){
 
 }
 
+
+
 function removeTriangle(){
 
-
-    // if(object.hasName('traiangle')){
-
-    layer.findOne('.triangle').fill('grey');
+    $("h3").text("click a triangle to remove");
 
 
+    // layer.remove(new_triangle);
 
-        // new_triangle.visible(false);
-        //
-        // // layer.add(e.target);
-        // layer.add(new_triangle);
-        // layer.draw();
+    stage.on('click', function (e) {
+        console.log('click the object');
 
-    // }
+        if (e.target.hasName('triangle')) {
+            // var fill = color;
+            e.target.visible(false);
+
+            layer.add(e.target);
+            layer.draw();
+
+        }
+
+    });
+}
+
+function removeCircle(){
+
+    stage.on('click', function (e) {
+        console.log('click the object');
+
+        if (e.target.hasName('circle')) {
+            // var fill = color;
+            e.target.visible(false);
+
+            layer.add(e.target);
+            layer.draw();
+
+        }
+
+    });
+
+}
+
+function removeRect(){
+
+    stage.on('click', function (e) {
+        console.log('click the object');
+
+        if (e.target.hasName('rect')) {
+            // var fill = color;
+            e.target.visible(false);
+
+            layer.add(e.target);
+            layer.draw();
+
+        }
+
+    });
 
 
+}
 
+function changeColor(color){
 
-    // stage.on('click', function (e) {
-    //     console.log('click the object');
-    //
-    //     if (e.target.hasName('triangle')) {
-    //         // var fill = color;
-    //         e.target.visible(false);
-    //
-    //         layer.add(e.target);
-    //         layer.draw();
-    //
-    //         // stage.add(layer);
-    //         // return;
-    //     }
-    //
-    // });
+    stage.on('click', function (e) {
+        console.log('click the object');
 
+        if (e.target.hasName('rect') || e.target.hasName('circle') || e.target.hasName('triangle')) {
+            // var fill = color;
+            e.target.fill(color);
 
+            layer.add(e.target);
+            layer.draw();
+
+        }
+
+    });
 
 
 }

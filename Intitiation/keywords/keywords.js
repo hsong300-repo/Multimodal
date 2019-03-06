@@ -2,13 +2,16 @@ if (annyang) {
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
-        'draw (a green) circle': drawCircle,
-        'draw (a green) rectangle': drawRect,
-        'draw (a green) triangle': drawTriangle,
-        'draw (a) :color circle': drawCircle,
-        'draw (a) :color rectangle': drawRect,
-        'draw (a) :color triangle': drawTriangle,
-        'remove (all) triangles': removeTriangle,
+        'system draw (a) circle': drawCircle,
+        'system draw (a) rectangle': drawRect,
+        'system draw (a) triangle': drawTriangle,
+        'system draw (a) :color circle': drawCircle,
+        'system draw (a) :color rectangle': drawRect,
+        'system draw (a) :color triangle': drawTriangle,
+        'system remove (all) triangles': removeTriangle,
+        'system remove (all) rectangles': removeRect,
+        'system remove (all) circles': removeCircle,
+        'system change (color) to :color': changeColor,
     };
 
     annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
