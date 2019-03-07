@@ -3,6 +3,7 @@ if (annyang) {
     var commands = {
         'hello': function() { alert('Hello world!'); },
         'system draw (a) circle': drawCircle,
+        // 'system draw (a) circle': drawGroupCircle,
         'system draw (a) rectangle': drawRect,
         'system draw (a) triangle': drawTriangle,
         'system draw (a) :color circle': drawCircle,

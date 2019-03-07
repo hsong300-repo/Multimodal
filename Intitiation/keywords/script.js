@@ -151,6 +151,46 @@ function drawCircle(color){
     layer.draw();
 }
 
+function drawGroupCircle(color){
+    console.log(color);
+
+    if(color == null){
+        color = "black";
+    }
+
+    group = new Konva.Group({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        draggable: true
+    });
+
+    var shape = new Konva.Circle({
+        width: 30 + Math.random() * 30,
+        height: 30 + Math.random() * 30,
+        fill: 'grey',
+        rotation: 360 * Math.random(),
+        name: 'circle'
+    });
+    group.add(shape);
+
+    // new_circle = new Konva.Circle({
+    //     x: Math.random() * width,
+    //     y: Math.random() * height,
+    //     // radius: 30 + Math.random() * 30,
+    //     radius: 30,
+    //     // fill: 'yellow',
+    //     fill: color,
+    //     name:'circle',
+    //     // stroke: 'black',
+    //     // strokeWidth: 4,
+    //     draggable: true
+    // });
+
+
+    layer.add(group);
+    layer.draw();
+}
+
 function drawRect(color){
 
     if(color == null){
@@ -224,6 +264,40 @@ function removeTriangle(){
 }
 
 function removeCircle(){
+
+    // group.findOne('.circle').remove();
+    // layer.add(group);
+    // layer.draw();
+
+
+
+    var shapes = stage.find('.circle');
+
+    var tweens = [];
+
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
+
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            // fill:'red',
+            opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+
+    // layer.find('.circle').remove();
+    //
+    // layer.find('.circle').hide();
+
+
+    console.log("all circles",layer.find('Circle'));
 
     stage.on('click', function (e) {
         console.log('click the object');
