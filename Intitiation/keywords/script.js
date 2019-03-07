@@ -54,17 +54,20 @@ stage.on('click tap', function (e) {
         return;
     }
     // do nothing if clicked NOT on our rectangles
-    if (!e.target.hasName('rect')) {
+    if (!e.target.hasName('rect') && !e.target.hasName('circle') && !e.target.hasName('triangle')) {
+        console.log('rect here');
         return;
     }
 
-    if (!e.target.hasName('circle')) {
-        return;
-    }
-
-    if (!e.target.hasName('triangle')) {
-        return;
-    }
+    // if (!e.target.hasName('circle')) {
+    //     console.log('circle here');
+    //     return;
+    // }
+    //
+    // if (!e.target.hasName('triangle')) {
+    //     console.log('triangle here');
+    //     return;
+    // }
     // remove old transformers
     // TODO: we can skip it if current rect is already selected
     stage.find('Transformer').destroy();
@@ -77,51 +80,51 @@ stage.on('click tap', function (e) {
 });
 
 //when click the object
-stage.on('click', function (e) {
-    console.log('click the object');
-    // if click on empty area - remove all transformers
-    // if (e.target === stage) {
-    //     stage.find('Transformer').destroy();
-    //     layer.draw();
-    //     return;
-    // }
-    // do nothing if clicked NOT on our rectangles
-    if (e.target.hasName('rect')) {
-        var fill = color;
-        e.target.fill(fill);
-
-        layer.add(e.target);
-        layer.draw();
-
-        // stage.add(layer);
-        // return;
-    }
-
-    if (e.target.hasName('circle')) {
-        var fill = color;
-        e.target.fill(fill);
-
-        layer.add(e.target);
-        layer.draw();
-
-        // stage.add(layer);
-        // return;
-    }
-
-    if (e.target.hasName('triangle')) {
-        var fill = color;
-        e.target.fill(fill);
-
-        layer.add(e.target);
-        layer.draw();
-
-        // stage.add(layer);
-        // return;
-    }
-    // remove old transformers
-    // TODO: we can skip it if current rect is already selected
-
-});
+// stage.on('click', function (e) {
+//     console.log('click the object');
+//     // if click on empty area - remove all transformers
+//     // if (e.target === stage) {
+//     //     stage.find('Transformer').destroy();
+//     //     layer.draw();
+//     //     return;
+//     // }
+//     // do nothing if clicked NOT on our rectangles
+//     if (e.target.hasName('rect')) {
+//         var fill = color;
+//         e.target.fill(fill);
+//
+//         layer.add(e.target);
+//         layer.draw();
+//
+//         // stage.add(layer);
+//         // return;
+//     }
+//
+//     if (e.target.hasName('circle')) {
+//         var fill = color;
+//         e.target.fill(fill);
+//
+//         layer.add(e.target);
+//         layer.draw();
+//
+//         // stage.add(layer);
+//         // return;
+//     }
+//
+//     if (e.target.hasName('triangle')) {
+//         var fill = color;
+//         e.target.fill(fill);
+//
+//         layer.add(e.target);
+//         layer.draw();
+//
+//         // stage.add(layer);
+//         // return;
+//     }
+//     // remove old transformers
+//     // TODO: we can skip it if current rect is already selected
+//
+// });
 
 
 
@@ -151,45 +154,45 @@ function drawCircle(color){
     layer.draw();
 }
 
-function drawGroupCircle(color){
-    console.log(color);
-
-    if(color == null){
-        color = "black";
-    }
-
-    group = new Konva.Group({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        draggable: true
-    });
-
-    var shape = new Konva.Circle({
-        width: 30 + Math.random() * 30,
-        height: 30 + Math.random() * 30,
-        fill: 'grey',
-        rotation: 360 * Math.random(),
-        name: 'circle'
-    });
-    group.add(shape);
-
-    // new_circle = new Konva.Circle({
-    //     x: Math.random() * width,
-    //     y: Math.random() * height,
-    //     // radius: 30 + Math.random() * 30,
-    //     radius: 30,
-    //     // fill: 'yellow',
-    //     fill: color,
-    //     name:'circle',
-    //     // stroke: 'black',
-    //     // strokeWidth: 4,
-    //     draggable: true
-    // });
-
-
-    layer.add(group);
-    layer.draw();
-}
+// function drawGroupCircle(color){
+//     console.log(color);
+//
+//     if(color == null){
+//         color = "black";
+//     }
+//
+//     group = new Konva.Group({
+//         x: Math.random() * width,
+//         y: Math.random() * height,
+//         draggable: true
+//     });
+//
+//     var shape = new Konva.Circle({
+//         width: 30 + Math.random() * 30,
+//         height: 30 + Math.random() * 30,
+//         fill: 'grey',
+//         rotation: 360 * Math.random(),
+//         name: 'circle'
+//     });
+//     group.add(shape);
+//
+//     // new_circle = new Konva.Circle({
+//     //     x: Math.random() * width,
+//     //     y: Math.random() * height,
+//     //     // radius: 30 + Math.random() * 30,
+//     //     radius: 30,
+//     //     // fill: 'yellow',
+//     //     fill: color,
+//     //     name:'circle',
+//     //     // stroke: 'black',
+//     //     // strokeWidth: 4,
+//     //     draggable: true
+//     // });
+//
+//
+//     layer.add(group);
+//     layer.draw();
+// }
 
 function drawRect(color){
 
