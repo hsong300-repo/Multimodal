@@ -12,21 +12,54 @@ if (annyang) {
         'system remove (all) triangles': removeTriangle,
         'system remove (all) rectangles': removeRect,
         'system remove (all) circles': removeCircle,
-        'system change (color) to :color': changeColor,
+        'system change triangles (to) :color': changeTriangle,
+        'system change rectangles (to) :color': changeRect,
+        'system change circles (to) :color': changeCircle,
     };
+
+    annyang.interimResults = true;
+
 
     annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
         console.log(userSaid); // sample output: 'hello'
-        $("h3").text(userSaid);
+        $("#output").text(userSaid);
         console.log(commandText); // sample output: 'hello (there)'
         console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
     });
-
-
 
     // Add our commands to annyang
     annyang.addCommands(commands);
 
     // Start listening.
-    annyang.start();
+    // annyang.start();
 }
+
+
+var recognition = annyang.getSpeechRecognizer();
+var final_transcript = '';
+recognition.interimResults = true;
+annyang.start();
+
+recognition.onresult = function(event) {
+    var interim_transcript = '';
+    final_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+            final_transcript += event.results[i][0].transcript;
+            // console.log("final_transcript");
+            // console.log(final_transcript);
+            annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
+        } else {
+            interim_transcript += event.results[i][0].transcript;
+            // console.log("interim_transcript");
+            // console.log(interim_transcript);
+        }
+    }
+    if(interim_transcript!='') {
+        // console.log('interim transcript',interim_transcript);
+        $("#log").text(interim_transcript);
+    }
+    // final_transcript = capitalize(final_transcript);
+    // final_span.innerHTML = linebreak(final_transcript);
+    // interim_span.innerHTML = linebreak(interim_transcript);
+};

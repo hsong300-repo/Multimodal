@@ -343,6 +343,91 @@ function removeRect(){
 
 }
 
+function changeRect(color){
+
+    if(color == null){
+        color = "black";
+    }
+
+    var shapes = stage.find('.rect');
+
+    var tweens = [];
+
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
+
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            fill:color,
+            // opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
+
+function changeCircle(color){
+
+    if(color == null){
+        color = "black";
+    }
+
+    var shapes = stage.find('.circle');
+
+    var tweens = [];
+
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
+
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            fill:color,
+            // opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
+
+function changeTriangle(color){
+
+    if(color == null){
+        color = "black";
+    }
+
+    var shapes = stage.find('.triangle');
+
+    var tweens = [];
+
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
+
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            fill:color,
+            // opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
+
+
 function changeColor(color){
 
     stage.on('click', function (e) {
