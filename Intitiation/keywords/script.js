@@ -243,24 +243,26 @@ function drawTriangle(color){
 
 function removeTriangle(){
 
-    $("h3").text("click a triangle to remove");
+    var shapes = stage.find('.triangle');
 
+    var tweens = [];
 
-    // layer.remove(new_triangle);
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
 
-    stage.on('click', function (e) {
-        console.log('click the object');
-
-        if (e.target.hasName('triangle')) {
-            // var fill = color;
-            e.target.visible(false);
-
-            layer.add(e.target);
-            layer.draw();
-
-        }
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            // fill:'red',
+            opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
 
     });
+
+    layer.add(shapes);
+    layer.draw();
 }
 
 function removeCircle(){
@@ -297,39 +299,46 @@ function removeCircle(){
     // layer.find('.circle').hide();
 
 
-    console.log("all circles",layer.find('Circle'));
-
-    stage.on('click', function (e) {
-        console.log('click the object');
-
-        if (e.target.hasName('circle')) {
-            // var fill = color;
-            e.target.visible(false);
-
-            layer.add(e.target);
-            layer.draw();
-
-        }
-
-    });
+    // console.log("all circles",layer.find('Circle'));
+    //
+    // stage.on('click', function (e) {
+    //     console.log('click the object');
+    //
+    //     if (e.target.hasName('circle')) {
+    //         // var fill = color;
+    //         e.target.visible(false);
+    //
+    //         layer.add(e.target);
+    //         layer.draw();
+    //
+    //     }
+    //
+    // });
 
 }
 
 function removeRect(){
 
-    stage.on('click', function (e) {
-        console.log('click the object');
+    var shapes = stage.find('.rect');
 
-        if (e.target.hasName('rect')) {
-            // var fill = color;
-            e.target.visible(false);
+    var tweens = [];
 
-            layer.add(e.target);
-            layer.draw();
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
 
-        }
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            // fill:'red',
+            opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
 
     });
+
+    layer.add(shapes);
+    layer.draw();
 
 
 }
