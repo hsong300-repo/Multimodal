@@ -136,6 +136,10 @@ function drawCircle(color){
         color = "black";
     }
 
+    if(touch_color === true){
+        color = fillColor;
+    }
+
     new_circle = new Konva.Circle({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -149,9 +153,10 @@ function drawCircle(color){
         draggable: true
     });
 
-
     layer.add(new_circle);
     layer.draw();
+
+    touch_color = false;
 }
 
 // function drawGroupCircle(color){
@@ -199,7 +204,11 @@ function drawRect(color){
     if(color == null){
         color = "black";
     }
-    console.log(color);
+
+    if(touch_color === true){
+        color = fillColor;
+    }
+
     new_rect = new Konva.Rect({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -216,6 +225,8 @@ function drawRect(color){
     layer.add(new_rect);
     layer.draw();
 
+    touch_color = false;
+
 }
 
 function drawTriangle(color){
@@ -223,6 +234,11 @@ function drawTriangle(color){
     if(color == null){
         color = "black";
     }
+
+    if(touch_color === true){
+        color = fillColor;
+    }
+
 
     new_triangle = new Konva.RegularPolygon({
         x: Math.random() * width,
@@ -239,6 +255,8 @@ function drawTriangle(color){
 
     layer.add(new_triangle);
     layer.draw();
+
+    touch_color = false;
 
 }
 
