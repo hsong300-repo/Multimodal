@@ -142,12 +142,8 @@ recognition.onresult = function(event) {
 
 };
 
-// if(!recongizing){
-//     recognition.start();
-// }
 
 function drawAllShapes(){
-
     var new_circle = new Konva.Circle({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -198,113 +194,6 @@ function drawAllShapes(){
 
 
 
-// if(globalVars.recognizingSpeech==false){
-//     recognizer.start();
-// }
-
-//arjun code last
-
-// detect the magic word
-// recognition.onresult = e => {
-//     var transcripts  = [].concat.apply([], [...e.results].map(res => [...res].map(alt => alt.transcript)));
-//
-//
-//     if(transcripts.some(t=>t.indexOf(magic_word)>-1)){
-//
-//         console.log('magic word');
-//         check_flag = true;
-//         document.getElementById('listen').style.display = "block";
-//         document.getElementById('say_color').style.display = "block";
-//
-//         magic_flag = true;
-//
-//         command = transcripts.toString();
-//
-//         command = command.replace(/\s/gi,'');
-//         $('h3').text(command);
-//
-//         if(e.results.isFinal){
-//             console.log('the end');
-//         }
-//
-//         if(command==="system"){
-//             console.log('system called');
-//         }else{
-//             color = transcripts[1].toString();
-//             $('h3').text(color);
-//
-//             var last = e.results.length - 1;
-//             var color_test = e.results[last][0].transcript;
-//             // if(e.results[last][0].isFinal){
-//             //     console.log('the end');
-//             // }
-//             var color_test = color_test.toLowerCase();
-//             color_test = color_test.replace(/\s/gi,'');
-//
-//             console.log('color_test',color_test);
-//
-//             if(color_test === 'peru' || color_test === 'salmon' || color_test === 'magenta' || color_test === 'wheat'|| color_test === 'violet'||color_test === 'plum'||color_test === 'tomato'||color_test === 'silver'||color_test === 'teal'||color_test === 'darkred'){
-//                 diagnostic.textContent = 'Result received: ' + color_test + '.';
-//
-//                 color = color_test;
-//             }
-//
-//
-//         }
-//
-//         if(!recognizing){
-//             recognition.start();
-//         }
-//
-//     }
-//     else{
-//         // log('understood ' + JSON.stringify(transcripts));
-//         check_flag = true;
-//         console.log('just anything');
-//         document.getElementById('listen').style.display = "block";
-//         document.getElementById('say_color').style.display = "block";
-//
-//         // colour = JSON.stringify(transcripts);
-//         var colour = transcripts.toString();
-//         var colour = colour.toLowerCase();
-//         // strip the spaces out of it
-//         colour = colour.replace(/\s/gi,'');
-//         $('h3').text(colour);
-//
-//
-//         console.log('color',colour);
-//         color = colour;
-//
-//         var last = e.results.length - 1;
-//         var color_test = e.results[last][0].transcript;
-//         // if(e.results[last][0].isFinal){
-//         //     console.log('the end here');
-//         // }
-//         var color_test = color_test.toLowerCase();
-//         color_test = color_test.replace(/\s/gi,'');
-//
-//         console.log('color_test',color_test);
-//
-//         if(color_test === 'peru' || color_test === 'salmon' || color_test === 'magenta' || color_test === 'wheat'|| color_test === 'violet'||color_test === 'plum'||color_test === 'tomato'||color_test === 'silver'||color_test === 'teal'||color_test === 'darkred'){
-//             diagnostic.textContent = 'Result received: ' + color_test + '.';
-//
-//             color = color_test;
-//
-//         }
-//
-//
-//
-//
-//         // if(!recognizing){
-//         //     recognition.start();
-//         // }
-//         if(!recognizing){
-//             recognition.start();
-//         }
-//
-//     }
-//
-// };
 
 
 

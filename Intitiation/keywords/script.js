@@ -286,6 +286,84 @@ function removeTriangle(){
     layer.draw();
 }
 
+function removeLastTriangle(){
+
+    var shapes = stage.find('.triangle');
+
+
+    // shapes.visible('false');
+
+
+    stage.on('click', function (e) {
+        console.log('click the object');
+
+        if (e.target.hasName('triangle')) {
+            // var fill = color;
+            e.target.visible(false);
+
+            layer.add(e.target);
+            layer.draw();
+
+        }
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
+
+function removeLastRect(){
+
+    var shapes = stage.findOne('.rect');
+
+    // shapes.visible('false');
+
+    var tweens = [];
+
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
+
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            // fill:'red',
+            opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
+
+function removeLastCircle(){
+
+    var shapes = stage.findOne('.circle');
+
+    // shapes.visible('false');
+
+    var tweens = [];
+
+    for (var n=0; n<tweens.length; n++) {
+        tweens[n].destroy();
+    }
+
+    shapes.each(function(shape) {
+        tweens.push(new Konva.Tween({
+            node: shape,
+            // fill:'red',
+            opacity:0,
+            // easing: Konva.Easings.ElasticEaseOut
+        }).play());
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
+
 function removeCircle(){
 
     // group.findOne('.circle').remove();

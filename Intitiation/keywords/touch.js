@@ -1,4 +1,5 @@
 console.log('read touch.js file');
+touch_color = false;
 
 
 $("#color").change(function () {
@@ -10,3 +11,29 @@ $("#color").change(function () {
     touch_color = true;
 
 });
+
+function removeShapes(){
+
+    // var shapes = stage.find('.triangle');
+
+
+    // shapes.visible('false');
+
+
+    stage.on('click', function (e) {
+        console.log('click the object');
+
+        if (e.target.hasName('triangle') || e.target.hasName('circle') || e.target.hasName('rect')) {
+            // var fill = color;
+            e.target.visible(false);
+
+            layer.add(e.target);
+            layer.draw();
+
+        }
+
+    });
+
+    layer.add(shapes);
+    layer.draw();
+}
