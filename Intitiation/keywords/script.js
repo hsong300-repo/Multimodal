@@ -93,10 +93,16 @@ stage.on('click', function (e) {
     if(touch_color === true){
         color = fillColor;
     }
+
+    if(touch_border_color === true){
+        console.log('border_color true',border_color);
+        sroke_color = border_color;
+    }
     if (e.target.hasName('rect')) {
         console.log('here rect');
         var fill = color;
         e.target.fill(fill);
+        e.target.stroke(border_color);
 
         layer.add(e.target);
         layer.draw();
@@ -110,6 +116,8 @@ stage.on('click', function (e) {
 
         var fill = color;
         e.target.fill(fill);
+        e.target.stroke(border_color);
+
 
         layer.add(e.target);
         layer.draw();
@@ -123,6 +131,8 @@ stage.on('click', function (e) {
 
         var fill = color;
         e.target.fill(fill);
+        e.target.stroke(border_color);
+
 
         layer.add(e.target);
         layer.draw();
@@ -133,41 +143,9 @@ stage.on('click', function (e) {
     // remove old transformers
     // TODO: we can skip it if current rect is already selected
     touch_color = false;
+    touch_border_color = false;
 
 });
-
-
-
-
-function drawCircle(color){
-    console.log(color);
-
-    if(color == null){
-        color = "black";
-    }
-
-    if(touch_color === true){
-        color = fillColor;
-    }
-
-    new_circle = new Konva.Circle({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        // radius: 30 + Math.random() * 30,
-        radius: 30,
-        // fill: 'yellow',
-        fill: color,
-        name:'circle',
-        // stroke: 'black',
-        // strokeWidth: 4,
-        draggable: true
-    });
-
-    layer.add(new_circle);
-    layer.draw();
-
-    touch_color = false;
-}
 
 // function drawGroupCircle(color){
 //     console.log(color);
@@ -209,6 +187,43 @@ function drawCircle(color){
 //     layer.draw();
 // }
 
+function drawCircle(color){
+
+    if(color == null){
+        color = "black";
+    }
+
+    if(touch_color === true){
+        color = fillColor;
+    }
+
+    if(touch_border_color === true){
+        stroke_color = border_color;
+    }else{
+        stroke_color = 'black';
+    }
+
+    new_circle = new Konva.Circle({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        // radius: 30 + Math.random() * 30,
+        radius: 30,
+        // fill: 'yellow',
+        fill: color,
+        name:'circle',
+        // stroke: 'black',
+        stroke: stroke_color,
+        strokeWidth: 4,
+        draggable: true
+    });
+
+    layer.add(new_circle);
+    layer.draw();
+
+    touch_color = false;
+    touch_border_color = false;
+}
+
 function drawRect(color){
 
     if(color == null){
@@ -217,6 +232,12 @@ function drawRect(color){
 
     if(touch_color === true){
         color = fillColor;
+    }
+
+    if(touch_border_color === true){
+        stroke_color = border_color;
+    }else{
+        stroke_color = 'black';
     }
 
     new_rect = new Konva.Rect({
@@ -229,6 +250,9 @@ function drawRect(color){
         // fill: 'grey',
         fill: color,
         name: 'rect',
+        // stroke: 'black',
+        stroke: stroke_color,
+        strokeWidth: 4,
         draggable: true
     });
 
@@ -236,7 +260,7 @@ function drawRect(color){
     layer.draw();
 
     touch_color = false;
-
+    touch_border_color = false;
 }
 
 function drawTriangle(color){
@@ -250,6 +274,12 @@ function drawTriangle(color){
     }
 
 
+    if(touch_border_color === true){
+        stroke_color = border_color;
+    }else{
+        stroke_color = 'black';
+    }
+
     new_triangle = new Konva.RegularPolygon({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -258,7 +288,8 @@ function drawTriangle(color){
         fill: color,
         // fill: '#00D2FF',
         // stroke: 'black',
-        // strokeWidth: 4
+        stroke: stroke_color,
+        strokeWidth: 4,
         name: 'triangle',
         draggable: true,
     });
@@ -267,7 +298,7 @@ function drawTriangle(color){
     layer.draw();
 
     touch_color = false;
-
+    touch_border_color = false;
 }
 
 

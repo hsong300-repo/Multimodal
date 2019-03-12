@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Intitiation/keywords/img/fill.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intitiation/keywords/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Intitiation/keywords/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intitiation/keywords/keywords.js" beforeDir="false" afterPath="$PROJECT_DIR$/Intitiation/keywords/keywords.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intitiation/keywords/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Intitiation/keywords/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intitiation/keywords/touch.js" beforeDir="false" afterPath="$PROJECT_DIR$/Intitiation/keywords/touch.js" afterDir="false" />
     </list>
@@ -36,7 +33,7 @@
         <counts>
           <entry key="css" value="5" />
           <entry key="html" value="16" />
-          <entry key="js" value="24" />
+          <entry key="js" value="26" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="1" />
@@ -47,7 +44,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="16" />
           <entry key="Image" value="1" />
-          <entry key="JavaScript" value="24" />
+          <entry key="JavaScript" value="26" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="1" />
         </counts>
@@ -55,15 +52,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="434" />
-          <entry key="html" value="1872" />
-          <entry key="js" value="9645" />
+          <entry key="html" value="1898" />
+          <entry key="js" value="10186" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="434" />
-          <entry key="HTML" value="1872" />
-          <entry key="JavaScript" value="9645" />
+          <entry key="HTML" value="1898" />
+          <entry key="JavaScript" value="10186" />
         </counts>
       </usages-collector>
     </session>
@@ -73,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Intitiation/keywords/speech.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
+            <state relative-caret-position="1150">
               <caret line="144" selection-start-line="144" selection-end-line="144" />
             </state>
           </provider>
@@ -106,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Intitiation/keywords/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="776">
+              <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -115,17 +112,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Intitiation/keywords/keywords.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+            <state relative-caret-position="210">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Intitiation/keywords/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="134" column="24" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+            <state relative-caret-position="217">
+              <caret line="117" selection-start-line="117" selection-end-line="117" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -133,25 +130,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Intitiation/keywords/touch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="37" column="20" lean-forward="true" selection-start-line="36" selection-start-column="2" selection-end-line="37" selection-end-column="20" />
+            <state relative-caret-position="314">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Intitiation/keywords/styles.css">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Intitiation/hold/speech.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="131" column="31" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="31" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/changeColor.html">
+        <entry file="file://$PROJECT_DIR$/Intitiation/hold/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="1395">
+              <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,7 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onresult</find>
       <find>stop</find>
       <find>adds</find>
       <find>active</find>
@@ -205,9 +208,10 @@
       <find>remov</find>
       <find>removecircle</find>
       <find>color</find>
-      <find>touch</find>
       <find>enable</find>
       <find>system</find>
+      <find>touch</find>
+      <find>removeshapes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -247,8 +251,8 @@
         <option value="$PROJECT_DIR$/knovo_grammar/script.js" />
         <option value="$PROJECT_DIR$/Intitiation/keywords/keywords.js" />
         <option value="$PROJECT_DIR$/Intitiation/keywords/index.html" />
-        <option value="$PROJECT_DIR$/Intitiation/keywords/script.js" />
         <option value="$PROJECT_DIR$/Intitiation/keywords/touch.js" />
+        <option value="$PROJECT_DIR$/Intitiation/keywords/script.js" />
       </list>
     </option>
   </component>
@@ -264,10 +268,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
-    <option name="y" value="-180" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="730" />
+    <option name="width" value="710" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -291,11 +294,6 @@
               <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
               <item name="Intitiation" type="462c0819:PsiDirectoryNode" />
               <item name="keywords" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="knovo_grammar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
@@ -359,18 +357,18 @@
       <workItem from="1551801623205" duration="6973000" />
       <workItem from="1551849245219" duration="7319000" />
       <workItem from="1552243208865" duration="5193000" />
-      <workItem from="1552322879860" duration="1425000" />
+      <workItem from="1552322879860" duration="3991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78212000" />
+    <option name="totallyTimeSpent" value="80778000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
+    <frame x="730" y="0" width="710" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16061085" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19883889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -382,7 +380,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.36732674" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18674698" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -507,27 +505,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Intitiation/hold/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Intitiation/button/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Intitiation/hold/speech.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="113" column="53" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -633,41 +614,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/speech.js">
+    <entry file="file://$PROJECT_DIR$/Intitiation/hold/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/keywords.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="43" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="134" column="24" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+        <state relative-caret-position="1395">
+          <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Intitiation/hold/speech.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="131" column="31" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/speech.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/keywords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Intitiation/keywords/touch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="37" column="20" lean-forward="true" selection-start-line="36" selection-start-column="2" selection-end-line="37" selection-end-column="20" />
+        <state relative-caret-position="314">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Intitiation/keywords/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
