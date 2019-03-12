@@ -34,6 +34,6 @@ function removeShapes(){
 
     });
 
-    layer.add(shapes);
-    layer.draw();
+    // layer.add(shapes);
+    // layer.draw();
 }

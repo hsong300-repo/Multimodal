@@ -54,7 +54,9 @@ recognition.onresult = function(event) {
             annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
-            // console.log("interim_transcript");
+            // console.log("*interim_transcript", interim_transcript);
+            // console.log("**interim_transcript", event.results[0][0].transcript);
+
             // console.log(interim_transcript);
         }
     }
