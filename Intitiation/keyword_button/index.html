@@ -18,7 +18,7 @@
 
 <div class="listen_center">
     <!--<h1 class ="b" id="debug">log.</h1>-->
-    <h4 class ="b">Say "system" + command.</h4>
+    <h4 class ="b">Click speech button to initiate recognition.</h4>
     <!--<h3 class ="b" id="say_color" style="display:none;">Say a color.</h3>-->
     <p class="b" id="log"><em>log message</em></p>
 
@@ -34,9 +34,9 @@
 <div class="center" id="container"></div>
 
 <div class="b">
-    <h4 class="b"><br> ex) system draw a (green) circle
-        <br> ex) system remove all circles
-        <br> ex) system change circles to green
+    <h4 class="b"><br> ex) draw a (green) circle
+        <br> ex) remove all circles
+        <br> ex) change circles to green
     <!--<br> ex) system remove last (drawn) circle-->
     </h4>
 
@@ -94,6 +94,7 @@
 <!--</div>-->
 
 <div class="d">
+    <input class ="c" onClick="EnableSpeech();" type="image" id ="speech" src="./img/speech.svg"  width="66" height="66" />
     <input class = "c" onClick="drawRect();" type="image" id ="rect" src="./img/rect.png"  width="66" height="66" />
     <input class = "c" onClick="drawCircle();" type="image" id="circle" src="./img/circle.svg"  width="66" height="66"/>
     <input class = "c" onClick="drawTriangle();" type="image" id="triangle" src="./img/triangle.png"  width="66" height="66"/>

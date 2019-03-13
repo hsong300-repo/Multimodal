@@ -2,22 +2,22 @@ if (annyang) {
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
-        'system draw (a) circle': drawCircle,
+        'draw (a) circle': drawCircle,
         // 'system draw (a) circle': drawGroupCircle,
-        'system draw (a) rectangle': drawRect,
-        'system draw (a) triangle': drawTriangle,
-        'system draw (a) :color circle': drawCircle,
-        'system draw (a) :color rectangle': drawRect,
-        'system draw (a) :color triangle': drawTriangle,
-        'system remove (all) triangles': removeTriangle,
-        'system remove (all) rectangles': removeRect,
-        'system remove (all) circles': removeCircle,
+        'draw (a) rectangle': drawRect,
+        'draw (a) triangle': drawTriangle,
+        'draw (a) :color circle': drawCircle,
+        'draw (a) :color rectangle': drawRect,
+        'draw (a) :color triangle': drawTriangle,
+        'remove (all) triangles': removeTriangle,
+        'remove (all) rectangles': removeRect,
+        'remove (all) circles': removeCircle,
         // 'system remove (a) last (drawn) triangle': removeLastTriangle,
         // 'system remove (a) last (drawn) rectangle': removeLastRect,
         // 'system remove (a) last (drawn) circle': removeLastCircle,
-        'system change triangles (to) :color': changeTriangle,
-        'system change rectangles (to) :color': changeRect,
-        'system change circles (to) :color': changeCircle,
+        'change triangles (to) :color': changeTriangle,
+        'change rectangles (to) :color': changeRect,
+        'change circles (to) :color': changeCircle,
     };
 
     annyang.interimResults = true;
@@ -42,7 +42,7 @@ var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
 recognition.interimResults = true;
 annyang.start();
-// count = 0;
+count = 0;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
@@ -51,8 +51,8 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             // console.log("final_transcript");
-            // console.log('final',final_transcript);
-            // count++;
+            console.log('final',final_transcript);
+            count++;
             annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
