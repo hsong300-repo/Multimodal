@@ -33,16 +33,14 @@
 
 <div class="center" id="container"></div>
 
-
-
-<div class="b" id="color" >
-    <h4 class ="b"><br> ex) system draw a (green) circle
+<div class="b">
+    <h4 class="b"><br> ex) system draw a (green) circle
         <br> ex) system remove all circles
-        <br> ex) system change circles to green</h4>
-        <br> ex) system remove last (drawn) circle</h4>
+        <br> ex) system change circles to green
+    <br> ex) system remove last (drawn) circle</h4>
 
     Fill Color:
-    <select>
+    <select class = "b" id ="color">
         <option value="black">black</option>
         <option value="red">red</option>
         <option value="green">green</option>
@@ -59,13 +57,10 @@
         <option value="tomato">tomato</option>
         <option value="teal">teal</option>
         <option value="silver">silver</option>
-    </select>
-</div>
-
-<div class="b" id="border_color" >
+    </select><br><br>
 
     Border Color:
-    <select>
+    <select class="b" id="border_color">
         <option value="black">black</option>
         <option value="red">red</option>
         <option value="green">green</option>
@@ -85,6 +80,17 @@
         <option value="white">white</option>
     </select>
 </div>
+
+<!--<div class="b" id="color" >-->
+
+
+
+<!--</div>-->
+
+<!--<div class="b" id="border_color" >-->
+
+
+<!--</div>-->
 
 <div class="d">
     <input class = "c" onClick="drawRect();" type="image" id ="rect" src="./img/rect.png"  width="66" height="66" />
