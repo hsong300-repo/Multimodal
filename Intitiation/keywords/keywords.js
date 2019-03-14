@@ -42,7 +42,7 @@ var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
 recognition.interimResults = true;
 annyang.start();
-// count = 0;
+count = 0;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
@@ -52,10 +52,30 @@ recognition.onresult = function(event) {
             final_transcript += event.results[i][0].transcript;
             // console.log("final_transcript");
             // console.log('final',final_transcript);
-            // count++;
+            count++;
             annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
+            var magic_word = interim_transcript.split(' ');
+            command_flag = false;
+            if(count === 0){
+                if(magic_word[0] === "system" || magic_word[0] === " system"){
+                    console.log('first system');
+                    command_flag =true;
+                    // $("#log").text(interim_transcript);
+                }else{
+                    console.log('first system');
+                    command_flag =false;
+                }
+            }else{
+                if(magic_word[1] === "system" || magic_word[1] === " system" ){
+                    console.log('second system');
+                    command_flag =true;
+                    // $("#log").text(interim_transcript);
+                }else{
+                    command_flag =false;
+                }
+            }
             // console.log("*interim_transcript", interim_transcript, event.results[0][0].transcript);
             // console.log("**interim_transcript", event.results[0][0].transcript);
 
@@ -63,24 +83,10 @@ recognition.onresult = function(event) {
         }
     }
     if(interim_transcript!='') {
-        console.log('interim transcript',interim_transcript);
-        // var magic_word = interim_transcript.split(' ');
-        // command_flag = false;
-        // if(count === 0){
-        //     if(magic_word[0] === "system"){
-        //         command_flag =true;
-        //     }else{
-        //         command_flag =false;
-        //     }
-        // }else{
-        //     if(magic_word[1] === "system"){
-        //         command_flag =true;
-        //     }else{
-        //         command_flag =true;
-        //     }
-        // }
-        // console.log('magic word check, system',magic_word,magic_word[0],magic_word[1]);
-        $("#log").text(interim_transcript);
+        if(command_flag === true){
+            $("#log").text(interim_transcript);
+        }
+
 
     }
     // final_transcript = capitalize(final_transcript);

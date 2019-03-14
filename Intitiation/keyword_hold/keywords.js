@@ -64,19 +64,23 @@ recognition.onresult = function(event) {
     }
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
-        // var magic_word = interim_transcript.split(' ');
+        var magic_word = interim_transcript.split(' ');
         // command_flag = false;
         // if(count === 0){
         //     if(magic_word[0] === "system"){
         //         command_flag =true;
+        //         $("#log").text(interim_transcript);
+        //
         //     }else{
         //         command_flag =false;
         //     }
         // }else{
         //     if(magic_word[1] === "system"){
         //         command_flag =true;
+        //         $("#log").text(interim_transcript);
+        //
         //     }else{
-        //         command_flag =true;
+        //         command_flag =false;
         //     }
         // }
         // console.log('magic word check, system',magic_word,magic_word[0],magic_word[1]);
