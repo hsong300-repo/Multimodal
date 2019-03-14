@@ -104,6 +104,7 @@ window.addEventListener('load', function(){
         // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
         // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
         statusdiv.innerHTML = 'Status: touchstart';
+        document.getElementById('listen').style.display = "block";
         e.preventDefault();
         annyang.start();
     }, false);
@@ -112,6 +113,8 @@ window.addEventListener('load', function(){
         // var touchobj = e.changedTouches[0]; // reference first touch point for this event
         // var dist = parseInt(touchobj.clientX) - startx;
         statusdiv.innerHTML = 'Status: touchmove';
+        document.getElementById('listen').style.display = "block";
+
         e.preventDefault();
     }, false);
 
@@ -119,6 +122,8 @@ window.addEventListener('load', function(){
         // var touchobj = e.changedTouches[0] // reference first touch point for this event
         statusdiv.innerHTML = 'Status: touchend';
         $("#output").text("Recognition stopped");
+        document.getElementById('listen').style.display = "none";
+
 
         e.preventDefault();
         // recognition.stop();
