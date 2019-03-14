@@ -56,6 +56,7 @@ recognition.onresult = function(event) {
             annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
             // annyang.pause();
             annyang.abort();
+            document.getElementById('listen').style.display = "none";
 
         } else {
             interim_transcript += event.results[i][0].transcript;
@@ -98,6 +99,8 @@ function EnableSpeech(){
     console.log('speech true');
 
     annyang.start();
+    document.getElementById('listen').style.display = "block";
+
 
 }
 
