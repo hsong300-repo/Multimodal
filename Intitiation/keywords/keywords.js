@@ -84,7 +84,11 @@ recognition.onresult = function(event) {
     }
     if(interim_transcript!='') {
         if(command_flag === true){
+            document.getElementById('listen').style.display = "block";
             $("#log").text(interim_transcript);
+        }else{
+            document.getElementById('listen').style.display = "none";
+
         }
 
 
