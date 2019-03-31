@@ -172,8 +172,6 @@ stage.on('click', function (e) {
 // }
 
 function drawCircle(color){
-
-
     if(color == null){
         color = "silver";
     }
@@ -229,8 +227,8 @@ function drawRect(color){
     }
 
     new_rect = new Konva.Rect({
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: globX,
+        y: globY,
         width: 50,
         height: 50,
         // width: 30 + Math.random() * 30,
@@ -270,8 +268,8 @@ function drawTriangle(color){
     }
 
     new_triangle = new Konva.RegularPolygon({
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: globX,
+        y: globY,
         sides: 3,
         radius: 50,
         fill: color,
