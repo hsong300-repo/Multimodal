@@ -1,3 +1,5 @@
+
+
 if (annyang) {
     // Let's define a command.
     var commands = {
@@ -43,6 +45,8 @@ var final_transcript = '';
 recognition.interimResults = true;
 // annyang.start();
 count = 0;
+globX = stage.width() / 2;
+globY = stage.height() / 2;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
@@ -98,12 +102,22 @@ window.addEventListener('load', function(){
     var box1 = document.getElementById('container');
     var statusdiv = document.getElementById('statusdiv');
     var startx = 0;
+    var starty = 0;
     var dist = 0;
 
     box1.addEventListener('touchstart', function(e){
-        // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
+        var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
         // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
+        startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
+        starty = parseInt(touchobj.clientY);
         statusdiv.innerHTML = 'Status: touchstart';
+
+        statusdiv.innerHTML = 'Status: touchstart<br> ClientY: ' + startx+ 'px'+ starty + 'px';
+
+        globX = startx-250;
+        globY = starty-130;
+
+        // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
         document.getElementById('listen').style.display = "block";
         e.preventDefault();
         annyang.start();
@@ -112,6 +126,13 @@ window.addEventListener('load', function(){
     box1.addEventListener('touchmove', function(e){
         // var touchobj = e.changedTouches[0]; // reference first touch point for this event
         // var dist = parseInt(touchobj.clientX) - startx;
+        var touchobj = e.changedTouches[0]; // reference first touch point for this event
+        startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
+        starty = parseInt(touchobj.clientY);
+
+        globX = startx-250;
+        globY = starty-130;
+
         statusdiv.innerHTML = 'Status: touchmove';
         document.getElementById('listen').style.display = "block";
 
@@ -119,7 +140,17 @@ window.addEventListener('load', function(){
     }, false);
 
     box1.addEventListener('touchend', function(e){
-        // var touchobj = e.changedTouches[0] // reference first touch point for this event
+        var touchobj = e.changedTouches[0]; // reference first touch point for this event
+        startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
+        starty = parseInt(touchobj.clientY);
+
+        globX = startx-250;
+        globY = starty-130;
+
+        // globX = startx-150;
+        // globY = starty-70;
+
+
         statusdiv.innerHTML = 'Status: touchend';
         $("#output").text("Recognition stopped");
         document.getElementById('listen').style.display = "none";

@@ -22,28 +22,11 @@ var stage = new Konva.Stage({
 var layer = new Konva.Layer();
 stage.add(layer);
 
-// var rect1 = new Konva.Rect({
-//     x: 60,
-//     y: 60,
-//     width: 100,
-//     height: 90,
-//     fill: 'red',
-//     name: 'rect',
-//     draggable: true
-// });
-// layer.add(rect1);
-//
-// var rect2 = new Konva.Rect({
-//     x: 250,
-//     y: 100,
-//     width: 150,
-//     height: 90,
-//     fill: 'green',
-//     name: 'rect',
-//     draggable: true
-// });
-// layer.add(rect2);
-// layer.draw();
+// global positioning for each shapes that will be drawn
+// globX = stage.width() / 2;
+// globY = stage.height()/2;
+
+
 
 stage.on('click tap', function (e) {
     console.log('here change in position');
@@ -206,8 +189,10 @@ function drawCircle(color){
     }
 
     new_circle = new Konva.Circle({
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: globX,
+        y: globY,
+        // x:  stage.width() / 2,
+        // y: stage.height() / 2,
         // radius: 30 + Math.random() * 30,
         radius: 30,
         // fill: 'yellow',

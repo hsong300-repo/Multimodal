@@ -88,7 +88,6 @@ recognition.onresult = function(event) {
             $("#log").text(interim_transcript);
         }else{
             document.getElementById('listen').style.display = "none";
-
         }
 
 

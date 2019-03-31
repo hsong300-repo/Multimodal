@@ -13,6 +13,7 @@ var stage = new Konva.Stage({
     height: 600
 });
 
+
 // var group = new Konva.Group({
 //     x: Math.random() * width,
 //     y: Math.random() * height,
