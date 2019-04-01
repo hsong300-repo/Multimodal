@@ -56,7 +56,9 @@ stage.on('click tap', function (e) {
     stage.find('Transformer').destroy();
 
     // create new transformer
-    var tr = new Konva.Transformer();
+    var tr = new Konva.Transformer({
+        anchorSize:20,
+    });
     layer.add(tr);
     tr.attachTo(e.target);
     layer.draw();

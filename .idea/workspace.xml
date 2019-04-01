@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Intitiation/keyword_hold/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Intitiation/keyword_hold/script.js" afterDir="false" />
-    </list>
+    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -270,10 +268,11 @@
       <path value="$PROJECT_DIR$/node_modules/artyom.js/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="218" />
+    <option name="y" value="-652" />
     <option name="width" value="1440" />
-    <option name="height" value="801" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -380,16 +379,15 @@
       <workItem from="1552322879860" duration="13318000" />
       <workItem from="1553461429435" duration="13000" />
       <workItem from="1553701323060" duration="1811000" />
-      <workItem from="1554060000752" duration="4178000" />
+      <workItem from="1554060000752" duration="4561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96107000" />
+    <option name="totallyTimeSpent" value="96490000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
-    <editor active="true" />
+    <frame x="218" y="-652" width="1440" height="797" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14517266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
