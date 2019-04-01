@@ -64,6 +64,8 @@ stage.on('click tap', function (e) {
     layer.draw();
 });
 
+
+
 //when click the object
 stage.on('touchstart', function (e) {
 // stage.on('click', function (e) {
@@ -131,6 +133,8 @@ stage.on('touchstart', function (e) {
     // TODO: we can skip it if current rect is already selected
     touch_color = false;
     touch_border_color = false;
+
+
 
 });
 

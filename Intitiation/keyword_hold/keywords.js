@@ -112,7 +112,7 @@ window.addEventListener('load', function(){
         starty = parseInt(touchobj.clientY);
         statusdiv.innerHTML = 'Status: touchstart';
 
-        statusdiv.innerHTML = 'Status: touchstart<br> ClientY: ' + startx+ 'px'+ starty + 'px';
+        // statusdiv.innerHTML = 'Status: touchstart<br> ClientY: ' + startx+ 'px'+ starty + 'px';
 
         globX = startx-250;
         globY = starty-130;
