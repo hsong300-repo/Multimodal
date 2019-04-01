@@ -65,7 +65,8 @@ stage.on('click tap', function (e) {
 });
 
 //when click the object
-stage.on('click', function (e) {
+stage.on('touchstart', function (e) {
+// stage.on('click', function (e) {
 
     console.log('click the object');
     // if click on empty area - remove all transformers
@@ -132,6 +133,8 @@ stage.on('click', function (e) {
     touch_border_color = false;
 
 });
+
+
 
 // function drawGroupCircle(color){
 //     console.log(color);
