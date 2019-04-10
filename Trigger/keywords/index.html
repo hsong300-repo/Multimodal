@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- USE DEVELOPMENT VERSION -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Multimodal Simple Canvas Button</title>
+
+</head>
+
+<body>
+
+
+<div class="listen_center">
+    <!--<h1 class ="b" id="debug">log.</h1>-->
+    <h4 class ="b">Say "system" + command.</h4>
+    <!--<h3 class ="b" id="say_color" style="display:none;">Say a color.</h3>-->
+    <p class="b" id="log"><em>log message</em></p>
+
+    <h3 class ="b" id="output">diagnostic messages</h3>
+
+
+</div>
+<!--<span id="status_" class="inactive">SpeechRecognition is </span>-->
+<!--<span id="status_" class="inactive">SpeechRecognition is </span>-->
+<!--<pre id="log_"></pre>-->
+<div class ="listen_ear" id="content"><img src="./img/listen.png" id="listen"  width="66" height="66" style="display:none;"></div>
+
+<div class="center" id="container"></div>
+
+<div class="b">
+    <h4 class="b"><br> ex) system draw a (green) circle
+        <br> ex) system remove all circles
+        <br> ex) system change circles to green
+    <!--<br> ex) system remove last (drawn) circle-->
+    </h4>
+
+    <div style="display:none;" id="shapeFormat"> Fill Color:
+        <select class = "b" id ="color">
+            <option value="black">black</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="purple">purple</option>
+            <option value="magenta">magenta</option>
+            <option value="pink">pink</option>
+            <option value="peru">peru</option>
+            <option value="salmon">salmon</option>
+            <option value="magenta">magenta</option>
+            <option value="wheat">wheat</option>
+            <option value="violet">violet</option>
+            <option value="plum">plum</option>
+            <option value="tomato">tomato</option>
+            <option value="teal">teal</option>
+            <option value="silver">silver</option>
+        </select><br><br>
+
+        Border Color:
+        <select class="b" id="border_color">
+            <option value="black">black</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="purple">purple</option>
+            <option value="magenta">magenta</option>
+            <option value="pink">pink</option>
+            <option value="peru">peru</option>
+            <option value="salmon">salmon</option>
+            <option value="magenta">magenta</option>
+            <option value="wheat">wheat</option>
+            <option value="violet">violet</option>
+            <option value="plum">plum</option>
+            <option value="tomato">tomato</option>
+            <option value="teal">teal</option>
+            <option value="silver">silver</option>
+            <option value="white">white</option>
+        </select><br></div>
+
+    <!--Tool:-->
+    <!--<select id="tool">-->
+        <!--<option value="brush">Brush</option>-->
+        <!--<option value="eraser">Eraser</option>-->
+    <!--</select>-->
+</div>
+
+<!--<div class="b" id="color" >-->
+
+
+
+<!--</div>-->
+
+<!--<div class="b" id="border_color" >-->
+
+
+<!--</div>-->
+
+<!--<div class="d">-->
+    <!--<input class = "c" onClick="drawRect();" type="image" id ="rect" src="./img/rect.png"  width="66" height="66" />-->
+    <!--<input class = "c" onClick="drawCircle();" type="image" id="circle" src="./img/circle.svg"  width="66" height="66"/>-->
+    <!--<input class = "c" onClick="drawTriangle();" type="image" id="triangle" src="./img/triangle.png"  width="66" height="66"/>-->
+    <!--<input class = "c" onClick="removeShapes();" type="image" id="remove_shapes" src="./img/eraser.png"  width="66" height="66"/>-->
+
+
+<!--</div>-->
+
+<div class="d">
+    <!--<input class ="c" onClick="EnableSpeech();" type="image" id ="speech" src="./img/speech.svg"  width="66" height="66" />-->
+    <!--<input class = "c" onClick="touchRect();" type="image" id ="touchRect_" src="./img/rect.png"  width="66" height="66" />-->
+    <!--<input class = "c" onClick="touchCircle();" type="image" id="touchCircle_" src="./img/circle.svg"  width="66" height="66"/>-->
+    <!--<input class = "c" onClick="touchTriangle();" type="image" id="touchTriangle_" src="./img/triangle.png"  width="66" height="66"/>-->
+    <input class = "c"  type="image"  onClick="touchDraw();" id ="touchRect_" src="./img/rect.png"  width="66" height="66" />
+    <input class = "c"  type="image" onClick="touchDraw();" id="touchCircle_" src="./img/circle.svg"  width="66" height="66"/>
+    <input class = "c"  type="image" onClick="touchDraw();" id="touchTriangle_" src="./img/triangle.png"  width="66" height="66"/>
+    <input class = "c" onClick="removeShapes();" type="image" id="remove_shapes" src="./img/eraser.png"  width="66" height="66"/>
+
+
+</div>
+<!--<div>-->
+    <!--<p class="output"><em>...diagnostic messages</em></p>-->
+<!--</div>-->
+
+
+
+
+
+<script>
+
+</script>
+<!--this is mainly for the touch-->
+<!--<script src="script.js"></script>-->
+<!--&lt;!&ndash;<script src="speech.js"></script>&ndash;&gt;-->
+<!--<script src="keywords.js"></script>-->
+<!--<script src="touch.js"></script>-->
+
+<script src="draw.js"></script>
+<!--<script src="speech.js"></script>-->
+<script src="keywords.js"></script>
+<script src="touch.js"></script>
+
+
+
+
+</body>
+
+</html>
