@@ -59,94 +59,140 @@ stage.on('click tap', function (e) {
         return;
     }
 
-    // if (!e.target.hasName('circle')) {
-    //     console.log('circle here');
-    //     return;
-    // }
-    //
-    // if (!e.target.hasName('triangle')) {
-    //     console.log('triangle here');
-    //     return;
-    // }
+    document.getElementById('shapeFormat').style.display = "block";
+    document.getElementById('color').addEventListener('change', shapeFill);
+    document.getElementById('border_color').addEventListener('change', strokeFill);
+
+    function shapeFill(){
+
+        var fillColor = $("#color option:selected").text();
+
+        if (e.target.hasName('rect') && !e.target.hasName('circle') && !e.target.hasName('triangle')) {
+            console.log('here rect');
+            var fill = fillColor;
+            e.target.fill(fill);
+
+            layer.add(e.target);
+            layer.draw();
+
+        }
+        if (!e.target.hasName('rect') && e.target.hasName('circle') && !e.target.hasName('triangle')) {
+            console.log('here rect');
+            var fill = fillColor;
+            e.target.fill(fill);
+
+            layer.add(e.target);
+            layer.draw();
+        }
+        if (e.target.hasName('rect') && e.target.hasName('circle') && !e.target.hasName('triangle')) {
+            console.log('here rect');
+            var fill = fillColor;
+            e.target.fill(fill);
+
+            layer.add(e.target);
+            layer.draw();
+        }
+
+    }
+
+    function strokeFill(){
+
+        var border_color = $("#border_color option:selected").text();
+
+        if (e.target.hasName('rect') || e.target.hasName('circle') || e.target.hasName('triangle')) {
+            console.log('here rect');
+            e.target.stroke(border_color);
+
+            layer.add(e.target);
+            layer.draw();
+
+            // stage.add(layer);
+            // return;
+        }
+    }
+
     // remove old transformers
     // TODO: we can skip it if current rect is already selected
     stage.find('Transformer').destroy();
 
     // create new transformer
-    var tr = new Konva.Transformer();
+    var tr = new Konva.Transformer({
+        anchorSize:20,
+    });
     layer.add(tr);
     tr.attachTo(e.target);
     layer.draw();
+
 });
 
 //when click the object
-stage.on('click', function (e) {
-
-    console.log('click the object');
-    // if click on empty area - remove all transformers
-    // if (e.target === stage) {
-    //     stage.find('Transformer').destroy();
-    //     layer.draw();
-    //     return;
-    // }
-    // do nothing if clicked NOT on our rectangles
-
-    if(touch_color === true){
-        color = fillColor;
-    }
-
-    if(touch_border_color === true){
-        console.log('border_color true',border_color);
-        sroke_color = border_color;
-    }
-    if (e.target.hasName('rect')) {
-        console.log('here rect');
-        var fill = color;
-        e.target.fill(fill);
-        e.target.stroke(border_color);
-
-        layer.add(e.target);
-        layer.draw();
-
-        // stage.add(layer);
-        // return;
-    }
-
-    if (e.target.hasName('circle')) {
-        console.log('here circle');
-
-        var fill = color;
-        e.target.fill(fill);
-        e.target.stroke(border_color);
-
-
-        layer.add(e.target);
-        layer.draw();
-
-        // stage.add(layer);
-        // return;
-    }
-
-    if (e.target.hasName('triangle')) {
-        console.log('here triangle');
-
-        var fill = color;
-        e.target.fill(fill);
-        e.target.stroke(border_color);
-
-
-        layer.add(e.target);
-        layer.draw();
-
-        // stage.add(layer);
-        // return;
-    }
-    // remove old transformers
-    // TODO: we can skip it if current rect is already selected
-    touch_color = false;
-    touch_border_color = false;
-
-});
+// stage.on('click', function (e) {
+//
+//     console.log('click the object');
+//     // if click on empty area - remove all transformers
+//     // if (e.target === stage) {
+//     //     stage.find('Transformer').destroy();
+//     //     layer.draw();
+//     //     return;
+//     // }
+//     // do nothing if clicked NOT on our rectangles
+//
+//     if(touch_color === true){
+//         color = fillColor;
+//     }
+//
+//     if(touch_border_color === true){
+//         console.log('border_color true',border_color);
+//         sroke_color = border_color;
+//     }
+//     if (e.target.hasName('rect')) {
+//         console.log('here rect');
+//         var fill = color;
+//         e.target.fill(fill);
+//         e.target.stroke(border_color);
+//
+//         layer.add(e.target);
+//         layer.draw();
+//
+//         // stage.add(layer);
+//         // return;
+//     }
+//
+//     if (e.target.hasName('circle')) {
+//         console.log('here circle');
+//
+//         var fill = color;
+//         e.target.fill(fill);
+//         e.target.stroke(border_color);
+//
+//
+//         layer.add(e.target);
+//         layer.draw();
+//
+//         // stage.add(layer);
+//         // return;
+//     }
+//
+//     if (e.target.hasName('triangle')) {
+//         console.log('here triangle');
+//
+//         var fill = color;
+//         e.target.fill(fill);
+//         e.target.stroke(border_color);
+//
+//
+//         layer.add(e.target);
+//         layer.draw();
+//
+//         // stage.add(layer);
+//         // return;
+//     }
+//     // remove old transformers
+//     // TODO: we can skip it if current rect is already selected
+//     touch_color = false;
+//     touch_border_color = false;
+//
+// });
 
 // function drawGroupCircle(color){
 //     console.log(color);

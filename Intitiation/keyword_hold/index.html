@@ -42,7 +42,7 @@
     <!--<br> ex) system remove last (drawn) circle-->
     </h4>
 
-    Fill Color:
+    <div style="display:none;" id="shapeFormat"> Fill Color:
     <select class = "b" id ="color">
         <option value="black">black</option>
         <option value="red">red</option>
@@ -81,13 +81,9 @@
         <option value="teal">teal</option>
         <option value="silver">silver</option>
         <option value="white">white</option>
-    </select><br>
+    </select><br></div>
 
-    Tool:
-    <select id="tool">
-        <option value="brush">Brush</option>
-        <option value="eraser">Eraser</option>
-    </select>
+
 </div>
 
 <!--<div class="b" id="color" >-->
@@ -106,6 +102,11 @@
     <input class = "c" onClick="drawCircle();" type="image" id="circle" src="./img/circle.svg"  width="66" height="66"/>
     <input class = "c" onClick="drawTriangle();" type="image" id="triangle" src="./img/triangle.png"  width="66" height="66"/>
     <input class = "c" onClick="removeShapes();" type="image" id="remove_shapes" src="./img/eraser.png"  width="66" height="66"/>
+    Tool:
+    <select id="tool" class="c">
+        <option value="brush">Brush</option>
+        <option value="eraser">Eraser</option>
+    </select>
 
 
 </div>
@@ -125,7 +126,7 @@
 <!--<script src="speech.js"></script>-->
 <script src="keywords.js"></script>
 <script src="touch.js"></script>
-<script src="freedraw.js"></script>
+<!--<script src="freedraw.js"></script>-->
 
 
 
