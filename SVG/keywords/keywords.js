@@ -2,22 +2,22 @@ if (annyang) {
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
-        'system draw (a) circle': drawCircle,
-        // 'system draw (a) circle': drawGroupCircle,
-        'system draw (a) rectangle': drawRect,
-        'system draw (a) triangle': drawTriangle,
-        'system draw (a) :color circle': drawCircle,
-        'system draw (a) :color rectangle': drawRect,
-        'system draw (a) :color triangle': drawTriangle,
-        'system remove (all) triangles': removeTriangle,
-        'system remove (all) rectangles': removeRect,
-        'system remove (all) circles': removeCircle,
-        // 'system remove (a) last (drawn) triangle': removeLastTriangle,
-        // 'system remove (a) last (drawn) rectangle': removeLastRect,
-        // 'system remove (a) last (drawn) circle': removeLastCircle,
-        'system change triangles (to) :color': changeTriangle,
-        'system change rectangles (to) :color': changeRect,
-        'system change circles (to) :color': changeCircle,
+        // 'system draw (a) circle': drawCircle,
+        // // 'system draw (a) circle': drawGroupCircle,
+        // 'system draw (a) rectangle': drawRect,
+        // 'system draw (a) triangle': drawTriangle,
+        // 'system draw (a) :color circle': drawCircle,
+        // 'system draw (a) :color rectangle': drawRect,
+        // 'system draw (a) :color triangle': drawTriangle,
+        // 'system remove (all) triangles': removeTriangle,
+        // 'system remove (all) rectangles': removeRect,
+        // 'system remove (all) circles': removeCircle,
+        // // 'system remove (a) last (drawn) triangle': removeLastTriangle,
+        // // 'system remove (a) last (drawn) rectangle': removeLastRect,
+        // // 'system remove (a) last (drawn) circle': removeLastCircle,
+        // 'system change triangles (to) :color': changeTriangle,
+        // 'system change rectangles (to) :color': changeRect,
+        // 'system change circles (to) :color': changeCircle,
     };
 
     annyang.interimResults = true;
@@ -53,7 +53,10 @@ recognition.onresult = function(event) {
             // console.log("final_transcript");
             // console.log('final',final_transcript);
             count++;
-            annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
+            //this is where I call a query processer, when the speech input ends
+            QueryProcess(final_transcript);
+
+            // annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
             var magic_word = interim_transcript.split(' ');
@@ -96,3 +99,29 @@ recognition.onresult = function(event) {
     // final_span.innerHTML = linebreak(final_transcript);
     // interim_span.innerHTML = linebreak(interim_transcript);
 };
+
+// this is the function that process query that detects keywords and lead to certain function
+function QueryProcess(script){
+    let myStr = script;
+    let tokenStr = myStr.split(" ");
+    //make it all lower case
+    console.log('tokenizedStr',tokenStr);
+    var result = ["remove","insert","create","put","generate"].filter(function(n) {
+        return tokenStr.indexOf(n) > -1;
+    });
+
+    console.log('result',result);
+    console.log('temp',["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1),["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1).length);
+    if(["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log("draw")
+    }else if(["copy","duplicate","paste"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('copy')
+    }else if(["remove","delete"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('delete')
+    }
+
+
+
+
+
+}

@@ -151,7 +151,10 @@ rect {
 }
 
 ellipse {
-    stroke: mediumvioletred;
+    /*stroke: mediumvioletred;*/
+    /*stroke-width: 2px;*/
+    /*fill: palevioletred;*/
+    fill: lightblue;
+    stroke: blue;
     stroke-width: 2px;
-    fill: palevioletred;
 }

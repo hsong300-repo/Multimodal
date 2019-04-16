@@ -23,10 +23,11 @@ function Rectangle() {
             updateRect();
             isDrag = false;
         } else {
+            console.log('drag');
             isDrag = true;
         }
         isDown = !isDown;
-    })
+        })
         .on('touchmove', function() {
             // .on('mousemove', function() {
             console.log('touch move');
@@ -39,13 +40,15 @@ function Rectangle() {
             }
         });
 
+
     function updateRect() {
         rect = d3.select(self.rectangleElement[0][0]);
         rect.attr({
             x: self.rectData[1].x - self.rectData[0].x > 0 ? self.rectData[0].x :  self.rectData[1].x,
             y: self.rectData[1].y - self.rectData[0].y > 0 ? self.rectData[0].y :  self.rectData[1].y,
             width: Math.abs(self.rectData[1].x - self.rectData[0].x),
-            height: Math.abs(self.rectData[1].y - self.rectData[0].y)
+            height: Math.abs(self.rectData[1].y - self.rectData[0].y),
+            // fill:"orange"
         });
 
         var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
@@ -76,6 +79,10 @@ function Rectangle() {
                 .attr('y', self.rectData[i].y += e.dy );
         }
         rect.style('cursor', 'move');
+        // document.getElementById('shapeFormat').style.display = "block";
+        // var color = document.getElementById('color').addEventListener('change', shapeFill());
+        // var stroke = document.getElementById('border_color').addEventListener('change', strokeFill);
+        // console.log('color and stroke',color, stroke);
         updateRect();
     }
 
@@ -116,4 +123,26 @@ function Rectangle() {
         updateRect();
     }
 
+    function shapeFill(){
+        console.log('shape fill');
+        var fillColor = $("#color option:selected").text();
+
+        rect = d3.select(self.rectangleElement[0][0]);
+        rect.attr({
+            fill:"orange"
+        });
+    }
+
+    function strokeFill(){
+        var fillColor = $("#border_color option:selected").text();
+        return fillColor;
+    }
+
 }//end Rectangle
+
+d3.selectAll('rect')
+    .on('click',function(d,i){
+        console.log('clickec!');
+        d3.select(this)
+            .style('fill','orange');
+    });

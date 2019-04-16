@@ -46,6 +46,8 @@ function Ellipse() {
             }
         });
 
+
+
     function updateEllipse() {
         ellipse = d3.select(self.ellipseElement[0][0]).data(self.eData);
         ellipse.attr('cx', function (d) { return d.x1; })
@@ -72,6 +74,8 @@ function Ellipse() {
             .attr('r', 5)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
+
+
     }
 
     var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
@@ -113,3 +117,20 @@ function Ellipse() {
     }
 
 }//end Ellipse
+
+d3.selectAll('ellipse')
+    .on('touchstart', function(d, i) {
+        console.log('circle click');
+        d3.select(this)
+            .style('fill', 'orange');
+    });
+
+
+d3.selectAll('ellipse')
+    .on('click', function(d, i) {
+        console.log('circle click');
+        d3.select(this)
+            .style('fill', 'orange');
+    });
+
+
