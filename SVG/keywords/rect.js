@@ -140,6 +140,8 @@ function Rectangle() {
 
 }//end Rectangle
 
+
+
 d3.selectAll('rect')
     .on('click',function(d,i){
         console.log('clickec!');

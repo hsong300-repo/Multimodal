@@ -100,28 +100,3 @@ recognition.onresult = function(event) {
     // interim_span.innerHTML = linebreak(interim_transcript);
 };
 
-// this is the function that process query that detects keywords and lead to certain function
-function QueryProcess(script){
-    let myStr = script;
-    let tokenStr = myStr.split(" ");
-    //make it all lower case
-    console.log('tokenizedStr',tokenStr);
-    var result = ["remove","insert","create","put","generate"].filter(function(n) {
-        return tokenStr.indexOf(n) > -1;
-    });
-
-    console.log('result',result);
-    console.log('temp',["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1),["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1).length);
-    if(["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        console.log("draw")
-    }else if(["copy","duplicate","paste"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        console.log('copy')
-    }else if(["remove","delete"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        console.log('delete')
-    }
-
-
-
-
-
-}
