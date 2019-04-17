@@ -5,7 +5,7 @@ d3.select('#touchRect').on('click', function(){ Rectangle(); });
 
 
 var w = 800, h = 600;
-var svg = d3.select('#container').append('svg').attr({width: w, height: h});
+var svg = d3.select('#container').append('svg').attr('id','svg').attr({width: w, height: h});
 // var svg = d3.select('body').append('svg').attr({width: w, height: h});
 
 function Rectangle() {
@@ -21,7 +21,8 @@ function Rectangle() {
         if (!isDown && !isDrag) {
             rId++;
             self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
-            self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').on("click",clicked).call(dragR);
+            // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').on("click",clicked).call(dragR);
+            self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
             self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
             self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
             self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
@@ -48,37 +49,35 @@ function Rectangle() {
         });
         // .on("touchend",dragEnd);
 
-    document.getElementById('shapeFormat').style.display = "block";
-    $("#color").change(function () {
-        console.log("id colorchange",shape);
-        let fill = shapeFill();
-        shape.style("fill",fill);
-    });
 
-    var prev;
-    var count = 0;
-    function clicked(d,i){
-        count ++;
-        console.log('count',count);
-        if (d3.event.defaultPrevented) return; // dragged
-
-        console.log('d3.select',d3.select(this).attr("id"));
-        var id = d3.select(this).attr("id");
-        shape = d3.select("#"+id);
-
-        d3.select(this).transition()
-            .style("stroke-width", "6px");
-            // .style("fill", "green");
-            // .transition()
-            // .attr("r", 32)
-            // .style("fill", color(i));
-
-            $("#border_color").change(function () {
-                let stroke = strokeFill();
-                tempRect.style("stroke",stroke);
-
-            });
-    }
+    //for changing colors
+    // document.getElementById('shapeFormat').style.display = "block";
+    // $("#color").change(function () {
+    //     console.log("id colorchange",shape);
+    //     let fill = shapeFill();
+    //     shape.style("fill",fill);
+    // });
+    // $("#border_color").change(function () {
+    //     let stroke = strokeFill();
+    //     shape.style("stroke",stroke);
+    //
+    // });
+    // var prev;
+    // var count = 0;
+    // function clicked(d,i){
+    //     count ++;
+    //     console.log('count',count);
+    //     if (d3.event.defaultPrevented) return; // dragged
+    //
+    //     console.log('d3.select',d3.select(this).attr("id"));
+    //     var id = d3.select(this).attr("id");
+    //     shape = d3.select("#"+id);
+    //
+    //     d3.select(this).transition()
+    //         .style("stroke-width", "6px");
+    //
+    // }
+    //changing colors
 
 
     function updateRect() {
@@ -138,50 +137,6 @@ function Rectangle() {
 
     }
 
-    function selectRect(id) {
-        rect = d3.select(self.rectangleElement[0][0]);
-        var color = "green";
-
-        // document.getElementById('shapeFormat').style.display = "block";
-        // $("#color").change(function () {
-        //     let fill = shapeFill();
-        //     rect.style("fill",fill);
-        //
-        // });
-        //
-        // $("#border_color").change(function () {
-        //     let stroke = strokeFill();
-        //     rect.style("stroke",stroke);
-        //
-        // });
-
-        rect.attr({
-            x: self.rectData[1].x - self.rectData[0].x > 0 ? self.rectData[0].x :  self.rectData[1].x,
-            y: self.rectData[1].y - self.rectData[0].y > 0 ? self.rectData[0].y :  self.rectData[1].y,
-            width: Math.abs(self.rectData[1].x - self.rectData[0].x),
-            height: Math.abs(self.rectData[1].y - self.rectData[0].y),
-        });
-
-        var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
-        point1.attr('r', 5)
-            .attr('cx', self.rectData[0].x)
-            .attr('cy', self.rectData[0].y);
-        var point2 = d3.select(self.pointElement2[0][0]).data(self.rectData);
-        point2.attr('r', 5)
-            .attr('cx', self.rectData[1].x)
-            .attr('cy', self.rectData[1].y);
-        var point3 = d3.select(self.pointElement3[0][0]).data(self.rectData);
-        point3.attr('r', 5)
-            .attr('cx', self.rectData[1].x)
-            .attr('cy', self.rectData[0].y);
-        var point3 = d3.select(self.pointElement4[0][0]).data(self.rectData);
-        point3.attr('r', 5)
-            .attr('cx', self.rectData[0].x)
-            .attr('cy', self.rectData[1].y);
-
-
-    }
-
     function dragPoint1() {
         var e = d3.event;
         d3.select(self.pointElement1[0][0])
@@ -214,23 +169,12 @@ function Rectangle() {
         updateRect();
     }
 
-    function shapeFill(){
-        console.log('shape fill');
-        var fillColor = $("#color option:selected").text();
 
-        return fillColor;
-
-
-    }
-
-    function strokeFill(){
-        var fillColor = $("#border_color option:selected").text();
-
-        return fillColor;
-    }
 
 
 
 }//end Rectangle
+
+
 
 

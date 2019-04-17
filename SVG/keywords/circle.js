@@ -1,4 +1,5 @@
 // var svg = d3.select('body').append('svg');
+var cId = 0;
 
 d3.select('#touchCircle').on('click', function () {
     new Ellipse();
@@ -10,10 +11,11 @@ function Ellipse() {
 
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
+        console.log('circle touchstart');
             m1 = d3.mouse(this);
         if (!isDown && click == 1) {
-            cId++;
-            if(!isDragging){
+        // if (!isDown) {
+                if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -22,7 +24,8 @@ function Ellipse() {
                     a: 0,
                     b: 0
                 }];
-                self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_"+cId).attr('class', 'ellipse').call(dragE);
+                // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
+                self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').call(dragE);
                 self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
@@ -30,22 +33,59 @@ function Ellipse() {
                 updateEllipse();
             }
         } else {
+            console.log('drag');
             isDragging = true;
         }
         isDown = !isDown;
         click++;
+        cId++;
+        console.log('outside');
     })
         .on('touchmove', function () {
         // .on('mousemove', function () {
+            console.log('circle touchmove');
             m2 = d3.mouse(this);
+            // if (isDown && !isDragging) {
             if (isDown && !isDragging && click == 2) {
                 self.eData[0].x2 = m2[0];
                 self.eData[0].y2 = m2[1];
                 self.eData[0].a = Math.abs(m2[0] - m1[0]);
                 self.eData[0].b = Math.abs(m2[1] - m1[1]);
                 updateEllipse();
+            }else{
+                console.log('touch more than two');
             }
         });
+
+    // document.getElementById('shapeFormat').style.display = "block";
+    // $("#color").change(function () {
+    //     console.log("id colorchange",shape);
+    //     let fill = shapeFill();
+    //     shape.style("fill",fill);
+    // });
+    // $("#border_color").change(function () {
+    //     let stroke = strokeFill();
+    //     shape.style("stroke",stroke);
+    //
+    // });
+    // var prev;
+    // var count = 0;
+    // function clicked(d,i){
+    //     count ++;
+    //     console.log('count',count);
+    //     // if (d3.event.currentTarget.blur()) return; // dragged
+    //
+    //     if (d3.event.defaultPrevented) return; // dragged
+    //
+    //     console.log('d3.select',d3.select(this).attr("id"));
+    //     var id = d3.select(this).attr("id");
+    //     shape = d3.select("#"+id);
+    //
+    //     d3.select(this).transition()
+    //         .style("stroke-width", "6px");
+    //
+    // }
+    //changing colors
 
 
 
@@ -79,21 +119,27 @@ function Ellipse() {
 
     }
 
+    // var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
+    // var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);
+
     var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
     var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);
 
     function dragStart(d) {
+        console.log('dragstart');
         isDown = false;
         isDragging = true;
-        d3.event.sourceEvent.stopPropagation();
-        d3.event.sourceEvent.preventDefault();
+        // d3.event.sourceEvent.stopPropagation();
+        // d3.event.sourceEvent.preventDefault();
     }
 
     function dragEnd(d) {
+        console.log('dragend');
         isDown = isDragging = false;
     }
 
     function dragEllipse(d) {
+        console.log('dragelipse');
         isDragging = true;
         var e = d3.event;
         d.x1 += e.dx;
@@ -105,6 +151,7 @@ function Ellipse() {
     }
 
     function dragPoint(d) {
+        console.log('drag point');
         var e = d3.event;
         var id = d3.select(this).attr('id');
         if(id == 3 || id == 4) {
