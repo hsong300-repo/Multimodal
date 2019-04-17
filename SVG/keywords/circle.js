@@ -119,19 +119,6 @@ function Ellipse() {
 
 }//end Ellipse
 
-d3.selectAll('ellipse')
-    .on('touchstart', function(d, i) {
-        console.log('circle click');
-        d3.select(this)
-            .style('fill', 'orange');
-    });
 
-
-d3.selectAll('ellipse')
-    .on('click', function(d, i) {
-        console.log('circle click');
-        d3.select(this)
-            .style('fill', 'orange');
-    });
 
 

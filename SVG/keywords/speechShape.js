@@ -2,6 +2,11 @@ var cId = 0;
 
 function drawShapes(shape, color,count,stroke) {
 
+
+    function nozoom() {
+        d3.event.preventDefault();
+    }
+
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
@@ -11,7 +16,6 @@ function drawShapes(shape, color,count,stroke) {
                     .attr("cx", 100 + i * 10)
                     .attr("cy", 100 + i * 10)
                     .attr("rx", 25)
-                    .attr("ry", 25)
                     .style("fill", function (d) {
                         if (color) {
                             return color;
@@ -36,7 +40,7 @@ function drawShapes(shape, color,count,stroke) {
                     }
                 });
         }
-    } else if (shape === "rectangle" || shape === "square" || shape === "rectanlges" || shape === "squares") {
+    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
             for (i = 0; i < count; i++) {
                 rId++;
@@ -46,6 +50,9 @@ function drawShapes(shape, color,count,stroke) {
                     .attr("y", 100+i*10)
                     .attr("width", 50)
                     .attr("height", 50)
+                    .on("click",function(d){
+                        console.log('you clicked',svg.attr('id'));
+                    })
                     .style("fill", function (d) {
                         if (color) {
                             return color;
@@ -53,6 +60,7 @@ function drawShapes(shape, color,count,stroke) {
                             return "lightblue";
                         }
                     });
+
             }//for loop
         } else {
             rId++;
@@ -62,6 +70,7 @@ function drawShapes(shape, color,count,stroke) {
                 .attr("y", 100)
                 .attr("width", 50)
                 .attr("height", 50)
+
                 .style("fill", function (d) {
                     if (color) {
                         return color;
@@ -89,3 +98,8 @@ function removeShapes(shape, color,count,stroke) {
 
     }//else if rect
 }
+
+d3.select('svg').on('click', function(d, i) {
+    // Somehow console.log the ID of the circle clicked on (if any).
+    console.log("Clicked ID: " + d3.event.target.id);
+});

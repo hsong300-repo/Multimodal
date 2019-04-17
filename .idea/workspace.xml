@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVG/keywords/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/circle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SVG/keywords/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/rect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SVG/keywords/speechShape.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/speechShape.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,9 +35,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="13" />
+          <entry key="css" value="14" />
           <entry key="html" value="38" />
-          <entry key="js" value="109" />
+          <entry key="js" value="112" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="1" />
@@ -45,10 +45,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="13" />
+          <entry key="CSS" value="14" />
           <entry key="HTML" value="38" />
           <entry key="Image" value="1" />
-          <entry key="JavaScript" value="109" />
+          <entry key="JavaScript" value="112" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="1" />
         </counts>
@@ -57,14 +57,14 @@
         <counts>
           <entry key="css" value="492" />
           <entry key="html" value="2298" />
-          <entry key="js" value="18774" />
+          <entry key="js" value="21191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="492" />
           <entry key="HTML" value="2298" />
-          <entry key="JavaScript" value="18774" />
+          <entry key="JavaScript" value="21191" />
         </counts>
       </usages-collector>
     </session>
@@ -74,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SVG/keywords/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
+            <state relative-caret-position="1325">
               <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -85,24 +85,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Trigger/keywords/speech.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keywords/circle.js">
+        <entry file="file://$PROJECT_DIR$/Trigger/keywords/touch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1815">
-              <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+            <state relative-caret-position="240">
+              <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keywords/keywords.js">
+        <entry file="file://$PROJECT_DIR$/SVG/keywords/circle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="613">
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
             </state>
           </provider>
         </entry>
@@ -116,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SVG/keywords/speechShape.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="600">
+              <caret line="103" column="53" lean-forward="true" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -137,26 +132,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/touch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3015">
-              <caret line="201" column="21" lean-forward="true" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SVG/keywords/rect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="645">
+              <caret line="43" column="3" lean-forward="true" selection-start-line="11" selection-end-line="43" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Trigger/keywords/draw.js">
+        <entry file="file://$PROJECT_DIR$/SVG/keywords/rect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="38" column="72" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="72" />
+            <state relative-caret-position="615">
+              <caret line="235" selection-start-line="235" selection-end-line="235" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-795" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Trigger/keywords/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="57" column="17" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -174,10 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getcontext</find>
-      <find>l</find>
-      <find>console.log</find>
-      <find>p</find>
       <find>s1</find>
       <find>reverse</find>
       <find>shape</find>
@@ -193,17 +191,21 @@
       <find>updatecircle</find>
       <find>conta</find>
       <find>svg</find>
-      <find>block</find>
       <find>shapefill</find>
       <find>updaterect</find>
       <find>cur</find>
       <find>point</find>
       <find>click</find>
-      <find>dragR</find>
       <find>output</find>
       <find>final_transcript</find>
       <find>on</find>
       <find>isdown</find>
+      <find>drag</find>
+      <find>attr(&quot;id)</find>
+      <find>block</find>
+      <find>dragR</find>
+      <find>e.target</find>
+      <find>dragrect</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -254,15 +256,15 @@
         <option value="$PROJECT_DIR$/Trigger/keyword_button/draw.js" />
         <option value="$PROJECT_DIR$/Trigger/keywords/styles.css" />
         <option value="$PROJECT_DIR$/SVG/keywords/draw.js" />
-        <option value="$PROJECT_DIR$/SVG/keywords/circle.js" />
         <option value="$PROJECT_DIR$/Trigger/keyword_hold/touch.js" />
         <option value="$PROJECT_DIR$/SVG/queryProcess.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/keywords.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/index.html" />
         <option value="$PROJECT_DIR$/SVG/keywords/queryProcess.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/styles.css" />
-        <option value="$PROJECT_DIR$/SVG/keywords/speechShape.js" />
+        <option value="$PROJECT_DIR$/SVG/keywords/circle.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/rect.js" />
+        <option value="$PROJECT_DIR$/SVG/keywords/speechShape.js" />
       </list>
     </option>
   </component>
@@ -393,12 +395,12 @@
       <workItem from="1555348239271" duration="3352000" />
       <workItem from="1555423267972" duration="6805000" />
       <workItem from="1555461800429" duration="1052000" />
-      <workItem from="1555470815646" duration="1797000" />
+      <workItem from="1555470815646" duration="12061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147333000" />
+    <option name="totallyTimeSpent" value="157597000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -609,9 +611,6 @@
     <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/keywords.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/styles.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/speech.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -661,13 +660,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/draw.js" />
-    <entry file="file://$PROJECT_DIR$/Trigger/keywords/touch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7755">
-          <caret line="517" selection-start-line="517" selection-end-line="517" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Trigger/keywords/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
@@ -682,37 +674,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keywords/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="106" column="36" lean-forward="true" selection-start-line="106" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SVG/queryProcess.js" />
     <entry file="file://$PROJECT_DIR$/Trigger/keywords/speech.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/circle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
-          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/queryProcess.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/touch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3015">
-          <caret line="201" column="21" lean-forward="true" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Trigger/keywords/draw.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -728,9 +692,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SVG/keywords/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-795" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/touch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="3" lean-forward="true" selection-start-line="11" selection-end-line="43" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
+        <state relative-caret-position="1325">
           <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -739,24 +722,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/styles.css">
+    <entry file="file://$PROJECT_DIR$/Trigger/keywords/touch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+        <state relative-caret-position="240">
+          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/speechShape.js">
+    <entry file="file://$PROJECT_DIR$/SVG/keywords/queryProcess.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="44" />
+        <state relative-caret-position="525">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVG/keywords/circle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trigger/keywords/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/rect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="615">
+          <caret line="235" selection-start-line="235" selection-end-line="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVG/keywords/speechShape.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="103" column="53" lean-forward="true" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
         </state>
       </provider>
     </entry>
