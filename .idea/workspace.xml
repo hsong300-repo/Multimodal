@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/rect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/speechShape.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/speechShape.js" afterDir="false" />
-    </list>
+    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -141,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SVG/keywords/rect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="235" selection-start-line="235" selection-end-line="235" />
+            <state relative-caret-position="-2400">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -263,8 +258,8 @@
         <option value="$PROJECT_DIR$/SVG/keywords/queryProcess.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/styles.css" />
         <option value="$PROJECT_DIR$/SVG/keywords/circle.js" />
-        <option value="$PROJECT_DIR$/SVG/keywords/rect.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/speechShape.js" />
+        <option value="$PROJECT_DIR$/SVG/keywords/rect.js" />
       </list>
     </option>
   </component>
@@ -395,12 +390,12 @@
       <workItem from="1555348239271" duration="3352000" />
       <workItem from="1555423267972" duration="6805000" />
       <workItem from="1555461800429" duration="1052000" />
-      <workItem from="1555470815646" duration="12061000" />
+      <workItem from="1555470815646" duration="12738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157597000" />
+    <option name="totallyTimeSpent" value="158274000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -752,8 +747,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/rect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
+        <state relative-caret-position="-2400">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>

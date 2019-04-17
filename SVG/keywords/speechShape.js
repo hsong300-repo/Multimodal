@@ -102,4 +102,12 @@ function removeShapes(shape, color,count,stroke) {
 d3.select('svg').on('click', function(d, i) {
     // Somehow console.log the ID of the circle clicked on (if any).
     console.log("Clicked ID: " + d3.event.target.id);
+    var tempId = d3.event.target.id;
+    if(!tempId){
+        d3.selectAll("rect").style('stroke-width',"2px");
+        d3.selectAll("ellipse").style('stroke-width',"2px");
+        d3.selectAll(".pointC").style("opacity",0);
+        d3.selectAll(".pointE").style("opacity",0);
+
+    }
 });
