@@ -158,3 +158,8 @@ ellipse {
     stroke: blue;
     stroke-width: 2px;
 }
+
+.active {
+    stroke: #000;
+    stroke-width: 2px;
+}

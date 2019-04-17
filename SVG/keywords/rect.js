@@ -1,3 +1,5 @@
+var rId = 0;
+
 d3.select('#touchRect').on('click', function(){ new Rectangle(); });
 
 var w = 800, h = 600;
@@ -14,8 +16,9 @@ function Rectangle() {
         m1 = d3.mouse(this);
         // m1 = d3.touch(this);
         if (!isDown && !isDrag) {
+            rId++;
             self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
-            self.rectangleElement = d3.select('svg').append('rect').attr('class', 'rectangle').call(dragR);
+            self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
             self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
             self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
             self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
@@ -39,6 +42,7 @@ function Rectangle() {
                 updateRect();
             }
         });
+        // .on("touchend",dragEnd);
 
 
     function updateRect() {
@@ -91,6 +95,12 @@ function Rectangle() {
     var dragC3 = d3.behavior.drag().on('drag', dragPoint3);
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
+    function dragEnd(){
+        isDown = false;
+        isDrag = false;
+        d3.selectAll(".pointC").remove();
+    }
+
     function dragPoint1() {
         var e = d3.event;
         d3.select(self.pointElement1[0][0])
@@ -142,9 +152,3 @@ function Rectangle() {
 
 
 
-d3.selectAll('rect')
-    .on('click',function(d,i){
-        console.log('clickec!');
-        d3.select(this)
-            .style('fill','orange');
-    });

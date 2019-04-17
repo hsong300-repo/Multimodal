@@ -12,6 +12,7 @@ function Ellipse() {
     svg.on('touchstart', function () {
             m1 = d3.mouse(this);
         if (!isDown && click == 1) {
+            cId++;
             if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
@@ -21,7 +22,7 @@ function Ellipse() {
                     a: 0,
                     b: 0
                 }];
-                self.ellipseElement = d3.select('svg').append('ellipse').attr('class', 'ellipse').call(dragE);
+                self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_"+cId).attr('class', 'ellipse').call(dragE);
                 self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
