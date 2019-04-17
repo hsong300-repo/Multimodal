@@ -1,9 +1,12 @@
+var cId = 0;
+
 function drawShapes(shape, color,count,stroke) {
 
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
                 svg.append("ellipse")
+                    .attr("id","circle_"+i)
                     .attr("cx", 100 + i * 10)
                     .attr("cy", 100 + i * 10)
                     .attr("rx", 25)
@@ -60,8 +63,21 @@ function drawShapes(shape, color,count,stroke) {
                     }
                 });
 
-
         }
+
+    }//else if rect
+}
+
+function removeShapes(shape, color,count,stroke) {
+
+    if (shape === "circle" || shape === "circles") {
+        d3.selectAll("ellipse").remove();
+        d3.selectAll(".pointE").remove();
+
+
+    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
+        d3.selectAll("rect").remove();
+        d3.selectAll(".pointC").remove();
 
 
     }//else if rect
