@@ -153,6 +153,9 @@ $("#border_color").change(function () {
 
 });
 
+// d3.select('svg').on('click', function(d, i) {
+
+
 d3.select('svg').on('click', function(d, i) {
     // if (d3.event.defaultPrevented) return; // dragged
 

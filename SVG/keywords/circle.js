@@ -57,38 +57,6 @@ function Ellipse() {
             }
         });
 
-    // document.getElementById('shapeFormat').style.display = "block";
-    // $("#color").change(function () {
-    //     console.log("id colorchange",shape);
-    //     let fill = shapeFill();
-    //     shape.style("fill",fill);
-    // });
-    // $("#border_color").change(function () {
-    //     let stroke = strokeFill();
-    //     shape.style("stroke",stroke);
-    //
-    // });
-    // var prev;
-    // var count = 0;
-    // function clicked(d,i){
-    //     count ++;
-    //     console.log('count',count);
-    //     // if (d3.event.currentTarget.blur()) return; // dragged
-    //
-    //     if (d3.event.defaultPrevented) return; // dragged
-    //
-    //     console.log('d3.select',d3.select(this).attr("id"));
-    //     var id = d3.select(this).attr("id");
-    //     shape = d3.select("#"+id);
-    //
-    //     d3.select(this).transition()
-    //         .style("stroke-width", "6px");
-    //
-    // }
-    //changing colors
-
-
-
     function updateEllipse() {
         ellipse = d3.select(self.ellipseElement[0][0]).data(self.eData);
         ellipse.attr('cx', function (d) { return d.x1; })
