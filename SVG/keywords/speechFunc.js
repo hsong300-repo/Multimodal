@@ -7,37 +7,10 @@ function drawShapes(shape, color,count,stroke) {
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
-                // cId++;
-                // svg.append("ellipse")
-                //     .attr("id","circle_"+cId)
-                //     .attr("cx", 100 + i * 60)
-                //     .attr("cy", 100)
-                //     .attr("rx", 25)
-                //     .attr("ry", 25)
-                //     .style("fill", function (d) {
-                //         if (color) {
-                //             return color;
-                //         } else {
-                //             return "lightblue";
-                //         }
-                //     });
                 new putCircle();
             }//for loop
         } else {
-            // cId++;
-            // svg.append("ellipse")
-            //     .attr("id","circle_"+cId)
-            //     .attr("cx", 100)
-            //     .attr("cy", 100 + cId * 60)
-            //     .attr("rx", 25)
-            //     .attr("ry", 25)
-            //     .style("fill", function (d) {
-            //         if (color) {
-            //             return color;
-            //         } else {
-            //             return "lightblue";
-            //         }
-            //     });
+
             new putCircle();
 
         }
@@ -58,8 +31,6 @@ function drawShapes(shape, color,count,stroke) {
 function removeShapes(shape, color,count,stroke) {
 
     if (shape === "circle" || shape === "circles") {
-
-
         if(color){
             var inColor = d3.rgb(color);
 
@@ -112,9 +83,8 @@ function removeShapes(shape, color,count,stroke) {
 }
 
 var space = 0;
-function copyShapes(){
+function copyShapes(count){
     space++;
-
 
     console.log('shapeId',shapeId);
 
@@ -123,36 +93,32 @@ function copyShapes(){
     shape = d3.select("#"+tempId);
     var id = idProcess(tempId);
 
-    console.log('shapecolor',shapeColor,tempFill.r, tempFill.g,tempFill.b);
-    // console.log('rgb',)
-    console.log('shapeStroke',shapeStroke);
+
+    // var shapeColor = d3.select("#"+shapeId).style("fill");
+    // var tempFill = d3.rgb(shapeColor);
+    // let color = "rgb("+tempFill.r+","+tempFill.g+","+tempFill.b+")";
+    // var shapeStroke = d3.select("#"+shapeId).style("stroke");
+    // var tempStroke = d3.rgb(shapeStroke);
+    // let strokeColor = "rgb("+tempStroke.r+","+tempStroke.g+","+tempStroke.b+")";
 
 
     if(id === "circle"){
-        svg.append("ellipse")
-            .attr("id",shapeId+"_copy")
-            .attr("cx", 100+space*60)
-            .attr("cy", 50)
-            .attr("rx", shapeWidth)
-            .attr("ry", shapeHeight)
-            .attr("fill",shapeColor)
-            .attr("stroke",shapeStroke);
+        if (count) {
+            for (i = 0; i < count; i++) {
+                new copyCircle();
+            }//for loop
+        } else {
+            new copyCircle();
 
+        }
     }else if(id === "rect"){
-        svg.append("rect")
-            .attr("id",shapeId+"_copy")
-            .attr("x", 100+ space*60)
-            .attr("y", 50)
-            .attr("fill",shapeColor.toString())
-            // .attr("fill","green")
-            .attr("stroke",shapeStroke)
-            .attr("width", shapeWidth)
-            .attr("height", shapeHeight);
-
-
-
-        // rects.style('fill',shapeColor.toString());
-
+        if (count) {
+            for (i = 0; i < count; i++) {
+                new copyRect();
+            }//for loop
+        } else {
+            new copyRect();
+        }
     }
 
 
@@ -213,10 +179,9 @@ d3.select('svg').on('click', function(d, i) {
     console.log("shapeId click",shapeId);
 
     var tempId = d3.event.target.id;
-    console.log('tempId',tempId);
     shape = d3.select("#"+tempId);
-    shapeColor = d3.select("#"+tempId).style("fill");
-    shapeStroke = d3.select("#"+tempId).style("stroke");
+    // shapeColor = d3.select("#"+tempId).style("fill");
+    // shapeStroke = d3.select("#"+tempId).style("stroke");
 
 
     var id = idProcess(tempId);
@@ -225,22 +190,22 @@ d3.select('svg').on('click', function(d, i) {
             .style("stroke-width", "6px");
         document.getElementById('shapeFormat').style.display = "block";
         // d3.selectAll(".pointC").style("opacity",1);
-        shapeColor = d3.select("#"+tempId).style("fill");
-        tempFill = d3.rgb(shapeColor);
-        shapeStroke = d3.select("#"+tempId).style("stroke");
-        shapeWidth = d3.select("#"+tempId).style("width");
-        tempStroke = d3.rgb(shapeStroke);
-        shapeHeight = d3.select("#"+tempId).style("height");
+        // shapeColor = d3.select("#"+tempId).style("fill");
+        // tempFill = d3.rgb(shapeColor);
+        // shapeStroke = d3.select("#"+tempId).style("stroke");
+        // shapeWidth = d3.select("#"+tempId).style("width");
+        // tempStroke = d3.rgb(shapeStroke);
+        // shapeHeight = d3.select("#"+tempId).style("height");
 
     }else if(id==="circle"){
         d3.select("#"+tempId).transition()
             .style("stroke-width", "6px");
         document.getElementById('shapeFormat').style.display = "block";
         // d3.selectAll(".pointE").style("opacity",0);
-        shapeColor = d3.select("#"+tempId).style("fill");
-        shapeStroke = d3.select("#"+tempId).style("stroke");
-        shapeWidth = d3.select("#"+tempId).style("rx");
-        shapeHeight = d3.select("#"+tempId).style("ry");
+        // shapeColor = d3.select("#"+tempId).style("fill");
+        // shapeStroke = d3.select("#"+tempId).style("stroke");
+        // shapeWidth = d3.select("#"+tempId).style("rx");
+        // shapeHeight = d3.select("#"+tempId).style("ry");
 
     }else{
         d3.selectAll("rect").style('stroke-width',"2px");

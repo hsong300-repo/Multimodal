@@ -1,4 +1,4 @@
-function putRect() {
+function copyRect() {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
     svg.on('touchstart', function() {
@@ -73,8 +73,25 @@ function putRect() {
     var dragC3 = d3.behavior.drag().on('drag', dragPoint3);
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
-    self.rectData = [ { x: 100+rId*10, y: 100+rId*10 }, { x: 150+rId*10, y: 150+rId*10 } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
+    var shapeColor = d3.select("#"+shapeId).style("fill");
+    var tempFill = d3.rgb(shapeColor);
+    let color = "rgb("+tempFill.r+","+tempFill.g+","+tempFill.b+")";
+    var shapeStroke = d3.select("#"+shapeId).style("stroke");
+    var tempStroke = d3.rgb(shapeStroke);
+    let strokeColor = "rgb("+tempStroke.r+","+tempStroke.g+","+tempStroke.b+")";
+    var shapeWidth = d3.select("#"+shapeId).style("width");
+    var shapeHeight = d3.select("#"+shapeId).style("height");
+
+    // console.log('shapeWidth',shapeWidth,shapeHeight,parseInt(shapeWidth,10),parseInt(shapeWidth,10));
+
+    // .style("fill",color)
+    // .style("stroke",strokeColor)
+    // .attr("width", shapeWidth)
+    // .attr("height", shapeHeight);
+
+    self.rectData = [ { x: 100+rId*10, y: 100+rId*30 }, { x: 100+rId*10+parseInt(shapeWidth,10), y: 100+rId*30+parseInt(shapeWidth,10) } ];
+    self.rectangleElement = d3.select('svg').append('rect').attr("id",shapeId+"_copy").attr('class', 'rectangle').style("fill",color)
+        .style("stroke",strokeColor).attr("width", shapeWidth).attr("height", shapeHeight).call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
@@ -115,3 +132,11 @@ function putRect() {
     }
 
 }//end Rectangle
+
+// var svg = d3.select('body').append('svg');
+// var cId = 0;
+//
+// d3.select('#touchCircle').on('click', function () {
+//     new Ellipse();
+// });
+
