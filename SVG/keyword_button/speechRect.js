@@ -1,4 +1,4 @@
-function putRect() {
+function putRect(color) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
     svg.on('touchstart', function() {
@@ -74,7 +74,7 @@ function putRect() {
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
     self.rectData = [ { x: 100+rId*10, y: 100+rId*10 }, { x: 150+rId*10, y: 150+rId*10 } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
+    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
