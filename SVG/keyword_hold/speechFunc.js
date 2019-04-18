@@ -4,24 +4,25 @@ function drawShapes(shape, color,count,stroke) {
         d3.event.preventDefault();
     }
 
+
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
-                new putCircle();
+                new putCircle(color);
             }//for loop
         } else {
 
-            new putCircle();
+            new putCircle(color);
 
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
             for (i = 0; i < count; i++) {
-                new putRect();
+                new putRect(color);
             }//for loop
         } else {
 
-            new putRect();
+            new putRect(color);
 
         }
 
