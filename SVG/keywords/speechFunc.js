@@ -1,7 +1,5 @@
 
 function drawShapes(shape, color,count,stroke) {
-
-
     function nozoom() {
         d3.event.preventDefault();
     }
@@ -9,76 +7,48 @@ function drawShapes(shape, color,count,stroke) {
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
-                cId++;
-                svg.append("ellipse")
-                    .attr("id","circle_"+cId)
-                    .attr("cx", 100 + i * 60)
-                    .attr("cy", 100)
-                    .attr("rx", 25)
-                    .attr("ry", 25)
-                    .style("fill", function (d) {
-                        if (color) {
-                            return color;
-                        } else {
-                            return "lightblue";
-                        }
-                    });
+                // cId++;
+                // svg.append("ellipse")
+                //     .attr("id","circle_"+cId)
+                //     .attr("cx", 100 + i * 60)
+                //     .attr("cy", 100)
+                //     .attr("rx", 25)
+                //     .attr("ry", 25)
+                //     .style("fill", function (d) {
+                //         if (color) {
+                //             return color;
+                //         } else {
+                //             return "lightblue";
+                //         }
+                //     });
+                new putCircle();
             }//for loop
         } else {
-            cId++;
-            svg.append("ellipse")
-                .attr("id","circle_"+cId)
-                .attr("cx", 100)
-                .attr("cy", 100 + cId * 60)
-                .attr("rx", 25)
-                .attr("ry", 25)
-                .style("fill", function (d) {
-                    if (color) {
-                        return color;
-                    } else {
-                        return "lightblue";
-                    }
-                });
-        }
-    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
-        if (count) {
-            for (i = 0; i < count; i++) {
-                rId++;
-                svg.append("rect")
-                    .attr("id","rect_"+rId)
-                    .attr("x", 100+i*60)
-                    .attr("y", 100)
-                    .attr("width", 50)
-                    .attr("height", 50)
-                    .on("click",function(d){
-                        console.log('you clicked',svg.attr('id'));
-                    })
-                    .style("fill", function (d) {
-                        if (color) {
-                            return color;
-                        } else {
-                            return "lightblue";
-                        }
-                    });
-            }//for loop
-        } else {
-            // rId++;
-            // svg.append("rect")
-            //     .attr("id","rect_"+rId)
-            //     .attr("x", 100)
-            //     .attr("y", 100 + rId * 60+10)
-            //     .attr("width", 50)
-            //     .attr("height", 50)
-            //
+            // cId++;
+            // svg.append("ellipse")
+            //     .attr("id","circle_"+cId)
+            //     .attr("cx", 100)
+            //     .attr("cy", 100 + cId * 60)
+            //     .attr("rx", 25)
+            //     .attr("ry", 25)
             //     .style("fill", function (d) {
             //         if (color) {
             //             return color;
             //         } else {
-            //             return "light";
-            //             // return d3.rgb(173,216,230);
+            //             return "lightblue";
             //         }
             //     });
-            speechRect();
+            new putCircle();
+
+        }
+    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
+        if (count) {
+            for (i = 0; i < count; i++) {
+                new putRect();
+            }//for loop
+        } else {
+
+            new putRect();
 
         }
 
@@ -111,9 +81,6 @@ function removeShapes(shape, color,count,stroke) {
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
         }
-
-
-
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         // d3.selectAll("rect").remove();
         // d3.selectAll(".pointC").remove();
@@ -238,7 +205,6 @@ $("#border_color").change(function () {
 });
 
 d3.select('svg').on('click', function(d, i) {
-
     // if (d3.event.defaultPrevented) return; // dragged
 
     // Somehow console.log the ID of the circle clicked on (if any).
@@ -284,12 +250,9 @@ d3.select('svg').on('click', function(d, i) {
 
         document.getElementById('shapeFormat').style.display = "none";
     }
-
-    console.log('red in rgv',d3.rgb("red"));
-
-
-
 });
 
 document.getElementById('shapeFormat').style.display = "none";
+
+
 

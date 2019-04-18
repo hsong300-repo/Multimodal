@@ -1,7 +1,7 @@
 var rId = 0;
 
 // d3.select('#touchRect').on('click', function(){ new Rectangle(); });
-d3.select('#touchRect').on('click', function(){ Rectangle(); });
+d3.select('#touchRect').on('click', function(){ new Rectangle(); });
 
 
 var w = 800, h = 600;
@@ -14,8 +14,6 @@ function Rectangle() {
 
     // svg.on('mousedown', function() {
     svg.on('touchstart', function() {
-        console.log('touch start');
-
         m1 = d3.mouse(this);
         // m1 = d3.touch(this);
         if (!isDown && !isDrag) {
@@ -37,7 +35,7 @@ function Rectangle() {
         isDown = !isDown;
         })
         .on('touchmove', function() {
-            // .on('mousemove', function() {
+        // .on('mousemove', function() {
             console.log('touch move');
 
             m2 = d3.mouse(this);
@@ -47,38 +45,6 @@ function Rectangle() {
                 updateRect();
             }
         });
-        // .on("touchend",dragEnd);
-
-
-    //for changing colors
-    // document.getElementById('shapeFormat').style.display = "block";
-    // $("#color").change(function () {
-    //     console.log("id colorchange",shape);
-    //     let fill = shapeFill();
-    //     shape.style("fill",fill);
-    // });
-    // $("#border_color").change(function () {
-    //     let stroke = strokeFill();
-    //     shape.style("stroke",stroke);
-    //
-    // });
-    // var prev;
-    // var count = 0;
-    // function clicked(d,i){
-    //     count ++;
-    //     console.log('count',count);
-    //     if (d3.event.defaultPrevented) return; // dragged
-    //
-    //     console.log('d3.select',d3.select(this).attr("id"));
-    //     var id = d3.select(this).attr("id");
-    //     shape = d3.select("#"+id);
-    //
-    //     d3.select(this).transition()
-    //         .style("stroke-width", "6px");
-    //
-    // }
-    //changing colors
-
 
     function updateRect() {
         rect = d3.select(self.rectangleElement[0][0]);
@@ -109,6 +75,7 @@ function Rectangle() {
 
     var dragR = d3.behavior.drag().on('drag', dragRect);
 
+
     function dragRect() {
         var e = d3.event;
         for(var i = 0; i < self.rectData.length; i++){
@@ -117,11 +84,6 @@ function Rectangle() {
                 .attr('y', self.rectData[i].y += e.dy );
         }
         rect.style('cursor', 'move');
-
-        // document.getElementById('shapeFormat').style.display = "block";
-        // var color = document.getElementById('color').addEventListener('change', shapeFill());
-        // var stroke = document.getElementById('border_color').addEventListener('change', strokeFill);
-        // console.log('color and stroke',color, stroke);
         updateRect();
     }
 
@@ -129,13 +91,6 @@ function Rectangle() {
     var dragC2 = d3.behavior.drag().on('drag', dragPoint2);
     var dragC3 = d3.behavior.drag().on('drag', dragPoint3);
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
-
-    function dragEnd(){
-        // isDown = false;
-        // isDrag = false;
-        // d3.selectAll(".pointC").attr("opacity",0);
-
-    }
 
     function dragPoint1() {
         var e = d3.event;
