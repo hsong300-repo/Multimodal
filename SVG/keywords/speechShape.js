@@ -29,7 +29,7 @@ function drawShapes(shape, color,count,stroke) {
             svg.append("ellipse")
                 .attr("id","circle_"+cId)
                 .attr("cx", 100)
-                .attr("cy", 100)
+                .attr("cy", 100 + cId * 60)
                 .attr("rx", 25)
                 .attr("ry", 25)
                 .style("fill", function (d) {
@@ -60,24 +60,25 @@ function drawShapes(shape, color,count,stroke) {
                             return "lightblue";
                         }
                     });
-
             }//for loop
         } else {
-            rId++;
-            svg.append("rect")
-                .attr("id","rect_"+rId)
-                .attr("x", 100)
-                .attr("y", 100)
-                .attr("width", 50)
-                .attr("height", 50)
-
-                .style("fill", function (d) {
-                    if (color) {
-                        return color;
-                    } else {
-                        return "lightblue";
-                    }
-                });
+            // rId++;
+            // svg.append("rect")
+            //     .attr("id","rect_"+rId)
+            //     .attr("x", 100)
+            //     .attr("y", 100 + rId * 60+10)
+            //     .attr("width", 50)
+            //     .attr("height", 50)
+            //
+            //     .style("fill", function (d) {
+            //         if (color) {
+            //             return color;
+            //         } else {
+            //             return "light";
+            //             // return d3.rgb(173,216,230);
+            //         }
+            //     });
+            speechRect();
 
         }
 
@@ -87,19 +88,64 @@ function drawShapes(shape, color,count,stroke) {
 function removeShapes(shape, color,count,stroke) {
 
     if (shape === "circle" || shape === "circles") {
-        d3.selectAll("ellipse").remove();
-        d3.selectAll(".pointE").remove();
+
+
+        if(color){
+            var inColor = d3.rgb(color);
+
+            //check if same color
+            console.log('her color check');
+            d3.selectAll('ellipse').each(function(d,i){
+                var elt = d3.select(this);
+                console.log(elt.style("fill"));
+                var color = d3.rgb(elt.style("fill"));
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    console.log('***red here***');
+                    d3.select(this).remove();
+                }else{
+                    console.log('light blue');
+                }
+                // console.log(elt.attr("style"));
+            })
+        }else {
+            d3.selectAll("ellipse").remove();
+            d3.selectAll(".pointE").remove();
+        }
+
 
 
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
-        d3.selectAll("rect").remove();
-        d3.selectAll(".pointC").remove();
+        // d3.selectAll("rect").remove();
+        // d3.selectAll(".pointC").remove();
+
+        if(color){
+            var inColor = d3.rgb(color);
+
+            //check if same color
+            console.log('her color check');
+            d3.selectAll('rect').each(function(d,i){
+                var elt = d3.select(this);
+                console.log(elt.style("fill"));
+                var color = d3.rgb(elt.style("fill"));
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    console.log('***red here***');
+                    d3.select(this).remove();
+                }else{
+                    console.log('light blue');
+                }
+                // console.log(elt.attr("style"));
+            })
+        }else {
+            d3.selectAll("rect").remove();
+            d3.selectAll(".pointC").remove();
+        }
 
 
     }//else if rect
 }
+
 var space = 0;
-function copyShapes(shapeId){
+function copyShapes(){
     space++;
 
 
@@ -109,6 +155,10 @@ function copyShapes(shapeId){
     console.log('tempId',tempId);
     shape = d3.select("#"+tempId);
     var id = idProcess(tempId);
+
+    console.log('shapecolor',shapeColor,tempFill.r, tempFill.g,tempFill.b);
+    // console.log('rgb',)
+    console.log('shapeStroke',shapeStroke);
 
 
     if(id === "circle"){
@@ -126,10 +176,16 @@ function copyShapes(shapeId){
             .attr("id",shapeId+"_copy")
             .attr("x", 100+ space*60)
             .attr("y", 50)
-            .attr("fill",shapeColor)
+            .attr("fill",shapeColor.toString())
+            // .attr("fill","green")
             .attr("stroke",shapeStroke)
             .attr("width", shapeWidth)
             .attr("height", shapeHeight);
+
+
+
+        // rects.style('fill',shapeColor.toString());
+
     }
 
 
@@ -203,8 +259,11 @@ d3.select('svg').on('click', function(d, i) {
             .style("stroke-width", "6px");
         document.getElementById('shapeFormat').style.display = "block";
         // d3.selectAll(".pointC").style("opacity",1);
-
+        shapeColor = d3.select("#"+tempId).style("fill");
+        tempFill = d3.rgb(shapeColor);
+        shapeStroke = d3.select("#"+tempId).style("stroke");
         shapeWidth = d3.select("#"+tempId).style("width");
+        tempStroke = d3.rgb(shapeStroke);
         shapeHeight = d3.select("#"+tempId).style("height");
 
     }else if(id==="circle"){
@@ -212,6 +271,8 @@ d3.select('svg').on('click', function(d, i) {
             .style("stroke-width", "6px");
         document.getElementById('shapeFormat').style.display = "block";
         // d3.selectAll(".pointE").style("opacity",0);
+        shapeColor = d3.select("#"+tempId).style("fill");
+        shapeStroke = d3.select("#"+tempId).style("stroke");
         shapeWidth = d3.select("#"+tempId).style("rx");
         shapeHeight = d3.select("#"+tempId).style("ry");
 
@@ -220,25 +281,13 @@ d3.select('svg').on('click', function(d, i) {
         d3.selectAll("ellipse").style('stroke-width',"2px");
         d3.selectAll(".pointC").style("opacity",0);
         d3.selectAll(".pointE").style("opacity",0);
+
         document.getElementById('shapeFormat').style.display = "none";
     }
-    // else{
-    //     var id = idProcess(tempId);
-    //     if(id ==="rect"){
-    //         d3.select("#"+tempId).transition()
-    //             .style("stroke-width", "6px");
-    //         document.getElementById('shapeFormat').style.display = "block";
-    //         // d3.selectAll(".pointC").style("opacity",1);
-    //
-    //     }else if(id==="circle"){
-    //         d3.select("#"+tempId).transition()
-    //             .style("stroke-width", "6px");
-    //         document.getElementById('shapeFormat').style.display = "block";
-    //         // d3.selectAll(".pointE").style("opacity",0);
-    //
-    //     }
-    //
-    // }
+
+    console.log('red in rgv',d3.rgb("red"));
+
+
 
 });
 

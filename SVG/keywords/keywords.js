@@ -50,11 +50,13 @@ recognition.onresult = function(event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
-            // console.log("final_transcript");
-            // console.log('final',final_transcript);
             count++;
             //this is where I call a query processer, when the speech input ends
-            QueryProcess(final_transcript);
+            if(command_flag === true){
+                QueryProcess(final_transcript);
+                document.getElementById('listen').style.display = "none";
+            }
+
 
             // annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
@@ -79,10 +81,7 @@ recognition.onresult = function(event) {
                     command_flag =false;
                 }
             }
-            // console.log("*interim_transcript", interim_transcript, event.results[0][0].transcript);
-            // console.log("**interim_transcript", event.results[0][0].transcript);
 
-            // console.log(interim_transcript);
         }
     }
     if(interim_transcript!='') {
@@ -95,6 +94,7 @@ recognition.onresult = function(event) {
 
 
     }
+
     // final_transcript = capitalize(final_transcript);
     // final_span.innerHTML = linebreak(final_transcript);
     // interim_span.innerHTML = linebreak(interim_transcript);

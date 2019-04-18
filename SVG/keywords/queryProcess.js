@@ -8,7 +8,7 @@ function QueryProcess(script){
         return tokenStr.indexOf(n) > -1;
     });
 
-    if(["draw","insert","create","put","generate"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    if(["draw","insert","create","put","generate","add"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
         let shape = ["circle","rectangle","square","circles","rectangles","squares"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
@@ -22,17 +22,18 @@ function QueryProcess(script){
         });
         let n = mapToNumber(count[0]);
         drawShapes(shape[0],color[0],n);
+        // putRect();
     }else if(["copy","duplicate","paste"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('copy');
 
-        copyShapes(shapeId);
+        copyShapes();
     }else if(["remove","delete","clear"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
         let shape = ["circle","rectangle","square","circles","rectangles","squares"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
 
-        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white"].filter(function(n) {
+        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","orange","purple"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
 
