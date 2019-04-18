@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- USE DEVELOPMENT VERSION -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Multimodal Simple Canvas Button</title>
+
+</head>
+
+<body>
+
+
+<div class="listen_center">
+    <h4 class ="b" id="statusdiv">Hold touch to initiate speech recognition.</h4>
+    <p class="b" id="log"><em>log message</em></p>
+    <h3 class ="b" id="output">diagnostic messages</h3>
+
+
+</div>
+
+<div class ="listen_ear" id="content"><img src="./img/listen.png" id="listen"  width="66" height="66" style="display:none;"></div>
+
+<div class="center" id="container"></div>
+
+<div class="b">
+    <h4 class="b"><br> ex) draw a (green) circle
+        <br> ex) remove all circles
+        <br> ex) change circles to green
+        <!--<br> ex) system remove last (drawn) circle-->
+    </h4>
+
+    <div style="display:none;" id="shapeFormat"> Fill Color:
+        <select class = "b" id ="color">
+            <option value="black">black</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="purple">purple</option>
+            <option value="magenta">magenta</option>
+            <option value="pink">pink</option>
+            <option value="peru">peru</option>
+            <option value="salmon">salmon</option>
+            <option value="magenta">magenta</option>
+            <option value="wheat">wheat</option>
+            <option value="violet">violet</option>
+            <option value="plum">plum</option>
+            <option value="tomato">tomato</option>
+            <option value="teal">teal</option>
+            <option value="silver">silver</option>
+        </select><br><br>
+
+        Border Color:
+        <select class="b" id="border_color">
+            <option value="black">black</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="purple">purple</option>
+            <option value="magenta">magenta</option>
+            <option value="pink">pink</option>
+            <option value="peru">peru</option>
+            <option value="salmon">salmon</option>
+            <option value="magenta">magenta</option>
+            <option value="wheat">wheat</option>
+            <option value="violet">violet</option>
+            <option value="plum">plum</option>
+            <option value="tomato">tomato</option>
+            <option value="teal">teal</option>
+            <option value="silver">silver</option>
+            <option value="white">white</option>
+        </select><br></div>
+
+
+</div>
+
+
+
+
+<div class="d">
+    <input class = "c"  type="image" id ="touchRect" src="./img/rect.png"  width="66" height="66" />
+    <input class = "c"  type="image" id="touchCircle" src="./img/circle.svg"  width="66" height="66"/>
+    <!--<input class = "c" onClick="removeShapes();" type="image" id="remove_shapes" src="./img/eraser.png"  width="66" height="66"/>-->
+</div>
+
+
+
+
+
+
+
+<script src="rect.js"></script>
+<script src="circle.js"></script>
+<script src="keywords.js"></script>
+<script src="queryProcess.js"></script>
+<script src="speechFunc.js"></script>
+<script src="speechRect.js"></script>
+<script src="speechCircle.js"></script>
+<script src="copyShapes.js"></script>
+
+
+
+
+</body>
+
+</html>
