@@ -37,6 +37,8 @@ if (annyang) {
     // annyang.start();
 }
 
+// console.log("log message from writing",$("#log").val($(this).val()));
+
 
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
@@ -54,6 +56,7 @@ recognition.onresult = function(event) {
             //this is where I call a query processer, when the speech input ends
             if(command_flag === true){
                 QueryProcess(final_transcript);
+                // $("#log").text(final_transcript);
                 $("#log").text(final_transcript);
                 document.getElementById('listen').style.display = "none";
             }
@@ -85,7 +88,9 @@ recognition.onresult = function(event) {
     if(interim_transcript!='') {
         if(command_flag === true){
             document.getElementById('listen').style.display = "block";
-            $("#log").text(interim_transcript);
+            // $("#log").text(interim_transcript);
+            $("#log").val(interim_transcript);
+
         }else{
             document.getElementById('listen').style.display = "none";
         }
@@ -93,8 +98,5 @@ recognition.onresult = function(event) {
 
     }
 
-    // final_transcript = capitalize(final_transcript);
-    // final_span.innerHTML = linebreak(final_transcript);
-    // interim_span.innerHTML = linebreak(interim_transcript);
 };
 
