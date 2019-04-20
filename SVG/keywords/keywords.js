@@ -55,13 +55,11 @@ recognition.onresult = function(event) {
             count++;
             //this is where I call a query processer, when the speech input ends
             if(command_flag === true){
+                $("#log").val(final_transcript);
                 QueryProcess(final_transcript);
                 // $("#log").text(final_transcript);
-                $("#log").text(final_transcript);
                 document.getElementById('listen').style.display = "none";
             }
-
-
             // annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
