@@ -170,7 +170,7 @@ d3.select('svg').on('touchend', function(d, i) {
     if(id ==="rect"){
         // d3.select("#"+tempId).transition()
         //     .style("stroke-width", "6px");
-        // document.getElementById('shapeFormat').style.display = "block";
+        document.getElementById('shapeFormat').style.display = "block";
 
         d3.selectAll("ellipse").each(function(d,i){
             var elt = d3.select(this);

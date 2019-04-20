@@ -54,6 +54,7 @@ recognition.onresult = function(event) {
             //this is where I call a query processer, when the speech input ends
             if(command_flag === true){
                 QueryProcess(final_transcript);
+                $("#log").text(final_transcript);
                 document.getElementById('listen').style.display = "none";
             }
 
@@ -65,16 +66,13 @@ recognition.onresult = function(event) {
             command_flag = false;
             if(count === 0){
                 if(magic_word[0] === "system" || magic_word[0] === " system"){
-                    console.log('first system');
                     command_flag =true;
                     // $("#log").text(interim_transcript);
                 }else{
-                    console.log('first system');
                     command_flag =false;
                 }
             }else{
                 if(magic_word[1] === "system" || magic_word[1] === " system" ){
-                    console.log('second system');
                     command_flag =true;
                     // $("#log").text(interim_transcript);
                 }else{

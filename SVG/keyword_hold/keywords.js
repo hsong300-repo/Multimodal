@@ -39,8 +39,8 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             // console.log("final_transcript");
-            console.log('final',final_transcript);
             count++;
+            $("#log").text(final_transcript);
             QueryProcess(final_transcript);
             document.getElementById('listen').style.display = "none";
         } else {
