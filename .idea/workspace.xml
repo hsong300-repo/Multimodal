@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SVG/keyword_hold/textProcess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keyword_hold/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keyword_hold/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keyword_hold/keywords.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keyword_hold/keywords.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keyword_hold/queryProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keyword_hold/queryProcess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keyword_hold/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keyword_hold/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/copyCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/keywords.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/keywords.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/queryProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/queryProcess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/speechCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVG/keywords/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/speechRect.js" afterDir="false" />
-    </list>
+    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -154,7 +141,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/speechFunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-586">
+            <state relative-caret-position="2580">
               <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
             </state>
           </provider>
@@ -391,12 +378,12 @@
       <workItem from="1555461800429" duration="1052000" />
       <workItem from="1555470815646" duration="45088000" />
       <workItem from="1555632439775" duration="971000" />
-      <workItem from="1555732111545" duration="7573000" />
+      <workItem from="1555732111545" duration="7813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199168000" />
+    <option name="totallyTimeSpent" value="199408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -409,9 +396,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15850447" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15850447" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -423,7 +409,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.21287128" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.21287128" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.25903615" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -726,7 +712,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/speechFunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-586">
+        <state relative-caret-position="2580">
           <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
         </state>
       </provider>
