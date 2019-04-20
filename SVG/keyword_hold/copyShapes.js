@@ -133,10 +133,6 @@ function copyRect() {
 
 }//end Rectangle
 
-// var svg = d3.select('body').append('svg');
-// var cId = 0;
-//
-// d3.select('#touchCircle').on('click', function () {
-//     new Ellipse();
-// });
+
+
 
