@@ -96,10 +96,14 @@ function copyCircle() {
 
     if(!isDragging){
         self.eData = [{
-            x1: 100+cId*30,
-            y1: 200+cId*30,
-            x2: 100+cId*30+20,
-            y2: 200+cId*30+20,
+            // x1: 100+cId*30,
+            // y1: 200+cId*30,
+            // x2: 100+cId*30+20,
+            // y2: 200+cId*30+20,
+            x1: 50+cId*30,
+            y1: 50,
+            x2: 70+cId*30,
+            y2: 50+cId*30,
             a: parseInt(shapeWidth,10),
             b: parseInt(shapeHeight,10)
         }];

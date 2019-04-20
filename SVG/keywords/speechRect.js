@@ -74,7 +74,8 @@ function putRect(color) {
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
     rId++;
-    self.rectData = [ { x: 100+rId*10, y: 100+rId*10 }, { x: 150+rId*10, y: 150+rId*10 } ];
+    // self.rectData = [ { x: rId*10, y: rId*10 }, { x: 50+rId*10, y: 50+rId*10 } ];
+    self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 65+rId*20, y: 65 } ];
     self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);

@@ -89,7 +89,9 @@ function copyRect() {
     // .attr("width", shapeWidth)
     // .attr("height", shapeHeight);
 
-    self.rectData = [ { x: 100+rId*10, y: 100+rId*30 }, { x: 100+rId*10+parseInt(shapeWidth,10), y: 100+rId*30+parseInt(shapeWidth,10) } ];
+    // self.rectData = [ { x: 15+rId*10, y: 15 }, { x: 15+rId*10+parseInt(shapeWidth,10), y: 15+parseInt(shapeWidth,10) } ];
+    // self.rectData = [ { x: 100+rId*10, y: 100+rId*30 }, { x: 100+rId*10+parseInt(shapeWidth,10), y: 100+rId*30+parseInt(shapeWidth,10) } ];
+    self.rectData = [ { x: 15+rId*10, y: 15 }, { x: 15+rId*10+parseInt(shapeWidth,10), y: 15+parseInt(shapeHeight,10) } ];
     self.rectangleElement = d3.select('svg').append('rect').attr("id",shapeId+"_copy").attr('class', 'rectangle').style("fill",color)
         .style("stroke",strokeColor).attr("width", shapeWidth).attr("height", shapeHeight).call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
