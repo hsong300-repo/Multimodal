@@ -27,6 +27,9 @@ function drawShapes(shape, color,count,stroke) {
         }
 
     }//else if rect
+
+    $("#output").text("Drawing complete");
+
 }
 
 function removeShapes(shape, color,count,stroke) {
@@ -79,6 +82,9 @@ function removeShapes(shape, color,count,stroke) {
 
 
     }//else if rect
+
+    $("#output").text("Removal complete");
+
 }
 
 var space = 0;
@@ -110,6 +116,9 @@ function copyShapes(count){
             new copyRect();
         }
     }
+
+    $("#output").text("Copy complete");
+
 
 }
 
@@ -146,10 +155,16 @@ $("#color").change(function () {
     console.log("id colorchange",shape);
     let fill = shapeFill();
     shape.style("fill",fill);
+
+    $("#output").text("Updated object style");
+
 });
 $("#border_color").change(function () {
     let stroke = strokeFill();
     shape.style("stroke",stroke);
+
+    $("#output").text("Updated object style");
+
 
 });
 

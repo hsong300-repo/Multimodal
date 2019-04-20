@@ -47,7 +47,8 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             count++;
-            $("#log").text(final_transcript);
+            // $("#log").text(final_transcript);
+            $("#log").val(final_transcript);
             QueryProcess(final_transcript);
             document.getElementById('listen').style.display = "none";
             annyang.abort();
@@ -61,7 +62,9 @@ recognition.onresult = function(event) {
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
 
-        $("#log").text(interim_transcript);
+        // $("#log").text(interim_transcript);
+        $("#log").val(interim_transcript);
+
 
     }
 
