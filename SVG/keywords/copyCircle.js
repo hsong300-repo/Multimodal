@@ -108,9 +108,7 @@ function copyCircle() {
             b: parseInt(shapeHeight,10)
         }];
         // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
-        self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy").attr('class', 'ellipse').style("fill",color)
-        // .style("fill",shapeColor)
-            .style("stroke",strokeColor).call(dragE);
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy").attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).call(dragE);
         self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
         self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);

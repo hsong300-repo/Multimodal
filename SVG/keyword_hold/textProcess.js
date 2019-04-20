@@ -1,7 +1,15 @@
+var input = document.getElementById("log");
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("submit").click();
+    }
+});
+
 // this is the function that process query that detects keywords and lead to certain function
-function QueryProcess(script){
+function textProcess(){
+    var script = $("#log").val();
     let myStr = script.toLowerCase();
-    console.log('myStr',myStr);
     let tokenStr = myStr.split(" ");
     //make it all lower case
     console.log('tokenizedStr',tokenStr);

@@ -40,7 +40,9 @@ recognition.onresult = function(event) {
             final_transcript += event.results[i][0].transcript;
             // console.log("final_transcript");
             count++;
-            $("#log").text(final_transcript);
+            $("#log").val(final_transcript);
+
+            // $("#log").text(final_transcript);
             QueryProcess(final_transcript);
             document.getElementById('listen').style.display = "none";
         } else {
@@ -50,7 +52,9 @@ recognition.onresult = function(event) {
     }
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
-        $("#log").text(interim_transcript);
+        // $("#log").text(interim_transcript);
+        $("#log").val(interim_transcript);
+
     }
 };
 

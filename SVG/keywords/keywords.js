@@ -55,8 +55,9 @@ recognition.onresult = function(event) {
             count++;
             //this is where I call a query processer, when the speech input ends
             if(command_flag === true){
-                $("#log").val(final_transcript);
                 QueryProcess(final_transcript);
+                $("#log").val(final_transcript);
+
                 // $("#log").text(final_transcript);
                 document.getElementById('listen').style.display = "none";
             }

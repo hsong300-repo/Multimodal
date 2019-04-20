@@ -27,6 +27,9 @@ function drawShapes(shape, color,count,stroke) {
         }
 
     }//else if rect
+
+    $("#output").text("Drawing complete");
+
 }
 
 function removeShapes(shape, color,count,stroke) {
@@ -79,6 +82,9 @@ function removeShapes(shape, color,count,stroke) {
 
 
     }//else if rect
+
+    $("#output").text("Removal complete");
+
 }
 
 var space = 0;
@@ -111,18 +117,27 @@ function copyShapes(count){
         }
     }
 
+    $("#output").text("Copy complete");
+
+
 }
 
 function shapeFill(){
     console.log('shape fill');
     var fillColor = $("#color option:selected").text();
 
+
+
     return fillColor;
+
+
 
 }
 
 function strokeFill(){
     var fillColor = $("#border_color option:selected").text();
+
+
 
     return fillColor;
 }
@@ -146,15 +161,20 @@ $("#color").change(function () {
     console.log("id colorchange",shape);
     let fill = shapeFill();
     shape.style("fill",fill);
+
+    $("#output").text("Updated object style");
+
 });
 $("#border_color").change(function () {
     let stroke = strokeFill();
     shape.style("stroke",stroke);
 
+    $("#output").text("Updated object style");
+
+
 });
 
 d3.select('svg').on('touchend', function(d, i) {
-// d3.select('svg').on('click', function(d, i) {
     // if (d3.event.defaultPrevented) return; // dragged
 
     // Somehow console.log the ID of the circle clicked on (if any).

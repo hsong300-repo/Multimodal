@@ -51,7 +51,6 @@ function removeShapes(shape, color,count,stroke) {
                 }
                 // console.log(elt.attr("style"));
             })
-
         }else {
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
@@ -85,6 +84,8 @@ function removeShapes(shape, color,count,stroke) {
     }//else if rect
 
     $("#output").text("Removal completed");
+
+
 
 }
 
