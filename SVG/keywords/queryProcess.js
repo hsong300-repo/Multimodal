@@ -14,7 +14,7 @@ function QueryProcess(script){
             return tokenStr.indexOf(n) > -1;
         });
 
-        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","lightblue"].filter(function(n) {
+        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
 
@@ -40,7 +40,7 @@ function QueryProcess(script){
         });
 
         console.log('shpae',shape);
-        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","lightblue"].filter(function(n) {
+        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
 

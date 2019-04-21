@@ -109,10 +109,14 @@ function putCircle(color) {
         cId++;
         self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).call(dragE);
         // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'pointE').style("fill",color).call(dragE);
-        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+        self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+        self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
         updateEllipse();
     }
 

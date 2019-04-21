@@ -10,9 +10,15 @@ function drawShapes(shape, color,count,stroke) {
             for (i = 0; i < count; i++) {
                 new putCircle(color);
             }//for loop
+
+            $("#output").text("Drawing completed");
+
         } else {
 
             new putCircle(color);
+
+            $("#output").text("Drawing completed");
+
 
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
@@ -20,15 +26,21 @@ function drawShapes(shape, color,count,stroke) {
             for (i = 0; i < count; i++) {
                 new putRect(color);
             }//for loop
+
+            $("#output").text("Drawing completed");
+
         } else {
 
             new putRect(color);
 
+            $("#output").text("Drawing completed");
+
         }
+
+
 
     }//else if rect
 
-    $("#output").text("Drawing completed");
 
 }
 
@@ -51,9 +63,15 @@ function removeShapes(shape, color,count,stroke) {
                 }
                 // console.log(elt.attr("style"));
             })
+
+            $("#output").text("Removal completed");
+
         }else {
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
+
+            $("#output").text("Removal completed");
+
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         // d3.selectAll("rect").remove();
@@ -75,15 +93,21 @@ function removeShapes(shape, color,count,stroke) {
                 }
                 // console.log(elt.attr("style"));
             })
+
+            $("#output").text("Removal completed");
+
         }else {
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
+
+            $("#output").text("Removal completed");
+
         }
 
 
     }//else if rect
 
-    $("#output").text("Removal completed");
+    // $("#output").text("Removal completed");
 
 
 
@@ -105,8 +129,14 @@ function copyShapes(count){
             for (i = 0; i < count; i++) {
                 new copyCircle();
             }//for loop
+
+            $("#output").text("Copy completed");
+
         } else {
             new copyCircle();
+
+            $("#output").text("Copy completed");
+
 
         }
     }else if(id === "rect"){
@@ -114,12 +144,18 @@ function copyShapes(count){
             for (i = 0; i < count; i++) {
                 new copyRect();
             }//for loop
+
+            $("#output").text("Copy completed");
+
         } else {
             new copyRect();
         }
+
+        $("#output").text("Copy completed");
+
     }
 
-    $("#output").text("Copy completed");
+    // $("#output").text("Copy completed");
 
 
 }
@@ -187,6 +223,20 @@ d3.select('svg').on('click', function(d, i) {
         //     .style("stroke-width", "6px");
         document.getElementById('shapeFormat').style.display = "block";
 
+        d3.selectAll("rect").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId){
+                d3.select(this).transition()
+                    .style("stroke-width", "6px");
+            }else{
+                d3.select(this).transition()
+                    .style("stroke-width", "2px");
+            }
+        });
+
+        d3.selectAll(".pointC").style("opacity",0);
+        d3.selectAll(".pointC").filter("."+shapeId).style("opacity",1);
+
         d3.selectAll("ellipse").each(function(d,i){
             var elt = d3.select(this);
             if(elt.attr("id") === shapeId){
@@ -198,16 +248,7 @@ d3.select('svg').on('click', function(d, i) {
             }
         });
 
-        d3.selectAll("rect").each(function(d,i){
-            var elt = d3.select(this);
-            if(elt.attr("id") === shapeId){
-                d3.select(this).transition()
-                    .style("stroke-width", "6px");
-            }else{
-                d3.select(this).transition()
-                    .style("stroke-width", "2px");
-            }
-        });
+
 
     }else if(id==="circle"){
         // d3.select("#"+tempId).transition()
@@ -224,6 +265,11 @@ d3.select('svg').on('click', function(d, i) {
            }
         });
 
+        d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll(".pointE").filter("."+shapeId).style("opacity",1);
+        // ellipses
+
+        //rect part
         d3.selectAll("rect").each(function(d,i){
             var elt = d3.select(this);
             if(elt.attr("id") === shapeId){
@@ -240,10 +286,11 @@ d3.select('svg').on('click', function(d, i) {
         document.getElementById('shapeFormat').style.display = "block";
 
     }else{
+
+        console.log('svg');
         d3.selectAll("rect").style('stroke-width',"2px");
         d3.selectAll("ellipse").style('stroke-width',"2px");
-        d3.selectAll(".pointC").style("opacity",0);
-        d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll("circle").style("opacity",0);
 
         document.getElementById('shapeFormat').style.display = "none";
     }

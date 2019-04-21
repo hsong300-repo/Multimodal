@@ -212,14 +212,17 @@ d3.select('svg').on('click', function(d, i) {
         // d3.select("#"+tempId).transition()
         //     .style("stroke-width", "6px");
 
+        // d3.selectAll(".pointE").each(function(d,i){
         d3.selectAll("ellipse").each(function(d,i){
            var elt = d3.select(this);
            if(elt.attr("id") === shapeId){
                d3.select(this).transition()
                    .style("stroke-width", "6px");
+
            }else{
                d3.select(this).transition()
                    .style("stroke-width", "2px");
+
            }
         });
 
@@ -239,10 +242,10 @@ d3.select('svg').on('click', function(d, i) {
         document.getElementById('shapeFormat').style.display = "block";
 
     }else{
-        d3.selectAll("rect").style('stroke-width',"2px");
-        d3.selectAll("ellipse").style('stroke-width',"2px");
-        d3.selectAll(".pointC").style("opacity",0);
-        d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll("rect").style('stroke-width',"2px").attr("opacity","1");
+        d3.selectAll("ellipse").style('stroke-width',"2px").attr("opacity","1");
+        d3.selectAll("circle.pointC").style("opacity",0);
+        d3.selectAll("circle.pointE").style("opacity",0);
 
         document.getElementById('shapeFormat').style.display = "none";
     }

@@ -26,6 +26,7 @@ function Ellipse() {
                 }];
                 // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
                 self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').call(dragE);
+                // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'pointE').call(dragE);
                 self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
