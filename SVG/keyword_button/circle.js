@@ -25,12 +25,16 @@ function Ellipse() {
                     b: 0
                 }];
                 // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
+                cId++;
                 self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').call(dragE);
-                // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'pointE').call(dragE);
-                self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-                self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-                self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-                self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+                self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+                self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+                self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+                self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+                // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+                // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+                // self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+                // self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 updateEllipse();
             }
         } else {
@@ -39,8 +43,8 @@ function Ellipse() {
         }
         isDown = !isDown;
         click++;
-        cId++;
-        // console.log('outside');
+        // cId++;
+        console.log('outside');
     })
         .on('touchmove', function () {
         // .on('mousemove', function () {
@@ -57,38 +61,6 @@ function Ellipse() {
                 console.log('touch more than two');
             }
         });
-
-    // document.getElementById('shapeFormat').style.display = "block";
-    // $("#color").change(function () {
-    //     console.log("id colorchange",shape);
-    //     let fill = shapeFill();
-    //     shape.style("fill",fill);
-    // });
-    // $("#border_color").change(function () {
-    //     let stroke = strokeFill();
-    //     shape.style("stroke",stroke);
-    //
-    // });
-    // var prev;
-    // var count = 0;
-    // function clicked(d,i){
-    //     count ++;
-    //     console.log('count',count);
-    //     // if (d3.event.currentTarget.blur()) return; // dragged
-    //
-    //     if (d3.event.defaultPrevented) return; // dragged
-    //
-    //     console.log('d3.select',d3.select(this).attr("id"));
-    //     var id = d3.select(this).attr("id");
-    //     shape = d3.select("#"+id);
-    //
-    //     d3.select(this).transition()
-    //         .style("stroke-width", "6px");
-    //
-    // }
-    //changing colors
-
-
 
     function updateEllipse() {
         ellipse = d3.select(self.ellipseElement[0][0]).data(self.eData);
