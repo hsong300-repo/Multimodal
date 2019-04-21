@@ -1,3 +1,4 @@
+var count = 0;
 function copyCircle() {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
@@ -107,16 +108,21 @@ function copyCircle() {
             a: parseInt(shapeWidth,10),
             b: parseInt(shapeHeight,10)
         }];
-        // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
-        self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy").attr('class', 'ellipse').style("fill",color)
-        // .style("fill",shapeColor)
-            .style("stroke",strokeColor).call(dragE);
-        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-        updateEllipse();
         cId++;
+        count++;
+        // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy"+count).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).call(dragE);
+        // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        // self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
+        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' +" "+shapeId + "_copy"+count).call(dragP);
+        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
+        self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
+        self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
+
+        updateEllipse();
+        // cId++;
     }
 
     function dragStart(d) {

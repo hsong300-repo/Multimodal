@@ -1,8 +1,8 @@
 // this is the function that process query that detects keywords and lead to certain function
 function QueryProcess(script){
     let myStr = script.toLowerCase();
-    console.log('myStr',myStr);
     let tokenStr = myStr.split(" ");
+
     //make it all lower case
     console.log('tokenizedStr',tokenStr);
     var result = ["remove","insert","create","put","generate"].filter(function(n) {
@@ -14,7 +14,7 @@ function QueryProcess(script){
             return tokenStr.indexOf(n) > -1;
         });
 
-        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","lightblue"].filter(function(n) {
+        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
 
@@ -39,9 +39,12 @@ function QueryProcess(script){
             return tokenStr.indexOf(n) > -1;
         });
 
-        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","orange","purple"].filter(function(n) {
+        console.log('shpae',shape);
+        let color = ["red","green","yellow","pink","blue","lightblue","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"].filter(function(n) {
             return tokenStr.indexOf(n) > -1;
         });
+
+        console.log('color',color);
 
         removeShapes(shape[0],color[0]);
 
