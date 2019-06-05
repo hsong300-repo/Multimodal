@@ -40,9 +40,8 @@ function drawShapes(shape, color,count,stroke) {
 }
 
 function removeShapes(shape, color,count,stroke) {
-
     if (shape === "circle" || shape === "circles") {
-        if(color){
+        if(color){// when specify color and shape
             var inColor = d3.rgb(color);
 
             //check if same color
@@ -53,15 +52,35 @@ function removeShapes(shape, color,count,stroke) {
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
                     d3.select(this).remove();
+                    d3.selectAll(".pointE").remove(); //testing
                 }else{
                     console.log('light blue');
                 }
                 // console.log(elt.attr("style"));
-            })
+            });
 
             $("#output").text("Removal completed");
 
-        }else {
+        }else if(stroke){
+            var inColor = d3.rgb(stroke);
+
+            //check if same color
+            d3.selectAll('ellipse').each(function(d,i){
+                var elt = d3.select(this);
+                console.log(elt.style("fill"));
+                var color = d3.rgb(elt.style("fill"));
+                if(stroke.r === inColor.r && stroke.g === inColor.g && stroke.b === inColor.b){
+                    d3.select(this).remove();
+                    d3.selectAll(".pointE").remove(); //testing
+                }else{
+                    console.log('light blue');
+                }
+                // console.log(elt.attr("style"));
+            });
+
+            $("#output").text("Removal completed");
+
+        }else {// when specify shape
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
@@ -83,11 +102,12 @@ function removeShapes(shape, color,count,stroke) {
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
                     d3.select(this).remove();
+                    d3.selectAll(".pointC").remove(); // testing
                 }else{
                     console.log('light blue');
                 }
                 // console.log(elt.attr("style"));
-            })
+            });
 
             $("#output").text("Removal completed");
 

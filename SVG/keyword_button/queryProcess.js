@@ -50,7 +50,16 @@ function QueryProcess(script){
             return tokenStr.indexOf(n) > -1;
         });
 
-        var strokeColor = "black"; // dafault
+        if(["stroke","line"].filter(n => tokenStr.indexOf(n) > -1).length > 0){ // weird
+            var strokeColor = colors.filter(function(n) {
+                return tokenStr.indexOf(n) > -1;
+            });
+        }else{
+            var strokeColor = "black"; // dafault
+        }
+
+        console.log('stroke color normal',strokeColor);
+
         var n = mapToNumber(count[0]);
     }
 
@@ -130,29 +139,4 @@ function QueryProcess(script){
     // }
 }
 
-function mapToNumber(str){
-    switch(str){
-        case "one":
-            return 1;
-        case "two":
-            return 2;
-        case "three":
-            return 3;
-        case "four":
-            return 4;
-        case "five":
-            return 5;
-        case "six":
-            return 6;
-        case "seven":
-            return 7;
-        case "eight":
-            return 8;
-        case "nine":
-            return 9;
-        case "ten":
-            return 10;
-    }
-
-}
 

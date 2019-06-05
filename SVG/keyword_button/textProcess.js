@@ -7,7 +7,7 @@ const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
 //colors
 const colors = ["red","green","yellow","pink","blue","purple","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"];
 //counts
-const counts = ["one","two","three","four","five","six","seven","eight","nine","ten"];
+const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
 
 
 function splitAnd(script){
@@ -86,7 +86,15 @@ function textProcess(){
             return tokenStr.indexOf(n) > -1;
         });
 
-        var strokeColor = "black"; // dafault
+        if(["stroke","line"].filter(n => tokenStr.indexOf(n) > -1).length > 0){ // weird
+            var strokeColor = colors.filter(function(n) {
+                return tokenStr.indexOf(n) > -1;
+            });
+        }else{
+            var strokeColor = "black"; // dafault
+        }
+
+        console.log('stroke color normal',strokeColor);
         var n = mapToNumber(count[0]);
     }
 
@@ -118,29 +126,53 @@ function textProcess(){
 }
 
 function mapToNumber(str){
-    switch(str){
-        case "one":
-            return 1;
-        case "two":
-            return 2;
-        case "three":
-            return 3;
-        case "four":
-            return 4;
-        case "five":
-            return 5;
-        case "six":
-            return 6;
-        case "seven":
-            return 7;
-        case "eight":
-            return 8;
-        case "nine":
-            return 9;
-        case "ten":
-            return 10;
-
+    if(isNaN(str)){// str
+        switch(str){
+            case "one":
+                return 1;
+            case "two":
+                return 2;
+            case "three":
+                return 3;
+            case "four":
+                return 4;
+            case "five":
+                return 5;
+            case "six":
+                return 6;
+            case "seven":
+                return 7;
+            case "eight":
+                return 8;
+            case "nine":
+                return 9;
+            case "ten":
+                return 10;
+            case "1":
+                return 1;
+            case "2":
+                return 2;
+            case "3":
+                return 3;
+            case "4":
+                return 4;
+            case "5":
+                return 5;
+            case "6":
+                return 6;
+            case "7":
+                return 7;
+            case "8":
+                return 8;
+            case "9":
+                return 9;
+            case "10":
+                return 10;
+        }// end of switch
+    }else{
+        return str;
     }
+
 
 }
 
