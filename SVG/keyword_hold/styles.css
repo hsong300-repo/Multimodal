@@ -133,8 +133,8 @@ svg {
     width: 800px;
 }
 rect {
-    fill: lightblue;
-    stroke: blue;
+    fill: grey;
+    stroke: black;
     stroke-width: 2px;
 }
 /*rectangle*/
@@ -154,8 +154,8 @@ ellipse {
     /*stroke: mediumvioletred;*/
     /*stroke-width: 2px;*/
     /*fill: palevioletred;*/
-    fill: lightblue;
-    stroke: blue;
+    fill: grey;
+    stroke: black;
     stroke-width: 2px;
 }
 
