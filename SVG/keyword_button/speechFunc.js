@@ -4,18 +4,17 @@ function drawShapes(shape, color,count,stroke) {
         d3.event.preventDefault();
     }
 
-
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
-                new putCircle(color);
+                new putCircle(color,stroke);
             }//for loop
 
             $("#output").text("Drawing completed");
 
         } else {
 
-            new putCircle(color);
+            new putCircle(color,stroke);
 
             $("#output").text("Drawing completed");
 
@@ -24,24 +23,20 @@ function drawShapes(shape, color,count,stroke) {
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
             for (i = 0; i < count; i++) {
-                new putRect(color);
+                new putRect(color,stroke);
             }//for loop
 
             $("#output").text("Drawing completed");
 
         } else {
 
-            new putRect(color);
+            new putRect(color,stroke);
 
             $("#output").text("Drawing completed");
 
         }
 
-
-
     }//else if rect
-
-
 }
 
 function removeShapes(shape, color,count,stroke) {
