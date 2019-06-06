@@ -39,12 +39,13 @@ function drawShapes(shape, color,count,stroke) {
     }//else if rect
 }
 
-function removeShapes(shape, color,count,stroke) {
+function removeShapes(shape, color,stroke) {
+    console.log('remove shape color count stroke:',shape,color,count,stroke);
     if (shape === "circle" || shape === "circles") {
-        if(color){// when specify color and shape
+        if(color && stroke === "n"){// when specify color and shape
+            console.log('***color ');
             var inColor = d3.rgb(color);
 
-            //check if same color
             console.log('her color check');
             d3.selectAll('ellipse').each(function(d,i){
                 var elt = d3.select(this);
@@ -53,48 +54,46 @@ function removeShapes(shape, color,count,stroke) {
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
                     d3.select(this).remove();
                     d3.selectAll(".pointE").remove(); //testing
-                }else{
-                    console.log('light blue');
                 }
-                // console.log(elt.attr("style"));
-            });
-
+            });// iterate on ellipses
             $("#output").text("Removal completed");
+        }else if(color && stroke !== "n"){
+            console.log('***both color and  stroke');
 
-        }else if(stroke){
-            var inColor = d3.rgb(stroke);
+            var inColor = d3.rgb(color);
+            var strokeColor = d3.rgb(stroke);
 
-            //check if same color
+
+            console.log('her color check');
             d3.selectAll('ellipse').each(function(d,i){
                 var elt = d3.select(this);
+                var slt = d3.select(this);
+
                 console.log(elt.style("fill"));
                 var color = d3.rgb(elt.style("fill"));
-                if(stroke.r === inColor.r && stroke.g === inColor.g && stroke.b === inColor.b){
+                var scolor = d3.rgb(slt.style("stroke"));
+
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b && scolor.r === strokeColor.r && scolor.g === strokeColor.g && scolor.b === strokeColor.b){
                     d3.select(this).remove();
                     d3.selectAll(".pointE").remove(); //testing
-                }else{
-                    console.log('light blue');
                 }
-                // console.log(elt.attr("style"));
-            });
-
+            });// iterate on ellipses
             $("#output").text("Removal completed");
 
-        }else {// when specify shape
+        }else{// when specify shape
+            console.log('***remove all circles');
+
+
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
             $("#output").text("Removal completed");
-
         }
-    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
-        // d3.selectAll("rect").remove();
-        // d3.selectAll(".pointC").remove();
-
-        if(color){
+    }else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
+        if(color && stroke === "n"){// when specify color and shape
+            console.log('***color ');
             var inColor = d3.rgb(color);
 
-            //check if same color
             console.log('her color check');
             d3.selectAll('rect').each(function(d,i){
                 var elt = d3.select(this);
@@ -102,13 +101,31 @@ function removeShapes(shape, color,count,stroke) {
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
                     d3.select(this).remove();
-                    d3.selectAll(".pointC").remove(); // testing
-                }else{
-                    console.log('light blue');
+                    d3.selectAll(".pointC").remove(); //testing
                 }
-                // console.log(elt.attr("style"));
-            });
+            });// iterate on ellipses
+            $("#output").text("Removal completed");
+        }else if(color && stroke !== "n"){
+            console.log('***both color and  stroke');
 
+            var inColor = d3.rgb(color);
+            var strokeColor = d3.rgb(stroke);
+
+
+            console.log('her color check');
+            d3.selectAll('rect').each(function(d,i){
+                var elt = d3.select(this);
+                var slt = d3.select(this);
+
+                console.log(elt.style("fill"));
+                var color = d3.rgb(elt.style("fill"));
+                var scolor = d3.rgb(slt.style("stroke"));
+
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b && scolor.r === strokeColor.r && scolor.g === strokeColor.g && scolor.b === strokeColor.b){
+                    d3.select(this).remove();
+                    d3.selectAll(".pointC").remove(); //testing
+                }
+            });// iterate on ellipses
             $("#output").text("Removal completed");
 
         }else {
@@ -121,19 +138,13 @@ function removeShapes(shape, color,count,stroke) {
 
 
     }//else if rect
-
-    // $("#output").text("Removal completed");
-
-
-
-}
+}// end of remove shapes
 
 var space = 0;
 function copyShapes(count){
     space++;
 
     console.log('shapeId',shapeId);
-
     var tempId = shapeId;
     console.log('tempId',tempId);
     shape = d3.select("#"+tempId);
@@ -144,24 +155,18 @@ function copyShapes(count){
             for (i = 0; i < count; i++) {
                 new copyCircle();
             }//for loop
-
             $("#output").text("Copy completed");
 
         } else {
             new copyCircle();
-
             $("#output").text("Copy completed");
-
-
         }
     }else if(id === "rect"){
         if (count) {
             for (i = 0; i < count; i++) {
                 new copyRect();
             }//for loop
-
             $("#output").text("Copy completed");
-
         } else {
             new copyRect();
         }
@@ -169,10 +174,7 @@ function copyShapes(count){
         $("#output").text("Copy completed");
 
     }
-
     // $("#output").text("Copy completed");
-
-
 }
 
 function shapeFill(){
@@ -220,6 +222,7 @@ $("#border_color").change(function () {
 
 });
 
+//when click on a object those objects will have thicker width
 d3.select('svg').on('click', function(d, i) {
     // if (d3.event.defaultPrevented) return; // dragged
 

@@ -70,8 +70,6 @@ function textProcess(){
 
     }else{
         console.log('normal');
-
-
         var tokenStr = myStr.split(" ");
 
         var shape = shapes.filter(function(n) {
@@ -91,7 +89,7 @@ function textProcess(){
                 return tokenStr.indexOf(n) > -1;
             });
         }else{
-            var strokeColor = "black"; // dafault
+            var strokeColor = "none"; // dafault
         }
 
         console.log('stroke color normal',strokeColor);

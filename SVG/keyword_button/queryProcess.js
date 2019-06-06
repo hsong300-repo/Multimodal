@@ -55,10 +55,10 @@ function QueryProcess(script){
                 return tokenStr.indexOf(n) > -1;
             });
         }else{
-            var strokeColor = "black"; // dafault
+            var strokeColor = "none"; // dafault
         }
 
-        console.log('stroke color normal',strokeColor);
+        console.log('fillColor and strokeColor',color,strokeColor);
 
         var n = mapToNumber(count[0]);
     }
@@ -89,54 +89,6 @@ function QueryProcess(script){
 
     }
 
-    // //make it all lower case
-    // console.log('tokenizedStr',tokenStr);
-    // var result = ["remove","insert","create","put","generate"].filter(function(n) {
-    //     return tokenStr.indexOf(n) > -1;
-    // });
-    //
-    // if(["draw","insert","create","put","generate","add"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
-    //     // console.log('insert token being processed',tokenStr);
-    //     let shape = ["circle","rectangle","square","circles","rectangles","squares"].filter(function(n) {
-    //         return tokenStr.indexOf(n) > -1;
-    //     });
-    //
-    //     let color = ["red","green","yellow","pink","blue","lightblue","purple","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"].filter(function(n) {
-    //         return tokenStr.indexOf(n) > -1;
-    //     });
-    //
-    //     let count = ["one","two","three","four","five","six","seven","eight","nine","ten"].filter(function(n) {
-    //         return tokenStr.indexOf(n) > -1;
-    //     });
-    //     let n = mapToNumber(count[0]);
-    //     drawShapes(shape[0],color[0],n);
-    //     // putRect();
-    // }else if(["copy","duplicate","paste","copies"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
-    //     console.log('copy');
-    //
-    //     let count = ["one","two","three","four","five","six","seven","eight","nine","ten"].filter(function(n) {
-    //         return tokenStr.indexOf(n) > -1;
-    //     });
-    //     let n = mapToNumber(count[0]);
-    //
-    //     copyShapes(n);
-    // }else if(["remove","delete","clear"].filter(n => tokenStr.indexOf(n) > -1).length > 0){
-    //     console.log('delete');
-    //     let shape = ["circle","rectangle","square","circles","rectangles","squares"].filter(function(n) {
-    //         return tokenStr.indexOf(n) > -1;
-    //     });
-    //
-    //     console.log('shpae',shape);
-    //     let color = ["red","green","yellow","pink","blue","lightblue","purple","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"].filter(function(n) {
-    //         return tokenStr.indexOf(n) > -1;
-    //     });
-    //
-    //     console.log('color',color);
-    //
-    //     removeShapes(shape[0],color[0]);
-    // }else{
-    //     $("#output").text("A command did not work. Try again.");
-    // }
 }
 
 
