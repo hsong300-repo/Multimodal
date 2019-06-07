@@ -139,6 +139,3 @@ function Ellipse() {
 
 }//end Ellipse
 
-
-
-

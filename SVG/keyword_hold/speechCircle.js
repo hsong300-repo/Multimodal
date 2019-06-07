@@ -5,7 +5,7 @@
 //     new Ellipse();
 // });
 
-function putCircle(color) {
+function putCircle(color,strokeColor) {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
 
@@ -107,7 +107,7 @@ function putCircle(color) {
         }];
         // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
         cId++;
-        self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).call(dragE);
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).call(dragE);
         // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'pointE').style("fill",color).call(dragE);
         // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
         // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
