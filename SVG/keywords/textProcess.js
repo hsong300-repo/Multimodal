@@ -40,6 +40,12 @@ function textProcess(){
     var script = $("#log").val();
     let myStr = script.toLowerCase();
     // there should be a case only when there is
+
+    if(["here","there"].filter(n=> myStr.indexOf(n) > -1).length > 0){
+        var here = true;
+    }else{
+        var here = false;
+    }
     if(["and","with"].filter(n => myStr.indexOf(n) > -1).length > 0){
         console.log('and with');
         var tokenStr = myStr.split(" ");
@@ -105,7 +111,8 @@ function textProcess(){
     // });
 
     if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        drawShapes(shape[0],color[0],n,strokeColor[0]);
+
+        drawShapes(shape[0],color[0],n,strokeColor[0],here);
         // putRect();
     }else if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('copy');

@@ -1,5 +1,5 @@
 
-function drawShapes(shape, color,count,stroke) {
+function drawShapes(shape, color,count,stroke,here) {
     function nozoom() {
         d3.event.preventDefault();
     }
@@ -7,33 +7,49 @@ function drawShapes(shape, color,count,stroke) {
     if (shape === "circle" || shape === "circles") {
         if (count) {
             for (i = 0; i < count; i++) {
-                new putCircle(color,stroke);
+                if(here === true){
+                    new putCircleHere(color,stroke);
+                }else{
+                    new putCircle(color,stroke);
+
+                }
+                // new putCircleHere(color,stroke);
+
             }//for loop
 
             $("#output").text("Drawing completed");
 
         } else {
 
-            new putCircle(color,stroke);
+            // new putCircle(color,stroke);
+            if(here === true){
+                new putCircleHere(color,stroke);
+            }else{
+                new putCircle(color,stroke);
+
+            }
+            // new putCircleHere(color,stroke);
 
             $("#output").text("Drawing completed");
-
 
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
             for (i = 0; i < count; i++) {
-                new putRect(color,stroke);
+                if(here === true){
+                    new putRectHere(color,stroke);
+                }else{
+                    new putRect(color,stroke);
+                }
             }//for loop
-
             $("#output").text("Drawing completed");
-
         } else {
-
-            new putRect(color,stroke);
-
+            if(here === true){
+                new putRectHere(color,stroke);
+            }else{
+                new putRect(color,stroke);
+            }
             $("#output").text("Drawing completed");
-
         }
 
     }//else if rect
