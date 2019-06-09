@@ -3,8 +3,8 @@ var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
 svg.on('touchstart', function() {
     m1 = d3.mouse(this);
-    if (!isDown && !isDrag) {
-        console.log('touchstart');
+    // if (!isDown && !isDrag) {
+    //     console.log('touchstart');
         // self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
         // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
         // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
@@ -12,11 +12,11 @@ svg.on('touchstart', function() {
         // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
         // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
         // updateRect();
-        isDrag = false;
-    } else {
-        console.log('drag');
-        isDrag = true;
-    }
+        // isDrag = false;
+    // } else {
+    console.log('drag');
+    isDrag = true;
+    // }
     isDown = !isDown;
 })
 

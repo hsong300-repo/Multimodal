@@ -1,29 +1,33 @@
 var count = 0;
 function copyRect() {
-    var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
+    var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false,click = 1;
 
     svg.on('touchstart', function() {
         m1 = d3.mouse(this);
-        if (!isDown && !isDrag) {
-            console.log('touchstart');
-            // self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
-            // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
-            // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
-            // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
-            // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
-            // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
-            // updateRect();
-            isDrag = false;
-        } else {
-            console.log('drag');
-            isDrag = true;
-        }
+        // if (!isDown) {
+        // // if (!isDown && !isDrag) {
+        //         console.log('touchstart');
+        //     // self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
+        //     // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
+        //     // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
+        //     // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
+        //     // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
+        //     // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
+        //     // updateRect();
+        //     // isDrag = false;
+        // } else {
+        console.log('drag');
+        isDrag = true;
+        // }
         isDown = !isDown;
+        click++;
+
     })
 
         .on('touchmove', function() {
+            console.log('touchmove');
             m2 = d3.mouse(this);
-            if(isDown && !isDrag) {
+            if(isDown && !isDrag && click == 2) {
                 self.rectData[1] = { x: m2[0], y: m2[1] };
                 updateRect();
             }
@@ -95,21 +99,28 @@ function copyRect() {
 
     // self.rectData = [ { x: 15+rId*10, y: 15 }, { x: 15+rId*10+parseInt(shapeWidth,10), y: 15+parseInt(shapeWidth,10) } ];
     // self.rectData = [ { x: 100+rId*10, y: 100+rId*30 }, { x: 100+rId*10+parseInt(shapeWidth,10), y: 100+rId*30+parseInt(shapeWidth,10) } ];
+
+    console.log('normallly');
+
     rId++;
     count++;
-    self.rectData = [ { x: 15+rId*10, y: 15 }, { x: 15+rId*10+parseInt(shapeWidth,10), y: 15+parseInt(shapeHeight,10) } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id",shapeId+"_copy"+count).attr('class', 'rectangle').style("fill",color)
-        .style("stroke",strokeColor).attr("width", shapeWidth).attr("height", shapeHeight).call(dragR);
+    self.rectData = [{x: 15 + rId * 10, y: 15}, {
+        x: 15 + rId * 10 + parseInt(shapeWidth, 10),
+        y: 15 + parseInt(shapeHeight, 10)
+    }];
+    self.rectangleElement = d3.select('svg').append('rect').attr("id", shapeId + "_copy" + count).attr('class', 'rectangle').style("fill", color)
+        .style("stroke", strokeColor).attr("width", shapeWidth).attr("height", shapeHeight).call(dragR);
     // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
     // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
     // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
     // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
-    self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" "+shapeId+"_copy"+count).call(dragC1);
-    self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" "+shapeId+"_copy"+count).call(dragC2);
-    self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" "+shapeId+"_copy"+count).call(dragC3);
-    self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" "+shapeId+"_copy"+count).call(dragC4);
+    self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC1);
+    self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC2);
+    self.pointElement3 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC3);
+    self.pointElement4 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC4);
     // rId++;
     updateRect();
+
 
     function dragPoint1() {
         var e = d3.event;

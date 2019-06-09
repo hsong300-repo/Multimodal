@@ -38,7 +38,8 @@ function copyCircle() {
             console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
-            if (isDown && !isDragging && click == 2) {
+            // if (isDown && !isDragging && click == 2) {
+            if (isDown && !isDragging) {
                 self.eData[0].x2 = m2[0];
                 self.eData[0].y2 = m2[1];
                 self.eData[0].a = Math.abs(m2[0] - m1[0]);
@@ -96,6 +97,7 @@ function copyCircle() {
     let strokeColor = "rgb("+tempStroke.r+","+tempStroke.g+","+tempStroke.b+")";
 
     if(!isDragging){
+        console.log('***first but not dragging');
         self.eData = [{
             // x1: 100+cId*30,
             // y1: 200+cId*30,

@@ -55,43 +55,59 @@ function drawShapes(shape, color,count,stroke,here) {
     }//else if rect
 }
 
+function pointEProcess(id){
+    var concatId = ".pointE." + id;
+
+    return concatId;
+}
+
+function pointCProcess(id){
+    var concatId = ".pointC." + id;
+
+    return concatId;
+}
+
 function removeShapes(shape, color,stroke) {
-    console.log('remove shape color count stroke:',shape,color,count,stroke);
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
-            console.log('***color ');
             var inColor = d3.rgb(color);
 
             console.log('her color check');
             d3.selectAll('ellipse').each(function(d,i){
                 var elt = d3.select(this);
-                console.log(elt.style("fill"));
+
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
-                    d3.select(this).remove();
-                    d3.selectAll(".pointE").remove(); //testing
+                    var temp = d3.select(this);
+                    var tempId = pointEProcess(temp.attr("id"));
+                    temp.remove();
+                    d3.selectAll(tempId).remove();
+                    // d3.select(this).remove();
+
+                    // d3.selectAll(".pointE").remove(); //testing
                 }
             });// iterate on ellipses
             $("#output").text("Removal completed");
         }else if(color && stroke !== "n"){
-            console.log('***both color and  stroke');
 
             var inColor = d3.rgb(color);
             var strokeColor = d3.rgb(stroke);
 
-
-            console.log('her color check');
             d3.selectAll('ellipse').each(function(d,i){
                 var elt = d3.select(this);
                 var slt = d3.select(this);
 
                 console.log(elt.style("fill"));
+                console.log("id",elt.attr("id"));
+
                 var color = d3.rgb(elt.style("fill"));
                 var scolor = d3.rgb(slt.style("stroke"));
 
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b && scolor.r === strokeColor.r && scolor.g === strokeColor.g && scolor.b === strokeColor.b){
-                    d3.select(this).remove();
-                    d3.selectAll(".pointE").remove(); //testing
+                    var temp = d3.select(this);
+                    var tempId = pointEProcess(temp.attr("id"));
+                    temp.remove();
+                    d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
             $("#output").text("Removal completed");
@@ -116,8 +132,10 @@ function removeShapes(shape, color,stroke) {
                 console.log(elt.style("fill"));
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
-                    d3.select(this).remove();
-                    d3.selectAll(".pointC").remove(); //testing
+                    var temp = d3.select(this);
+                    var tempId = pointCProcess(temp.attr("id"));
+                    temp.remove();
+                    d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
             $("#output").text("Removal completed");
@@ -138,8 +156,10 @@ function removeShapes(shape, color,stroke) {
                 var scolor = d3.rgb(slt.style("stroke"));
 
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b && scolor.r === strokeColor.r && scolor.g === strokeColor.g && scolor.b === strokeColor.b){
-                    d3.select(this).remove();
-                    d3.selectAll(".pointC").remove(); //testing
+                    var temp = d3.select(this);
+                    var tempId = pointCProcess(temp.attr("id"));
+                    temp.remove();
+                    d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
             $("#output").text("Removal completed");
@@ -155,7 +175,6 @@ function removeShapes(shape, color,stroke) {
 
     }//else if rect
 }// end of remove shapes
-
 var space = 0;
 function copyShapes(count){
     space++;
