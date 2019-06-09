@@ -3,7 +3,11 @@ function QueryProcess(script){
     let myStr = script.toLowerCase();
     // let tokenStr = myStr.split(" ");
 
-    //for color and stroke fill, styling
+    if(["here","there"].filter(n=> myStr.indexOf(n) > -1).length > 0){
+        var here = true;
+    }else{
+        var here = false;
+    }
     if(["and","with"].filter(n => myStr.indexOf(n) > -1).length > 0){
         console.log('and with');
         var tokenStr = myStr.split(" ");
@@ -34,8 +38,6 @@ function QueryProcess(script){
 
     }else{
         console.log('normal');
-
-
         var tokenStr = myStr.split(" ");
 
         var shape = shapes.filter(function(n) {
@@ -58,8 +60,7 @@ function QueryProcess(script){
             var strokeColor = "none"; // dafault
         }
 
-        console.log('fillColor and strokeColor',color,strokeColor);
-
+        console.log('stroke color normal',strokeColor);
         var n = mapToNumber(count[0]);
     }
 
@@ -72,7 +73,8 @@ function QueryProcess(script){
     // });
 
     if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        drawShapes(shape[0],color[0],n,strokeColor[0]);
+
+        drawShapes(shape[0],color[0],n,strokeColor[0],here);
         // putRect();
     }else if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('copy');

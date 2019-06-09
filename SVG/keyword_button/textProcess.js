@@ -5,7 +5,7 @@ const deleteCommands = ["remove","delete","clear"];
 //shapes
 const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
 //colors
-const colors = ["red","green","yellow","pink","blue","purple","gray","grey","white","pink","black","magenta","peru","salmon","wheat","violet","plum","tomato","teal","silver","yellow"];
+const colors = ["red","green","yellow","pink","blue","purple","gray","grey","white","pink","black","wheat","violet","plum","tomato","silver","yellow","aqua"];
 //counts
 const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
 

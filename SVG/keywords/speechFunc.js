@@ -224,17 +224,25 @@ function idProcess(script){
 document.getElementById('shapeFormat').style.display = "block";
 $("#color").change(function () {
     console.log("id colorchange",shape);
+
     let fill = shapeFill();
     shape.style("fill",fill);
 
     $("#output").text("Updated object style");
 
+    document.getElementById('color').selectedIndex = 0;
+
 });
 $("#border_color").change(function () {
+
+
     let stroke = strokeFill();
     shape.style("stroke",stroke);
 
     $("#output").text("Updated object style");
+
+    document.getElementById('border_color').selectedIndex = 0;
+
 
 });
 
