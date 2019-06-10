@@ -176,6 +176,42 @@ function removeShapes(shape, color,stroke) {
     }//else if rect
 }// end of remove shapes
 
+function removeThisShape(){
+
+    console.log('remove this shape');
+
+    console.log("remove this id",shapeId);
+
+    var tempId = shapeId;
+    var shape = d3.select("#"+tempId);
+    var id = idProcess(tempId);
+    console.log('remove shape',id);
+
+    if(id === "rect"){
+        d3.selectAll("rect").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                var temp  = d3.select(this);
+                temp.remove();
+                var tempId = pointCProcess(temp.attr("id"));
+                temp.remove();
+                d3.selectAll(tempId).remove();
+            }
+        });
+    }else if(id === "circle"){
+        d3.selectAll("ellipse").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                var temp  = d3.select(this);
+                temp.remove();
+                var tempId = pointEProcess(temp.attr("id"));
+                temp.remove();
+                d3.selectAll(tempId).remove();            }
+        });
+    }
+
+}
+
 var space = 0;
 function copyShapes(count){
     space++;

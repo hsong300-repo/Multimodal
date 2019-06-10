@@ -8,6 +8,11 @@ function QueryProcess(script){
     }else{
         var here = false;
     }
+    if(["this"].filter(n=> myStr.indexOf(n) > -1).length > 0){
+        var deleteThis = true;
+    }else{
+        var deleteThis= false;
+    }
     if(["and","with"].filter(n => myStr.indexOf(n) > -1).length > 0){
         console.log('and with');
         var tokenStr = myStr.split(" ");
@@ -84,13 +89,16 @@ function QueryProcess(script){
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
 
-        removeShapes(shape[0],color[0],strokeColor[0]);
+        if(deleteThis === true){
+            removeThisShape(shape[0],color[0],strokeColor[0]);
+        }else if(deleteThis === false){
+            removeShapes(shape[0],color[0],strokeColor[0]);
+        }
 
     }else{
         $("#output").text("A command did not work. Try again.");
 
     }
-
 }
 
 
