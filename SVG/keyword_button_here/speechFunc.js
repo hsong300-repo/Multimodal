@@ -215,7 +215,6 @@ function removeThisShape(){
 
 }
 
-
 var space = 0;
 function copyShapes(count){
     space++;
@@ -312,9 +311,6 @@ $("#border_color").change(function () {
 d3.select('svg').on('click', function(d, i) {
     // if (d3.event.defaultPrevented) return; // dragged
 
-    globM = d3.mouse(this);
-    console.log('global click',globM[0],globM[1]);
-
     // Somehow console.log the ID of the circle clicked on (if any).
     console.log("Clicked ID: " + d3.event.target.id);
     shapeId = d3.event.target.id;
@@ -354,9 +350,6 @@ d3.select('svg').on('click', function(d, i) {
                     .style("stroke-width", "2px");
             }
         });
-
-
-
     }else if(id==="circle"){
         // d3.select("#"+tempId).transition()
         //     .style("stroke-width", "6px");
@@ -387,11 +380,7 @@ d3.select('svg').on('click', function(d, i) {
                     .style("stroke-width", "2px");
             }
         });
-
-
-
         document.getElementById('shapeFormat').style.display = "block";
-
     }else{
 
         console.log('svg');
@@ -404,6 +393,9 @@ d3.select('svg').on('click', function(d, i) {
 });
 
 document.getElementById('shapeFormat').style.display = "none";
+
+
+
 
 
 
