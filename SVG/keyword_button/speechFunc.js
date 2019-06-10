@@ -186,7 +186,6 @@ function removeThisShape(){
     console.log("remove this id",shapeId);
 
     var tempId = shapeId;
-    var shape = d3.select("#"+tempId);
     var id = idProcess(tempId);
     console.log('remove shape',id);
 
@@ -212,6 +211,35 @@ function removeThisShape(){
                 d3.selectAll(tempId).remove();            }
         });
     }
+
+}
+
+function updateShapes(color, stroke){
+
+    console.log('update color shape');
+
+    var tempId = shapeId;
+    var id = idProcess(tempId);
+    console.log('remove shape',id);
+
+    if(id === "rect"){
+        d3.selectAll("rect").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                elt.style("fill",color);
+                elt.style("stroke",stroke);
+
+            }
+        });
+    }else if(id === "circle"){
+        d3.selectAll("ellipse").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                elt.style("fill",color);
+                elt.style("stroke",stroke);        }
+        });
+    }
+
 
 }
 

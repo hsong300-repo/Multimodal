@@ -33,7 +33,7 @@ function QueryProcess(script){
         });
         var n = mapToNumber(count[0]);
 
-        if(["stroke","line"].filter(n => andStr[1].indexOf(n) > -1).length > 0){
+        if(["stroke","line","border","width"].filter(n => andStr[1].indexOf(n) > -1).length > 0){
             var strokeColor = colors.filter(function(n) {
                 return andStr[1].indexOf(n) > -1;
             });
@@ -57,10 +57,11 @@ function QueryProcess(script){
             return tokenStr.indexOf(n) > -1;
         });
 
-        if(["stroke","line"].filter(n => tokenStr.indexOf(n) > -1).length > 0){ // weird
+        if(["stroke","line","border","width"].filter(n => tokenStr.indexOf(n) > -1).length > 0){ // weird
             var strokeColor = colors.filter(function(n) {
                 return tokenStr.indexOf(n) > -1;
             });
+            var color = "none";
         }else{
             var strokeColor = "none"; // dafault
         }
@@ -95,6 +96,8 @@ function QueryProcess(script){
             removeShapes(shape[0],color[0],strokeColor[0]);
         }
 
+    }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        updateShapes(color[0],strokeColor[0]);
     }else{
         $("#output").text("A command did not work. Try again.");
 

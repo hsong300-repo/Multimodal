@@ -2,6 +2,8 @@
 const drawCommands = ["draw","insert","create","put","generate","add"];
 const copyCommands = ["copy","duplicate","paste","copies"];
 const deleteCommands = ["remove","delete","clear"];
+const updateCommands = ["change","update","apply","fill","set","make","color"];
+
 //shapes
 const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
 //colors
@@ -71,15 +73,15 @@ function textProcess(){
         });
         var n = mapToNumber(count[0]);
 
-        if(["stroke","line"].filter(n => andStr[1].indexOf(n) > -1).length > 0){
+        if(["stroke","line","border","width"].filter(n => andStr[1].indexOf(n) > -1).length > 0){
             var strokeColor = colors.filter(function(n) {
                 return andStr[1].indexOf(n) > -1;
             });
         }
-        // console.log('stroke color',strokeColor);
     }else{
-        console.log('normal');
         var tokenStr = myStr.split(" ");
+        console.log('***normal',tokenStr);
+
 
         var shape = shapes.filter(function(n) {
             return tokenStr.indexOf(n) > -1;
@@ -93,15 +95,16 @@ function textProcess(){
             return tokenStr.indexOf(n) > -1;
         });
 
-        if(["stroke","line"].filter(n => tokenStr.indexOf(n) > -1).length > 0){ // weird
+        if(["stroke","line","border","width"].filter(n => tokenStr.indexOf(n) > -1).length > 0){ // weird
             var strokeColor = colors.filter(function(n) {
                 return tokenStr.indexOf(n) > -1;
             });
+            var color = "none";
         }else{
             var strokeColor = "none"; // dafault
         }
 
-        console.log('stroke color normal',strokeColor);
+        console.log('***color & stroke color normal',color,strokeColor);
         var n = mapToNumber(count[0]);
     }
 
@@ -124,16 +127,14 @@ function textProcess(){
 
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
-
         if(deleteThis === true){
             removeThisShape(shape[0],color[0],strokeColor[0]);
         }else if(deleteThis === false){
             removeShapes(shape[0],color[0],strokeColor[0]);
         }
-
         // removeShapes(shape[0],color[0],strokeColor[0]);
-
-
+    }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        updateShapes(color[0],strokeColor[0]);
     }else{
         $("#output").text("A command did not work. Try again.");
 
