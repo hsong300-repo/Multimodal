@@ -429,6 +429,8 @@ d3.select('svg').on('click', function(d, i) {
 
         document.getElementById('shapeFormat').style.display = "none";
     }
+
+
 });
 
 document.getElementById('shapeFormat').style.display = "none";
