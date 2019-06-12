@@ -88,8 +88,6 @@ window.addEventListener('load', function(){
         e.preventDefault();
     }, false);
 
-
-
 }, false);
 
 
