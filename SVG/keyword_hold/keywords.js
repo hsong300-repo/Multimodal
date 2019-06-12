@@ -70,12 +70,12 @@ window.addEventListener('load', function(){
     box1.addEventListener('touchstart', function(e){
         var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
         // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
-        startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
-        starty = parseInt(touchobj.clientY);
+        // startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
+        // starty = parseInt(touchobj.clientY);
         statusdiv.innerHTML = 'Status: touchstart';
 
-        globX = startx-250;
-        globY = starty-130;
+        // globX = startx-250;
+        // globY = starty-130;
 
         // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
         document.getElementById('listen').style.display = "block";
@@ -85,11 +85,11 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         var touchobj = e.changedTouches[0]; // reference first touch point for this event
-        startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
-        starty = parseInt(touchobj.clientY);
+        // startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
+        // starty = parseInt(touchobj.clientY);
 
-        globX = startx-250;
-        globY = starty-130;
+        // globX = startx-250;
+        // globY = starty-130;
 
         statusdiv.innerHTML = 'Status: touchmove';
         document.getElementById('listen').style.display = "block";
@@ -99,11 +99,11 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]; // reference first touch point for this event
-        startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
-        starty = parseInt(touchobj.clientY);
+        // startx = parseInt(touchobj.clientX);// get x position of touch point relative to left edge of browser
+        // starty = parseInt(touchobj.clientY);
 
-        globX = startx-250;
-        globY = starty-130;
+        // globX = startx-250;
+        // globY = starty-130;
 
         statusdiv.innerHTML = 'Status: touchend';
         $("#output").text("Recognition stopped");
@@ -113,6 +113,22 @@ window.addEventListener('load', function(){
         annyang.abort();
         isDragging = false;
 
+    }, false);
+
+    box1.addEventListener('pointerdown', function(e){
+        // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
+        // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
+        // startx = e.clientX;// get x position of touch point relative to left edge of browser
+        // starty = e.clientY;
+        startx = e.pageX;// get x position of touch point relative to left edge of browser
+        starty = e.pageY;
+        console.log('pointer down tract', startx - box1.offsetLeft, starty - box1.offsetTop);
+
+        globX = startx - box1.offsetLeft-12;
+        globY = starty - box1.offsetTop-12;
+
+        // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
+        e.preventDefault();
     }, false);
 
 }, false);
