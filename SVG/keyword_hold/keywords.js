@@ -132,3 +132,7 @@ window.addEventListener('load', function(){
     }, false);
 
 }, false);
+
+document.oncontextmenu = function() {
+    return false;
+}

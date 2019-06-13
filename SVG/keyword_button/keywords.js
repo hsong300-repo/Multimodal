@@ -90,4 +90,8 @@ window.addEventListener('load', function(){
 
 }, false);
 
+document.oncontextmenu = function() {
+    return false;
+}
+
 
