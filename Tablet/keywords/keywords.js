@@ -39,6 +39,10 @@ recognition.onresult = function(event) {
                 $("#log").val(final_transcript);
                 document.getElementById('listen').style.display = "none";
             }
+            else{
+                //** this is for test
+                $("#log").val(final_transcript);
+            }
             // annyang.trigger(final_transcript); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
@@ -104,6 +108,6 @@ window.addEventListener('load', function(){
 
 document.oncontextmenu = function() {
     return false;
-}
+};
 
 
