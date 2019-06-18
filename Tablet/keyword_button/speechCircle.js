@@ -64,22 +64,22 @@ function putCircle(color,strokeColor) {
             .attr('ry', function (d) { return Math.abs(d.b); });
         point1 = d3.select(self.pointElement1[0][0]).data(self.eData);
         point1.attr('id', 1)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 - d.b; });
         point2 = d3.select(self.pointElement2[0][0]).data(self.eData);
         point2.attr('id', 2)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1 + d.a; })
             .attr('cy', function (d) { return d.y1; });
         point3 = d3.select(self.pointElement3[0][0]).data(self.eData);
         point3.attr('id', 3)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 + d.b; });
         point4 = d3.select(self.pointElement4[0][0]).data(self.eData);
         point4.attr('id', 4)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
 
@@ -272,22 +272,22 @@ function putCircleHere(color,strokeColor) {
             .attr('ry', function (d) { return Math.abs(d.b); });
         point1 = d3.select(self.pointElement1[0][0]).data(self.eData);
         point1.attr('id', 1)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 - d.b; });
         point2 = d3.select(self.pointElement2[0][0]).data(self.eData);
         point2.attr('id', 2)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1 + d.a; })
             .attr('cy', function (d) { return d.y1; });
         point3 = d3.select(self.pointElement3[0][0]).data(self.eData);
         point3.attr('id', 3)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 + d.b; });
         point4 = d3.select(self.pointElement4[0][0]).data(self.eData);
         point4.attr('id', 4)
-            .attr('r', 8)
+            .attr('r', 20)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
 
