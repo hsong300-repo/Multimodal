@@ -94,24 +94,3 @@ document.oncontextmenu = function() {
     return false;
 };
 
-function blockOverscroll ( ) {
-
-    var pageDirectionX;
-
-    function pX(e){
-        return e.originalEvent.changedTouches[0].pageX;
-    }
-
-    $(document).on('touchstart', function(e){
-        pageDirectionX = pX(e);
-    });
-
-    $(document).on('touchmove', function(e){
-        if ( pageDirectionX !== pX(e) ) {
-            e.preventDefault();
-            console.log('Stopping overscroll effect');
-        }
-    });
-}
-
-$(blockOverscroll);
