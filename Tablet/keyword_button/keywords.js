@@ -94,9 +94,13 @@ document.oncontextmenu = function() {
     return false;
 };
 
-$(window).on("scroll", function(evt) {
-    var height = $(window).scrollTop();
-    scrollTo(0,height);
-});
+document.body.addEventListener('mousewheel', function(e) {
+    e.stopPropagation();
+    var max = this.scrollWidth - this.offsetWidth; // this might change if you have dynamic content, perhaps some mutation observer will be useful here
 
+    if (this.scrollLeft + e.deltaX < 0 || this.scrollLeft + e.deltaX > max) {
+        e.preventDefault();
+        this.scrollLeft = Math.max(0, Math.min(max, this.scrollLeft + e.deltaX));
+    }
+}, false);
 
