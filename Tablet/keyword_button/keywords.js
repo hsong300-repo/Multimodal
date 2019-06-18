@@ -92,6 +92,11 @@ window.addEventListener('load', function(){
 
 document.oncontextmenu = function() {
     return false;
-}
+};
+
+$(window).on("scroll", function(evt) {
+    var height = $(window).scrollTop();
+    scrollTo(0,height);
+});
 
 
