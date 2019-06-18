@@ -40,19 +40,23 @@ function updateRect() {
     });
 
     var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
-    point1.attr('r', 8)
+    // point1.attr('r', 8)
+    point1.attr('r', 10)
         .attr('cx', self.rectData[0].x)
         .attr('cy', self.rectData[0].y);
     var point2 = d3.select(self.pointElement2[0][0]).data(self.rectData);
-    point2.attr('r', 8)
+    // point2.attr('r', 8)
+    point2.attr('r', 10)
         .attr('cx', self.rectData[1].x)
         .attr('cy', self.rectData[1].y);
     var point3 = d3.select(self.pointElement3[0][0]).data(self.rectData);
-    point3.attr('r', 8)
+    // point3.attr('r', 8)
+    point3.attr('r', 10)
         .attr('cx', self.rectData[1].x)
         .attr('cy', self.rectData[0].y);
     var point3 = d3.select(self.pointElement4[0][0]).data(self.rectData);
-    point3.attr('r', 8)
+    point3.attr('r', 10)
+    // point3.attr('r', 8)
         .attr('cx', self.rectData[0].x)
         .attr('cy', self.rectData[1].y);
 }
@@ -77,7 +81,7 @@ var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
 rId++;
 // self.rectData = [ { x: rId*10, y: rId*10 }, { x: 50+rId*10, y: 50+rId*10 } ];
-self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 65+rId*20, y: 65 } ];
+self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 85+rId*20, y: 85 } ];
 self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).call(dragR);
 // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'pointC').style("fill",color).call(dragR);
 // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
