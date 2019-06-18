@@ -21,8 +21,8 @@
     display: inline-block;
     /*display: inline-block;*/
     position: absolute;
-    /*left:22.5%;*/
-    left:10.5%;
+    left:22.5%;
+    /*left:10.5%;*/
     top:15%;
 
 
@@ -105,8 +105,8 @@ div.b {
 div.d {
     display: inline-block;
     position: absolute;
-    /*left:15%;*/
-    left:5%;
+    left:15%;
+    /*left:5%;*/
     /*width: 100px;*/
     /*height: 100px;*/
     padding: 5px;
