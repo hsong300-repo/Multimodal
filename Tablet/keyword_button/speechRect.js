@@ -41,21 +41,21 @@ function updateRect() {
 
     var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
     // point1.attr('r', 8)
-    point1.attr('r', 15)
+    point1.attr('r', 20)
         .attr('cx', self.rectData[0].x)
         .attr('cy', self.rectData[0].y);
     var point2 = d3.select(self.pointElement2[0][0]).data(self.rectData);
     // point2.attr('r', 8)
-    point2.attr('r', 15)
+    point2.attr('r', 20)
         .attr('cx', self.rectData[1].x)
         .attr('cy', self.rectData[1].y);
     var point3 = d3.select(self.pointElement3[0][0]).data(self.rectData);
     // point3.attr('r', 8)
-    point3.attr('r', 15)
+    point3.attr('r', 20)
         .attr('cx', self.rectData[1].x)
         .attr('cy', self.rectData[0].y);
     var point3 = d3.select(self.pointElement4[0][0]).data(self.rectData);
-    point3.attr('r', 15)
+    point3.attr('r', 20)
     // point3.attr('r', 8)
         .attr('cx', self.rectData[0].x)
         .attr('cy', self.rectData[1].y);
@@ -176,19 +176,19 @@ function putRectHere(color,strokeColor) {
         });
 
         var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
-        point1.attr('r', 15)
+        point1.attr('r', 20)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[0].y);
         var point2 = d3.select(self.pointElement2[0][0]).data(self.rectData);
-        point2.attr('r', 15)
+        point2.attr('r', 20)
             .attr('cx', self.rectData[1].x)
             .attr('cy', self.rectData[1].y);
         var point3 = d3.select(self.pointElement3[0][0]).data(self.rectData);
-        point3.attr('r', 15)
+        point3.attr('r', 20)
             .attr('cx', self.rectData[1].x)
             .attr('cy', self.rectData[0].y);
         var point3 = d3.select(self.pointElement4[0][0]).data(self.rectData);
-        point3.attr('r', 15)
+        point3.attr('r', 20)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[1].y);
     }
