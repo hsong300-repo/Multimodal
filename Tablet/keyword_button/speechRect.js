@@ -3,20 +3,8 @@ var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
 svg.on('touchstart', function() {
     m1 = d3.mouse(this);
-    // if (!isDown && !isDrag) {
-    //     console.log('touchstart');
-        // self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
-        // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
-        // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
-        // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
-        // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
-        // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
-        // updateRect();
-        // isDrag = false;
-    // } else {
     console.log('drag');
     isDrag = true;
-    // }
     isDown = !isDown;
 })
 
@@ -80,15 +68,8 @@ var dragC3 = d3.behavior.drag().on('drag', dragPoint3);
 var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
 rId++;
-// self.rectData = [ { x: rId*10, y: rId*10 }, { x: 50+rId*10, y: 50+rId*10 } ];
-self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 85+rId*20, y: 85 } ];
+self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 65+rId*20, y: 65 } ];
 self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).call(dragR);
-// self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'pointC').style("fill",color).call(dragR);
-// self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
-// self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
-// self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
-// self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
-// self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').call(dragR);
 self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
 self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);

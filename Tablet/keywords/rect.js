@@ -25,10 +25,6 @@ function Rectangle() {
             self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
             self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
             self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
-            // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
-            // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
-            // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
-            // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
             updateRect();
             isDrag = false;
         } else{
@@ -60,19 +56,19 @@ function Rectangle() {
         });
 
         var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
-        point1.attr('r', 8)
+        point1.attr('r', 15)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[0].y);
         var point2 = d3.select(self.pointElement2[0][0]).data(self.rectData);
-        point2.attr('r', 8)
+        point2.attr('r', 15)
             .attr('cx', self.rectData[1].x)
             .attr('cy', self.rectData[1].y);
         var point3 = d3.select(self.pointElement3[0][0]).data(self.rectData);
-        point3.attr('r', 8)
+        point3.attr('r', 15)
             .attr('cx', self.rectData[1].x)
             .attr('cy', self.rectData[0].y);
         var point3 = d3.select(self.pointElement4[0][0]).data(self.rectData);
-        point3.attr('r', 8)
+        point3.attr('r', 15)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[1].y);
     }

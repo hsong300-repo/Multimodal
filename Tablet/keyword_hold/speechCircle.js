@@ -64,22 +64,22 @@ function putCircle(color,strokeColor) {
             .attr('ry', function (d) { return Math.abs(d.b); });
         point1 = d3.select(self.pointElement1[0][0]).data(self.eData);
         point1.attr('id', 1)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 - d.b; });
         point2 = d3.select(self.pointElement2[0][0]).data(self.eData);
         point2.attr('id', 2)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1 + d.a; })
             .attr('cy', function (d) { return d.y1; });
         point3 = d3.select(self.pointElement3[0][0]).data(self.eData);
         point3.attr('id', 3)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 + d.b; });
         point4 = d3.select(self.pointElement4[0][0]).data(self.eData);
         point4.attr('id', 4)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
 
@@ -204,48 +204,7 @@ function putCircleHere(color,strokeColor) {
     // }
     isDown = !isDown;
     click++;
-    // cId++;
 
-
-    // svg.on('mousedown', function () {
-    // svg.on('touchstart', function () {
-    //     console.log('circle touchstart');
-    //     // m1 = d3.mouse(this);
-    //     // m1[0] = globX;
-    //     // m1[1] = globY;
-    //     console.log("globx and goby",globX,globY)
-    //     if (!isDown && click == 1) {
-    //         isDragging = false;
-    //         if(!isDragging){
-    //             self.eData = [{
-    //                 // x1: m1[0],
-    //                 // y1: m1[1],
-    //                 // x2: m1[0],
-    //                 // y2: m1[1],
-    //                 // a: 35,
-    //                 // b: 35
-    //                 x1: globX,
-    //                 y1: globY,
-    //                 x2: globX,
-    //                 y2: globY,
-    //                 a: 35,
-    //                 b: 35
-    //             }];
-    //             cId++;
-    //             self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).call(dragE);
-    //             self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
-    //             self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
-    //             self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
-    //             self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
-    //             updateEllipse();
-    //         }
-    //     } else {
-    //         isDragging = true;
-    //     }
-    //     isDown = !isDown;
-    //     click++;
-    //     // cId++;
-    // })
     svg .on('touchmove', function () {
         // .on('mousemove', function () {
         console.log('circle touchmove');
@@ -272,22 +231,22 @@ function putCircleHere(color,strokeColor) {
             .attr('ry', function (d) { return Math.abs(d.b); });
         point1 = d3.select(self.pointElement1[0][0]).data(self.eData);
         point1.attr('id', 1)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 - d.b; });
         point2 = d3.select(self.pointElement2[0][0]).data(self.eData);
         point2.attr('id', 2)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1 + d.a; })
             .attr('cy', function (d) { return d.y1; });
         point3 = d3.select(self.pointElement3[0][0]).data(self.eData);
         point3.attr('id', 3)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1 + d.b; });
         point4 = d3.select(self.pointElement4[0][0]).data(self.eData);
         point4.attr('id', 4)
-            .attr('r', 8)
+            .attr('r', 15)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
 

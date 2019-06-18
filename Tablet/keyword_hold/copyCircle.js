@@ -7,7 +7,7 @@ function copyCircle() {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
         m1 = d3.mouse(this);
-        if (!isDown && click == 1) {
+        // if (!isDown && click == 1) {
             // if (!isDown) {
             // if(!isDragging){
             //     self.eData = [{
@@ -26,9 +26,9 @@ function copyCircle() {
             //     self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
             //     updateEllipse();
             // }
-        } else {
-            isDragging = true;
-        }
+        // } else {
+        isDragging = true;
+        // }
         isDown = !isDown;
         click++;
         // cId++;
