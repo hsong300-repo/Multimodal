@@ -2,7 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/circle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/eraser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/listen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/rect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/speech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/speech.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/img/triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/keywords.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/queryProcess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/rect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechCircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_button/textProcess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/circle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/copyCircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/copyShapes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/eraser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/listen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/rect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/speech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/speech.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/img/triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/keywords.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/queryProcess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/rect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/speechCircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/speechFunc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/speechRect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keyword_hold/textProcess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/circle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/copyCircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/copyShapes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/eraser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/listen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/rect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/speech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/speech.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/img/triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/keywords.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/queryProcess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/rect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/speechCircle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/speechFunc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/speechRect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tablet/keywords/textProcess.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVG/keywords/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVG/keywords/textProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/SVG/keywords/textProcess.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/canvas/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/canvas/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/canvas/shapes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/canvas/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/shapes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Touch/style.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,25 +87,27 @@
     <session id="-291044497">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="40" />
+          <entry key="project.closed" value="42" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.2" value="5" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="9" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="41" />
+          <entry key="project.opened" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="20" />
-          <entry key="html" value="66" />
-          <entry key="js" value="381" />
+          <entry key="html" value="69" />
+          <entry key="js" value="389" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="1" />
@@ -44,9 +116,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="20" />
-          <entry key="HTML" value="66" />
+          <entry key="HTML" value="69" />
           <entry key="Image" value="1" />
-          <entry key="JavaScript" value="381" />
+          <entry key="JavaScript" value="389" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="1" />
         </counts>
@@ -54,15 +126,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="542" />
-          <entry key="html" value="2744" />
-          <entry key="js" value="33867" />
+          <entry key="html" value="2759" />
+          <entry key="js" value="33881" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="542" />
-          <entry key="HTML" value="2744" />
-          <entry key="JavaScript" value="33867" />
+          <entry key="HTML" value="2759" />
+          <entry key="JavaScript" value="33881" />
         </counts>
       </usages-collector>
     </session>
@@ -70,111 +142,81 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keywords/speechRect.js">
+        <entry file="file://$PROJECT_DIR$/SVG/keywords/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="128" column="8" selection-start-line="128" selection-end-line="252" />
-              <folding>
-                <element signature="n#!!block;n#putRect#0" />
-                <element signature="n#!!block;n#putRectHere#0" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="83" column="48" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/speechRect.js">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="255" selection-start-line="255" selection-end-line="255" />
+            <state relative-caret-position="525">
+              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
               <folding>
-                <element signature="n#!!block;n#putRect#0" />
-                <element signature="n#!!block;n#putRectHere#0" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keywords/textProcess.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="142" selection-start-line="142" selection-end-line="142" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/keywords.js">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keyword_button/keywords.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="88" column="14" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="88" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/speechCircle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="339" selection-start-line="339" selection-end-line="339" />
+            <state relative-caret-position="14">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
-                <element signature="n#!!block;n#putCircle#0" />
-                <element signature="n#!!block;n#putCircleHere#0" />
+                <element signature="n#!!block;n#drawShapes#0" />
+                <element signature="n#!!block;n#pointEProcess#0" />
+                <element signature="n#!!block;n#pointCProcess#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keyword_button/textProcess.js">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/queryProcess.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="-828" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/keywords.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="68" column="49" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keywords/speechCircle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="164" column="3" lean-forward="true" selection-start-line="164" selection-end-line="339" />
-              <folding>
-                <element signature="n#!!block;n#putCircle#0" />
-                <element signature="n#!!block;n#putCircleHere#0" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/circle.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SVG/keyword_button/speechCircle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-end-line="339" />
-              <folding>
-                <element signature="n#!!block;n#putCircle#0" />
-                <element signature="n#!!block;n#putCircleHere#0" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechRect.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SVG/keyword_button/speechRect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="128" column="3" lean-forward="true" selection-start-line="128" selection-end-line="252" />
+              <caret line="128" column="3" selection-start-line="128" selection-end-line="252" />
               <folding>
                 <element signature="n#!!block;n#putRect#0" />
                 <element signature="n#!!block;n#putRectHere#0" />
@@ -261,7 +303,6 @@
         <option value="$PROJECT_DIR$/SVG/keyword_hold/circle.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_button/index.html" />
         <option value="$PROJECT_DIR$/SVG/keyword_hold/index.html" />
-        <option value="$PROJECT_DIR$/SVG/keywords/index.html" />
         <option value="$PROJECT_DIR$/SVG/keyword_button/copyCircle.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_button/copyShapes.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_button_here/keywords.js" />
@@ -272,19 +313,20 @@
         <option value="$PROJECT_DIR$/SVG/keyword_hold/speechFunc.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_hold/textProcess.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_hold/queryProcess.js" />
-        <option value="$PROJECT_DIR$/SVG/keywords/textProcess.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/speechFunc.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/queryProcess.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_button/speechFunc.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_button/speechCircle.js" />
-        <option value="$PROJECT_DIR$/SVG/keyword_button/keywords.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_button/speechRect.js" />
-        <option value="$PROJECT_DIR$/SVG/keywords/keywords.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/speechCircle.js" />
         <option value="$PROJECT_DIR$/SVG/keywords/speechRect.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_hold/speechCircle.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_hold/speechRect.js" />
+        <option value="$PROJECT_DIR$/SVG/keyword_button/keywords.js" />
         <option value="$PROJECT_DIR$/SVG/keyword_hold/keywords.js" />
+        <option value="$PROJECT_DIR$/SVG/keywords/keywords.js" />
+        <option value="$PROJECT_DIR$/SVG/keywords/textProcess.js" />
+        <option value="$PROJECT_DIR$/SVG/keywords/index.html" />
       </list>
     </option>
   </component>
@@ -295,15 +337,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="795" />
+    <option name="x" value="-241" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,31 +358,18 @@
             <path>
               <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
               <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="SVG" type="462c0819:PsiDirectoryNode" />
+              <item name="Tablet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
               <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="SVG" type="462c0819:PsiDirectoryNode" />
+              <item name="Tablet" type="462c0819:PsiDirectoryNode" />
               <item name="keyword_button" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="SVG" type="462c0819:PsiDirectoryNode" />
-              <item name="keyword_hold" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="SVG" type="462c0819:PsiDirectoryNode" />
-              <item name="keywords" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,12 +452,14 @@
       <workItem from="1560101314733" duration="7430000" />
       <workItem from="1560137821513" duration="136000" />
       <workItem from="1560178291037" duration="16810000" />
-      <workItem from="1560448443547" duration="209000" />
+      <workItem from="1560448443547" duration="833000" />
+      <workItem from="1560780397881" duration="686000" />
+      <workItem from="1560819138585" duration="238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261043000" />
+    <option name="totallyTimeSpent" value="262591000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -438,9 +471,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15362932" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.114797264" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -452,7 +486,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.11566265" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.09504951" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.25903615" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -466,52 +500,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/speech.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/keywords.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="154" column="49" selection-end-line="165" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_hold/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_button/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="96" column="42" selection-start-line="96" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trigger/keyword_button/keywords.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="91" column="62" lean-forward="true" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/textProcess.js" />
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/copyCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="121" column="113" selection-start-line="121" selection-start-column="113" selection-end-line="121" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/circle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="124" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="32" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/rect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -565,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/copyShapes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -583,13 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keyword_button/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -688,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keywords/keywords.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/speechFunc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
@@ -713,10 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="128" column="8" selection-start-line="128" selection-end-line="252" />
-          <folding>
-            <element signature="n#!!block;n#putRect#0" />
-            <element signature="n#!!block;n#putRectHere#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -724,24 +687,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="255" selection-start-line="255" selection-end-line="255" />
-          <folding>
-            <element signature="n#!!block;n#putRect#0" />
-            <element signature="n#!!block;n#putRectHere#0" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/keywords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2055">
+          <caret line="137" column="1" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/textProcess.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="135">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVG/keywords/keywords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="106" column="1" selection-start-line="106" selection-start-column="1" selection-end-line="106" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVG/keyword_button/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keyword_button/keywords.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="88" column="14" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="88" selection-end-column="14" />
+        <state relative-caret-position="1380">
+          <caret line="92" selection-start-line="92" selection-end-line="94" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -759,14 +739,14 @@
     <entry file="file://$PROJECT_DIR$/SVG/keyword_button/textProcess.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SVG/keywords/speechCircle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="164" column="3" lean-forward="true" selection-start-line="164" selection-end-line="339" />
+          <caret line="164" column="3" selection-start-line="164" selection-end-line="339" />
           <folding>
             <element signature="n#!!block;n#putCircle#0" />
             <element signature="n#!!block;n#putCircleHere#0" />
@@ -777,7 +757,7 @@
     <entry file="file://$PROJECT_DIR$/SVG/keyword_button/speechCircle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-end-line="339" />
+          <caret line="164" column="9" selection-start-line="164" selection-end-line="339" />
           <folding>
             <element signature="n#!!block;n#putCircle#0" />
             <element signature="n#!!block;n#putCircleHere#0" />
@@ -788,7 +768,7 @@
     <entry file="file://$PROJECT_DIR$/SVG/keyword_button/speechRect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="128" column="3" lean-forward="true" selection-start-line="128" selection-end-line="252" />
+          <caret line="128" column="3" selection-start-line="128" selection-end-line="252" />
           <folding>
             <element signature="n#!!block;n#putRect#0" />
             <element signature="n#!!block;n#putRectHere#0" />
@@ -796,10 +776,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/keywords.js">
+    <entry file="file://$PROJECT_DIR$/SVG/keywords/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+        <state relative-caret-position="220">
+          <caret line="83" column="48" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/queryProcess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-828" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/keywords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="68" column="49" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/circle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="n#!!block;n#drawShapes#0" />
+            <element signature="n#!!block;n#pointEProcess#0" />
+            <element signature="n#!!block;n#pointCProcess#0" />
+          </folding>
         </state>
       </provider>
     </entry>
