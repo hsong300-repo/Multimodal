@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/rect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/textProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/textProcess.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,14 +56,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="558" />
-          <entry key="html" value="2775" />
+          <entry key="html" value="2803" />
           <entry key="js" value="34073" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="558" />
-          <entry key="HTML" value="2775" />
+          <entry key="HTML" value="2803" />
           <entry key="JavaScript" value="34073" />
         </counts>
       </usages-collector>
@@ -80,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+            <state relative-caret-position="372">
+              <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -101,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -267,13 +258,13 @@
         <option value="$PROJECT_DIR$/SVG/keywords/index.html" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/styles.css" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/textProcess.js" />
-        <option value="$PROJECT_DIR$/Tablet/keyword_button/index.html" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/speechCircle.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/rect.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/circle.js" />
+        <option value="$PROJECT_DIR$/Tablet/keyword_button/index.html" />
       </list>
     </option>
   </component>
@@ -400,12 +391,12 @@
       <workItem from="1560448443547" duration="833000" />
       <workItem from="1560780397881" duration="686000" />
       <workItem from="1560819138585" duration="3056000" />
-      <workItem from="1560873628679" duration="167000" />
+      <workItem from="1560873628679" duration="414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265576000" />
+    <option name="totallyTimeSpent" value="265823000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,7 +411,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1529246" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1529246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -432,7 +423,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.27710843" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.27710843" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.25903615" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -735,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechCircle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-347">
@@ -794,6 +775,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
