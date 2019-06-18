@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/rect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -37,7 +40,7 @@
         <counts>
           <entry key="css" value="21" />
           <entry key="html" value="69" />
-          <entry key="js" value="390" />
+          <entry key="js" value="391" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="1" />
@@ -48,7 +51,7 @@
           <entry key="CSS" value="21" />
           <entry key="HTML" value="69" />
           <entry key="Image" value="1" />
-          <entry key="JavaScript" value="390" />
+          <entry key="JavaScript" value="391" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="1" />
         </counts>
@@ -57,14 +60,14 @@
         <counts>
           <entry key="css" value="549" />
           <entry key="html" value="2759" />
-          <entry key="js" value="33894" />
+          <entry key="js" value="33936" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="549" />
           <entry key="HTML" value="2759" />
-          <entry key="JavaScript" value="33894" />
+          <entry key="JavaScript" value="33936" />
         </counts>
       </usages-collector>
     </session>
@@ -130,15 +133,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/keywords.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="68" column="49" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/circle.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-736" />
@@ -152,14 +146,27 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-937">
+              <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/rect.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="74" column="27" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechRect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="367">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -215,8 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Trigger/keyword_hold/draw.js" />
-        <option value="$PROJECT_DIR$/Trigger/keyword_button/touch.js" />
         <option value="$PROJECT_DIR$/Trigger/keyword_button/draw.js" />
         <option value="$PROJECT_DIR$/Trigger/keywords/styles.css" />
         <option value="$PROJECT_DIR$/SVG/keywords/draw.js" />
@@ -266,6 +271,8 @@
         <option value="$PROJECT_DIR$/SVG/keywords/index.html" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/styles.css" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/speechRect.js" />
+        <option value="$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js" />
+        <option value="$PROJECT_DIR$/Tablet/keyword_button/rect.js" />
       </list>
     </option>
   </component>
@@ -393,12 +400,12 @@
       <workItem from="1560178291037" duration="16810000" />
       <workItem from="1560448443547" duration="833000" />
       <workItem from="1560780397881" duration="686000" />
-      <workItem from="1560819138585" duration="915000" />
+      <workItem from="1560819138585" duration="1549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263268000" />
+    <option name="totallyTimeSpent" value="263902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,7 +432,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.09504951" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.27722773" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.25903615" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -439,7 +446,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/speechRectHere.js" />
     <entry file="file://$PROJECT_DIR$/SVG/keyword_hold/styles.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -732,9 +738,6 @@
     <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyCircle.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -790,8 +793,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechRect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        <state relative-caret-position="367">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/copyShapes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-937">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/rect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="74" column="27" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
         </state>
       </provider>
     </entry>
