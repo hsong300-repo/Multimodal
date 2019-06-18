@@ -95,7 +95,7 @@ document.oncontextmenu = function() {
 };
 
 // Add the event listener which gets triggered when using the trackpad
-window.addEventListener('mousewheel', function(event) {
+document.getElementById('container').addEventListener('mousewheel', function(event) {
     // We don't want to scroll below zero or above the width and height
     var maxX = this.scrollWidth - this.offsetWidth;
     var maxY = this.scrollHeight - this.offsetHeight;
