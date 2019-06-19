@@ -4,7 +4,9 @@
     /*width:800px;*/
     /*height:600px;*/
     width:800px;
-    height:600px;
+    /*height:600px;*/
+    height:500px;
+
 
 }
 
@@ -135,7 +137,8 @@ div.d {
 /*rectangle*/
 svg {
     border: solid 1px grey;
-    height: 600px;
+    /*height: 600px;*/
+    height: 500px;
     width: 800px;
 }
 rect {
