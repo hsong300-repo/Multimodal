@@ -26,7 +26,7 @@ var final_transcript = '';
 recognition.interimResults = true;
 annyang.start();
 count = 0;
-
+command_flag = false;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
@@ -36,20 +36,35 @@ recognition.onresult = function(event) {
             final_transcript += event.results[i][0].transcript;
             console.log("***final_transcript:::",final_transcript);
             count++;
-            $("#log").val(final_transcript);
+            if(command_flag === true){
+                $("#log").val(final_transcript);
 
-            // $("#log").text(final_transcript);
-            QueryProcess(final_transcript);
-            document.getElementById('listen').style.display = "none";
+                // $("#log").text(final_transcript);
+                QueryProcess(final_transcript);
+                document.getElementById('listen').style.display = "none";
+            }
+
         } else {
             interim_transcript += event.results[i][0].transcript;
+            var trueStr = interim_transcript.split(" ");
+            console.log("trueStr",trueStr);
+            console.log("here first and second",trueStr[0],trueStr[1]);
+            if(trueStr[0] === "system"){
+                command_flag = true;
+            }else if(trueStr[1] === "system"){
+                command_flag = true;
+            }else{
+                command_flag = false;
+            }
 
         }
     }
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
         // $("#log").text(interim_transcript);
-        $("#log").val(interim_transcript);
+        if(command_flag === true){
+            $("#log").val(interim_transcript);
+        }
 
     }
 };
