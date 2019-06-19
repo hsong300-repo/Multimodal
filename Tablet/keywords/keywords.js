@@ -63,8 +63,6 @@ recognition.onresult = function(event) {
                 //     command_flag =false;
                 // }
             }
-            annyang.start();
-
 
         }
     }
@@ -84,6 +82,9 @@ recognition.onresult = function(event) {
 
 // this is to track the position
 window.addEventListener('load', function(){
+
+    annyang.start();
+
 
     // var box1 = document.getElementById('box1')
     var box1 = document.getElementById('container');
