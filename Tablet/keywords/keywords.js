@@ -51,15 +51,17 @@ recognition.onresult = function(event) {
             if(count === 0){
                 if(magic_word[0] === "system" || magic_word[0] === " system"){
                     command_flag =true;
-                }else{
-                    command_flag =false;
                 }
+                // else{
+                //     command_flag =false;
+                // }
             }else{
                 if(magic_word[1] === "system" || magic_word[1] === " system" ){
                     command_flag =true;
-                }else{
-                    command_flag =false;
                 }
+                // else{
+                //     command_flag =false;
+                // }
             }
 
         }
