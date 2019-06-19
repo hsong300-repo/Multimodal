@@ -2,7 +2,7 @@
     border: 1px solid grey;
     background-color: lightgrey;
     width:800px;
-    height:600px;
+    height:500px;
 }
 
 #listen{
@@ -129,7 +129,7 @@ div.d {
 /*rectangle*/
 svg {
     border: solid 1px grey;
-    height: 600px;
+    height: 500px;
     width: 800px;
 }
 rect {
