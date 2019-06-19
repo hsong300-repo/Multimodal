@@ -2,6 +2,7 @@ if (annyang) {
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
+        'system':function(){alert('system called');}
     };
 
     annyang.interimResults = true;
@@ -25,7 +26,7 @@ var final_transcript = '';
 recognition.interimResults = true;
 annyang.start();
 count = 0;
-
+command_flag = false;
 recognition.onresult = function(event) {
     var interim_transcript = '';
     final_transcript = '';
@@ -83,7 +84,7 @@ recognition.onresult = function(event) {
 // this is to track the position
 window.addEventListener('load', function(){
 
-    annyang.start();
+    // annyang.start();
 
 
     // var box1 = document.getElementById('box1')
