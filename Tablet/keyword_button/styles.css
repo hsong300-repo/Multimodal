@@ -26,8 +26,8 @@
     position: absolute;
     left:22.5%;
     /*left:10.5%;*/
-    /*top:15%;*/
-    top:30%;
+    top:15%;
+    /*top:30%;*/
 
 
 
@@ -94,13 +94,16 @@ span.c {
 
 
 div.b {
-    display: inline-block;
-    position: absolute;
+    /*display: inline-block;*/
+    position: relative;
     /*left:81%;*/
+    overflow:hidden;
     left:85%;
-    /*width: 100px;*/
-    /*height: 100px;*/
-    padding: 5px;
+
+    /*padding: 5px;*/
+    padding: 0px;
+    margin: 0px;
+
     top:15%;
     /*margin-top:-5px;*/
     /*margin-bottom:-10px;*/
