@@ -100,7 +100,6 @@ function QueryProcess(script){
         updateShapes(color[0],strokeColor[0]);
     }else{
         $("#output").text("A command did not work. Try again.");
-
     }
 }
 
