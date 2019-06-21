@@ -26,7 +26,9 @@
     position: absolute;
     left:22.5%;
     /*left:10.5%;*/
-    top:15%;
+    /*top:15%;*/
+    top:20%;
+
 
 
 }
@@ -100,6 +102,27 @@ div.b {
     /*height: 100px;*/
     padding: 5px;
     top:15%;
+    /*margin-top:-5px;*/
+    /*margin-bottom:-10px;*/
+
+    /*top:-5%;*/
+
+
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+div.e {
+    display: inline-block;
+    position: absolute;
+    /*left:81%;*/
+    left:85%;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 5px;
+    top:15%;
+    /*top:-5%;*/
+
 
     /*border: 1px solid blue;*/
     /*background-color: yellow;*/

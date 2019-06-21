@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/queryProcess.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/queryProcess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tablet/keyword_button/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_button/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +36,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="27" />
-          <entry key="html" value="72" />
+          <entry key="css" value="28" />
+          <entry key="html" value="73" />
           <entry key="js" value="439" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
@@ -47,8 +46,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="27" />
-          <entry key="HTML" value="72" />
+          <entry key="CSS" value="28" />
+          <entry key="HTML" value="73" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="439" />
           <entry key="RNG Compact" value="1" />
@@ -57,15 +56,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="580" />
-          <entry key="html" value="2875" />
+          <entry key="css" value="596" />
+          <entry key="html" value="2882" />
           <entry key="js" value="35682" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="580" />
-          <entry key="HTML" value="2875" />
+          <entry key="CSS" value="596" />
+          <entry key="HTML" value="2882" />
           <entry key="JavaScript" value="35682" />
         </counts>
       </usages-collector>
@@ -73,20 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tablet/keyword_hold/styles.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="148" column="16" lean-forward="true" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tablet/keywords/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="134" column="1" lean-forward="true" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+            <state relative-caret-position="360">
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -112,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="n#!!block;n#removeShapes#0" />
                 <element signature="n#!!block;n#removeThisShape#0" />
@@ -125,6 +115,18 @@
                 <element signature="n#!!block;n#shapeFill#0" />
                 <element signature="n#!!block;n#strokeFill#0" />
                 <element signature="n#!!block;n#idProcess#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="537">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -247,7 +249,6 @@
         <option value="$PROJECT_DIR$/Tablet/keyword_button/circle.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/keywords.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/disable-back-swipe.js" />
-        <option value="$PROJECT_DIR$/Tablet/keyword_button/index.html" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/textProcess.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/index.html" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/circle.js" />
@@ -268,11 +269,12 @@
         <option value="$PROJECT_DIR$/Tablet/keywords/keywords.js" />
         <option value="$PROJECT_DIR$/Tablet/keywords/index.html" />
         <option value="$PROJECT_DIR$/Tablet/keywords/keywords_test.js" />
-        <option value="$PROJECT_DIR$/Tablet/keyword_button/styles.css" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/styles.css" />
         <option value="$PROJECT_DIR$/Tablet/keywords/styles.css" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/queryProcess.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js" />
+        <option value="$PROJECT_DIR$/Tablet/keyword_button/index.html" />
+        <option value="$PROJECT_DIR$/Tablet/keyword_button/styles.css" />
       </list>
     </option>
   </component>
@@ -401,12 +403,12 @@
       <workItem from="1560819138585" duration="3056000" />
       <workItem from="1560873628679" duration="5450000" />
       <workItem from="1560908387378" duration="4730000" />
-      <workItem from="1561140855462" duration="2543000" />
+      <workItem from="1561140855462" duration="3220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278132000" />
+    <option name="totallyTimeSpent" value="278809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -560,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tablet/keyword_hold/textProcess.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -635,6 +630,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="6" selection-start-line="1" selection-end-line="136" />
+          <folding>
+            <element signature="n#!!block;n#copyCircle#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,6 +664,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="4" selection-start-line="1" selection-end-line="131" />
+          <folding>
+            <element signature="n#!!block;n#copyRect#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -708,13 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -782,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="n#!!block;n#removeShapes#0" />
             <element signature="n#!!block;n#removeThisShape#0" />
@@ -793,6 +787,23 @@
             <element signature="n#!!block;n#strokeFill#0" />
             <element signature="n#!!block;n#idProcess#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tablet/keyword_button/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
