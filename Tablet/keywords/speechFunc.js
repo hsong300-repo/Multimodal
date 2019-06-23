@@ -68,6 +68,22 @@ function pointCProcess(id){
 }
 
 function removeShapes(shape, color,stroke) {
+
+    if (colors.indexOf(color) >= 0) {
+        var color_flag = true;
+    }else{
+        var color_flag = false;
+    }
+
+    if(colors.indexOf(stroke) >=0){
+        var stroke_flag = true;
+
+    }else{
+        var stroke_flag = false;
+    }
+
+    console.log('color & stroke flag',color_flag, stroke_flag);
+
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
             var inColor = d3.rgb(color);
@@ -164,7 +180,10 @@ function removeShapes(shape, color,stroke) {
             });// iterate on ellipses
             $("#output").text("Removal completed");
 
-        }else {
+        }else if(color_flag === false && stroke_flag === false){
+            console.log('false false');
+            $("#output").text("Command did not work. Try again.");
+        }else{
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
@@ -214,6 +233,19 @@ function removeThisShape(){
 
 function updateShapes(color, stroke){
 
+    if (colors.indexOf(color) >= 0) {
+        var color_flag = true;
+    }else{
+        var color_flag = false;
+    }
+
+    if(colors.indexOf(stroke) >=0){
+        var stroke_flag = true;
+
+    }else{
+        var stroke_flag = false;
+    }
+
     console.log('update color shape');
 
     var tempId = shapeId;
@@ -221,21 +253,46 @@ function updateShapes(color, stroke){
     console.log('remove shape',id);
 
     if(id === "rect"){
-        d3.selectAll("rect").each(function(d,i){
-            var elt = d3.select(this);
-            if(elt.attr("id") === shapeId) {
-                elt.style("fill",color);
-                elt.style("stroke",stroke);
 
-            }
-        });
+        if(color_flag === false && stroke_flag == false){
+            $("#output").text("Command did not work. Try again.");
+
+
+        }else{
+            d3.selectAll("rect").each(function(d,i){
+                var elt = d3.select(this);
+                if(elt.attr("id") === shapeId) {
+                    elt.style("fill",color);
+                    elt.style("stroke",stroke);
+
+                }
+            });
+
+            $("#output").text("Style updated");
+
+        }
+
+
     }else if(id === "circle"){
-        d3.selectAll("ellipse").each(function(d,i){
-            var elt = d3.select(this);
-            if(elt.attr("id") === shapeId) {
-                elt.style("fill",color);
-                elt.style("stroke",stroke);        }
-        });
+        if(color_flag === false && stroke_flag == false){
+            $("#output").text("Command did not work. Try again.");
+
+
+        }else{
+            d3.selectAll("ellipse").each(function(d,i){
+                var elt = d3.select(this);
+                if(elt.attr("id") === shapeId) {
+                    elt.style("fill",color);
+                    elt.style("stroke",stroke);        }
+            });
+
+            $("#output").text("Style updated");
+
+        }
+
+    }else{
+        $("#output").text("Command did not work. Try again.");
+
     }
 
 
