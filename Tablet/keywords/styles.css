@@ -112,6 +112,19 @@ div.d {
     /*background-color: yellow;*/
 }
 
+div.manual {
+    margin-top : -10px;
+}
+
+div.log_message {
+    margin-top : -10px;
+}
+
+div.diagnostic_message {
+    margin-top : -10px;
+}
+
+
 .button {
     /*background-color: #4CAF50; !* Green *!*/
     border: none;
