@@ -116,4 +116,8 @@ document.oncontextmenu = function() {
     return false;
 };
 
+//drawing rectangle pre-selected
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("touchRect").click();
+});
 
