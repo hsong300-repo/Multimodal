@@ -13,7 +13,7 @@ var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
         m2 = d3.mouse(this);
         if(isDown && !isDrag) {
             // self.rectData[1] = { x: m2[0], y: m2[1] };
-            self.rectData[1] ={x: 65+rId*20, y: 65};
+            self.rectData[1] ={x: 105+rId*20, y: 105};
             updateRect();
         }else{
             console.log('here else');
@@ -89,7 +89,7 @@ var dragC3 = d3.behavior.drag().on('drag', dragPoint3);
 var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
 rId++;
-self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 65+rId*20, y: 65 } ];
+self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 105+rId*20, y: 105 } ];
 self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
 self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
@@ -216,7 +216,7 @@ function putRectHere(color,strokeColor) {
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
     rId++;
-    self.rectData = [ { x: globX, y: globY }, { x: globX + 50, y: globY + 50 } ];
+    self.rectData = [ { x: globX, y: globY }, { x: globX + 100, y: globY + 100 } ];
     self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
