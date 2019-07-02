@@ -12,10 +12,10 @@ function Ellipse() {
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
-            m1 = d3.mouse(this);
+        m1 = d3.mouse(this);
         if (!isDown && click == 1) {
-        // if (!isDown) {
-                if(!isDragging){
+            // if (!isDown) {
+            if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -24,17 +24,12 @@ function Ellipse() {
                     a: 0,
                     b: 0
                 }];
-                // self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').on("click",clicked).call(dragE);
                 cId++;
-                self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').call(dragE);
+                self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("stroke-width","6px").call(dragE);
                 self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
                 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
                 self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
                 self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
-                // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-                // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-                // self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
-                // self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE').call(dragP);
                 updateEllipse();
             }
         } else {
@@ -47,7 +42,7 @@ function Ellipse() {
         console.log('outside');
     })
         .on('touchmove', function () {
-        // .on('mousemove', function () {
+            // .on('mousemove', function () {
             console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
@@ -102,6 +97,9 @@ function Ellipse() {
         console.log('dragstart');
         isDown = false;
         isDragging = true;
+        d3.select(this).transition()
+            .style("stroke-width", "6px");
+
         // d3.event.sourceEvent.stopPropagation();
         // d3.event.sourceEvent.preventDefault();
     }
@@ -109,6 +107,9 @@ function Ellipse() {
     function dragEnd(d) {
         console.log('dragend');
         isDown = isDragging = false;
+        d3.select(this).transition()
+            .style("stroke-width", "2px");
+
     }
 
     function dragEllipse(d) {

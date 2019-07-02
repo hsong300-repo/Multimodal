@@ -39,9 +39,9 @@ function Rectangle() {
         }
         isDown = !isDown;
         click++;
-        })
+    })
         .on('touchmove', function() {
-        // .on('mousemove', function() {
+            // .on('mousemove', function() {
             console.log('touch move');
             m2 = d3.mouse(this);
             // m2 = d3.touch(this);

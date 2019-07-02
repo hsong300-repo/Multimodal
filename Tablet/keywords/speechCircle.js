@@ -1,10 +1,3 @@
-// var svg = d3.select('body').append('svg');
-// var cId = 0;
-//
-// d3.select('#touchCircle').on('click', function () {
-//     new Ellipse();
-// });
-
 function putCircle(color,strokeColor) {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
@@ -13,11 +6,9 @@ function putCircle(color,strokeColor) {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
         m1 = d3.mouse(this);
-
         isDragging = true;
         isDown = !isDown;
         click++;
-        // cId++;
     })
         .on('touchmove', function () {
             // .on('mousemove', function () {
@@ -65,16 +56,11 @@ function putCircle(color,strokeColor) {
 
     }
 
-
     var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
     var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);
 
     if(!isDragging){
         self.eData = [{
-            // x1: 100+cId*30,
-            // y1: 200+cId*30,
-            // x2: 100+cId*30+20,
-            // y2: 200+cId*30+20,
             x1: 50+cId*30,
             y1: 50,
             x2: 70+cId*30,
@@ -83,7 +69,7 @@ function putCircle(color,strokeColor) {
             b: 35
         }];
         cId++;
-        self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).call(dragE);
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragE);
         self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
         self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
@@ -95,11 +81,16 @@ function putCircle(color,strokeColor) {
         console.log('dragstart');
         isDown = false;
         isDragging = true;
+        d3.select(this).transition()
+            .style("stroke-width", "6px");
+
     }
 
     function dragEnd(d) {
         console.log('dragend');
         isDown = isDragging = false;
+        d3.select(this).transition()
+            .style("stroke-width", "2px");
     }
 
     function dragEllipse(d) {
@@ -140,9 +131,9 @@ function putCircleHere(color,strokeColor) {
 
     console.log('circle touchstart');
 
-    console.log("globx and goby",globX,globY)
-
+    console.log("globx and goby",globX,globY);
     self.eData = [{
+
         x1: globX,
         y1: globY,
         x2: globX,
@@ -151,17 +142,15 @@ function putCircleHere(color,strokeColor) {
         b: 35
     }];
     cId++;
-    self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).call(dragE);
+    self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragE);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
     self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
     self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
     updateEllipse();
-
     isDragging = true;
     isDown = !isDown;
     click++;
-
 
     svg .on('touchmove', function () {
         // .on('mousemove', function () {
@@ -211,16 +200,21 @@ function putCircleHere(color,strokeColor) {
 
     }
 
-
     function dragStart(d) {
         console.log('dragstart');
         isDown = false;
         isDragging = true;
+        d3.select(this).transition()
+            .style("stroke-width", "6px");
+
     }
 
     function dragEnd(d) {
         console.log('dragend');
         isDown = isDragging = false;
+        d3.select(this).transition()
+            .style("stroke-width", "2px");
+
     }
 
     function dragEllipse(d) {

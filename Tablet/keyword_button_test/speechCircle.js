@@ -152,7 +152,7 @@ function putCircleHere(color,strokeColor) {
     isDown = !isDown;
     click++;
 
-   svg .on('touchmove', function () {
+    svg .on('touchmove', function () {
         // .on('mousemove', function () {
         console.log('circle touchmove');
         m2 = d3.mouse(this);

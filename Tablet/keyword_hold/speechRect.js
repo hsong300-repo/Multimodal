@@ -5,7 +5,6 @@ function putRect(color,strokeColor) {
         m1 = d3.mouse(this);
         console.log('drag');
         isDrag = true;
-        // }
         isDown = !isDown;
     })
 
@@ -16,6 +15,8 @@ function putRect(color,strokeColor) {
                 // self.rectData[1] = { x: m2[0], y: m2[1] };
                 self.rectData[1] ={x: 65+rId*20, y: 65};
                 updateRect();
+            }else{
+                console.log('here else');
             }
         });
 
@@ -29,24 +30,47 @@ function putRect(color,strokeColor) {
         });
 
         var point1 = d3.select(self.pointElement1[0][0]).data(self.rectData);
+        // point1.attr('r', 8)
         point1.attr('r', 15)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[0].y);
         var point2 = d3.select(self.pointElement2[0][0]).data(self.rectData);
+        // point2.attr('r', 8)
         point2.attr('r', 15)
             .attr('cx', self.rectData[1].x)
             .attr('cy', self.rectData[1].y);
         var point3 = d3.select(self.pointElement3[0][0]).data(self.rectData);
+        // point3.attr('r', 8)
         point3.attr('r', 15)
             .attr('cx', self.rectData[1].x)
             .attr('cy', self.rectData[0].y);
         var point3 = d3.select(self.pointElement4[0][0]).data(self.rectData);
         point3.attr('r', 15)
+        // point3.attr('r', 8)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[1].y);
+        // rect.style('stroke-width',"2px");
+
     }
 
-    var dragR = d3.behavior.drag().on('drag', dragRect);
+// var dragR = d3.behavior.drag().on('drag', dragRect);
+    var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
+
+    function dragStart(d) {
+        console.log('dragstart');
+        isDown = false;
+        isDragging = true;
+        d3.select(this).transition()
+            .style("stroke-width", "6px");
+
+    }
+
+    function dragEnd(d) {
+        console.log('dragend');
+        isDown = isDragging = false;
+        d3.select(this).transition()
+            .style("stroke-width", "2px");
+    }
 
     function dragRect() {
         var e = d3.event;
@@ -65,9 +89,8 @@ function putRect(color,strokeColor) {
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
     rId++;
-// self.rectData = [ { x: rId*10, y: rId*10 }, { x: 50+rId*10, y: 50+rId*10 } ];
     self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 65+rId*20, y: 65 } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).call(dragR);
+    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
@@ -120,6 +143,7 @@ function putRectHere(color,strokeColor) {
             // self.rectData[1] ={x: 65+rId*20, y: 65};
             updateRect();
         }
+
     });
 
     function updateRect() {
@@ -150,16 +174,39 @@ function putRectHere(color,strokeColor) {
             .attr('cy', self.rectData[1].y);
     }
 
-    var dragR = d3.behavior.drag().on('drag', dragRect);
+    // var dragR = d3.behavior.drag().on('drag', dragRect);
+    var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
+
+    function dragStart(d) {
+        console.log('dragstart');
+        isDown = false;
+        isDragging = true;
+        d3.select(this).transition()
+            .style("stroke-width", "6px");
+
+    }
+
+    function dragEnd(d) {
+        console.log('dragend');
+        isDown = isDragging = false;
+        d3.select(this).transition()
+            .style("stroke-width", "2px");
+    }
+
 
     function dragRect() {
+
         var e = d3.event;
         for(var i = 0; i < self.rectData.length; i++){
+            // d3.select(self.rectangleElement[0][0])
+            //     .attr('x', self.rectData[i].x += e.dx )
+            //     .attr('y', self.rectData[i].y += e.dy );
             d3.select(self.rectangleElement[0][0])
                 .attr('x', self.rectData[i].x += e.dx )
                 .attr('y', self.rectData[i].y += e.dy );
         }
         rect.style('cursor', 'move');
+        // rect.style('stroke-width',"6px");
         updateRect();
     }
 
@@ -169,9 +216,8 @@ function putRectHere(color,strokeColor) {
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
     rId++;
-    // self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 65+rId*20, y: 65 } ];
     self.rectData = [ { x: globX, y: globY }, { x: globX + 50, y: globY + 50 } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).call(dragR);
+    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);

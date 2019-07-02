@@ -12,10 +12,10 @@ function Ellipse() {
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
-            m1 = d3.mouse(this);
+        m1 = d3.mouse(this);
         if (!isDown && click == 1) {
-        // if (!isDown) {
-                if(!isDragging){
+            // if (!isDown) {
+            if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -42,7 +42,7 @@ function Ellipse() {
         console.log('outside');
     })
         .on('touchmove', function () {
-        // .on('mousemove', function () {
+            // .on('mousemove', function () {
             console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
