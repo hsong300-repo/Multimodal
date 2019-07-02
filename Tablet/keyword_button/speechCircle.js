@@ -65,8 +65,10 @@ function putCircle(color,strokeColor) {
             y1: 50,
             x2: 70+cId*30,
             y2: 50+cId*30,
-            a: 35,
-            b: 35
+            // a: 35,
+            // b: 35
+            a: 50,
+            b: 50
         }];
         cId++;
         self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragE);
@@ -138,8 +140,8 @@ function putCircleHere(color,strokeColor) {
         y1: globY,
         x2: globX,
         y2: globY,
-        a: 35,
-        b: 35
+        a: 50,
+        b: 50
     }];
     cId++;
     self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragE);
@@ -152,7 +154,7 @@ function putCircleHere(color,strokeColor) {
     isDown = !isDown;
     click++;
 
-   svg .on('touchmove', function () {
+    svg .on('touchmove', function () {
         // .on('mousemove', function () {
         console.log('circle touchmove');
         m2 = d3.mouse(this);
