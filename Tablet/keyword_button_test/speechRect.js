@@ -15,6 +15,8 @@ var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
             // self.rectData[1] = { x: m2[0], y: m2[1] };
             self.rectData[1] ={x: 65+rId*20, y: 65};
             updateRect();
+        }else{
+            console.log('here else');
         }
     });
 
@@ -51,7 +53,24 @@ function updateRect() {
 
 }
 
-var dragR = d3.behavior.drag().on('drag', dragRect);
+// var dragR = d3.behavior.drag().on('drag', dragRect);
+var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
+
+function dragStart(d) {
+    console.log('dragstart');
+    isDown = false;
+    isDragging = true;
+    d3.select(this).transition()
+        .style("stroke-width", "6px");
+
+}
+
+function dragEnd(d) {
+    console.log('dragend');
+    isDown = isDragging = false;
+    d3.select(this).transition()
+        .style("stroke-width", "2px");
+}
 
 function dragRect() {
     var e = d3.event;
@@ -124,6 +143,7 @@ function putRectHere(color,strokeColor) {
                 // self.rectData[1] ={x: 65+rId*20, y: 65};
                 updateRect();
             }
+
         });
 
     function updateRect() {
@@ -154,7 +174,25 @@ function putRectHere(color,strokeColor) {
             .attr('cy', self.rectData[1].y);
     }
 
-    var dragR = d3.behavior.drag().on('drag', dragRect);
+    // var dragR = d3.behavior.drag().on('drag', dragRect);
+    var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
+
+    function dragStart(d) {
+        console.log('dragstart');
+        isDown = false;
+        isDragging = true;
+        d3.select(this).transition()
+            .style("stroke-width", "6px");
+
+    }
+
+    function dragEnd(d) {
+        console.log('dragend');
+        isDown = isDragging = false;
+        d3.select(this).transition()
+            .style("stroke-width", "2px");
+    }
+
 
     function dragRect() {
 
