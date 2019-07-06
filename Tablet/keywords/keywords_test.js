@@ -30,6 +30,8 @@ command_flag = false;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
+    var ret = '';
+
     final_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
@@ -37,16 +39,11 @@ recognition.onresult = function(event) {
             console.log("***final_transcript:::",final_transcript);
             count++;
             if(command_flag === true){
+                final_transcript = final_transcript.replace(/system/g,'');
                 $("#log").val(final_transcript);
-
-                // $("#log").text(final_transcript);
                 QueryProcess(final_transcript);
-                // document.getElementById('listen').style.display = "none";
                 $('input.b').removeClass("flash");// I think this is a problem
-
-
             }
-
         } else {
             interim_transcript += event.results[i][0].transcript;
             var trueStr = interim_transcript.split(" ");
@@ -63,10 +60,13 @@ recognition.onresult = function(event) {
         }
     }
     if(interim_transcript!='') {
-        console.log('interim transcript',interim_transcript);
-        // $("#log").text(interim_transcript);
+        // console.log('interim transcript typeof',typeof interim_transcript);
+        var temp = interim_transcript;
+        ret = temp.replace(/system/g,'');
         if(command_flag === true){
-            $("#log").val(interim_transcript);
+            // $("#log").val(interim_transcript);
+            $("#log").val(ret);
+
             $('input.b').addClass("flash");
 
         }
@@ -77,16 +77,11 @@ recognition.onresult = function(event) {
 
 // this is to track the position
 window.addEventListener('load', function(){
-
     // annyang.start();
-
-
     // var box1 = document.getElementById('box1')
     var box1 = document.getElementById('container');
-    var statusdiv = document.getElementById('statusdiv');
     var startx = 0;
     var starty = 0;
-    var dist = 0;
 
     box1.addEventListener('pointerdown', function(e){
         // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
@@ -100,7 +95,6 @@ window.addEventListener('load', function(){
         globX = startx - box1.offsetLeft-12;
         globY = starty - box1.offsetTop-12;
 
-        // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
         e.preventDefault();
     }, false);
 

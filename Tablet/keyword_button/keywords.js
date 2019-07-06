@@ -37,13 +37,7 @@ recognition.onresult = function(event) {
             // $("#log").removeClass("input.blink");
 
             $('input.b').removeClass("flash");
-
-
-
             annyang.abort();
-
-
-
         } else {
             interim_transcript += event.results[i][0].transcript;
 
