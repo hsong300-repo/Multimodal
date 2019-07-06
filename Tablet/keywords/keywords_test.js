@@ -41,7 +41,10 @@ recognition.onresult = function(event) {
 
                 // $("#log").text(final_transcript);
                 QueryProcess(final_transcript);
-                document.getElementById('listen').style.display = "none";
+                // document.getElementById('listen').style.display = "none";
+                $('input.b').removeClass("flash");// I think this is a problem
+
+
             }
 
         } else {
@@ -64,6 +67,8 @@ recognition.onresult = function(event) {
         // $("#log").text(interim_transcript);
         if(command_flag === true){
             $("#log").val(interim_transcript);
+            $('input.b').addClass("flash");
+
         }
 
     }

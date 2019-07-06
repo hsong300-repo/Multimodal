@@ -117,7 +117,40 @@ div.manual {
 
 div.log_message {
     margin-top : -10px;
+
 }
+
+/*flashing red border*/
+@keyframes blink {
+    50% { border-color: #ff0000; }
+}
+
+@-webkit-keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 red;}
+    50% { box-shadow: 0 0 0 4px red; }
+}
+
+input.b{
+    border: 1px solid black;
+    /*animation: pulse 1s infinite;*/
+}
+
+.flash{
+    animation: pulse 1s infinite;
+}
+
+/*.highlight*/
+/*{*/
+    /*border: 2px solid #ff0000;*/
+    /*!*font-weight: bold;*!*/
+/*}*/
+
+/*.highlighted*/
+/*{*/
+    /*border: 1px solid #000000;*/
+    /*!*font-weight: bold;*!*/
+/*}*/
+
 
 div.diagnostic_message {
     margin-top : -10px;
@@ -176,3 +209,8 @@ ellipse {
     stroke: #000;
     stroke-width: 2px;
 }
+
+
+/*table{ !*or other element you want*!*/
+    /*animation: blink .5s step-end infinite alternate;*/
+/*}*/

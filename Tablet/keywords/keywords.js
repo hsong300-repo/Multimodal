@@ -38,12 +38,11 @@ recognition.onresult = function(event) {
             if(command_flag === true){
                 QueryProcess(final_transcript);
                 $("#log").val(final_transcript);
-                document.getElementById('listen').style.display = "none";
+                // document.getElementById('listen').style.display = "none";
+                // $('input.b').removeClass("flash");
+
             }
-            // else{
-            //     //** this is for test
-            //     $("#log").val(final_transcript);
-            // }
+
             // annyang.start(); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
         } else {
             interim_transcript += event.results[i][0].transcript;
@@ -53,26 +52,26 @@ recognition.onresult = function(event) {
                 if(magic_word[0] === "system" || magic_word[0] === " system"){
                     command_flag =true;
                 }
-                // else{
-                //     command_flag =false;
-                // }
+
             }else{
                 if(magic_word[1] === "system" || magic_word[1] === " system" ){
                     command_flag =true;
                 }
-                // else{
-                //     command_flag =false;
-                // }
+
             }
 
         }
     }
     if(interim_transcript!='') {
         if(command_flag === true){
-            document.getElementById('listen').style.display = "block";
+            // document.getElementById('listen').style.display = "block";
+            $('input.b').addClass("flash");
+
             $("#log").val(interim_transcript);
         }else{
-            document.getElementById('listen').style.display = "none";
+            // document.getElementById('listen').style.display = "none";
+            $('input.b').removeClass("flash");
+
         }
 
 

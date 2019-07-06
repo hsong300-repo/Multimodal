@@ -34,9 +34,15 @@ recognition.onresult = function(event) {
             // $("#log").text(final_transcript);
             $("#log").val(final_transcript);
             QueryProcess(final_transcript);
-            document.getElementById('listen').style.display = "none";
+            // $("#log").removeClass("input.blink");
+
+            $('input.b').removeClass("flash");
+
+
+
             annyang.abort();
-            document.getElementById('listen').style.display = "none";
+
+
 
         } else {
             interim_transcript += event.results[i][0].transcript;
@@ -54,11 +60,16 @@ recognition.onresult = function(event) {
 
 };
 
+
+
 function EnableSpeech(){
-
     annyang.start();
-    document.getElementById('listen').style.display = "block";
+    // document.getElementById('listen').style.display = "block";
+    $('input.b').addClass("flash");
+    // blink($('#log'));    // $("#log").addClass("input.blink");
 
+
+    // document.getElementById('log').style.display = "block";
 }
 
 
@@ -98,3 +109,4 @@ document.oncontextmenu = function() {
 document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("touchRect").click();
 });
+

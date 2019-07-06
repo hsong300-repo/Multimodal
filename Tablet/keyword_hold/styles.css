@@ -51,6 +51,25 @@
 
 }
 
+@keyframes blink {
+    50% { border-color: #ff0000; }
+}
+
+@-webkit-keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 red;}
+    50% { box-shadow: 0 0 0 4px red; }
+}
+
+
+input.b{
+    border: 1px solid black;
+    /*animation: pulse 1s infinite;*/
+}
+
+.flash{
+    animation: pulse 1s infinite;
+}
+
 input.c {
     display: block;
     /*width: 100px;*/

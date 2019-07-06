@@ -78,7 +78,9 @@ window.addEventListener('load', function(){
         // globY = starty-130;
 
         // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
-        document.getElementById('listen').style.display = "block";
+        // document.getElementById('listen').style.display = "block";
+        $('input.b').addClass("flash");
+
         e.preventDefault();
         annyang.start();
     }, false);
@@ -92,7 +94,9 @@ window.addEventListener('load', function(){
         // globY = starty-130;
 
         statusdiv.innerHTML = 'Status: touchmove';
-        document.getElementById('listen').style.display = "block";
+        // document.getElementById('listen').style.display = "block";
+        $('input.b').addClass("flash");
+
 
         e.preventDefault();
     }, false);
@@ -107,7 +111,9 @@ window.addEventListener('load', function(){
 
         statusdiv.innerHTML = 'Status: touchend';
         $("#output").text("Recognition stopped");
-        document.getElementById('listen').style.display = "none";
+        // document.getElementById('listen').style.display = "none";
+        $('input.b').removeClass("flash");
+
 
         e.preventDefault();
         annyang.abort();
