@@ -424,7 +424,7 @@ d3.select('svg').on('pointerdown', function(d, i) {
 
         //ellipse part
         d3.selectAll(".pointE").style("opacity",0);
-        de.selectAll("ellipse").style("stroke-width","2px");
+        d3.selectAll("ellipse").style("stroke-width","2px");
 
 
         // d3.selectAll("ellipse").each(function(d,i){
@@ -472,7 +472,7 @@ d3.select('svg').on('pointerdown', function(d, i) {
         // });
 
         d3.selectAll(".pointC").style("opacity",0);
-        de.selectAll("rect").style("stroke-width","2px");
+        d3.selectAll("rect").style("stroke-width","2px");
 
 
 
