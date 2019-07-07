@@ -33,7 +33,6 @@ recognition.onresult = function(event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
-            count++;
             //this is where I call a query processer, when the speech input ends
             if(command_flag === true){
                 QueryProcess(final_transcript);
@@ -44,23 +43,24 @@ recognition.onresult = function(event) {
             }
 
             // annyang.start(); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
-        } else {
-            interim_transcript += event.results[i][0].transcript;
-            var magic_word = interim_transcript.split(' ');
-            command_flag = false;
-            if(count === 0){
-                if(magic_word[0] === "system" || magic_word[0] === " system"){
-                    command_flag =true;
-                }
+        }
+        interim_transcript += event.results[i][0].transcript;
+        var magic_word = interim_transcript.split(' ');
+        command_flag = false;
+        if(count === 0){
+            if(magic_word[0] === "system" || magic_word[0] === " system"){
+                command_flag =true;
+            }
 
-            }else{
-                if(magic_word[1] === "system" || magic_word[1] === " system" ){
-                    command_flag =true;
-                }
+        }else{
+            if(magic_word[1] === "system" || magic_word[1] === " system" ){
+                command_flag =true;
 
             }
 
         }
+
+
     }
     if(interim_transcript!='') {
         if(command_flag === true){
@@ -78,6 +78,64 @@ recognition.onresult = function(event) {
     }
 
 };
+
+// recognition.onresult = function(event) {
+//     var interim_transcript = '';
+//     final_transcript = '';
+//     for (var i = event.resultIndex; i < event.results.length; ++i) {
+//         if (event.results[i].isFinal) {
+//             final_transcript += event.results[i][0].transcript;
+//             count++;
+//             //this is where I call a query processer, when the speech input ends
+//             if(command_flag === true){
+//                 QueryProcess(final_transcript);
+//                 $("#log").val(final_transcript);
+//                 // document.getElementById('listen').style.display = "none";
+//                 // $('input.b').removeClass("flash");
+//
+//             }
+//             annyang.start();
+//
+//             // annyang.start(); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
+//         } else {
+//             interim_transcript += event.results[i][0].transcript;
+//             var magic_word = interim_transcript.split(' ');
+//             command_flag = false;
+//             if(count === 0){
+//                 if(magic_word[0] === "system" || magic_word[0] === " system"){
+//                     command_flag =true;
+//                     annyang.abort();
+//                 }
+//
+//             }else{
+//                 if(magic_word[1] === "system" || magic_word[1] === " system" ){
+//                     command_flag =true;
+//                     annyang.abort();
+//
+//                 }
+//
+//             }
+//
+//         }
+//     }
+//     if(interim_transcript!='') {
+//         if(command_flag === true){
+//             // document.getElementById('listen').style.display = "block";
+//             $('input.b').addClass("flash");
+//
+//             $("#log").val(interim_transcript);
+//         }else{
+//             // document.getElementById('listen').style.display = "none";
+//             $('input.b').removeClass("flash");
+//
+//         }
+//
+//
+//     }
+//
+// };
+
+
 
 
 // this is to track the position

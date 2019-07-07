@@ -66,13 +66,58 @@ recognition.onresult = function(event) {
         if(command_flag === true){
             // $("#log").val(interim_transcript);
             $("#log").val(ret);
-
             $('input.b').addClass("flash");
-
         }
 
     }
 };
+
+
+// recognition.onresult = function(event) {
+//     var interim_transcript = '';
+//     var ret = '';
+//
+//     final_transcript = '';
+//     for (var i = event.resultIndex; i < event.results.length; ++i) {
+//         if (event.results[i].isFinal) {
+//             final_transcript += event.results[i][0].transcript;
+//             console.log("***final_transcript:::",final_transcript);
+//             count++;
+//             if(command_flag === true){
+//                 final_transcript = final_transcript.replace(/system/g,'');
+//                 $("#log").val(final_transcript);
+//                 QueryProcess(final_transcript);
+//                 $('input.b').removeClass("flash");// I think this is a problem
+//             }
+//         } else {
+//             interim_transcript += event.results[i][0].transcript;
+//             var trueStr = interim_transcript.split(" ");
+//             console.log("trueStr",trueStr);
+//             console.log("here first and second",trueStr[0],trueStr[1]);
+//             if(trueStr[0] === "system"){
+//                 command_flag = true;
+//             }else if(trueStr[1] === "system"){
+//                 command_flag = true;
+//             }else{
+//                 command_flag = false;
+//             }
+//
+//         }
+//     }
+//     if(interim_transcript!='') {
+//         // console.log('interim transcript typeof',typeof interim_transcript);
+//         var temp = interim_transcript;
+//         ret = temp.replace(/system/g,'');
+//         if(command_flag === true){
+//             // $("#log").val(interim_transcript);
+//             $("#log").val(ret);
+//
+//             $('input.b').addClass("flash");
+//
+//         }
+//
+//     }
+// };
 
 
 // this is to track the position
