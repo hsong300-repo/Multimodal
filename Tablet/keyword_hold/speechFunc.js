@@ -241,23 +241,18 @@ function updateShapes(color, stroke){
 
     if(colors.indexOf(stroke) >=0){
         var stroke_flag = true;
-
     }else{
         var stroke_flag = false;
     }
 
     console.log('update color shape');
-
     var tempId = shapeId;
     var id = idProcess(tempId);
     console.log('remove shape',id);
 
     if(id === "rect"){
-
         if(color_flag === false && stroke_flag == false){
             $("#output").text("Command did not work. Try again.");
-
-
         }else{
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
@@ -431,7 +426,8 @@ function orderShape(){
 
 }
 
-d3.select('svg').on('pointerdown', function(d, i) {
+d3.select('svg').on('touchstart', function(d, i) {
+// d3.select('svg').on('pointerdown', function(d, i) {
 // d3.select('svg').on('touchend', function(d, i) {
     console.log("Clicked ID: " + d3.event.target.id);
     shapeId = d3.event.target.id;
