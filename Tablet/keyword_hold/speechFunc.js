@@ -426,7 +426,8 @@ function orderShape(){
 
 }
 
-d3.select('svg').on('touchstart', function(d, i) {
+d3.select('svg').on('pointerdown', function(d, i) {
+
 // d3.select('svg').on('pointerdown', function(d, i) {
 // d3.select('svg').on('touchend', function(d, i) {
     console.log("Clicked ID: " + d3.event.target.id);
@@ -478,9 +479,7 @@ d3.select('svg').on('touchstart', function(d, i) {
         d3.selectAll("rect").style("stroke-width","2px");
 
         document.getElementById('shapeFormat').style.display = "block";
-
     }else{
-
         console.log('svg');
         d3.selectAll("rect").style('stroke-width',"2px");
         d3.selectAll("ellipse").style('stroke-width',"2px");
