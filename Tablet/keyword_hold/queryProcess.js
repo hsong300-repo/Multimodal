@@ -52,9 +52,6 @@ function QueryProcess(script){
                 return andStr[1].indexOf(n) > -1;
             });
         }
-
-        // console.log('stroke color',strokeColor);
-
     }else{
         console.log('normal');
         var tokenStr = myStr.split(" ");
@@ -84,24 +81,25 @@ function QueryProcess(script){
         var n = mapToNumber(count[0]);
     }
 
-    // let andStr = splitAnd(myStr); // this one is added for applying stroke color and fillcolor
-    // let tokenStr = myStr.split(" ");
-    //make it all lower case
-    console.log('tokenizedStr',tokenStr);
-    // var result = ["remove","insert","create","put","generate"].filter(function(n) {
-    //     return tokenStr.indexOf(n) > -1;
-    // });
 
+
+//commands
     if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-
+        console.log('draw');
         drawShapes(shape[0],color[0],n,strokeColor[0],here);
         // putRect();
-    }else if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('update');
+
+        updateShapes(color[0],strokeColor[0]);
+    }
+
+    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('copy');
-
         copyShapes(n);
+    }
 
-    }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
 
         if(deleteThis === true){
@@ -110,9 +108,11 @@ function QueryProcess(script){
             removeShapes(shape[0],color[0],strokeColor[0]);
         }
 
-    }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        updateShapes(color[0],strokeColor[0]);
-    }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    }
+
+
+
+    if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('order');
         orderShape();
     }else{
