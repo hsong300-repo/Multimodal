@@ -431,11 +431,8 @@ function orderShape(){
 
 }
 
-// d3.select('svg').on('pointerdown', function(d, i) {
-d3.select('svg').on('touchend', function(d, i) {
-    // if (d3.event.defaultPrevented) return; // dragged
-
-    // Somehow console.log the ID of the circle clicked on (if any).
+d3.select('svg').on('pointerdown', function(d, i) {
+// d3.select('svg').on('touchend', function(d, i) {
     console.log("Clicked ID: " + d3.event.target.id);
     shapeId = d3.event.target.id;
     console.log("shapeId click",shapeId);
@@ -443,11 +440,8 @@ d3.select('svg').on('touchend', function(d, i) {
     var tempId = d3.event.target.id;
     shape = d3.select("#"+tempId);
 
-
     var id = idProcess(tempId);
     if(id ==="rect"){
-        // d3.select("#"+tempId).transition()
-        //     .style("stroke-width", "6px");
         document.getElementById('shapeFormat').style.display = "block";
 
         d3.selectAll("rect").each(function(d,i){
@@ -468,22 +462,7 @@ d3.select('svg').on('touchend', function(d, i) {
         d3.selectAll(".pointE").style("opacity",0);
         d3.selectAll("ellipse").style("stroke-width","2px");
 
-
-        // d3.selectAll("ellipse").each(function(d,i){
-        //     var elt = d3.select(this);
-        //     if(elt.attr("id") === shapeId){
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "6px");
-        //     }else{
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "2px");
-        //     }
-        // });
-
     }else if(id==="circle"){
-        // d3.select("#"+tempId).transition()
-        //     .style("stroke-width", "6px");
-
         d3.selectAll("ellipse").each(function(d,i){
            var elt = d3.select(this);
            if(elt.attr("id") === shapeId){
@@ -499,25 +478,8 @@ d3.select('svg').on('touchend', function(d, i) {
         d3.selectAll(".pointE").filter("."+shapeId).style("opacity",1);
         // ellipses
 
-
-
-        // //rect part
-        // d3.selectAll("rect").each(function(d,i){
-        //     var elt = d3.select(this);
-        //     if(elt.attr("id") === shapeId){
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "6px");
-        //     }else{
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "2px");
-        //     }
-        // });
-
         d3.selectAll(".pointC").style("opacity",0);
         d3.selectAll("rect").style("stroke-width","2px");
-
-
-
 
         document.getElementById('shapeFormat').style.display = "block";
 

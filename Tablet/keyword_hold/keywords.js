@@ -48,6 +48,7 @@ recognition.onresult = function(event) {
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
         $("#log").val(interim_transcript);
+        $("#log").val(final_transcript);
     }
 };
 
