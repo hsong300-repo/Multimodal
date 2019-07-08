@@ -7,6 +7,8 @@ if (annyang) {
         'system':function(){alert('system called');}
     };
 
+    console.log('***commands');
+
     annyang.interimResults = true;
 
     annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
@@ -14,10 +16,16 @@ if (annyang) {
         $("#output").text(userSaid);
         console.log(commandText); // sample output: 'hello (there)'
         console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+        console.log('result match printout');
     });
+
+    console.log('***reusltmatch');
 
     // Add our commands to annyang
     annyang.addCommands(commands);
+
+    console.log('***after add commands');
+
 
     // Start listening.
     // annyang.start();
@@ -27,6 +35,7 @@ if (annyang) {
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
 recognition.interimResults = true;
+
 annyang.start();
 count = 0;
 command_flag = false;
@@ -40,6 +49,7 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             console.log("***final_transcript:::",final_transcript);
+            count++;
             if(command_flag === true){
                 final_transcript = final_transcript.replace(/system/g,'');
                 $("#log").val(final_transcript);
@@ -69,58 +79,15 @@ recognition.onresult = function(event) {
             // $("#log").val(interim_transcript);
             $("#log").val(ret);
             $('input.b').addClass("flash");
+
+        }else{
+            // $("#log").val(ret);
+            // $('input.b').removeClass("flash");// I think this is a problem
+
         }
 
     }
 };
-
-
-
-// recognition.onresult = function(event) {
-//     var interim_transcript = '';
-//     var ret = '';
-//
-//     final_transcript = '';
-//     for (var i = event.resultIndex; i < event.results.length; ++i) {
-//         if (event.results[i].isFinal) {
-//             final_transcript += event.results[i][0].transcript;
-//             console.log("***final_transcript:::",final_transcript);
-//             count++;
-//             if(command_flag === true){
-//                 final_transcript = final_transcript.replace(/system/g,'');
-//                 $("#log").val(final_transcript);
-//                 QueryProcess(final_transcript);
-//                 $('input.b').removeClass("flash");// I think this is a problem
-//             }
-//         } else {
-//             interim_transcript += event.results[i][0].transcript;
-//             var trueStr = interim_transcript.split(" ");
-//             console.log("trueStr",trueStr);
-//             console.log("here first and second",trueStr[0],trueStr[1]);
-//             if(trueStr[0] === "system"){
-//                 command_flag = true;
-//             }else if(trueStr[1] === "system"){
-//                 command_flag = true;
-//             }else{
-//                 command_flag = false;
-//             }
-//
-//         }
-//     }
-//     if(interim_transcript!='') {
-//         // console.log('interim transcript typeof',typeof interim_transcript);
-//         var temp = interim_transcript;
-//         ret = temp.replace(/system/g,'');
-//         if(command_flag === true){
-//             // $("#log").val(interim_transcript);
-//             $("#log").val(ret);
-//
-//             $('input.b').addClass("flash");
-//
-//         }
-//
-//     }
-// };
 
 
 // this is to track the position
