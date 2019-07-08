@@ -390,9 +390,51 @@ $("#border_color").change(function () {
 
 });
 
+d3.selection.prototype.moveToFront = function() {
+    return this.each(function(){
+        this.parentNode.appendChild(this);
+    });
+};
+
+function orderShape(){
+    var tempId = shapeId;
+    var id = idProcess(tempId);
+    console.log('remove shape',id);
+
+    if(id === "rect"){
+        d3.selectAll("rect").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                var temp  = d3.select(this);
+                temp.moveToFront();
+                var tempId = pointCProcess(temp.attr("id"));
+                d3.selectAll(tempId).moveToFront();
+            }
+        });
+
+        $("#output").text("Bring to front");
+
+    }else if(id === "circle"){
+        d3.selectAll("ellipse").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                var temp  = d3.select(this);
+                temp.moveToFront();
+                var tempId = pointEProcess(temp.attr("id"));
+                d3.selectAll(tempId).moveToFront();
+            }
+        });
+
+
+    }
+
+    $("#output").text("Bring to front");
+
+}
+
 //when click on a object those objects will have thicker width
-d3.select('svg').on('pointerdown', function(d, i) {
-// d3.select('svg').on('touchend', function(d, i) {
+// d3.select('svg').on('pointerdown', function(d, i) {
+d3.select('svg').on('touchend', function(d, i) {
     // if (d3.event.defaultPrevented) return; // dragged
 
     // Somehow console.log the ID of the circle clicked on (if any).
