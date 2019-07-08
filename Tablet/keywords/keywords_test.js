@@ -1,4 +1,6 @@
 if (annyang) {
+
+    console.log("annyang**");
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
@@ -21,6 +23,7 @@ if (annyang) {
     // annyang.start();
 }
 
+
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
 recognition.interimResults = true;
@@ -37,7 +40,6 @@ recognition.onresult = function(event) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             console.log("***final_transcript:::",final_transcript);
-            count++;
             if(command_flag === true){
                 final_transcript = final_transcript.replace(/system/g,'');
                 $("#log").val(final_transcript);
@@ -71,6 +73,7 @@ recognition.onresult = function(event) {
 
     }
 };
+
 
 
 // recognition.onresult = function(event) {

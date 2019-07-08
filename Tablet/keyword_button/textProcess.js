@@ -1,15 +1,3 @@
-// commands modes
-const drawCommands = ["draw","insert","create","put","generate","add"];
-const copyCommands = ["copy","duplicate","paste","copies"];
-const deleteCommands = ["remove","delete","clear"];
-const updateCommands = ["change","update","apply","fill","set","make","color"];
-
-//shapes
-const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
-//colors
-const colors = ["red","brown","green","yellow","pink","blue","purple","gray","grey","white","pink","black","wheat","violet","plum","tomato","silver","yellow","aqua"];
-//counts
-const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
 
 
 function splitAnd(script){

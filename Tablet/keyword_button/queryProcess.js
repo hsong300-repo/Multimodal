@@ -1,3 +1,18 @@
+// commands modes
+const drawCommands = ["draw","insert","create","put","generate","add"];
+const copyCommands = ["copy","duplicate","paste","copies"];
+const deleteCommands = ["remove","delete","clear"];
+const updateCommands = ["change","update","apply","fill","set","make","color"];
+
+//shapes
+const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
+//colors
+const colors = ["red","brown","green","yellow","pink","blue","purple","gray","grey","white","pink","black","wheat","violet","plum","tomato","silver","yellow","aqua"];
+//counts
+const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
+const order = ["front","raise","bring"];
+
+
 // this is the function that process query that detects keywords and lead to certain function
 function QueryProcess(script){
     let myStr = script.toLowerCase();
@@ -98,6 +113,9 @@ function QueryProcess(script){
 
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         updateShapes(color[0],strokeColor[0]);
+    }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('order');
+        orderShape();
     }else{
         $("#output").text("A command did not work. Try again.");
     }
