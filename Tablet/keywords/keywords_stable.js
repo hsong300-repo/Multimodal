@@ -1,13 +1,10 @@
 if (annyang) {
 
-    console.log("annyang**");
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
         'system':function(){alert('system called');}
     };
-
-    console.log('***commands');
 
     annyang.interimResults = true;
 
@@ -19,13 +16,8 @@ if (annyang) {
         console.log('result match printout');
     });
 
-    console.log('***reusltmatch');
-
     // Add our commands to annyang
     annyang.addCommands(commands);
-
-    console.log('***after add commands');
-
 
     // Start listening.
     // annyang.start();
@@ -34,6 +26,7 @@ if (annyang) {
 
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
+var track = '';
 recognition.interimResults = true;
 
 annyang.start();
@@ -43,9 +36,14 @@ command_flag = false;
 recognition.onresult = function(event) {
     var interim_transcript = '';
     var ret = '';
+    // var system_flag = '';
+
+    if(track === "system" || track === " system"){
+        console.log('system true');
+        system_flag = true;
+    }
 
     final_transcript = '';
-    // console.log('commang flag before loop',command_flag);
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
@@ -57,9 +55,19 @@ recognition.onresult = function(event) {
                 QueryProcess(final_transcript);
                 $('input.b').removeClass("flash");// I think this is a problem
             }
+            if(system_flag === true){
+                final_transcript = final_transcript.replace(/system/g,'');
+                $("#log").val(final_transcript);
+                QueryProcess(final_transcript);
+                $('input.b').removeClass("flash");// I think this is a problem
+                system_flag = false;
+            }
         } else {
+            console.log('flag track',command_flag);
             interim_transcript += event.results[i][0].transcript;
             var trueStr = interim_transcript.split(" ");
+            track = trueStr;
+            console.log('track',track);
             console.log("trueStr",trueStr);
             console.log("here first and second",trueStr[0],trueStr[1]);
             if(trueStr[0] === "system"){
@@ -72,6 +80,7 @@ recognition.onresult = function(event) {
 
         }
     }// end of for loop
+
     if(interim_transcript!='') {
         // console.log('interim transcript typeof',typeof interim_transcript);
         var temp = interim_transcript;
@@ -80,15 +89,15 @@ recognition.onresult = function(event) {
             // $("#log").val(interim_transcript);
             $("#log").val(ret);
             $('input.b').addClass("flash");
-            // $('input.b').addClass("flash");
-
-        }else{
-            // $("#log").val(ret);
-            // $('input.b').removeClass("flash");// I think this is a problem
-
+        }else if(system_flag === true){
+            $("#log").val(interim_transcript);
+            $('input.b').addClass("flash");
         }
 
     }
+    // track = interim_transcript;
+    // console.log('track',track);
+
 };
 
 

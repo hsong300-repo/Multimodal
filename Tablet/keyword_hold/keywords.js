@@ -62,6 +62,8 @@ window.addEventListener('load', function(){
     box1.addEventListener('touchstart', function(e){
         annyang.start();
         statusdiv.innerHTML = 'Status: touchstart';
+        $("#output").text("Recognition active");
+
 
         $('input.b').addClass("flash");
 
@@ -70,6 +72,8 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         statusdiv.innerHTML = 'Status: touchmove';
+        $("#output").text("Recognition active");
+
         $('input.b').addClass("flash");
 
         e.preventDefault();

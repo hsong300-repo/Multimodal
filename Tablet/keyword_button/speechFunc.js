@@ -81,6 +81,10 @@ function removeShapes(shape, color,stroke) {
         var stroke_flag = false;
     }
 
+    if(stroke_flag === false && color_flag === false){// "delete" command delete the selected shape
+        removeThisShape();
+    }
+
     console.log('color & stroke flag',color_flag, stroke_flag);
 
     if (shape === "circle" || shape === "circles") {
@@ -189,7 +193,6 @@ function removeShapes(shape, color,stroke) {
             $("#output").text("Removal completed");
 
         }
-
 
     }//else if rect
 }// end of remove shapes

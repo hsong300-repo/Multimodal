@@ -84,6 +84,10 @@ function removeShapes(shape, color,stroke) {
 
     console.log('color & stroke flag',color_flag, stroke_flag);
 
+    if(stroke_flag === false && color_flag === false){// "delete" command delete the selected shape
+        removeThisShape();
+    }
+
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
             var inColor = d3.rgb(color);
