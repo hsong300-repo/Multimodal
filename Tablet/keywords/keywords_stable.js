@@ -32,71 +32,103 @@ recognition.interimResults = true;
 annyang.start();
 count = 0;
 command_flag = false;
+system_flag = false;
+givePass = false;
+pass_count = 0;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
     var ret = '';
     // var system_flag = '';
+    var temp_flag = system_flag;
 
-    if(track === "system" || track === " system"){
+    if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
         console.log('system true');
         system_flag = true;
+    }else{
+        system_flag = false;
+
     }
+
+    if(system_flag === true){
+        pass_count = 0;
+        command_flag = true;
+        givePass = true;
+    }else{
+        // givePass = false;
+        system_flag = false;
+
+    }
+
+    console.log('givePass', givePass);
+    //it should be executed while true, false change to true,
+
+    // console.log("system flag track", system_flag);
+    // console.log('track flag and system flag',system_flag, temp_flag);
+    // console.log('command flag',command_flag);
+
 
     final_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
+        console.log('results');
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
             console.log("***final_transcript:::",final_transcript);
             count++;
+            pass_count++;
+            console.log('count',count);
             if(command_flag === true){
-                final_transcript = final_transcript.replace(/system/g,'');
-                $("#log").val(final_transcript);
-                QueryProcess(final_transcript);
-                $('input.b').removeClass("flash");// I think this is a problem
-            }
-            if(system_flag === true){
-                final_transcript = final_transcript.replace(/system/g,'');
-                $("#log").val(final_transcript);
-                QueryProcess(final_transcript);
-                $('input.b').removeClass("flash");// I think this is a problem
-                system_flag = false;
+                if(pass_count === 1 ){
+                    final_transcript = final_transcript.replace(/system/g,'');
+                    $("#log").val(final_transcript);
+                    QueryProcess(final_transcript);
+                    $('input.b').removeClass("flash");// I think this is a problem
+                }else{
+                    givePass = false;
+                    $('input.b').removeClass("flash");// I think this is a problem
+                }
             }
         } else {
-            console.log('flag track',command_flag);
-            interim_transcript += event.results[i][0].transcript;
-            var trueStr = interim_transcript.split(" ");
-            track = trueStr;
-            console.log('track',track);
-            console.log("trueStr",trueStr);
-            console.log("here first and second",trueStr[0],trueStr[1]);
-            if(trueStr[0] === "system"){
-                command_flag = true;
-            }else if(trueStr[1] === "system"){
-                command_flag = true;
+            if(givePass === true){
+                interim_transcript += event.results[i][0].transcript;
+                // command_flag = true;
             }else{
-                command_flag = false;
+                // console.log('flag track',command_flag);
+                interim_transcript += event.results[i][0].transcript;
+                var trueStr = interim_transcript.split(" ");
+                // track = trueStr;
+                // console.log('track',track);
+                console.log("trueStr",trueStr);
+                console.log("here first and second",trueStr[0],trueStr[1]);
+                if(trueStr[0] === "system"){
+                    command_flag = true;
+                }else if(trueStr[1] === "system"){
+                    command_flag = true;
+                }else{
+                    command_flag = false;
+                }
             }
 
-        }
+
+        }//end of else
     }// end of for loop
 
     if(interim_transcript!='') {
+        console.log('interim_transcript',interim_transcript);
+        console.log('system flag',system_flag,"temp_flag", temp_flag,"command_flag",command_flag);
+
         // console.log('interim transcript typeof',typeof interim_transcript);
+        var trueStr = interim_transcript.split(" ");
+        track = trueStr;
         var temp = interim_transcript;
         ret = temp.replace(/system/g,'');
         if(command_flag === true){
-            // $("#log").val(interim_transcript);
             $("#log").val(ret);
-            $('input.b').addClass("flash");
-        }else if(system_flag === true){
-            $("#log").val(interim_transcript);
             $('input.b').addClass("flash");
         }
 
+
     }
-    // track = interim_transcript;
-    // console.log('track',track);
 
 };
 
