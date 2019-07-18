@@ -1,7 +1,8 @@
 #container {
     border: 1px solid grey;
     background-color: lightgrey;
-    width:800px;
+    /*width:800px;*/
+    width:1000px;
     height:500px;
 }
 
@@ -19,7 +20,8 @@
     display: inline-block;
     /*display: inline-block;*/
     position: absolute;
-    left:22.5%;
+    /*left:22.5%;*/
+    left:15%;
     top:15%;
 
 
@@ -93,8 +95,10 @@ span.c {
     /*height: 100px;*/
     /*padding: 5px;*/
     padding: 12px 20px;
+    /*padding: 12px 10px;*/
     position: absolute;
     right:10%;
+    /*right:5%;*/
     top:15%;
 
 
@@ -120,7 +124,9 @@ div.b {
 div.d {
     display: inline-block;
     position: absolute;
-    left:15%;
+    /*left:15%;*/
+    left:5%;
+
     /*width: 100px;*/
     /*height: 100px;*/
     padding: 5px;
@@ -162,7 +168,9 @@ div.diagnostic_message {
 svg {
     border: solid 1px grey;
     height: 500px;
-    width: 800px;
+    /*width: 800px;*/
+    width: 1000px;
+
 }
 rect {
     fill: grey;
