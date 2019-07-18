@@ -62,6 +62,8 @@ recognition.onresult = function(event) {
 
     }
 
+
+
     console.log('givePass', givePass);
     //it should be executed while true, false change to true,
 
@@ -84,7 +86,15 @@ recognition.onresult = function(event) {
                     final_transcript = final_transcript.replace(/system/g,'');
                     $("#log").val(final_transcript);
                     QueryProcess(final_transcript);
-                    $('input.b').removeClass("flash");// I think this is a problem
+                    // $('input.b').removeClass("flash");// I think this is a problem
+                    // if(track[0] && track.length!== "system" && track[1] !== "system"){
+                    //     $('input.b').removeClass("flash");// I think this is a problem
+                    // }
+                    if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
+                        //this is the case only when system is called
+                    }else{
+                        $('input.b').removeClass("flash");// I think this is a problem
+                    }
                     givePass = false;
                 }else{
                     givePass = false;
