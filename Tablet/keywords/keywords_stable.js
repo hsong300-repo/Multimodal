@@ -42,6 +42,8 @@ recognition.onresult = function(event) {
     // var system_flag = '';
     var temp_flag = system_flag;
 
+    console.log('track before', track, track.length);
+
     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
         console.log('system true');
         system_flag = true;
@@ -83,6 +85,7 @@ recognition.onresult = function(event) {
                     $("#log").val(final_transcript);
                     QueryProcess(final_transcript);
                     $('input.b').removeClass("flash");// I think this is a problem
+                    givePass = false;
                 }else{
                     givePass = false;
                     $('input.b').removeClass("flash");// I think this is a problem
