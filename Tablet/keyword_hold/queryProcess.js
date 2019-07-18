@@ -1,8 +1,8 @@
 // commands modes
-const drawCommands = ["draw","insert","create","put","generate","add"];
+const drawCommands = ["draw","insert","create","put","generate","make","add"];
 const copyCommands = ["copy","duplicate","paste","copies"];
 const deleteCommands = ["remove","delete","clear"];
-const updateCommands = ["change","update","apply","fill","set","make","color"];
+const updateCommands = ["change","update","apply","fill","set","color"];
 
 //shapes
 const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
