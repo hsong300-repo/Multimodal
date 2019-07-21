@@ -52,6 +52,8 @@ function putCircle(color,strokeColor) {
             .attr('r', 15)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
+        shapeId = "circle_" + cId;
+        console.log('shapeId',shapeId);
 
 
     }
@@ -76,6 +78,8 @@ function putCircle(color,strokeColor) {
         self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
         self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+        shapeId = "circle_" + cId;
+        console.log('shapeId',shapeId);
         updateEllipse();
     }
 
@@ -93,6 +97,8 @@ function putCircle(color,strokeColor) {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        shapeId = "circle_" + cId;
+        console.log('shapeId',shapeId);
     }
 
     function dragEllipse(d) {
@@ -149,12 +155,13 @@ function putCircleHere(color,strokeColor) {
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
     self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
     self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+    shapeId = "circle_" + cId;
     updateEllipse();
     isDragging = true;
     isDown = !isDown;
     click++;
 
-    svg .on('touchmove', function () {
+    svg.on('touchmove', function () {
         // .on('mousemove', function () {
         console.log('circle touchmove');
         m2 = d3.mouse(this);
@@ -198,6 +205,8 @@ function putCircleHere(color,strokeColor) {
             .attr('r', 15)
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
+        shapeId = "circle_" + cId;
+        console.log('shapeId',shapeId);
 
 
     }
@@ -216,6 +225,8 @@ function putCircleHere(color,strokeColor) {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        shapeId = "circle_" + cId;
+        console.log('shapeId',shapeId);
 
     }
 

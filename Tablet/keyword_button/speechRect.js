@@ -50,6 +50,8 @@ function updateRect() {
         .attr('cx', self.rectData[0].x)
         .attr('cy', self.rectData[1].y);
     // rect.style('stroke-width',"2px");
+    shapeId = "rect_" +rId;
+    console.log('shapeId',shapeId);
 
 }
 
@@ -70,6 +72,8 @@ function dragEnd(d) {
     isDown = isDragging = false;
     d3.select(this).transition()
         .style("stroke-width", "2px");
+    shapeId = "rect_" +rId;
+    console.log('shapeId',shapeId);
 }
 
 function dragRect() {
@@ -95,6 +99,8 @@ self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" 
 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
 self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
 self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
+shapeId = "rect_" +rId;
+console.log('shapeId',shapeId);
 updateRect();
 
 function dragPoint1() {
@@ -172,6 +178,8 @@ function putRectHere(color,strokeColor) {
         point3.attr('r', 15)
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[1].y);
+        shapeId = "rect_" +rId;
+        console.log('shapeId',shapeId);
     }
 
     // var dragR = d3.behavior.drag().on('drag', dragRect);
@@ -191,6 +199,8 @@ function putRectHere(color,strokeColor) {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        shapeId = "rect_" +rId;
+        console.log('shapeId',shapeId);
     }
 
 
@@ -222,6 +232,8 @@ function putRectHere(color,strokeColor) {
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
     self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
+    shapeId = "rect_" +rId;
+    console.log('shapeId',shapeId);
     updateRect();
 
     function dragPoint1() {

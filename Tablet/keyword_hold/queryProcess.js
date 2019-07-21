@@ -84,7 +84,10 @@ function QueryProcess(script){
 
 
 //commands
-    if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('copy');
+        copyShapes(n);
+    }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('draw');
         drawShapes(shape[0],color[0],n,strokeColor[0],here);
         // putRect();
@@ -92,14 +95,7 @@ function QueryProcess(script){
         console.log('update');
 
         updateShapes(color[0],strokeColor[0]);
-    }
-
-    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        console.log('copy');
-        copyShapes(n);
-    }
-
-    if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
 
         if(deleteThis === true){

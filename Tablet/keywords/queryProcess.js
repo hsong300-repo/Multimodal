@@ -87,14 +87,14 @@ function QueryProcess(script){
     //     return tokenStr.indexOf(n) > -1;
     // });
 
-    if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-
-        drawShapes(shape[0],color[0],n,strokeColor[0],here);
-        // putRect();
-    }else if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
 
         copyShapes(n);
 
+    }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+
+        drawShapes(shape[0],color[0],n,strokeColor[0],here);
+        // putRect();
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
 
         if(deleteThis === true){

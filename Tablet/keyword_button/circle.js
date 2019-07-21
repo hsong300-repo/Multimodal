@@ -30,6 +30,8 @@ function Ellipse() {
                 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
                 self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
                 self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+                shapeId = "circle_" + cId;
+                console.log('shapeId',shapeId);
                 updateEllipse();
             }
         } else {
@@ -109,6 +111,8 @@ function Ellipse() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        shapeId = "circle_" + cId;
+        console.log('shapeId',shapeId);
 
     }
 

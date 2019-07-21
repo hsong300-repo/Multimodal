@@ -4,33 +4,22 @@ function drawShapes(shape, color,count,stroke,here) {
         if (count) {
             for (i = 0; i < count; i++) {
                 if(here === true){
-                    // new putCircleHere(color,stroke);
                     new putCircleHere(color,stroke);
                 }else{
                     new putCircle(color,stroke);
-
                 }
-                // new putCircleHere(color,stroke);
 
             }//for loop
 
             $("#output").text("Drawing completed");
 
         } else {
-
-            // new putCircle(color,stroke);
             if(here === true){
-                // new putCircleHere(color,stroke);
                 new putCircleHere(color,stroke);
-
             }else{
                 new putCircle(color,stroke);
-
             }
-            // new putCircleHere(color,stroke);
-
             $("#output").text("Drawing completed");
-
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
@@ -67,7 +56,6 @@ function pointCProcess(id){
 }
 
 function removeShapes(shape, color,stroke) {
-
     if (colors.indexOf(color) >= 0) {
         var color_flag = true;
     }else{
@@ -86,7 +74,6 @@ function removeShapes(shape, color,stroke) {
     }
 
     console.log('color & stroke flag',color_flag, stroke_flag);
-
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
             var inColor = d3.rgb(color);
@@ -102,16 +89,13 @@ function removeShapes(shape, color,stroke) {
                     temp.remove();
                     d3.selectAll(tempId).remove();
                     // d3.select(this).remove();
-
                     // d3.selectAll(".pointE").remove(); //testing
                 }
             });// iterate on ellipses
             $("#output").text("Removal completed");
         }else if(color && stroke !== "n"){
-
             var inColor = d3.rgb(color);
             var strokeColor = d3.rgb(stroke);
-
             d3.selectAll('ellipse').each(function(d,i){
                 var elt = d3.select(this);
                 var slt = d3.select(this);
@@ -133,8 +117,6 @@ function removeShapes(shape, color,stroke) {
 
         }else{// when specify shape
             console.log('***remove all circles');
-
-
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
@@ -160,12 +142,9 @@ function removeShapes(shape, color,stroke) {
             $("#output").text("Removal completed");
         }else if(color && stroke !== "n"){
             console.log('***both color and  stroke');
-
             var inColor = d3.rgb(color);
             var strokeColor = d3.rgb(stroke);
 
-
-            console.log('her color check');
             d3.selectAll('rect').each(function(d,i){
                 var elt = d3.select(this);
                 var slt = d3.select(this);
@@ -198,9 +177,6 @@ function removeShapes(shape, color,stroke) {
 }// end of remove shapes
 
 function removeThisShape(){
-
-    console.log('remove this shape');
-
     console.log("remove this id",shapeId);
 
     var tempId = shapeId;
@@ -274,14 +250,11 @@ function orderShape(){
 
 
     }
-
     $("#output").text("Bring to front");
-
 }
 
 
 function updateShapes(color, stroke){
-
     if (colors.indexOf(color) >= 0) {
         var color_flag = true;
     }else{
@@ -296,36 +269,27 @@ function updateShapes(color, stroke){
     }
 
     console.log('update color shape');
-
     var tempId = shapeId;
     var id = idProcess(tempId);
     console.log('remove shape',id);
 
     if(id === "rect"){
-
         if(color_flag === false && stroke_flag == false){
             $("#output").text("Command did not work. Try again.");
-
-
         }else{
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
                 if(elt.attr("id") === shapeId) {
                     elt.style("fill",color);
                     elt.style("stroke",stroke);
-
                 }
             });
 
             $("#output").text("Style updated");
-
         }
-
-
     }else if(id === "circle"){
         if(color_flag === false && stroke_flag == false){
             $("#output").text("Command did not work. Try again.");
-
 
         }else{
             d3.selectAll("ellipse").each(function(d,i){
@@ -334,24 +298,16 @@ function updateShapes(color, stroke){
                     elt.style("fill",color);
                     elt.style("stroke",stroke);        }
             });
-
             $("#output").text("Style updated");
-
         }
-
     }else{
         $("#output").text("Command did not work. Try again.");
-
     }
-
-
 }
-
 
 var space = 0;
 function copyShapes(count){
     space++;
-
     console.log('shapeId',shapeId);
     var tempId = shapeId;
     console.log('tempId',tempId);
@@ -382,7 +338,6 @@ function copyShapes(count){
         $("#output").text("Copied");
 
     }
-    // $("#output").text("Copy completed");
 }
 
 function shapeFill(){
@@ -390,7 +345,6 @@ function shapeFill(){
     var fillColor = $("#color option:selected").text();
 
     return fillColor;
-
 }
 
 function strokeFill(){
@@ -414,7 +368,6 @@ function idProcess(script){
 }
 
 
-
 document.getElementById('shapeFormat').style.display = "block";
 $("#color").change(function () {
     console.log("id colorchange",shape);
@@ -427,8 +380,8 @@ $("#color").change(function () {
     document.getElementById('color').selectedIndex = 0;
 
 });
-$("#border_color").change(function () {
 
+$("#border_color").change(function () {
 
     let stroke = strokeFill();
     shape.style("stroke",stroke);
@@ -437,109 +390,88 @@ $("#border_color").change(function () {
 
     document.getElementById('border_color').selectedIndex = 0;
 
-
 });
 
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
     // if (d3.event.defaultPrevented) return; // dragged
-
     // Somehow console.log the ID of the circle clicked on (if any).
-    console.log("Clicked ID: " + d3.event.target.id);
-    shapeId = d3.event.target.id;
-    console.log("shapeId click",shapeId);
-
-    var tempId = d3.event.target.id;
-    shape = d3.select("#"+tempId);
-
-
-    var id = idProcess(tempId);
-    if(id ==="rect"){
-        // d3.select("#"+tempId).transition()
-        //     .style("stroke-width", "6px");
-        document.getElementById('shapeFormat').style.display = "block";
-
-        d3.selectAll("rect").each(function(d,i){
-            var elt = d3.select(this);
-            if(elt.attr("id") === shapeId){
-                d3.select(this).transition()
-                    .style("stroke-width", "6px");
-            }else{
-                d3.select(this).transition()
-                    .style("stroke-width", "2px");
-            }
-        });
-
-        d3.selectAll(".pointC").style("opacity",0);
-        d3.selectAll(".pointC").filter("."+shapeId).style("opacity",1);
-
-        //ellipse part
-        d3.selectAll(".pointE").style("opacity",0);
-        d3.selectAll("ellipse").style("stroke-width","2px");
-
-
-        // d3.selectAll("ellipse").each(function(d,i){
-        //     var elt = d3.select(this);
-        //     if(elt.attr("id") === shapeId){
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "6px");
-        //     }else{
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "2px");
-        //     }
-        // });
-
-    }else if(id==="circle"){
-        // d3.select("#"+tempId).transition()
-        //     .style("stroke-width", "6px");
-
-        d3.selectAll("ellipse").each(function(d,i){
-            var elt = d3.select(this);
-            if(elt.attr("id") === shapeId){
-                d3.select(this).transition()
-                    .style("stroke-width", "6px");
-            }else{
-                d3.select(this).transition()
-                    .style("stroke-width", "2px");
-            }
-        });
-
-        d3.selectAll(".pointE").style("opacity",0);
-        d3.selectAll(".pointE").filter("."+shapeId).style("opacity",1);
-        // ellipses
-
-
-
-        // //rect part
-        // d3.selectAll("rect").each(function(d,i){
-        //     var elt = d3.select(this);
-        //     if(elt.attr("id") === shapeId){
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "6px");
-        //     }else{
-        //         d3.select(this).transition()
-        //             .style("stroke-width", "2px");
-        //     }
-        // });
-
-        d3.selectAll(".pointC").style("opacity",0);
-        d3.selectAll("rect").style("stroke-width","2px");
-
-
-
-
-        document.getElementById('shapeFormat').style.display = "block";
-
+    // console.log("Clicked ID: " + d3.event.target.id);
+    var check = d3.event.target.id;
+    console.log('check', typeof check, check.length, check);
+    if(check.length === 0){// when clicked on small circles for rect
+        console.log("small circle click for rect");
+        return;
+    }else if(check === "1" || check === "2" || check === "3" || check === "4"){// when click on small circles for ellipses
+        console.log("small circle click for ellipse");
+        return;
     }else{
+        shapeId = d3.event.target.id;
 
-        console.log('svg');
-        d3.selectAll("rect").style('stroke-width',"2px");
-        d3.selectAll("ellipse").style('stroke-width',"2px");
-        d3.selectAll("circle").style("opacity",0);
+        console.log("shapeId click",shapeId);
 
-        document.getElementById('shapeFormat').style.display = "none";
+        var tempId = d3.event.target.id;
+        shape = d3.select("#"+tempId);
+
+        var id = idProcess(tempId);
+        if(id ==="rect"){
+            // d3.select("#"+tempId).transition()
+            //     .style("stroke-width", "6px");
+            document.getElementById('shapeFormat').style.display = "block";
+
+            d3.selectAll("rect").each(function(d,i){
+                var elt = d3.select(this);
+                if(elt.attr("id") === shapeId){
+                    d3.select(this).transition()
+                        .style("stroke-width", "6px");
+                }else{
+                    d3.select(this).transition()
+                        .style("stroke-width", "2px");
+                }
+            });
+            d3.selectAll(".pointC").style("opacity",0);
+            d3.selectAll(".pointC").filter("."+shapeId).style("opacity",1);
+
+            //ellipse part
+            d3.selectAll(".pointE").style("opacity",0);
+            d3.selectAll("ellipse").style("stroke-width","2px");
+
+        }else if(id==="circle"){
+            // d3.select("#"+tempId).transition()
+            //     .style("stroke-width", "6px");
+
+            d3.selectAll("ellipse").each(function(d,i){
+                var elt = d3.select(this);
+                if(elt.attr("id") === shapeId){
+                    d3.select(this).transition()
+                        .style("stroke-width", "6px");
+                }else{
+                    d3.select(this).transition()
+                        .style("stroke-width", "2px");
+                }
+            });
+
+            d3.selectAll(".pointE").style("opacity",0);
+            d3.selectAll(".pointE").filter("."+shapeId).style("opacity",1);
+            // ellipses
+
+            d3.selectAll(".pointC").style("opacity",0);
+            d3.selectAll("rect").style("stroke-width","2px");
+
+            document.getElementById('shapeFormat').style.display = "block";
+        }else{
+            console.log('svg');
+            d3.selectAll("rect").style('stroke-width',"2px");
+            d3.selectAll("ellipse").style('stroke-width',"2px");
+            d3.selectAll("circle").style("opacity",0);
+
+            document.getElementById('shapeFormat').style.display = "none";
+        }
+
     }
+
+
 });
 
 document.getElementById('shapeFormat').style.display = "none";
