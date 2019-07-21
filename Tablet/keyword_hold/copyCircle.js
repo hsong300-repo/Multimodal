@@ -59,7 +59,6 @@ function copyCircle() {
     var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
     var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);
 
-
     var shapeWidth = d3.select("#"+shapeId).style("rx");
     var shapeHeight = d3.select("#"+shapeId).style("ry");
     var shapeColor = d3.select("#"+shapeId).style("fill");
@@ -72,12 +71,6 @@ function copyCircle() {
     if(!isDragging){
         console.log('***first but not dragging');
         self.eData = [{
-            // x1: 50+cId*30,
-            // y1: 50,
-            // x2: 70+cId*30,
-            // y2: 50+cId*30,
-            // a: parseInt(shapeWidth,10),
-            // b: parseInt(shapeHeight,10)
             x1: globX+cId*30,
             y1: globY,
             x2: globX+cId*30,
@@ -92,7 +85,8 @@ function copyCircle() {
         self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
         self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
-
+        shapeId = shapeId + "_copy" + count;
+        console.log('shapeId',shapeId);
         updateEllipse();
     }
 
@@ -110,6 +104,8 @@ function copyCircle() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        // shapeId = shapeId + "_copy" + count;
+        // console.log('shapeId',shapeId);
 
     }
 

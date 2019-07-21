@@ -20,28 +20,24 @@ function Rectangle() {
         if (!isDown && !isDrag && click == 1) {
             rId++;
             self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
-            // self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').on("click",clicked).call(dragR);
             self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("stroke-width","6px").call(dragR);
             self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
             self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
             self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
             self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
-            // self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC1);
-            // self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC').call(dragC2);
-            // self.pointElement3 = svg.append('circle').attr('class', 'pointC').call(dragC3);
-            // self.pointElement4 = svg.append('circle').attr('class', 'pointC').call(dragC4);
+            shapeId = "rect_" +rId;
+            console.log('shapeId',shapeId);
             updateRect();
             // isDrag = false;
         } else{
             console.log('drag');
             isDrag = true;
-            // document.getElementById('shapeFormat').style.display = "none";
         }
         isDown = !isDown;
         click++;
-    })
+        })
         .on('touchmove', function() {
-            // .on('mousemove', function() {
+        // .on('mousemove', function() {
             console.log('touch move');
             m2 = d3.mouse(this);
             // m2 = d3.touch(this);
@@ -49,10 +45,8 @@ function Rectangle() {
                 self.rectData[1] = { x: m2[0], y: m2[1] };
                 updateRect();
             }else{
-                // rect.style("stroke-width","6px");
                 console.log('touch more than one');
             }
-
         });
 
     function updateRect() {
@@ -81,7 +75,6 @@ function Rectangle() {
             .attr('cx', self.rectData[0].x)
             .attr('cy', self.rectData[1].y);
     }
-
     // var dragR = d3.behavior.drag().on('drag', dragRect);
     var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
 
@@ -99,9 +92,9 @@ function Rectangle() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        // shapeId = "rect_" +rId;
+        // console.log('shapeId',shapeId);
     }
-
-
 
     function dragRect() {
         var e = d3.event;
@@ -123,7 +116,6 @@ function Rectangle() {
     // var dragC2 = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragPoint2);
     // var dragC3 = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragPoint3);
     // var dragC4 = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragPoint4);
-
     function dragPoint1() {
         var e = d3.event;
         d3.select(self.pointElement1[0][0])
@@ -155,10 +147,6 @@ function Rectangle() {
             .attr('cy', self.rectData[1].y += e.dy );
         updateRect();
     }
-
-
-
-
 
 }//end Rectangle
 

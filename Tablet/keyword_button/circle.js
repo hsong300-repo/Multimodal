@@ -111,8 +111,8 @@ function Ellipse() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
-        shapeId = "circle_" + cId;
-        console.log('shapeId',shapeId);
+        // shapeId = "circle_" + cId;
+        // console.log('shapeId',shapeId);
 
     }
 

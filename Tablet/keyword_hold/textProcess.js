@@ -67,10 +67,12 @@ function textProcess(){
                 return andStr[1].indexOf(n) > -1;
             });
         }
-    }else{
-        var tokenStr = myStr.split(" ");
-        console.log('***normal',tokenStr);
 
+        // console.log('stroke color',strokeColor);
+
+    }else{
+        console.log('normal');
+        var tokenStr = myStr.split(" ");
 
         var shape = shapes.filter(function(n) {
             return tokenStr.indexOf(n) > -1;
@@ -93,7 +95,7 @@ function textProcess(){
             var strokeColor = "none"; // dafault
         }
 
-        console.log('***color & stroke color normal',color,strokeColor);
+        console.log('stroke color normal',strokeColor);
         var n = mapToNumber(count[0]);
     }
 
@@ -105,28 +107,30 @@ function textProcess(){
     //     return tokenStr.indexOf(n) > -1;
     // });
 
-    if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-
-        drawShapes(shape[0],color[0],n,strokeColor[0],here);
-        // putRect();
-    }else if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
         console.log('copy');
 
         copyShapes(n);
+    }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
 
+        drawShapes(shape[0],color[0],n,strokeColor[0],here);
+        // putRect();
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
+
         if(deleteThis === true){
             removeThisShape(shape[0],color[0],strokeColor[0]);
         }else if(deleteThis === false){
             removeShapes(shape[0],color[0],strokeColor[0]);
         }
-        // removeShapes(shape[0],color[0],strokeColor[0]);
+
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         updateShapes(color[0],strokeColor[0]);
+    }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('order');
+        orderShape();
     }else{
         $("#output").text("A command did not work. Try again.");
-
     }
 }
 

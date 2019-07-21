@@ -64,8 +64,9 @@ function copyRect() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        // shapeId = shapeId + "_copy" + count;
+        // console.log('shapeId',shapeId);
     }
-
 
     function dragRect() {
         var e = d3.event;
@@ -94,13 +95,8 @@ function copyRect() {
     console.log('shpaeHeight',shapeHeight);
     console.log('shpaeWidth',shapeWidth);
 
-
     rId++;
     count++;
-    // self.rectData = [{x: 15 + rId * 10, y: 15}, {
-    //     x: 15 + rId * 10 + parseInt(shapeWidth, 10),
-    //     y: 15 + parseInt(shapeHeight, 10)
-    // }];
     self.rectData = [{x: globX + rId * 10, y: globY}, {
         x: globX + rId * 10 + parseInt(shapeWidth, 10),
         y: globY + parseInt(shapeHeight, 10)
@@ -111,8 +107,9 @@ function copyRect() {
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC3);
     self.pointElement4 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC4);
+    shapeId = shapeId + "_copy" + count;
+    console.log('shapeId',shapeId);
     updateRect();
-
 
     function dragPoint1() {
         var e = d3.event;

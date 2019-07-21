@@ -12,10 +12,10 @@ function Ellipse() {
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
-        m1 = d3.mouse(this);
+            m1 = d3.mouse(this);
         if (!isDown && click == 1) {
-            // if (!isDown) {
-            if(!isDragging){
+        // if (!isDown) {
+                if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -30,6 +30,8 @@ function Ellipse() {
                 self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
                 self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
                 self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+                shapeId = "circle_" + cId;
+                console.log('shapeId',shapeId);
                 updateEllipse();
             }
         } else {
@@ -42,7 +44,7 @@ function Ellipse() {
         console.log('outside');
     })
         .on('touchmove', function () {
-            // .on('mousemove', function () {
+        // .on('mousemove', function () {
             console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
@@ -109,6 +111,8 @@ function Ellipse() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
+        // shapeId = "circle_" + cId;
+        // console.log('shapeId',shapeId);
 
     }
 

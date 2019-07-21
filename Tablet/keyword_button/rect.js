@@ -92,8 +92,8 @@ function Rectangle() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
-        shapeId = "rect_" +rId;
-        console.log('shapeId',shapeId);
+        // shapeId = "rect_" +rId;
+        // console.log('shapeId',shapeId);
     }
 
     function dragRect() {

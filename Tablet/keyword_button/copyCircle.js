@@ -104,8 +104,8 @@ function copyCircle() {
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
-        shapeId = shapeId + "_copy" + count;
-        console.log('shapeId',shapeId);
+        // shapeId = shapeId + "_copy" + count;
+        // console.log('shapeId',shapeId);
 
     }
 
