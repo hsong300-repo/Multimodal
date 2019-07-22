@@ -47,30 +47,27 @@ recognition.onresult = function(event) {
     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
         console.log('system true');
         system_flag = true;
-    }else{
-        system_flag = false;
 
-    }
-
-    if(system_flag === true){
-        pass_count = 0;
+        pass_count = -1;
         command_flag = true;
         givePass = true;
     }else{
-        // givePass = false;
         system_flag = false;
 
     }
 
-
+    // if(system_flag === true){
+    //     pass_count = 0;
+    //     command_flag = true;
+    //     givePass = true;
+    // }else{
+    //     // givePass = false;
+    //     system_flag = false;
+    //
+    // }
 
     console.log('givePass', givePass);
     //it should be executed while true, false change to true,
-
-    // console.log("system flag track", system_flag);
-    // console.log('track flag and system flag',system_flag, temp_flag);
-    // console.log('command flag',command_flag);
-
 
     final_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -82,7 +79,7 @@ recognition.onresult = function(event) {
             pass_count++;
             console.log('count',count);
             if(command_flag === true){
-                if(pass_count === 1 ){
+                if(pass_count === 0 ){
                     final_transcript = final_transcript.replace(/system/g,'');
                     $("#log").val(final_transcript);
                     QueryProcess(final_transcript);
@@ -92,12 +89,14 @@ recognition.onresult = function(event) {
                     // }
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         //this is the case only when system is called
-
+                        console.log('system is called and move on');
                     }else{
+                        console.log('system+pause+command');
                         $('input.b').removeClass("flash");// I think this is a problem
                     }
                     givePass = false;
-                }else{
+                } else{
+                    console.log('system+command');
                     givePass = false;
                     $('input.b').removeClass("flash");// I think this is a problem
                 }
