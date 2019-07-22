@@ -108,7 +108,7 @@ function QueryProcess(script){
     }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         orderShape();
     }else if(givePass === true){// this case is for when a "system" is called and ended and the commands follows up
-        $("#output").text("Listening");
+        // $("#output").text("Listening");
     }else {
         $("#output").text("A command did not work. Try again.");
     }

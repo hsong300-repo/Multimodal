@@ -92,6 +92,7 @@ recognition.onresult = function(event) {
                     // }
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         //this is the case only when system is called
+
                     }else{
                         $('input.b').removeClass("flash");// I think this is a problem
                     }
