@@ -11,6 +11,8 @@ const colors = ["red","brown","green","yellow","pink","blue","purple","gray","gr
 //counts
 const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
 const order = ["front","raise","bring"];
+const orderBack = ["back","low","lower","below","send"];
+
 
 
 // this is the function that process query that detects keywords and lead to certain function
@@ -29,9 +31,11 @@ function QueryProcess(script){
         var deleteThis= false;
     }
     if(["and","with"].filter(n => myStr.indexOf(n) > -1).length > 0){
+        console.log('and with');
         var tokenStr = myStr.split(" ");
 
         var andStr = splitAnd(myStr);
+        // console.log('after and split function',andStr[0],andStr[1]);
 
         var shape = shapes.filter(function(n) {
             return andStr[0].indexOf(n) > -1;
@@ -52,8 +56,10 @@ function QueryProcess(script){
             });
         }
 
+        // console.log('stroke color',strokeColor);
 
     }else{
+        console.log('normal');
         var tokenStr = myStr.split(" ");
 
         var shape = shapes.filter(function(n) {
@@ -77,25 +83,28 @@ function QueryProcess(script){
             var strokeColor = "none"; // dafault
         }
 
+        console.log('stroke color normal',strokeColor);
         var n = mapToNumber(count[0]);
     }
 
     // let andStr = splitAnd(myStr); // this one is added for applying stroke color and fillcolor
     // let tokenStr = myStr.split(" ");
     //make it all lower case
+    console.log('tokenizedStr',tokenStr);
     // var result = ["remove","insert","create","put","generate"].filter(function(n) {
     //     return tokenStr.indexOf(n) > -1;
     // });
 
-    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+    if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
+        console.log('copy');
 
         copyShapes(n);
-
     }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
 
         drawShapes(shape[0],color[0],n,strokeColor[0],here);
         // putRect();
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('delete');
 
         if(deleteThis === true){
             removeThisShape(shape[0],color[0],strokeColor[0]);
@@ -106,10 +115,12 @@ function QueryProcess(script){
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         updateShapes(color[0],strokeColor[0]);
     }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('order');
         orderShape();
-    }else if(givePass === true){// this case is for when a "system" is called and ended and the commands follows up
-        $("#output").text("Listening");
-    }else {
+    }else if(orderBack.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('order');
+        orderShapeBack();
+    }else{
         $("#output").text("A command did not work. Try again.");
     }
 }

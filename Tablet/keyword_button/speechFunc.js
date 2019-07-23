@@ -269,9 +269,11 @@ function orderShapeBack(){
             var elt = d3.select(this);
             if(elt.attr("id") === shapeId) {
                 var temp  = d3.select(this);
+                // temp.moveToBack();
+                var tempId = pointCProcess(temp.attr("id"));
+                d3.selectAll(tempId).moveToBack();
                 temp.moveToBack();
-                // var tempId = pointCProcess(temp.attr("id"));
-                // d3.selectAll(tempId).moveToBack();
+
             }
         });
 
@@ -282,9 +284,11 @@ function orderShapeBack(){
             var elt = d3.select(this);
             if(elt.attr("id") === shapeId) {
                 var temp  = d3.select(this);
+                // temp.moveToBack();
+                var tempId = pointEProcess(temp.attr("id"));
+                d3.selectAll(tempId).moveToBack();
                 temp.moveToBack();
-                // var tempId = pointEProcess(temp.attr("id"));
-                // d3.selectAll(tempId).moveToBack();
+
             }
         });
     }
