@@ -11,6 +11,8 @@ const colors = ["red","brown","green","yellow","pink","blue","purple","gray","gr
 //counts
 const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
 const order = ["front","raise","bring"];
+const orderBack = ["back","low","lower","below","send"];
+
 
 
 // this is the function that process query that detects keywords and lead to certain function
@@ -115,6 +117,9 @@ function QueryProcess(script){
     }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('order');
         orderShape();
+    }else if(orderBack.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('order');
+        orderShapeBack();
     }else{
         $("#output").text("A command did not work. Try again.");
     }

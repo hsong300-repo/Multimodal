@@ -1,5 +1,3 @@
-
-
 function splitAnd(script){
     if(["and"].filter(n => script.indexOf(n) > -1).length > 0){
         var tokenStr = script.split("and");
@@ -128,6 +126,9 @@ function textProcess(){
     }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('order');
         orderShape();
+    }else if(orderBack.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        console.log('order');
+        orderShapeBack();
     }else{
         $("#output").text("A command did not work. Try again.");
     }

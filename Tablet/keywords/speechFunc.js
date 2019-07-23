@@ -219,6 +219,8 @@ d3.selection.prototype.moveToFront = function() {
     });
 };
 
+
+
 function orderShape(){
     var tempId = shapeId;
     var id = idProcess(tempId);

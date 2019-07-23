@@ -219,6 +219,14 @@ d3.selection.prototype.moveToFront = function() {
     });
 };
 
+d3.selection.prototype.moveToBack = function() {
+    return this.each(function() {
+        var firstChild = this.parentNode.firstChild;
+        if (firstChild) { this.parentNode.insertBefore(this, firstChild);
+        }
+    });
+};
+
 function orderShape(){
     var tempId = shapeId;
     var id = idProcess(tempId);
@@ -247,11 +255,42 @@ function orderShape(){
                 d3.selectAll(tempId).moveToFront();
             }
         });
-
-
     }
     $("#output").text("Bring to front");
 }
+
+function orderShapeBack(){
+    var tempId = shapeId;
+    var id = idProcess(tempId);
+    console.log('remove shape',id);
+
+    if(id === "rect"){
+        d3.selectAll("rect").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                var temp  = d3.select(this);
+                temp.moveToBack();
+                // var tempId = pointCProcess(temp.attr("id"));
+                // d3.selectAll(tempId).moveToBack();
+            }
+        });
+
+        $("#output").text("Sent to back");
+
+    }else if(id === "circle"){
+        d3.selectAll("ellipse").each(function(d,i){
+            var elt = d3.select(this);
+            if(elt.attr("id") === shapeId) {
+                var temp  = d3.select(this);
+                temp.moveToBack();
+                // var tempId = pointEProcess(temp.attr("id"));
+                // d3.selectAll(tempId).moveToBack();
+            }
+        });
+    }
+    $("#output").text("Sent to back");
+}
+
 
 
 function updateShapes(color, stroke){
