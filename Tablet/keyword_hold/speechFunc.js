@@ -68,10 +68,9 @@ function removeShapes(shape, color,stroke) {
         var stroke_flag = false;
     }
 
-    if(stroke_flag === false && color_flag === false){// "delete" command delete the selected shape
+    if(stroke_flag === false && color_flag === false && all_flag === false){// "delete" command delete the selected shape
         removeThisShape();
     }
-
     console.log('color & stroke flag',color_flag, stroke_flag);
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
@@ -114,7 +113,13 @@ function removeShapes(shape, color,stroke) {
             });// iterate on ellipses
             $("#output").text("Removal completed");
 
-        }else{// when specify shape
+        }else if(stroke_flag === false && color_flag === false && all_flag === true){
+            console.log('***remove all circles');
+            d3.selectAll("ellipse").remove();
+            d3.selectAll(".pointE").remove();
+
+            $("#output").text("Removal completed");
+        } else{// when specify shape
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
@@ -161,10 +166,13 @@ function removeShapes(shape, color,stroke) {
             });// iterate on ellipses
             $("#output").text("Removal completed");
 
-        }else if(color_flag === false && stroke_flag === false){
-            console.log('false false');
-            $("#output").text("Command did not work. Try again.");
-        }else{
+        } else if(stroke_flag === false && color_flag === false && all_flag === true){
+            d3.selectAll("rect").remove();
+            d3.selectAll(".pointC").remove();
+
+            $("#output").text("Removal completed");
+
+        } else{
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 

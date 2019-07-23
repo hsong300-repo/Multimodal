@@ -2,6 +2,7 @@
 const drawCommands = ["draw","insert","create","put","generate","make","add"];
 const copyCommands = ["copy","duplicate","paste","copies"];
 const deleteCommands = ["remove","delete","clear"];
+const allCommands = ["all","every"];
 const updateCommands = ["change","update","apply","fill","set","color"];
 
 //shapes
@@ -12,6 +13,8 @@ const colors = ["red","brown","green","yellow","pink","blue","purple","gray","gr
 const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
 const order = ["front","raise","bring"];
 const orderBack = ["back","low","lower","below","send"];
+var all_flag = false;
+
 
 
 // this is the function that process query that detects keywords and lead to certain function
@@ -105,10 +108,16 @@ function QueryProcess(script){
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
 
+        if(allCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+            all_flag = true;
+        }else{
+            all_flag = false;
+        }
+
         if(deleteThis === true){
             removeThisShape(shape[0],color[0],strokeColor[0]);
         }else if(deleteThis === false){
-            removeShapes(shape[0],color[0],strokeColor[0]);
+            removeShapes(shape[0],color[0],strokeColor[0],tokenStr);
         }
 
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){

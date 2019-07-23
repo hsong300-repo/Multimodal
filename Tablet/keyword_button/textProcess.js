@@ -115,10 +115,16 @@ function textProcess(){
     }else if(deleteCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('delete');
 
+        if(allCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+            all_flag = true;
+        }else{
+            all_flag = false;
+        }
+
         if(deleteThis === true){
             removeThisShape(shape[0],color[0],strokeColor[0]);
         }else if(deleteThis === false){
-            removeShapes(shape[0],color[0],strokeColor[0]);
+            removeShapes(shape[0],color[0],strokeColor[0],tokenStr);
         }
 
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
