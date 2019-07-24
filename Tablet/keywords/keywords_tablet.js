@@ -71,6 +71,10 @@ recognition.onresult = function(event) {
             if(command_flag === true){
                 if(pass_count === 0 ){
                     final_transcript = final_transcript.replace(/system/g,'');
+                    interim_transcript += event.results[i][0].transcript;
+                    var temp = interim_transcript;
+                    ret = temp.replace(/system/g,'');
+                    $("#log").val(ret);
                     // $("#log").val(final_transcript);
                     // QueryProcess(final_transcript);
 
@@ -80,8 +84,6 @@ recognition.onresult = function(event) {
                     // }
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         //this is the case only when system is called
-                        interim_transcript += event.results[i][0].transcript;
-                        $("#log").val(final_transcript);
                         console.log('system is called and move on');
                     }else{
                         // final_transcript = final_transcript.replace(/system/g,'');
