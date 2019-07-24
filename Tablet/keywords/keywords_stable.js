@@ -111,8 +111,10 @@ recognition.onresult = function(event) {
                 console.log("here first and second",trueStr[0],trueStr[1]);
                 if(trueStr[0] === "system"){
                     command_flag = true;
+                    $('input.b').addClass("flash");
                 }else if(trueStr[1] === "system"){
                     command_flag = true;
+                    $('input.b').addClass("flash");
                 }else{
                     command_flag = false;
                 }
