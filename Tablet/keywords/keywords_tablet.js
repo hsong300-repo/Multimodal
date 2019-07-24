@@ -81,7 +81,6 @@ recognition.onresult = function(event) {
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         //this is the case only when system is called
                         console.log('system is called and move on');
-                        $("#log").val("Listening");
                     }else{
                         // final_transcript = final_transcript.replace(/system/g,'');
                         $("#log").val(final_transcript);
@@ -109,10 +108,10 @@ recognition.onresult = function(event) {
                 var trueStr = interim_transcript.split(" ");
                 if(trueStr[0] === "system"){
                     command_flag = true;
-                    $('input.b').addClass("flash");
+                    // $('input.b').addClass("flash");
                 }else if(trueStr[1] === "system"){
                     command_flag = true;
-                    $('input.b').addClass("flash");
+                    // $('input.b').addClass("flash");
                 }else{
                     command_flag = false;
                 }
