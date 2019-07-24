@@ -50,8 +50,7 @@ recognition.onresult = function(event) {
         command_flag = true;
         givePass = true;
         $('input.b').addClass("flash");
-        interim_transcript += event.results[i][0].transcript;
-        $("#log").val(ret);
+
     }else{// saying something else
         system_flag = false;
 
