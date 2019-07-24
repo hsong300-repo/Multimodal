@@ -1,5 +1,4 @@
 if (annyang) {
-
     // Let's define a command.
     var commands = {
         'hello': function() { alert('Hello world!'); },
@@ -22,7 +21,6 @@ if (annyang) {
     // Start listening.
     // annyang.start();
 }
-
 
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
@@ -56,16 +54,6 @@ recognition.onresult = function(event) {
 
     }
 
-    // if(system_flag === true){
-    //     pass_count = 0;
-    //     command_flag = true;
-    //     givePass = true;
-    // }else{
-    //     // givePass = false;
-    //     system_flag = false;
-    //
-    // }
-
     console.log('givePass', givePass);
     //it should be executed while true, false change to true,
 
@@ -81,8 +69,9 @@ recognition.onresult = function(event) {
             if(command_flag === true){
                 if(pass_count === 0 ){
                     final_transcript = final_transcript.replace(/system/g,'');
-                    $("#log").val(final_transcript);
-                    QueryProcess(final_transcript);
+                    // $("#log").val(final_transcript);
+                    // QueryProcess(final_transcript);
+
                     // $('input.b').removeClass("flash");// I think this is a problem
                     // if(track[0] && track.length!== "system" && track[1] !== "system"){
                     //     $('input.b').removeClass("flash");// I think this is a problem
@@ -91,11 +80,18 @@ recognition.onresult = function(event) {
                         //this is the case only when system is called
                         console.log('system is called and move on');
                     }else{
+                        // final_transcript = final_transcript.replace(/system/g,'');
+                        $("#log").val(final_transcript);
+                        QueryProcess(final_transcript);
+
                         console.log('system+pause+command');
                         $('input.b').removeClass("flash");// I think this is a problem
                     }
                     givePass = false;
-                } else{
+                } else{// this case is system and command continus
+                    $("#log").val(final_transcript);
+                    QueryProcess(final_transcript);
+
                     console.log('system+command');
                     givePass = false;
                     $('input.b').removeClass("flash");// I think this is a problem
@@ -148,17 +144,11 @@ recognition.onresult = function(event) {
 
 // this is to track the position
 window.addEventListener('load', function(){
-    // annyang.start();
-    // var box1 = document.getElementById('box1')
     var box1 = document.getElementById('container');
     var startx = 0;
     var starty = 0;
 
     box1.addEventListener('pointerdown', function(e){
-        // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
-        // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
-        // startx = e.clientX;// get x position of touch point relative to left edge of browser
-        // starty = e.clientY;
         startx = e.pageX;// get x position of touch point relative to left edge of browser
         starty = e.pageY;
         console.log('pointer down tract', startx - box1.offsetLeft, starty - box1.offsetTop);
