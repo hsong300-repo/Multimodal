@@ -82,7 +82,7 @@ recognition.onresult = function(event) {
             $('input.b').addClass("flash");
             // $('input.b').addClass("flash");
 
-        }else{
+        }else{//end of sentence
             // $("#log").val(ret);
             // $('input.b').removeClass("flash");// I think this is a problem
 

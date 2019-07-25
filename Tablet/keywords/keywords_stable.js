@@ -42,13 +42,13 @@ recognition.onresult = function(event) {
 
     console.log('track before', track, track.length);
 
-    if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
+    if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){// to determine if "system" was said previously
         console.log('system true');
         system_flag = true;
 
         pass_count = -1;
         command_flag = true;
-        givePass = true;
+        givePass = true; // once "system" was said before the onresult will track things that have been said next
     }else{
         system_flag = false;
 
