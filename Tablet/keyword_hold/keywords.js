@@ -21,9 +21,10 @@ if (annyang) {
     // annyang.start();
 }
 
-
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
+var endSentence = false;
+var interimSentence = false;
 recognition.interimResults = true;
 // annyang.start();
 count = 0;
@@ -39,7 +40,10 @@ recognition.onresult = function(event) {
             final_transcript += event.results[i][0].transcript;
             $("#log").val(final_transcript);
             // command = final_transcript;
-            QueryProcess(final_transcript);
+            endSentence = true;
+            $("#output").text("Query understood").css("color","red");
+            // query process was here
+            // QueryProcess(final_transcript);
             // $('input.b').removeClass("flash");
         } else {
             interim_transcript += event.results[i][0].transcript;
@@ -48,9 +52,13 @@ recognition.onresult = function(event) {
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
         $("#log").val(interim_transcript);
+
         // $("#log").val(final_transcript);
+    }else{//end of sentence
+
     }
 };
+
 
 window.addEventListener('load', function(){
     var box1 = document.getElementById('container');
@@ -62,7 +70,7 @@ window.addEventListener('load', function(){
     box1.addEventListener('touchstart', function(e){
         annyang.start();
         statusdiv.innerHTML = 'Status: touchstart';
-        $("#output").text("Recognition active");
+        $("#output").text("Recognition active").css("color","black");
 
 
         $('input.b').addClass("flash");
@@ -72,7 +80,7 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         statusdiv.innerHTML = 'Status: touchmove';
-        $("#output").text("Recognition active");
+        $("#output").text("Recognition active").css("color","black");;
 
         $('input.b').addClass("flash");
 
@@ -81,14 +89,23 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchend', function(e){
         statusdiv.innerHTML = 'Status: touchend';
-        $("#output").text("Recognition stopped");
-        // QueryProcess(command);
+        $("#output").text("Recognition stopped").css("color","black");;
+        // QueryProcess(final_transcript);
+        console.log('touchend endSentence', endSentence);
+        console.log('touchend final trancript',final_transcript);
+
+        // if(endSentence === true){// detecting end of sentence is hard
+        //     QueryProcess(final_transcript);
+        // }
+        if(endSentence === true){// detecting end of sentence is hard
+            QueryProcess(final_transcript);
+        }
+        endSentence = false;
+
         // command=" ";
         $('input.b').removeClass("flash");
         e.preventDefault();
         annyang.abort();
-        // console.log("command here",command);
-
 
         // annyang.abort();
         isDragging = false;
