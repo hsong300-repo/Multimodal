@@ -4,7 +4,6 @@ function copyRect() {
 
     svg.on('touchstart', function() {
         m1 = d3.mouse(this);
-        console.log('drag');
         isDrag = true;
         isDown = !isDown;
         click++;
@@ -12,7 +11,6 @@ function copyRect() {
     })
 
         .on('touchmove', function() {
-            console.log('touchmove');
             m2 = d3.mouse(this);
             if(isDown && !isDrag && click == 2) {
                 self.rectData[1] = { x: m2[0], y: m2[1] };
@@ -51,7 +49,6 @@ function copyRect() {
     var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
 
     function dragStart(d) {
-        console.log('dragstart');
         isDown = false;
         isDragging = true;
         d3.select(this).transition()
@@ -60,7 +57,6 @@ function copyRect() {
     }
 
     function dragEnd(d) {
-        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
@@ -92,8 +88,8 @@ function copyRect() {
     let strokeColor = "rgb("+tempStroke.r+","+tempStroke.g+","+tempStroke.b+")";
     var shapeWidth = d3.select("#"+shapeId).style("width");
     var shapeHeight = d3.select("#"+shapeId).style("height");
-    console.log('shpaeHeight',shapeHeight);
-    console.log('shpaeWidth',shapeWidth);
+    // console.log('shpaeHeight',shapeHeight);
+    // console.log('shpaeWidth',shapeWidth);
 
     rId++;
     count++;

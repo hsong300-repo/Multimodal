@@ -4,7 +4,6 @@ function putCircle(color,strokeColor) {
 
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
-        console.log('circle touchstart');
         m1 = d3.mouse(this);
         isDragging = true;
         isDown = !isDown;
@@ -12,7 +11,6 @@ function putCircle(color,strokeColor) {
     })
         .on('touchmove', function () {
             // .on('mousemove', function () {
-            console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
             if (isDown && !isDragging && click == 2) {
@@ -84,7 +82,6 @@ function putCircle(color,strokeColor) {
     }
 
     function dragStart(d) {
-        console.log('dragstart');
         isDown = false;
         isDragging = true;
         d3.select(this).transition()
@@ -93,7 +90,6 @@ function putCircle(color,strokeColor) {
     }
 
     function dragEnd(d) {
-        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
@@ -102,7 +98,6 @@ function putCircle(color,strokeColor) {
     }
 
     function dragEllipse(d) {
-        console.log('dragelipse');
         isDragging = true;
         var e = d3.event;
         d.x1 += e.dx;
@@ -114,7 +109,6 @@ function putCircle(color,strokeColor) {
     }
 
     function dragPoint(d) {
-        console.log('drag point');
         var e = d3.event;
         var id = d3.select(this).attr('id');
         if(id == 3 || id == 4) {
@@ -137,9 +131,7 @@ function putCircleHere(color,strokeColor) {
     var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
     var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);
 
-    console.log('circle touchstart');
 
-    console.log("globx and goby",globX,globY);
     self.eData = [{
 
         x1: globX,
@@ -163,7 +155,6 @@ function putCircleHere(color,strokeColor) {
 
     svg.on('touchmove', function () {
         // .on('mousemove', function () {
-        console.log('circle touchmove');
         m2 = d3.mouse(this);
         // if (isDown && !isDragging) {
         if (isDown && !isDragging && click == 2) {
@@ -212,7 +203,6 @@ function putCircleHere(color,strokeColor) {
     }
 
     function dragStart(d) {
-        console.log('dragstart');
         isDown = false;
         isDragging = true;
         d3.select(this).transition()
@@ -221,7 +211,6 @@ function putCircleHere(color,strokeColor) {
     }
 
     function dragEnd(d) {
-        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
@@ -231,7 +220,6 @@ function putCircleHere(color,strokeColor) {
     }
 
     function dragEllipse(d) {
-        console.log('dragelipse');
         isDragging = true;
         var e = d3.event;
         d.x1 += e.dx;
@@ -243,7 +231,6 @@ function putCircleHere(color,strokeColor) {
     }
 
     function dragPoint(d) {
-        console.log('drag point');
         var e = d3.event;
         var id = d3.select(this).attr('id');
         if(id == 3 || id == 4) {

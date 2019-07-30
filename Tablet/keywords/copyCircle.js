@@ -13,7 +13,6 @@ function copyCircle() {
     })
         .on('touchmove', function () {
             // .on('mousemove', function () {
-            console.log('circle touchmove');
             m2 = d3.mouse(this);
             if (isDown && !isDragging) {
                 self.eData[0].x2 = m2[0];
@@ -69,7 +68,6 @@ function copyCircle() {
     let strokeColor = "rgb("+tempStroke.r+","+tempStroke.g+","+tempStroke.b+")";
 
     if(!isDragging){
-        console.log('***first but not dragging');
         self.eData = [{
             x1: globX+cId*30,
             y1: globY,
@@ -91,7 +89,6 @@ function copyCircle() {
     }
 
     function dragStart(d) {
-        console.log('dragstart');
         isDown = false;
         isDragging = true;
         d3.select(this).transition()
@@ -100,7 +97,6 @@ function copyCircle() {
     }
 
     function dragEnd(d) {
-        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
@@ -110,7 +106,6 @@ function copyCircle() {
     }
 
     function dragEllipse(d) {
-        console.log('dragelipse');
         isDragging = true;
         var e = d3.event;
         d.x1 += e.dx;
@@ -122,7 +117,6 @@ function copyCircle() {
     }
 
     function dragPoint(d) {
-        console.log('drag point');
         var e = d3.event;
         var id = d3.select(this).attr('id');
         if(id == 3 || id == 4) {

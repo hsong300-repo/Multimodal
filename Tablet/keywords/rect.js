@@ -9,7 +9,6 @@ var svg = d3.select('#container').append('svg').attr('id','svg').attr({width: w,
 // var svg = d3.select('body').append('svg').attr({width: w, height: h});
 
 function Rectangle() {
-    console.log('in this rect function');
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false,click=1;
 
     // svg.on('mousedown', function() {
@@ -30,7 +29,6 @@ function Rectangle() {
             updateRect();
             // isDrag = false;
         } else{
-            console.log('drag');
             isDrag = true;
         }
         isDown = !isDown;
@@ -38,7 +36,6 @@ function Rectangle() {
         })
         .on('touchmove', function() {
         // .on('mousemove', function() {
-            console.log('touch move');
             m2 = d3.mouse(this);
             // m2 = d3.touch(this);
             if(isDown && !isDrag && click == 2) {
@@ -79,7 +76,6 @@ function Rectangle() {
     var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
 
     function dragStart(d) {
-        console.log('dragstart');
         isDown = false;
         isDragging = true;
         d3.select(this).transition()
@@ -88,7 +84,6 @@ function Rectangle() {
     }
 
     function dragEnd(d) {
-        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");

@@ -36,6 +36,7 @@ pass_count = 0;
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
+    final_transcript = '';
     var ret = '';
     // var system_flag = '';
     var temp_flag = system_flag;
@@ -49,8 +50,10 @@ recognition.onresult = function(event) {
         pass_count = -1;
         command_flag = true;
         givePass = true;
-        $('input.b').addClass("flash");
-        $("#output").text("Listening").css("color","red");
+        $("#log").val(ret);
+
+        // $('input.b').addClass("flash");
+        // $("#output").text("Listening").css("color","red");
     }else{// saying something else
         system_flag = false;
 
@@ -59,7 +62,7 @@ recognition.onresult = function(event) {
     console.log('givePass', givePass);
     //it should be executed while true, false change to true,
 
-    final_transcript = '';
+    // final_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         console.log('####results');
         if (event.results[i].isFinal) {
@@ -102,9 +105,11 @@ recognition.onresult = function(event) {
         } else {// not final
             if(givePass === true){
                 interim_transcript += event.results[i][0].transcript;
+                console.log('givePass interim',interim_transcript);
                 // command_flag = true;
             }else{// saying something else
                 interim_transcript += event.results[i][0].transcript;
+                console.log('not givePass interim',interim_transcript);
                 var trueStr = interim_transcript.split(" ");
                 if(trueStr[0] === "system"){
                     command_flag = true;
@@ -128,6 +133,8 @@ recognition.onresult = function(event) {
         var temp = interim_transcript;
         ret = temp.replace(/system/g,'');
         if(command_flag === true){
+            $('input.b').addClass("flash");
+            $("#output").text("Listening").css("color","red");
             // $('input.b').addClass("flash");
             $("#log").val(ret);
         }
