@@ -1,6 +1,6 @@
 // commands modes
 const drawCommands = ["draw","insert","create","put","generate","make","add"];
-const copyCommands = ["copy","duplicate","paste","copies"];
+const copyCommands = ["copy","duplicate","paste","copies","copied","duplicated"];
 const deleteCommands = ["remove","delete","clear"];
 const allCommands = ["all","every"];
 const updateCommands = ["change","update","apply","fill","set","color"];

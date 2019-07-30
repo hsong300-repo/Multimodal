@@ -50,7 +50,7 @@ recognition.onresult = function(event) {
         command_flag = true;
         givePass = true;
         $('input.b').addClass("flash");
-
+        $("#output").text("Listening").css("color","red");
     }else{// saying something else
         system_flag = false;
 

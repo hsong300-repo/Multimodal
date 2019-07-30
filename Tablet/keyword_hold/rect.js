@@ -12,6 +12,8 @@ function Rectangle() {
     console.log('in this rect function');
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false,click=1;
 
+
+
     // svg.on('mousedown', function() {
     svg.on('touchstart', function() {
         m1 = d3.mouse(this);

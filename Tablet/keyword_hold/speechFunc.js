@@ -304,8 +304,6 @@ function orderShapeBack(){
     $("#output").text("Sent to back");
 }
 
-
-
 function updateShapes(color, stroke){
     if (colors.indexOf(color) >= 0) {
         var color_flag = true;

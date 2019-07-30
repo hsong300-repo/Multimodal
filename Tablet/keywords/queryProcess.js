@@ -1,6 +1,6 @@
 // commands modes
 const drawCommands = ["make","draw","insert","create","put","generate","add"];
-const copyCommands = ["copy","duplicate","paste","copies"];
+const copyCommands = ["copy","duplicate","paste","copies","copied","duplicated"];
 const deleteCommands = ["remove","delete","clear"];
 const updateCommands = ["change","update","apply","fill","set","color"];
 const allCommands = ["all","every"];
@@ -131,7 +131,7 @@ function QueryProcess(script){
         console.log('order');
         orderShapeBack();
     }else{
-        $("#output").text("A command did not work. Try again.");
+        $("#output").text("A command did not work. Try again.").css("color","black");;
     }
 }
 

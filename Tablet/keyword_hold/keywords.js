@@ -76,6 +76,9 @@ window.addEventListener('load', function(){
         $('input.b').addClass("flash");
 
         e.preventDefault();
+
+
+
     }, false);
 
     box1.addEventListener('touchmove', function(e){
@@ -85,6 +88,7 @@ window.addEventListener('load', function(){
         $('input.b').addClass("flash");
 
         e.preventDefault();
+
     }, false);
 
     box1.addEventListener('touchend', function(e){
@@ -109,7 +113,6 @@ window.addEventListener('load', function(){
 
         // annyang.abort();
         isDragging = false;
-
     }, false);
 
     box1.addEventListener('pointerdown', function(e){

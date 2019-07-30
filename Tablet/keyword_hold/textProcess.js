@@ -67,9 +67,6 @@ function textProcess(){
                 return andStr[1].indexOf(n) > -1;
             });
         }
-
-        // console.log('stroke color',strokeColor);
-
     }else{
         console.log('normal');
         var tokenStr = myStr.split(" ");
@@ -131,7 +128,11 @@ function textProcess(){
         }
 
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
-        updateShapes(color[0],strokeColor[0]);
+        updateShapes(color[0],strokeColor[0]);//prior
+
+        // updateShapes(shape[0],color[0],strokeColor[0],tokenStr);//testing
+
+
     }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('order');
         orderShape();

@@ -1,7 +1,10 @@
+
 function putRect(color,strokeColor) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
-        svg.on('touchstart', function() {
+
+
+    svg.on('touchstart', function() {
             m1 = d3.mouse(this);
             console.log('drag');
             isDrag = true;
@@ -141,7 +144,8 @@ function putRect(color,strokeColor) {
 function putRectHere(color,strokeColor) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
-      svg.on('touchmove', function() {
+
+    svg.on('touchmove', function() {
             console.log('touchmove');
             m2 = d3.mouse(this);
             if(isDown && !isDrag) {

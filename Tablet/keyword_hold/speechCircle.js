@@ -1,6 +1,8 @@
+
 function putCircle(color,strokeColor) {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
+
 
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
@@ -133,6 +135,7 @@ function putCircle(color,strokeColor) {
 function putCircleHere(color,strokeColor) {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
+
 
     var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
     var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);

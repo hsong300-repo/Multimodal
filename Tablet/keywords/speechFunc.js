@@ -11,7 +11,7 @@ function drawShapes(shape, color,count,stroke,here) {
 
             }//for loop
 
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","black");
 
         } else {
             if(here === true){
@@ -19,7 +19,7 @@ function drawShapes(shape, color,count,stroke,here) {
             }else{
                 new putCircle(color,stroke);
             }
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","black");
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
@@ -30,14 +30,14 @@ function drawShapes(shape, color,count,stroke,here) {
                     new putRect(color,stroke);
                 }
             }//for loop
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","black");
         } else {
             if(here === true){
                 new putRectHere(color,stroke);
             }else{
                 new putRect(color,stroke);
             }
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","black");
         }
 
     }//else if rect
@@ -91,7 +91,7 @@ function removeShapes(shape, color,stroke) {
                     // d3.selectAll(".pointE").remove(); //testing
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
         }else if(color && stroke !== "n"){
             var inColor = d3.rgb(color);
             var strokeColor = d3.rgb(stroke);
@@ -112,20 +112,20 @@ function removeShapes(shape, color,stroke) {
                     d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
 
         }else if(stroke_flag === false && color_flag === false && all_flag === true){
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
         } else{// when specify shape
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
         }
     }else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if(color && stroke === "n"){// when specify color and shape
@@ -144,7 +144,7 @@ function removeShapes(shape, color,stroke) {
                     d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
         }else if(color && stroke !== "n"){
             console.log('***both color and  stroke');
             var inColor = d3.rgb(color);
@@ -165,19 +165,19 @@ function removeShapes(shape, color,stroke) {
                     d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
 
         } else if(stroke_flag === false && color_flag === false && all_flag === true){
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
 
         } else{
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
-            $("#output").text("Removal completed");
+            $("#output").text("Removal completed").css("color","black");
 
         }
 
@@ -203,7 +203,7 @@ function removeThisShape(){
             }
         });
 
-        $("#output").text("Removal completed");
+        $("#output").text("Removal completed").css("color","black");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -217,7 +217,7 @@ function removeThisShape(){
         });
     }
 
-    $("#output").text("Removal completed");
+    $("#output").text("Removal completed").css("color","black");
 
 }
 
@@ -252,7 +252,7 @@ function orderShape(){
             }
         });
 
-        $("#output").text("Bring to front");
+        $("#output").text("Bring to front").css("color","black");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -267,7 +267,7 @@ function orderShape(){
 
 
     }
-    $("#output").text("Bring to front");
+    $("#output").text("Bring to front").css("color","black");
 }
 
 function orderShapeBack(){
@@ -288,7 +288,7 @@ function orderShapeBack(){
             }
         });
 
-        $("#output").text("Sent to back");
+        $("#output").text("Sent to back").css("color","black");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -303,7 +303,7 @@ function orderShapeBack(){
             }
         });
     }
-    $("#output").text("Sent to back");
+    $("#output").text("Sent to back").css("color","black");
 }
 
 
@@ -329,7 +329,7 @@ function updateShapes(color, stroke){
 
     if(id === "rect"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Command did not work. Try again.");
+            $("#output").text("Command did not work. Try again.").css("color","black");
         }else{
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
@@ -339,11 +339,11 @@ function updateShapes(color, stroke){
                 }
             });
 
-            $("#output").text("Style updated");
+            $("#output").text("Style updated").css("color","black");
         }
     }else if(id === "circle"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Command did not work. Try again.");
+            $("#output").text("Command did not work. Try again.").css("color","black");
 
         }else{
             d3.selectAll("ellipse").each(function(d,i){
@@ -352,10 +352,10 @@ function updateShapes(color, stroke){
                     elt.style("fill",color);
                     elt.style("stroke",stroke);        }
             });
-            $("#output").text("Style updated");
+            $("#output").text("Style updated").css("color","black");
         }
     }else{
-        $("#output").text("Command did not work. Try again.");
+        $("#output").text("Command did not work. Try again.").css("color","black");
     }
 }
 
@@ -373,23 +373,23 @@ function copyShapes(count){
             for (i = 0; i < count; i++) {
                 new copyCircle();
             }//for loop
-            $("#output").text("Copied");
+            $("#output").text("Copied").css("color","black");
 
         } else {
             new copyCircle();
-            $("#output").text("Copied");
+            $("#output").text("Copied").css("color","black");
         }
     }else if(id === "rect"){
         if (count) {
             for (i = 0; i < count; i++) {
                 new copyRect();
             }//for loop
-            $("#output").text("Copied");
+            $("#output").text("Copied").css("color","black");
         } else {
             new copyRect();
         }
 
-        $("#output").text("Copied");
+        $("#output").text("Copied").css("color","black");
 
     }
 }
@@ -429,7 +429,7 @@ $("#color").change(function () {
     let fill = shapeFill();
     shape.style("fill",fill);
 
-    $("#output").text("Updated object style");
+    $("#output").text("Updated object style").css("color","black");
 
     document.getElementById('color').selectedIndex = 0;
 
@@ -440,7 +440,7 @@ $("#border_color").change(function () {
     let stroke = strokeFill();
     shape.style("stroke",stroke);
 
-    $("#output").text("Updated object style");
+    $("#output").text("Updated object style").css("color","black");
 
     document.getElementById('border_color').selectedIndex = 0;
 

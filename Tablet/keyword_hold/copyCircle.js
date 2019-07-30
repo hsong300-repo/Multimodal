@@ -3,7 +3,9 @@ function copyCircle() {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
 
-    // svg.on('mousedown', function () {
+
+
+        // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
         m1 = d3.mouse(this);
