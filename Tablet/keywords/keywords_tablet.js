@@ -73,6 +73,7 @@ recognition.onresult = function(event) {
             console.log('count',count);
             if(command_flag === true){
                 if(pass_count === 0 ){
+                    console.log('=======pass count 0',final_transcript);
                     final_transcript = final_transcript.replace(/system/g,'');
                     // $("#log").val(final_transcript);
                     // QueryProcess(final_transcript);
@@ -82,10 +83,13 @@ recognition.onresult = function(event) {
                     //     $('input.b').removeClass("flash");// I think this is a problem
                     // }
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
+                        console.log('=======pass count 0 *** system');
+                        $('input.b').addClass("flash");
+                        $("#output").text("Listening").css("color","red");
                         //this is the case only when system is called
-                        console.log('system is called and move on');
                     }else{
                         // final_transcript = final_transcript.replace(/system/g,'');
+                        console.log('=======pass count 0 *** not',final_transcript);
                         $("#log").val(final_transcript);
                         QueryProcess(final_transcript);
 
@@ -94,6 +98,7 @@ recognition.onresult = function(event) {
                     }
                     givePass = false;
                 } else{// this case is system and command continus
+                    console.log('=======pass count **not0',final_transcript);
                     $("#log").val(final_transcript);
                     QueryProcess(final_transcript);
 
@@ -133,8 +138,8 @@ recognition.onresult = function(event) {
         var temp = interim_transcript;
         ret = temp.replace(/system/g,'');
         if(command_flag === true){
-            $('input.b').addClass("flash");
-            $("#output").text("Listening").css("color","red");
+            // $('input.b').addClass("flash");
+            // $("#output").text("Listening").css("color","red");
             // $('input.b').addClass("flash");
             $("#log").val(ret);
         }
