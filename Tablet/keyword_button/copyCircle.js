@@ -94,6 +94,16 @@ function copyCircle() {
         console.log('dragstart');
         isDown = false;
         isDragging = true;
+        // d3.select(this).transition()
+        //     .style("stroke-width", "6px");
+        d3.selectAll("rect").style("stroke-width","2px");
+        d3.selectAll(".pointC").style("opacity",0);
+        // d3.selectAll(".pointC").filter("."+shapeId).style("opacity",1);
+
+        //ellipse part
+        d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll("ellipse").style("stroke-width","2px");
+
         d3.select(this).transition()
             .style("stroke-width", "6px");
 
