@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_hold/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_hold/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_hold/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_hold/copyCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_hold/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_hold/copyShapes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_hold/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_hold/rect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_hold/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_hold/speechCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablet/keyword_hold/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tablet/keyword_hold/speechRect.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -446,12 +440,12 @@
       <workItem from="1564325132407" duration="7848000" />
       <workItem from="1564367842037" duration="7000" />
       <workItem from="1564507363722" duration="4579000" />
-      <workItem from="1564939902287" duration="1476000" />
+      <workItem from="1564939902287" duration="1880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395670000" />
+    <option name="totallyTimeSpent" value="396074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,9 +458,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17195208" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17195208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,7 +471,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" visible="true" weight="0.13855422" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" visible="true" weight="0.3060241" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5017618" side_tool="true" weight="0.16867469" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
