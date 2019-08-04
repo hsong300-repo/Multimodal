@@ -307,7 +307,6 @@ function orderShapeBack(){
 }
 
 
-
 function updateShapes(color, stroke){
     if (colors.indexOf(color) >= 0) {
         var color_flag = true;
@@ -527,6 +526,7 @@ d3.select('svg').on('touchend', function(d, i) {
 
 
 });
+
 
 document.getElementById('shapeFormat').style.display = "none";
 
