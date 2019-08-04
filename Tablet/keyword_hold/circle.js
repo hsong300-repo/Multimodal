@@ -104,19 +104,29 @@ function Ellipse() {
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
 
-        d3.selectAll("rect").style("stroke-width","2px");
-        d3.selectAll(".pointC").style("opacity",0);
-        // d3.selectAll(".pointC").filter("."+shapeId).style("opacity",1);
+        var check =  d3.select(this).attr("id");
 
-        //ellipse part
-        d3.selectAll(".pointE").style("opacity",0);
-        d3.selectAll("ellipse").style("stroke-width","2px");
+        if(check.length === 0){// when clicked on small circles for rect
+            console.log("small circle click for rect");
+            return;
+        }else if(check === "1" || check === "2" || check === "3" || check === "4"){// when click on small circles for ellipses
+            console.log("small circle click for ellipse");
+            return;
+        }else{
+            shapeId = check;
 
-        d3.select(this).transition()
-            .style("stroke-width", "6px");
+            d3.selectAll("rect").style("stroke-width","2px");
+            d3.selectAll(".pointC").style("opacity",0);
+            // d3.selectAll(".pointC").filter("."+shapeId).style("opacity",1);
 
-        // d3.event.sourceEvent.stopPropagation();
-        // d3.event.sourceEvent.preventDefault();
+            //ellipse part
+            d3.selectAll(".pointE").style("opacity",0);
+            d3.selectAll("ellipse").style("stroke-width","2px");
+
+            d3.select(this).transition()
+                .style("stroke-width", "6px");
+
+        }
     }
 
     function dragEnd(d) {

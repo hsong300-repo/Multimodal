@@ -98,11 +98,7 @@ function Ellipse() {
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
 
-
-
-
         // shapeId = d3.select(this).attr("id");
-
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect
