@@ -76,6 +76,7 @@ function removeShapes(shape, color,stroke) {
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
             var inColor = d3.rgb(color);
+            var checkColor = false;
 
             console.log('her color check');
             d3.selectAll('ellipse').each(function(d,i){
@@ -83,6 +84,7 @@ function removeShapes(shape, color,stroke) {
 
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    checkColor = true;
                     var temp = d3.select(this);
                     var tempId = pointEProcess(temp.attr("id"));
                     temp.remove();
@@ -91,7 +93,12 @@ function removeShapes(shape, color,stroke) {
                     // d3.selectAll(".pointE").remove(); //testing
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed").css("color","black");
+            if(checkColor === false){
+                $("#output").text("No matching color circles").css("color","black");
+            }else if(checkColor === true){
+                $("#output").text("Removal completed").css("color","black");
+            }
+            // $("#output").text("Removal completed").css("color","black");
         }else if(color && stroke !== "n"){
             var inColor = d3.rgb(color);
             var strokeColor = d3.rgb(stroke);
@@ -131,6 +138,7 @@ function removeShapes(shape, color,stroke) {
         if(color && stroke === "n"){// when specify color and shape
             console.log('***color ');
             var inColor = d3.rgb(color);
+            var checkColor = false;
 
             console.log('her color check');
             d3.selectAll('rect').each(function(d,i){
@@ -138,13 +146,20 @@ function removeShapes(shape, color,stroke) {
                 console.log(elt.style("fill"));
                 var color = d3.rgb(elt.style("fill"));
                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    checkColor = true;
+
                     var temp = d3.select(this);
                     var tempId = pointCProcess(temp.attr("id"));
                     temp.remove();
                     d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed").css("color","black");
+            if(checkColor === false){
+                $("#output").text("No matching color rectangles").css("color","black");
+            }else if(checkColor === true){
+                $("#output").text("Removal completed").css("color","black");
+            }
+
         }else if(color && stroke !== "n"){
             console.log('***both color and  stroke');
             var inColor = d3.rgb(color);
