@@ -109,7 +109,7 @@ window.addEventListener('load', function(){
         // if(endSentence === true){// detecting end of sentence is hard
         //     QueryProcess(final_transcript);
         // }
-        endSentence = false;
+        // endSentence = false;
 
         // command=" ";
         $('input.b').removeClass("flash");
