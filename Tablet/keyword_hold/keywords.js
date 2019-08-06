@@ -23,6 +23,7 @@ if (annyang) {
 
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
+var query = '';
 var endSentence = false;
 var interimSentence = false;
 recognition.interimResults = true;
@@ -35,18 +36,23 @@ var command = '';
 recognition.onresult = function(event) {
     var interim_transcript = '';
     final_transcript = '';
+    query = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
+            console.log('final &&', final_transcript);
+            query = final_transcript;
             $("#log").val(final_transcript);
             // command = final_transcript;
             endSentence = true;
-            $("#output").text("Query understood").css("color","red");
+            $("#output").text("Query understood").css("color","black");
             // query process was here
             // QueryProcess(final_transcript);
             // $('input.b').removeClass("flash");
         } else {
             interim_transcript += event.results[i][0].transcript;
+            query += event.results[i][0].transcript;
+
         }
     }
     if(interim_transcript!='') {
@@ -93,17 +99,16 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchend', function(e){
         statusdiv.innerHTML = 'Status: touchend';
-        $("#output").text("Recognition stopped").css("color","black");;
+        $("#output").text("Recognition stopped").css("color","black");
         // QueryProcess(final_transcript);
         console.log('touchend endSentence', endSentence);
         console.log('touchend final trancript',final_transcript);
 
+        QueryProcess(query);
+        query ='';
         // if(endSentence === true){// detecting end of sentence is hard
         //     QueryProcess(final_transcript);
         // }
-        if(endSentence === true){// detecting end of sentence is hard
-            QueryProcess(final_transcript);
-        }
         endSentence = false;
 
         // command=" ";
@@ -111,7 +116,6 @@ window.addEventListener('load', function(){
         e.preventDefault();
         annyang.abort();
 
-        // annyang.abort();
         isDragging = false;
     }, false);
 
