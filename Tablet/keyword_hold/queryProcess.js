@@ -121,12 +121,18 @@ function QueryProcess(script){
         }
 
     }else if(updateCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
+        final_transcript = final_transcript.replace(/two/g,'to');
+        $("#log").val(final_transcript);
         updateShapes(color[0],strokeColor[0]);
     }else if(order.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('order');
+        final_transcript = final_transcript.replace(/two/g,'to');
+        $("#log").val(final_transcript);
         orderShape();
     }else if(orderBack.filter(n => tokenStr.indexOf(n) > -1).length > 0){
         console.log('order');
+        final_transcript = final_transcript.replace(/two/g,'to');
+        $("#log").val(final_transcript);
         orderShapeBack();
     }else{
         $("#output").text("A command did not work. Try again.");

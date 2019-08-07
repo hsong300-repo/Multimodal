@@ -38,10 +38,10 @@ recognition.onresult = function(event) {
             final_transcript = final_transcript.replace(/friends/g,'front');
             final_transcript = final_transcript.replace(/block/g,'black');
             final_transcript = final_transcript.replace(/hair/g,'here');
+            final_transcript = final_transcript.replace(/year/g,'here');
             final_transcript = final_transcript.replace(/coffee/g,'copy');
             final_transcript = final_transcript.replace(/to/g,'two');
             final_transcript = final_transcript.replace(/things/g,'change');
-
 
 
             $("#log").val(final_transcript);
@@ -63,11 +63,10 @@ recognition.onresult = function(event) {
         interim_transcript = interim_transcript.replace(/friends/g,'front');
         interim_transcript = interim_transcript.replace(/block/g,'black');
         interim_transcript = interim_transcript.replace(/hair/g,'here');
+        interim_transcript = interim_transcript.replace(/year/g,'here');
         interim_transcript = interim_transcript.replace(/coffee/g,'copy');
         interim_transcript = interim_transcript.replace(/to/g,'two');
         interim_transcript = interim_transcript.replace(/things/g,'change');
-
-
 
         // $("#log").text(interim_transcript);
         $("#log").val(interim_transcript);
