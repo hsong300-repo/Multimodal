@@ -75,6 +75,15 @@ recognition.onresult = function(event) {
                 if(pass_count === 0 ){
                     console.log('=======pass count 0',final_transcript);
                     final_transcript = final_transcript.replace(/system/g,'');
+                    final_transcript = final_transcript.replace(/france/g,'front');
+                    final_transcript = final_transcript.replace(/France/g,'front');
+                    final_transcript = final_transcript.replace(/friends/g,'front');
+                    final_transcript = final_transcript.replace(/block/g,'black');
+                    final_transcript = final_transcript.replace(/hair/g,'here');
+                    final_transcript = final_transcript.replace(/year/g,'here');
+                    final_transcript = final_transcript.replace(/coffee/g,'copy');
+                    final_transcript = final_transcript.replace(/to/g,'two');
+                    final_transcript = final_transcript.replace(/things/g,'change');
                     // $("#log").val(final_transcript);
                     // QueryProcess(final_transcript);
 
@@ -135,6 +144,15 @@ recognition.onresult = function(event) {
         console.log('system flag',system_flag,"temp_flag", temp_flag,"command_flag",command_flag);
         var trueStr = interim_transcript.split(" ");
         track = trueStr;
+        interim_transcript = interim_transcript.replace(/france/g,'front');
+        interim_transcript = interim_transcript.replace(/France/g,'front');
+        interim_transcript = interim_transcript.replace(/friends/g,'front');
+        interim_transcript = interim_transcript.replace(/block/g,'black');
+        interim_transcript = interim_transcript.replace(/hair/g,'here');
+        interim_transcript = interim_transcript.replace(/year/g,'here');
+        interim_transcript = interim_transcript.replace(/coffee/g,'copy');
+        interim_transcript = interim_transcript.replace(/to/g,'two');
+        interim_transcript = interim_transcript.replace(/things/g,'change');
         var temp = interim_transcript;
         ret = temp.replace(/system/g,'');
         if(command_flag === true){

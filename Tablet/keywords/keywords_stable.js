@@ -69,8 +69,6 @@ recognition.onresult = function(event) {
             if(command_flag === true){
                 if(pass_count === 0 ){
                     final_transcript = final_transcript.replace(/system/g,'');
-                    // $("#log").val(final_transcript);
-                    // QueryProcess(final_transcript);
 
                     // $('input.b').removeClass("flash");// I think this is a problem
                     // if(track[0] && track.length!== "system" && track[1] !== "system"){
@@ -81,6 +79,16 @@ recognition.onresult = function(event) {
                         console.log('system is called and move on');
                     }else{
                         // final_transcript = final_transcript.replace(/system/g,'');
+                        final_transcript = final_transcript.replace(/france/g,'front');
+                        final_transcript = final_transcript.replace(/France/g,'front');
+                        final_transcript = final_transcript.replace(/friends/g,'front');
+                        final_transcript = final_transcript.replace(/block/g,'black');
+                        final_transcript = final_transcript.replace(/hair/g,'here');
+                        final_transcript = final_transcript.replace(/year/g,'here');
+                        final_transcript = final_transcript.replace(/coffee/g,'copy');
+                        final_transcript = final_transcript.replace(/to/g,'two');
+                        final_transcript = final_transcript.replace(/things/g,'change');
+
                         $("#log").val(final_transcript);
                         QueryProcess(final_transcript);
 
@@ -89,6 +97,16 @@ recognition.onresult = function(event) {
                     }
                     givePass = false;
                 } else{// this case is system and command continus
+                    final_transcript = final_transcript.replace(/france/g,'front');
+                    final_transcript = final_transcript.replace(/France/g,'front');
+                    final_transcript = final_transcript.replace(/friends/g,'front');
+                    final_transcript = final_transcript.replace(/block/g,'black');
+                    final_transcript = final_transcript.replace(/hair/g,'here');
+                    final_transcript = final_transcript.replace(/year/g,'here');
+                    final_transcript = final_transcript.replace(/coffee/g,'copy');
+                    final_transcript = final_transcript.replace(/to/g,'two');
+                    final_transcript = final_transcript.replace(/things/g,'change');
+
                     $("#log").val(final_transcript);
                     QueryProcess(final_transcript);
 
@@ -131,9 +149,22 @@ recognition.onresult = function(event) {
         // console.log('interim transcript typeof',typeof interim_transcript);
         var trueStr = interim_transcript.split(" ");
         track = trueStr;
+
+
         var temp = interim_transcript;
         ret = temp.replace(/system/g,'');
+
         if(command_flag === true){
+            ret = ret.replace(/france/g,'front');
+            ret = ret.replace(/France/g,'front');
+            ret = ret.replace(/friends/g,'front');
+            ret = ret.replace(/block/g,'black');
+            ret = ret.replace(/hair/g,'here');
+            ret = ret.replace(/year/g,'here');
+            ret = ret.replace(/coffee/g,'copy');
+            ret = ret.replace(/to/g,'two');
+            ret = ret.replace(/things/g,'change');
+
             $("#log").val(ret);
             $('input.b').addClass("flash");
         }
