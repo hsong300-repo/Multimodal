@@ -32,6 +32,18 @@ recognition.onresult = function(event) {
             final_transcript += event.results[i][0].transcript;
             count++;
             // $("#log").text(final_transcript);
+            //interim results hard code some of the words
+            final_transcript = final_transcript.replace(/france/g,'front');
+            final_transcript = final_transcript.replace(/France/g,'front');
+            final_transcript = final_transcript.replace(/friends/g,'front');
+            final_transcript = final_transcript.replace(/block/g,'black');
+            final_transcript = final_transcript.replace(/hair/g,'here');
+            final_transcript = final_transcript.replace(/coffee/g,'copy');
+            final_transcript = final_transcript.replace(/to/g,'two');
+            final_transcript = final_transcript.replace(/things/g,'change');
+
+
+
             $("#log").val(final_transcript);
             QueryProcess(final_transcript);
             // $("#log").removeClass("input.blink");
@@ -45,6 +57,17 @@ recognition.onresult = function(event) {
     }
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
+
+        interim_transcript = interim_transcript.replace(/france/g,'front');
+        interim_transcript = interim_transcript.replace(/France/g,'front');
+        interim_transcript = interim_transcript.replace(/friends/g,'front');
+        interim_transcript = interim_transcript.replace(/block/g,'black');
+        interim_transcript = interim_transcript.replace(/hair/g,'here');
+        interim_transcript = interim_transcript.replace(/coffee/g,'copy');
+        interim_transcript = interim_transcript.replace(/to/g,'two');
+        interim_transcript = interim_transcript.replace(/things/g,'change');
+
+
 
         // $("#log").text(interim_transcript);
         $("#log").val(interim_transcript);
