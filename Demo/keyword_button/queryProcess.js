@@ -15,8 +15,6 @@ const order = ["front","raise","bring"];
 const orderBack = ["back","low","lower","below","send"];
 var all_flag = false;
 
-
-
 // this is the function that process query that detects keywords and lead to certain function
 function QueryProcess(script){
     let myStr = script.toLowerCase();
@@ -57,9 +55,7 @@ function QueryProcess(script){
                 return andStr[1].indexOf(n) > -1;
             });
         }
-
         // console.log('stroke color',strokeColor);
-
     }else{
         console.log('normal');
         var tokenStr = myStr.split(" ");
@@ -135,8 +131,25 @@ function QueryProcess(script){
         $("#log").val(final_transcript);
         orderShapeBack();
     }else{
-        // $("#output").text("A command did not work. Try again.");
+        $("#output").text("A command did not work. Try again.");
     }
+}
+
+function splitAnd(script){
+    if(["and"].filter(n => script.indexOf(n) > -1).length > 0){
+        var tokenStr = script.split("and");
+    }else{
+        var tokenStr = script.split("with");
+    }
+
+    // let tokenStr = script.split("and");
+    let first = tokenStr[0];
+    let second = tokenStr[1];
+
+    let fStr = first.split(" ");
+    let sStr = second.split(" ");
+
+    return [fStr, sStr];
 }
 
 

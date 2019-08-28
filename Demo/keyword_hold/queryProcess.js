@@ -135,7 +135,7 @@ function QueryProcess(script){
         $("#log").val(final_transcript);
         orderShapeBack();
     }else{
-        // $("#output").text("A command did not work. Try again.");
+        $("#output").text("A command did not work. Try again.");
     }
 }
 

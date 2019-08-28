@@ -16,23 +16,31 @@ if (annyang) {
 
     // Add our commands to annyang
     annyang.addCommands(commands);
-}
 
+    // Start listening.
+    // annyang.start();
+}
 
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
+var query = '';
+var endSentence = false;
+var interimSentence = false;
 recognition.interimResults = true;
+// annyang.start();
 count = 0;
+globX = w / 2;
+globY = h / 2;
+var command = '';
 
 recognition.onresult = function(event) {
     var interim_transcript = '';
     final_transcript = '';
+    query = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript += event.results[i][0].transcript;
-            count++;
-            // $("#log").text(final_transcript);
-            //interim results hard code some of the words
+            console.log('final &&', final_transcript);
             final_transcript = final_transcript.replace(/france/g,'front');
             final_transcript = final_transcript.replace(/France/g,'front');
             final_transcript = final_transcript.replace(/friends/g,'front');
@@ -43,23 +51,22 @@ recognition.onresult = function(event) {
             final_transcript = final_transcript.replace(/to/g,'two');
             final_transcript = final_transcript.replace(/things/g,'change');
 
-
+            query = final_transcript;
             $("#log").val(final_transcript);
-            QueryProcess(final_transcript);
-            // $("#log").removeClass("input.blink");
-
-            $('input.b').removeClass("flash");
-            $("#output").text("Recognition stopped").css("color","black");
-
-            annyang.abort();
+            // command = final_transcript;
+            endSentence = true;
+            $("#output").text("Query understood").css("color","black");
+            // query process was here
+            // QueryProcess(final_transcript);
+            // $('input.b').removeClass("flash");
         } else {
             interim_transcript += event.results[i][0].transcript;
+            query += event.results[i][0].transcript;
 
         }
     }
     if(interim_transcript!='') {
         console.log('interim transcript',interim_transcript);
-
         interim_transcript = interim_transcript.replace(/france/g,'front');
         interim_transcript = interim_transcript.replace(/France/g,'front');
         interim_transcript = interim_transcript.replace(/friends/g,'front');
@@ -70,52 +77,75 @@ recognition.onresult = function(event) {
         interim_transcript = interim_transcript.replace(/to/g,'two');
         interim_transcript = interim_transcript.replace(/things/g,'change');
 
-        // $("#log").text(interim_transcript);
         $("#log").val(interim_transcript);
 
+        // $("#log").val(final_transcript);
+    }else{//end of sentence
 
     }
-
 };
 
 
-
-function EnableSpeech(){
-    annyang.start();
-    // document.getElementById('listen').style.display = "block";
-    $('input.b').addClass("flash");
-    $("#output").text("Recognition active").css("color","black");
-
-    // blink($('#log'));    // $("#log").addClass("input.blink");
-
-
-    // document.getElementById('log').style.display = "block";
-}
-
-
-// this is to track the position
 window.addEventListener('load', function(){
-
-    // var box1 = document.getElementById('box1')
     var box1 = document.getElementById('container');
     var statusdiv = document.getElementById('statusdiv');
     var startx = 0;
     var starty = 0;
     var dist = 0;
 
+    box1.addEventListener('touchstart', function(e){
+        annyang.start();
+        statusdiv.innerHTML = 'Status: touchstart';
+        $("#output").text("Recognition active").css("color","black");
+
+
+        $('input.b').addClass("flash");
+
+        e.preventDefault();
+
+
+
+    }, false);
+
+    box1.addEventListener('touchmove', function(e){
+        statusdiv.innerHTML = 'Status: touchmove';
+        $("#output").text("Recognition active").css("color","black");;
+
+        $('input.b').addClass("flash");
+
+        e.preventDefault();
+
+    }, false);
+
+    box1.addEventListener('touchend', function(e){
+        statusdiv.innerHTML = 'Status: touchend';
+        $("#output").text("Recognition stopped").css("color","black");
+        // QueryProcess(final_transcript);
+        console.log('touchend endSentence', endSentence);
+        console.log('touchend final trancript',final_transcript);
+
+        QueryProcess(query);
+        query ='';
+        // if(endSentence === true){// detecting end of sentence is hard
+        //     QueryProcess(final_transcript);
+        // }
+        // endSentence = false;
+
+        // command=" ";
+        $('input.b').removeClass("flash");
+        e.preventDefault();
+        annyang.abort();
+
+        isDragging = false;
+    }, false);
+
     box1.addEventListener('pointerdown', function(e){
-        // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
-        // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
-        // startx = e.clientX;// get x position of touch point relative to left edge of browser
-        // starty = e.clientY;
         startx = e.pageX;// get x position of touch point relative to left edge of browser
         starty = e.pageY;
-        console.log('pointer down tract', startx - box1.offsetLeft, starty - box1.offsetTop);
 
         globX = startx - box1.offsetLeft-12;
         globY = starty - box1.offsetTop-12;
 
-        // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
         e.preventDefault();
     }, false);
 
@@ -129,4 +159,3 @@ document.oncontextmenu = function() {
 document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("touchRect").click();
 });
-

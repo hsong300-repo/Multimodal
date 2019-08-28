@@ -1,9 +1,10 @@
 // commands modes
-const drawCommands = ["draw","insert","create","put","generate","make","add"];
+const drawCommands = ["make","draw","insert","create","put","generate","add"];
 const copyCommands = ["copy","duplicate","paste","copies","copied","duplicated"];
 const deleteCommands = ["remove","delete","clear"];
-const allCommands = ["all","every"];
 const updateCommands = ["change","update","apply","fill","set","color"];
+const allCommands = ["all","every"];
+
 
 //shapes
 const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
@@ -14,6 +15,7 @@ const counts = ["one","two","three","four","five","six","seven","eight","nine","
 const order = ["front","raise","bring"];
 const orderBack = ["back","low","lower","below","send"];
 var all_flag = false;
+
 
 
 
@@ -135,7 +137,7 @@ function QueryProcess(script){
         $("#log").val(final_transcript);
         orderShapeBack();
     }else{
-        // $("#output").text("A command did not work. Try again.");
+        $("#output").text("A command did not work. Try again.").css("color","red");;
     }
 }
 

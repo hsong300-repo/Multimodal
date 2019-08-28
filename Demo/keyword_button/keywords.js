@@ -49,8 +49,6 @@ recognition.onresult = function(event) {
             // $("#log").removeClass("input.blink");
 
             $('input.b').removeClass("flash");
-            $("#output").text("Recognition stopped").css("color","black");
-
             annyang.abort();
         } else {
             interim_transcript += event.results[i][0].transcript;
@@ -84,8 +82,6 @@ function EnableSpeech(){
     annyang.start();
     // document.getElementById('listen').style.display = "block";
     $('input.b').addClass("flash");
-    $("#output").text("Recognition active").css("color","black");
-
     // blink($('#log'));    // $("#log").addClass("input.blink");
 
 

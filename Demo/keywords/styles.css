@@ -1,0 +1,197 @@
+#container {
+    border: 1px solid grey;
+    background-color: lightgrey;
+    width:800px;
+    height:500px;
+}
+
+#listen{
+    padding-left: 80px;
+
+}
+
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    display: inline-block;
+    /*display: inline-block;*/
+    position: absolute;
+    left:22.5%;
+    top:15%;
+
+
+}
+
+.listen_center {
+    margin: auto;
+    width: 60%;
+    display: inline-block;
+    /*display: block;*/
+    text-align: center;
+    position: absolute;
+    left:22.5%;
+
+
+}
+
+.listen_ear {
+    margin: auto;
+    width: 60%;
+    display: inline-block;
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    position: absolute;
+    left:65%;
+    top:2.5%;
+
+
+
+}
+
+@keyframes blink {
+    50% { border-color: #ff0000; }
+}
+
+@-webkit-keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 red;}
+    50% { box-shadow: 0 0 0 4px red; }
+}
+
+
+input.b{
+    border: 1px solid black;
+    /*animation: pulse 1s infinite;*/
+}
+
+.flash{
+    animation: pulse 1s infinite;
+}
+
+input.c {
+    display: block;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 5px;
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F0F0F0;
+}
+
+
+span.c {
+    display: block;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*padding: 5px;*/
+    padding: 12px 20px;
+    position: absolute;
+    right:10%;
+    top:15%;
+
+
+
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+
+div.b {
+    display: inline-block;
+    position: absolute;
+    left:85%;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 5px;
+    top:15%;
+
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+div.d {
+    display: inline-block;
+    position: absolute;
+    left:15%;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 5px;
+    top:15%;
+
+    /*border: 1px solid blue;*/
+    /*background-color: yellow;*/
+}
+
+div.manual {
+    margin-top : -10px;
+}
+
+div.log_message {
+    margin-top : -10px;
+}
+
+div.diagnostic_message {
+    margin-top : -10px;
+}
+
+
+.button {
+    /*background-color: #4CAF50; !* Green *!*/
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    display: block;
+    font-size: 12px;
+    width:86px;
+    height:40px;
+
+}
+
+/*rectangle*/
+svg {
+    border: solid 1px grey;
+    height: 500px;
+    width: 800px;
+}
+rect {
+    fill: grey;
+    stroke: black;
+    stroke-width: 2px;
+}
+/*rectangle*/
+
+/*circle*/
+/*circle {*/
+    /*fill: lightgreen;*/
+    /*stroke: green;*/
+    /*stroke-width: 2px;*/
+/*}*/
+.point {
+    fill: black;
+    stroke: black;
+}
+
+ellipse {
+    /*stroke: mediumvioletred;*/
+    /*stroke-width: 2px;*/
+    /*fill: palevioletred;*/
+    fill: grey;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.active {
+    stroke: #000;
+    stroke-width: 2px;
+}
