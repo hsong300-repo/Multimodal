@@ -119,7 +119,7 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchend', function(e){
 
-        $("#output").text("Recognition stopped").css("color","black");
+        // $("#output").text("Recognition stopped").css("color","black");
         console.log('touchend endSentence', endSentence);
         console.log('touchend final trancript',final_transcript);
 

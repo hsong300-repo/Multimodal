@@ -8,10 +8,9 @@ function drawShapes(shape, color,count,stroke,here) {
                 }else{
                     new putCircle(color,stroke);
                 }
-
             }//for loop
 
-            $("#output").text("Drawing completed").css("color","black");
+            $("#output").text("Drawing completed").css("color","black");;
 
         } else {
             if(here === true){
@@ -19,7 +18,7 @@ function drawShapes(shape, color,count,stroke,here) {
             }else{
                 new putCircle(color,stroke);
             }
-            $("#output").text("Drawing completed").css("color","black");
+            $("#output").text("Drawing completed").css("color","black");;
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
@@ -30,14 +29,14 @@ function drawShapes(shape, color,count,stroke,here) {
                     new putRect(color,stroke);
                 }
             }//for loop
-            $("#output").text("Drawing completed").css("color","black");
+            $("#output").text("Drawing completed");
         } else {
             if(here === true){
                 new putRectHere(color,stroke);
             }else{
                 new putRect(color,stroke);
             }
-            $("#output").text("Drawing completed").css("color","black");
+            $("#output").text("Drawing completed").css("color","black");;
         }
 
     }//else if rect
@@ -218,7 +217,7 @@ function removeThisShape(){
             }
         });
 
-        $("#output").text("Removal completed").css("color","black");
+        $("#output").text("Removal completed");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -232,7 +231,7 @@ function removeThisShape(){
         });
     }
 
-    $("#output").text("Removal completed").css("color","black");
+    $("#output").text("Removal completed").css("color","black");;
 
 }
 
@@ -250,7 +249,6 @@ d3.selection.prototype.moveToBack = function() {
     });
 };
 
-
 function orderShape(){
     var tempId = shapeId;
     var id = idProcess(tempId);
@@ -267,7 +265,7 @@ function orderShape(){
             }
         });
 
-        $("#output").text("Bring to front").css("color","black");
+        $("#output").text("Bring to front").css("color","black");;
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -279,10 +277,8 @@ function orderShape(){
                 d3.selectAll(tempId).moveToFront();
             }
         });
-
-
     }
-    $("#output").text("Bring to front").css("color","black");
+    $("#output").text("Bring to front").css("color","black");;
 }
 
 function orderShapeBack(){
@@ -303,7 +299,7 @@ function orderShapeBack(){
             }
         });
 
-        $("#output").text("Sent to back").css("color","black");
+        $("#output").text("Sent to back").css("color","black");;
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -318,9 +314,8 @@ function orderShapeBack(){
             }
         });
     }
-    $("#output").text("Sent to back").css("color","black");
+    $("#output").text("Sent to back").css("color","black");;
 }
-
 
 function updateShapes(color, stroke){
     if (colors.indexOf(color) >= 0) {
@@ -343,7 +338,7 @@ function updateShapes(color, stroke){
 
     if(id === "rect"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Command did not work. Try again.").css("color","black");
+            $("#output").text("Command did not work. Try again.");
         }else{
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
@@ -353,11 +348,11 @@ function updateShapes(color, stroke){
                 }
             });
 
-            $("#output").text("Style updated").css("color","black");
+            $("#output").text("Style updated").css("color","black");;
         }
     }else if(id === "circle"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Command did not work. Try again.").css("color","black");
+            $("#output").text("Command did not work. Try again.");
 
         }else{
             d3.selectAll("ellipse").each(function(d,i){
@@ -366,17 +361,90 @@ function updateShapes(color, stroke){
                     elt.style("fill",color);
                     elt.style("stroke",stroke);        }
             });
-            $("#output").text("Style updated").css("color","black");
+            $("#output").text("Style updated").css("color","black");;
         }
     }else{
-        $("#output").text("Command did not work. Try again.").css("color","black");
+        $("#output").text("Command did not work. Try again.");
     }
 }
 
-var space = 0;
-function copyShapes(count){
-    space++;
-    console.log('shapeId',shapeId);
+function NoSelectCopy(count, shape, color){
+    if (shape === "circle" || shape === "circles") {
+        console.log('circle');
+        if(color){// when specify color and shape
+            var inColor = d3.rgb(color);
+            var checkColor = false;
+
+            console.log('her color check');
+            d3.selectAll('ellipse').each(function(d,i){
+                var elt = d3.select(this);
+                var color = d3.rgb(elt.style("fill"));
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    checkColor = true;
+                    var temp = d3.select(this);
+                    shapeId = temp.attr("id");
+
+                }
+            });// iterate on ellipses
+
+            if(checkColor === false){
+                $("#output").text("No matching color circles").css("color","green");
+            }else if(checkColor === true){
+                if (count) {
+                    for (i = 0; i < count; i++) {
+                        new copyCircle();
+                    }//for loop
+                    $("#output").text("Copied").css("color","black");;
+
+                } else {
+                    new copyCircle();
+                    $("#output").text("Copied").css("color","black");;
+                }
+            }
+        }else if(color === undefined){
+            $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+        }
+    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
+        if(color){// when specify color and shape
+            var inColor = d3.rgb(color);
+            var checkColor = false;
+
+            d3.selectAll('rect').each(function(d,i){
+                var elt = d3.select(this);
+                var color = d3.rgb(elt.style("fill"));
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    checkColor = true;
+                    var temp = d3.select(this);
+                    shapeId = temp.attr("id");
+
+                    // new copyRect();
+                    // $("#output").text("Copied");
+                }
+            });// iterate on ellipses
+
+            if(checkColor === false){
+                $("#output").text("No matching color circles").css("color","green");
+
+            }else if(checkColor === true){
+                if (count) {
+                    for (i = 0; i < count; i++) {
+                        new copyRect();
+                    }//for loop
+                    $("#output").text("Copied").css("color","black");;
+                } else {
+                    new copyRect();
+                    $("#output").text("Copied").css("color","black");;
+                }
+            }
+        }else if(color === undefined){
+            $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+        }
+    }
+
+}
+
+function SelectCopy(count, shape, color){
+
     var tempId = shapeId;
     console.log('tempId',tempId);
     shape = d3.select("#"+tempId);
@@ -387,24 +455,35 @@ function copyShapes(count){
             for (i = 0; i < count; i++) {
                 new copyCircle();
             }//for loop
-            $("#output").text("Copied").css("color","black");
+            $("#output").text("Copied").css("color","black");;
 
         } else {
             new copyCircle();
-            $("#output").text("Copied").css("color","black");
+            $("#output").text("Copied").css("color","black");;
         }
     }else if(id === "rect"){
         if (count) {
             for (i = 0; i < count; i++) {
                 new copyRect();
             }//for loop
-            $("#output").text("Copied").css("color","black");
+            $("#output").text("Copied").css("color","black");;
         } else {
             new copyRect();
         }
 
-        $("#output").text("Copied").css("color","black");
+        $("#output").text("Copied").css("color","black");;
+    }
 
+}
+
+function copyShapes(count,shape,color){
+    console.log('shapeId',shapeId);
+    console.log('count,color,shape',count, color,shape);
+
+    if(shapeId === "svg"){// shape not select
+        NoSelectCopy(count, shape, color);
+    }else{// shape selected
+        SelectCopy(count, shape, color);
     }
 }
 
@@ -435,7 +514,6 @@ function idProcess(script){
     }
 }
 
-
 document.getElementById('shapeFormat').style.display = "block";
 $("#color").change(function () {
     console.log("id colorchange",shape);
@@ -443,7 +521,7 @@ $("#color").change(function () {
     let fill = shapeFill();
     shape.style("fill",fill);
 
-    $("#output").text("Updated object style").css("color","black");
+    $("#output").text("Updated object style");
 
     document.getElementById('color').selectedIndex = 0;
 
@@ -454,7 +532,7 @@ $("#border_color").change(function () {
     let stroke = strokeFill();
     shape.style("stroke",stroke);
 
-    $("#output").text("Updated object style").css("color","black");
+    $("#output").text("Updated object style");
 
     document.getElementById('border_color').selectedIndex = 0;
 
@@ -478,6 +556,11 @@ d3.select('svg').on('touchend', function(d, i) {
         shapeId = d3.event.target.id;
 
         console.log("shapeId click",shapeId);
+        if(shapeId === "svg"){
+            console.log('background selected');
+        }else{
+            console.log('shape selected');
+        }
 
         var tempId = d3.event.target.id;
         shape = d3.select("#"+tempId);
@@ -541,7 +624,6 @@ d3.select('svg').on('touchend', function(d, i) {
 
 
 });
-
 
 document.getElementById('shapeFormat').style.display = "none";
 

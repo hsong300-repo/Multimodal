@@ -1,10 +1,9 @@
 // commands modes
-const drawCommands = ["make","draw","insert","create","put","generate","add"];
+const drawCommands = ["draw","insert","create","put","generate","make","add"];
 const copyCommands = ["copy","duplicate","paste","copies","copied","duplicated"];
 const deleteCommands = ["remove","delete","clear"];
-const updateCommands = ["change","update","apply","fill","set","color"];
 const allCommands = ["all","every"];
-
+const updateCommands = ["change","update","apply","fill","set","color"];
 
 //shapes
 const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
@@ -15,9 +14,6 @@ const counts = ["one","two","three","four","five","six","seven","eight","nine","
 const order = ["front","raise","bring"];
 const orderBack = ["back","low","lower","below","send"];
 var all_flag = false;
-
-
-
 
 // this is the function that process query that detects keywords and lead to certain function
 function QueryProcess(script){
@@ -102,7 +98,7 @@ function QueryProcess(script){
     if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
         console.log('copy');
 
-        copyShapes(n);
+        copyShapes(n,shape[0],color[0]);
     }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
 
         drawShapes(shape[0],color[0],n,strokeColor[0],here);
@@ -137,7 +133,7 @@ function QueryProcess(script){
         $("#log").val(final_transcript);
         orderShapeBack();
     }else{
-        // $("#output").text("A command did not work. Try again.").css("color","red");;
+        // $("#output").text("A command did not work. Try again.");
     }
 }
 

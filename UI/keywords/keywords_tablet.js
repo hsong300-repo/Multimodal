@@ -104,7 +104,7 @@ recognition.onresult = function(event) {
 
                         console.log('system+pause+command');
                         $('input.b').removeClass("flash");// I think this is a problem
-                        $("#output").text("Recognition stopped").css("color","black");
+                        // $("#output").text("Recognition stopped").css("color","black");
 
                     }
                     givePass = false;
@@ -116,7 +116,7 @@ recognition.onresult = function(event) {
                     console.log('system+command');
                     givePass = false;
                     $('input.b').removeClass("flash");// I think this is a problem
-                    $("#output").text("Recognition stopped").css("color","black");
+                    // $("#output").text("Recognition stopped").css("color","black");
 
                 }
             }

@@ -15,8 +15,6 @@ const order = ["front","raise","bring"];
 const orderBack = ["back","low","lower","below","send"];
 var all_flag = false;
 
-
-
 // this is the function that process query that detects keywords and lead to certain function
 function QueryProcess(script){
     let myStr = script.toLowerCase();
@@ -58,8 +56,6 @@ function QueryProcess(script){
             });
         }
 
-        // console.log('stroke color',strokeColor);
-
     }else{
         console.log('normal');
         var tokenStr = myStr.split(" ");
@@ -99,8 +95,9 @@ function QueryProcess(script){
 
     if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
         console.log('copy');
+        console.log('####copy command', n, shape[0],color[0]);
 
-        copyShapes(n);
+        copyShapes(n,shape[0],color[0]);
     }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
 
         drawShapes(shape[0],color[0],n,strokeColor[0],here);
