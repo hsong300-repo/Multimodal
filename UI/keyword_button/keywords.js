@@ -49,7 +49,7 @@ recognition.onresult = function(event) {
             // $("#log").removeClass("input.blink");
 
             $('input.b').removeClass("flash");
-            $("#output").text("Recognition stopped").css("color","black");
+            // $("#output").text("Recognition stopped").css("color","black");
 
             annyang.abort();
         } else {

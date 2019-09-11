@@ -317,8 +317,6 @@ function orderShapeBack(){
     $("#output").text("Sent to back");
 }
 
-
-
 function updateShapes(color, stroke){
     if (colors.indexOf(color) >= 0) {
         var color_flag = true;
@@ -370,46 +368,122 @@ function updateShapes(color, stroke){
     }
 }
 
-var space = 0;
-function copyShapes(count,color,shape){
-    space++;
-    console.log('shapeId',shapeId);
+function NoSelectCopy(count, shape, color){
+    if (shape === "circle" || shape === "circles") {
+        console.log('circle');
+        if(color){// when specify color and shape
+            var inColor = d3.rgb(color);
+            var checkColor = false;
 
-    if(shapeId === "svg"){
-        var selectShape = false;
+            console.log('her color check');
+            d3.selectAll('ellipse').each(function(d,i){
+                var elt = d3.select(this);
+                var color = d3.rgb(elt.style("fill"));
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    checkColor = true;
+                    var temp = d3.select(this);
+                    shapeId = temp.attr("id");
 
+                }
+            });// iterate on ellipses
 
+            if(checkColor === false){
+                $("#output").text("No matching color circles").css("color","green");
+            }else if(checkColor === true){
+                if (count) {
+                    for (i = 0; i < count; i++) {
+                        new copyCircle();
+                    }//for loop
+                    $("#output").text("Copied");
 
-    }else{
-        var selectShape = true;
-        var tempId = shapeId;
-        console.log('tempId',tempId);
-        shape = d3.select("#"+tempId);
-        var id = idProcess(tempId);
-
-        if(id === "circle"){
-            if (count) {
-                for (i = 0; i < count; i++) {
+                } else {
                     new copyCircle();
-                }//for loop
-                $("#output").text("Copied");
-
-            } else {
-                new copyCircle();
-                $("#output").text("Copied");
+                    $("#output").text("Copied");
+                }
             }
-        }else if(id === "rect"){
-            if (count) {
-                for (i = 0; i < count; i++) {
+        }else if(color === undefined){
+            $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+        }
+    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
+        if(color){// when specify color and shape
+            var inColor = d3.rgb(color);
+            var checkColor = false;
+
+            d3.selectAll('rect').each(function(d,i){
+                var elt = d3.select(this);
+                var color = d3.rgb(elt.style("fill"));
+                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+                    checkColor = true;
+                    var temp = d3.select(this);
+                    shapeId = temp.attr("id");
+
+                    // new copyRect();
+                    // $("#output").text("Copied");
+                }
+            });// iterate on ellipses
+
+            if(checkColor === false){
+                $("#output").text("No matching color circles").css("color","green");
+
+            }else if(checkColor === true){
+                if (count) {
+                    for (i = 0; i < count; i++) {
+                        new copyRect();
+                    }//for loop
+                    $("#output").text("Copied");
+                } else {
                     new copyRect();
-                }//for loop
-                $("#output").text("Copied");
-            } else {
-                new copyRect();
+                    $("#output").text("Copied");
+                }
             }
+        }else if(color === undefined){
+            $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+        }
+    }
 
+}
+
+function SelectCopy(count, shape, color){
+
+    var tempId = shapeId;
+    console.log('tempId',tempId);
+    shape = d3.select("#"+tempId);
+    var id = idProcess(tempId);
+
+    if(id === "circle"){
+        if (count) {
+            for (i = 0; i < count; i++) {
+                new copyCircle();
+            }//for loop
+            $("#output").text("Copied");
+
+        } else {
+            new copyCircle();
             $("#output").text("Copied");
         }
+    }else if(id === "rect"){
+        if (count) {
+            for (i = 0; i < count; i++) {
+                new copyRect();
+            }//for loop
+            $("#output").text("Copied");
+        } else {
+            new copyRect();
+        }
+
+        $("#output").text("Copied");
+    }
+
+}
+
+function copyShapes(count,shape,color){
+    console.log('shapeId',shapeId);
+    console.log('count,color,shape',count, color,shape);
+
+    if(shapeId === "svg"){// shape not select
+        NoSelectCopy(count, shape, color);
+    }else{// shape selected
+        SelectCopy(count, shape, color);
     }
 }
 
