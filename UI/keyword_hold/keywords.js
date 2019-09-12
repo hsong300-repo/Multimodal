@@ -123,12 +123,15 @@ window.addEventListener('load', function(){
         console.log('touchend endSentence', endSentence);
         console.log('touchend final trancript',final_transcript);
 
+
         QueryProcess(query);
         query ='';
 
         $('input.b').removeClass("flash");
         e.preventDefault();
-        annyang.abort();
+        setTimeout(function(){annyang.abort(),2000});
+
+        // annyang.abort();
 
         isDragging = false;
     }, false);
