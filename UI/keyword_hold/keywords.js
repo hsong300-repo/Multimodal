@@ -129,7 +129,7 @@ window.addEventListener('load', function(){
 
         $('input.b').removeClass("flash");
         e.preventDefault();
-        setTimeout(function(){annyang.abort(),2000});
+        annyang.abort();
 
         // annyang.abort();
 
