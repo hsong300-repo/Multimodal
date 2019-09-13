@@ -1,11 +1,11 @@
 #container {
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
     /*border: 1px solid black;*/
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
     /*background-color: black;*/
 
     /*background-image:url("./img/flowers.jpg");*/
-    background-image:url("./img/background.png");
+    /*background-image:url("./img/background.png");*/
 
 
     /*border: solid 1px #F0F0F0;*/
@@ -35,6 +35,8 @@ body {
 /*rectangle*/
 svg {
     border: solid 1px lightgrey;
+    background-image:url("./img/background.png");
+
     /*border: solid 1px black;*/
     /*background-image:url("./img/flowers.jpg");*/
 
