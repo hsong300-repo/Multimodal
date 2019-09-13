@@ -76,6 +76,7 @@ rect {
 
 }
 
+/*speaker panel*/
 .listen_center {
     margin: auto;
     border: 1px solid gray;
@@ -92,19 +93,33 @@ rect {
     /*left:22.5%;*/
 }
 
+/*left panel*/
+#profile_leftPanel {
+    position: absolute;
+    border: 1px solid gray;
+    top:10.95%;
+    height:89%;
+    /*width: 150px;*/
+    /*left:10%;*/
+    float: left;
+    /*border-right: 1px solid #666;*/
+    /*margin-right: 20px;*/
+}
+
+/*left panel with shape buttons*/
 div.d {
     display: inline-block;
     position: absolute;
     /*left:15%;*/
-    left:5%;
+    left:0%;
     /*width: 100px;*/
     /*height: 100px;*/
     padding: 5px;
     top:12%;
 
-    /*border: 1px solid blue;*/
-    /*background-color: yellow;*/
 }
+
+
 
 input.c {
     display: block;
