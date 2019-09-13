@@ -93,9 +93,9 @@ function removeShapes(shape, color,stroke) {
                 }
             });// iterate on ellipses
             if(checkColor === false){
-                $("#output").text("No matching color circles").css("color","black");
+                $("#output").text("No matching color circles").css("color","white");
             }else if(checkColor === true){
-                $("#output").text("Removal completed").css("color","black");
+                $("#output").text("Removal completed").css("color","white");
             }
             // $("#output").text("Removal completed").css("color","black");
         }else if(color && stroke !== "n"){
@@ -118,20 +118,20 @@ function removeShapes(shape, color,stroke) {
                     d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed").css("color","black");
+            $("#output").text("Removal completed").css("color","white");
 
         }else if(stroke_flag === false && color_flag === false && all_flag === true){
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
-            $("#output").text("Removal completed").css("color","black");
+            $("#output").text("Removal completed").css("color","white");
         } else{// when specify shape
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
-            $("#output").text("Removal completed").css("color","black");
+            $("#output").text("Removal completed").css("color","white");
         }
     }else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if(color && stroke === "n"){// when specify color and shape
@@ -154,9 +154,9 @@ function removeShapes(shape, color,stroke) {
                 }
             });// iterate on ellipses
             if(checkColor === false){
-                $("#output").text("No matching color rectangles").css("color","black");
+                $("#output").text("No matching color rectangles").css("color","white");
             }else if(checkColor === true){
-                $("#output").text("Removal completed").css("color","black");
+                $("#output").text("Removal completed").css("color","white");
             }
 
         }else if(color && stroke !== "n"){
@@ -179,19 +179,19 @@ function removeShapes(shape, color,stroke) {
                     d3.selectAll(tempId).remove();
                 }
             });// iterate on ellipses
-            $("#output").text("Removal completed").css("color","black");
+            $("#output").text("Removal completed").css("color","white");
 
         } else if(stroke_flag === false && color_flag === false && all_flag === true){
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
-            $("#output").text("Removal completed").css("color","black");
+            $("#output").text("Removal completed").css("color","white");
 
         } else{
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
-            $("#output").text("Removal completed").css("color","black");
+            $("#output").text("Removal completed").css("color","white");
 
         }
 

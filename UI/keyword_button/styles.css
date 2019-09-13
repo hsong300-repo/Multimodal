@@ -25,7 +25,9 @@ body {
     /*background-color: black;*/
 
     /*background-color: #5F6368;*/
-    background-color: #A9A9A9;
+    /*background-color: #A9A9A9;*/
+    background-color: black;
+
 
 
 }
@@ -83,7 +85,9 @@ rect {
     /*display: block;*/
     text-align: center;
     position: absolute;
-    background: silver;
+    /*background: silver;*/
+    background: black;
+
     /*left:22.5%;*/
 }
 
@@ -110,7 +114,7 @@ input.speech{
     display:inline-block;
     position:absolute;
     top: 5.5%;
-    right:23%;
+    right:20%;
 }
 
 /*dropdown*/
