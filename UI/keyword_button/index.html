@@ -25,20 +25,23 @@
 
 <body>
 
-<div class="panel panel-default">
-    <div class="panel-body">basic panel</div>
+<div class="w3-panel w3-gray listen_center">
+    <div class="panel-body">
+        <input class ="b" type="text" id="log" size="55">
+        <input class ="speech" onClick="EnableSpeech();" type="image" id ="speech" src="./img/microphone_panel_2.png"  width="55" height="55" />
+    <h4 class ="b" id="output"></h4></div>
+    <!--<div class="diagnostic_message"> <h3 class ="b" id="output"></h3></div>-->
+
 </div>
 
-<div class="listen_center">
-    <div class="log_message"><input class ="b" type="text" id="log" size="55">
-        <!--<button id="submit" onclick="textProcess()">submit</button>-->
-        <input class ="speech" onClick="EnableSpeech();" type="image" id ="speech" src="./img/microphone_panel_2.png"  width="55" height="55" />
-    </div>
-    <div class="diagnostic_message"> <h3 class ="b" id="output"></h3>
-    </div>
-    <!--<p class="b" id="log"><em>log message</em></p>-->
-</div>
-<!--<div class ="listen_ear" id="content"><img src="./img/listen.png" class = "ear" id="listen"  width="66" height="66" style="display:none;"></div>-->
+<!--<div class="listen_center">-->
+    <!--<div class="log_message"><input class ="b" type="text" id="log" size="55">-->
+        <!--&lt;!&ndash;<button id="submit" onclick="textProcess()">submit</button>&ndash;&gt;-->
+        <!--<input class ="speech" onClick="EnableSpeech();" type="image" id ="speech" src="./img/microphone_panel_2.png"  width="55" height="55" />-->
+    <!--</div>-->
+    <!--<div class="diagnostic_message"> <h3 class ="b" id="output"></h3>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="center" id="container"></div>
 

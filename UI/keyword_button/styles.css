@@ -61,7 +61,7 @@ rect {
 .center {
     margin: auto;
     width: 60%;
-    border: 3px solid #73AD21;
+    /*border: 3px solid #73AD21;*/
     padding: 10px;
     display: inline-block;
     /*display: inline-block;*/
@@ -75,14 +75,16 @@ rect {
 
 .listen_center {
     margin: auto;
-    width: 60%;
+    border: 1px solid gray;
+    /*width: 60%;*/
+    width: 100%;
+    height:11%;
     display: inline-block;
     /*display: block;*/
     text-align: center;
     position: absolute;
-    left:22.5%;
-
-
+    background: silver;
+    /*left:22.5%;*/
 }
 
 div.d {
@@ -107,8 +109,8 @@ input.c {
 input.speech{
     display:inline-block;
     position:absolute;
-    top: 15%;
-    right:10%;
+    top: 5.5%;
+    right:23%;
 }
 
 /*dropdown*/
