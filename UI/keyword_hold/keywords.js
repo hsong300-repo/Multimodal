@@ -55,7 +55,7 @@ recognition.onresult = function(event) {
             $("#log").val(final_transcript);
             // command = final_transcript;
             endSentence = true;
-            $("#output").text("Query understood").css("color","black");
+            $("#output").text("Query understood").css("color","white");
             // query process was here
             // QueryProcess(final_transcript);
             // $('input.b').removeClass("flash");
@@ -96,7 +96,7 @@ window.addEventListener('load', function(){
     box1.addEventListener('touchstart', function(e){
         annyang.start();
         // statusdiv.innerHTML = 'Status: touchstart';
-        $("#output").text("Recognition active").css("color","black");
+        $("#output").text("Recognition active").css("color","white");
 
 
         $('input.b').addClass("flash");
@@ -109,7 +109,7 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         // statusdiv.innerHTML = 'Status: touchmove';
-        $("#output").text("Recognition active").css("color","black");;
+        $("#output").text("Recognition active").css("color","white");;
 
         $('input.b').addClass("flash");
 

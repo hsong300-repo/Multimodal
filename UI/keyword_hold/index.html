@@ -18,22 +18,26 @@
 <body>
 
 
-<div class="listen_center">
-    <!--<p class="b" id="log"><em>log message</em></p>-->
+<div class="w3-panel w3-gray listen_center">
+    <div class="panel-body">
+        <!--<input class ="b" type="text" id="log" size="55">-->
+        <!--<h4 class ="b" id="output"></h4>-->
+        <div class="log_message"><input class ="b" type="text" id="log" size="55" >
+            <!--<button id="submit" onclick="textProcess()">submit</button>-->
+        </div>
+        <div class="diagnostic_message"> <h3 class ="b" id="output"></h3>
+        </div>
 
-    <div class="log_message"><input class ="b" type="text" id="log" size="55" >
-        <!--<button id="submit" onclick="textProcess()">submit</button>-->
     </div>
-    <div class="diagnostic_message"> <h3 class ="b" id="output"></h3>
-    </div>
-    <!--<p class="b" id="log"><em>log message</em></p>-->
+    <!--<div class="diagnostic_message"> <h3 class ="b" id="output"></h3></div>-->
 </div>
+
 
 <!--<div class ="listen_ear" id="content"><img src="./img/listen.png" id="listen"  width="66" height="66" style="display:none;"></div>-->
 
 <div class="center" id="container"></div>
 
-<div class="d">
+<div class="d" id="profile_leftPanel">
     <input class = "c"  autofocus type="image" id ="touchRect" src="./img/rect_panel_2.png"  width="66" height="66" />
     <input class = "c"  type="image" id="touchCircle" src="./img/circle_panel_2.png"  width="66" height="66"/>
     <!--<input class = "c" onClick="removeShapes();" type="image" id="remove_shapes" src="./img/eraser.png"  width="66" height="66"/>-->
