@@ -58,14 +58,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2095" />
+          <entry key="css" value="2113" />
           <entry key="html" value="3803" />
           <entry key="js" value="51015" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2095" />
+          <entry key="CSS" value="2113" />
           <entry key="HTML" value="3803" />
           <entry key="JavaScript" value="51015" />
         </counts>
@@ -136,8 +136,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="174" column="8" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="8" />
+            <state relative-caret-position="330">
+              <caret line="124" column="9" lean-forward="true" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -194,7 +194,6 @@
       <find>input</find>
       <find>div</find>
       <find>svg</find>
-      <find>input.b</find>
       <find>black</find>
       <find>shapeformat</find>
       <find>e.</find>
@@ -203,6 +202,7 @@
       <find>move</find>
       <find>log</find>
       <find>panel</find>
+      <find>input.b</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -449,12 +449,12 @@
       <workItem from="1568386067207" duration="319000" />
       <workItem from="1568397933394" duration="7308000" />
       <workItem from="1568503757153" duration="2134000" />
-      <workItem from="1568569716643" duration="2626000" />
+      <workItem from="1568569716643" duration="2915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="450961000" />
+    <option name="totallyTimeSpent" value="451250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,9 +467,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13460183" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13460183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -481,7 +480,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" visible="true" weight="0.15301205" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" visible="true" weight="0.15301205" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5017618" side_tool="true" weight="0.16867469" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -796,8 +795,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="174" column="8" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="8" />
+        <state relative-caret-position="330">
+          <caret line="124" column="9" lean-forward="true" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
         </state>
       </provider>
     </entry>
