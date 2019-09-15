@@ -543,6 +543,7 @@ d3.select('svg').on('touchend', function(d, i) {
 
         var id = idProcess(tempId);
         if(id ==="rect"){
+            console.log('*rect');
             // d3.select("#"+tempId).transition()
             //     .style("stroke-width", "6px");
 
@@ -564,6 +565,7 @@ d3.select('svg').on('touchend', function(d, i) {
             d3.selectAll("ellipse").style("stroke-width","2px");
 
         }else if(id==="circle"){
+            console.log("*circle");
             // d3.select("#"+tempId).transition()
             //     .style("stroke-width", "6px");
 
@@ -586,7 +588,7 @@ d3.select('svg').on('touchend', function(d, i) {
             d3.selectAll("rect").style("stroke-width","2px");
 
         }else{
-            console.log('svg');
+            console.log('*svg');
             d3.selectAll("rect").style('stroke-width',"2px");
             d3.selectAll("ellipse").style('stroke-width',"2px");
             d3.selectAll("circle").style("opacity",0);

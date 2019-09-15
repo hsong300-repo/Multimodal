@@ -96,6 +96,18 @@ window.addEventListener('load', function(){
     box1.addEventListener('touchstart', function(e){
         clearTimeout(timer);
 
+        console.log('######e touchstart',e.target.id);
+
+        var tempId = e.target.id;
+
+        if(tempId === "svg"){
+            d3.selectAll("rect").style('stroke-width',"2px");
+            d3.selectAll("ellipse").style('stroke-width',"2px");
+            d3.selectAll("circle").style("opacity",0);
+        }
+
+
+
         annyang.start();
         // statusdiv.innerHTML = 'Status: touchstart';
         $("#output").text("Recognition active").css("color","white");

@@ -40,14 +40,14 @@ function Rectangle() {
         })
         .on('touchmove', function() {
         // .on('mousemove', function() {
-            console.log('touch move');
+        //     console.log('touch move');
             m2 = d3.mouse(this);
             // m2 = d3.touch(this);
             if(isDown && !isDrag && click == 2) {
                 self.rectData[1] = { x: m2[0], y: m2[1] };
                 updateRect();
             }else{
-                console.log('touch more than one');
+                // console.log('touch more than one');
             }
         });
 

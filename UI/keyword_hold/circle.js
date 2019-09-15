@@ -47,7 +47,7 @@ function Ellipse() {
     })
         .on('touchmove', function () {
         // .on('mousemove', function () {
-            console.log('circle touchmove');
+        //     console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
             if (isDown && !isDragging && click == 2) {
@@ -57,7 +57,7 @@ function Ellipse() {
                 self.eData[0].b = Math.abs(m2[1] - m1[1]);
                 updateEllipse();
             }else{
-                console.log('touch more than two');
+                // console.log('touch more than two');
             }
         });
 
