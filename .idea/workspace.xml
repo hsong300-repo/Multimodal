@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keyword_button/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,7 +40,7 @@
           <entry key="css" value="54" />
           <entry key="html" value="115" />
           <entry key="jpg" value="3" />
-          <entry key="js" value="816" />
+          <entry key="js" value="817" />
           <entry key="png" value="5" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="3" />
@@ -52,22 +51,22 @@
           <entry key="CSS" value="54" />
           <entry key="HTML" value="115" />
           <entry key="Image" value="8" />
-          <entry key="JavaScript" value="816" />
+          <entry key="JavaScript" value="817" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2069" />
-          <entry key="html" value="3800" />
+          <entry key="css" value="2095" />
+          <entry key="html" value="3803" />
           <entry key="js" value="51015" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2069" />
-          <entry key="HTML" value="3800" />
+          <entry key="CSS" value="2095" />
+          <entry key="HTML" value="3803" />
           <entry key="JavaScript" value="51015" />
         </counts>
       </usages-collector>
@@ -87,10 +86,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/keyword_button/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
+            <state relative-caret-position="354">
               <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechRect.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -132,17 +136,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="165" column="1" lean-forward="true" selection-start-line="165" selection-start-column="1" selection-end-line="165" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechFunc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="594" selection-start-line="594" selection-end-line="594" />
+            <state relative-caret-position="269">
+              <caret line="174" column="8" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -178,7 +173,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>button</find>
       <find>recognition stop</find>
       <find>stopeed</find>
       <find>draw</find>
@@ -208,6 +202,7 @@
       <find>idprocess</find>
       <find>move</find>
       <find>log</find>
+      <find>panel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -454,12 +449,12 @@
       <workItem from="1568386067207" duration="319000" />
       <workItem from="1568397933394" duration="7308000" />
       <workItem from="1568503757153" duration="2134000" />
-      <workItem from="1568569716643" duration="2350000" />
+      <workItem from="1568569716643" duration="2626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="450685000" />
+    <option name="totallyTimeSpent" value="450961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -690,9 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechRect.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keywords/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1455">
@@ -792,17 +784,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
+        <state relative-caret-position="354">
           <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="165" column="1" lean-forward="true" selection-start-line="165" selection-start-column="1" selection-end-line="165" selection-end-column="1" />
+        <state relative-caret-position="269">
+          <caret line="174" column="8" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="8" />
         </state>
       </provider>
     </entry>
