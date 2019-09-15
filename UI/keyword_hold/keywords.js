@@ -133,7 +133,6 @@ window.addEventListener('load', function(){
             annyang.abort();
         },1000);
 
-
         // QueryProcess(query);
         // query ='';
         //

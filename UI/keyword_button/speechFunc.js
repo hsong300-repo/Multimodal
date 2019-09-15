@@ -514,29 +514,6 @@ function idProcess(script){
     }
 }
 
-document.getElementById('shapeFormat').style.display = "block";
-$("#color").change(function () {
-    console.log("id colorchange",shape);
-
-    let fill = shapeFill();
-    shape.style("fill",fill);
-
-    $("#output").text("Updated object style");
-
-    document.getElementById('color').selectedIndex = 0;
-
-});
-
-$("#border_color").change(function () {
-
-    let stroke = strokeFill();
-    shape.style("stroke",stroke);
-
-    $("#output").text("Updated object style");
-
-    document.getElementById('border_color').selectedIndex = 0;
-
-});
 
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
@@ -569,7 +546,6 @@ d3.select('svg').on('touchend', function(d, i) {
         if(id ==="rect"){
             // d3.select("#"+tempId).transition()
             //     .style("stroke-width", "6px");
-            document.getElementById('shapeFormat').style.display = "block";
 
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
@@ -610,14 +586,12 @@ d3.select('svg').on('touchend', function(d, i) {
             d3.selectAll(".pointC").style("opacity",0);
             d3.selectAll("rect").style("stroke-width","2px");
 
-            document.getElementById('shapeFormat').style.display = "block";
         }else{
             console.log('svg');
             d3.selectAll("rect").style('stroke-width',"2px");
             d3.selectAll("ellipse").style('stroke-width',"2px");
             d3.selectAll("circle").style("opacity",0);
 
-            document.getElementById('shapeFormat').style.display = "none";
         }
 
     }
@@ -625,7 +599,6 @@ d3.select('svg').on('touchend', function(d, i) {
 
 });
 
-document.getElementById('shapeFormat').style.display = "none";
 
 
 
