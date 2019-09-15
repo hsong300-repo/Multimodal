@@ -57,12 +57,10 @@ rect {
 
 }
 
-
 #output{
     font-family: Arial;
 
 }
-
 
 .center {
     margin: auto;
@@ -79,17 +77,13 @@ rect {
 
 }
 
-.panel_body{
-    position:absolute;
-}
-
 /*speaker panel*/
 .listen_center {
     margin: auto;
     border: 1px solid gray;
     /*width: 60%;*/
     width: 100%;
-    height:11%;
+    height:13.5%;
     display: inline-block;
     /*display: block;*/
     text-align: center;
@@ -104,7 +98,7 @@ rect {
 #profile_leftPanel {
     position: absolute;
     border: 1px solid gray;
-    top:11.2%;
+    top:13.45%;
     height:89%;
     /*width: 150px;*/
     /*left:10%;*/
@@ -137,7 +131,7 @@ input.speech{
     display:inline-block;
     position:absolute;
     top: 5.5%;
-    right:20%;
+    right:25%;
 }
 
 /*dropdown*/
@@ -171,9 +165,12 @@ span.c {
 }
 
 
+
+
+
 input.b{
     border: 1px solid grey;
-    font-size: 22px;
+    font-size: 18px;
     /*animation: pulse 1s infinite;*/
 }
 
@@ -182,9 +179,7 @@ div.manual {
 }
 
 div.log_message {
-    /*margin-top : 25px;*/
-    margin-top : 15px;
-
+    margin-top : 25px;
 
 }
 
