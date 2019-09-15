@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/keywords.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/keywords.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,7 +40,7 @@
           <entry key="css" value="54" />
           <entry key="html" value="114" />
           <entry key="jpg" value="3" />
-          <entry key="js" value="811" />
+          <entry key="js" value="812" />
           <entry key="png" value="5" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="3" />
@@ -53,7 +51,7 @@
           <entry key="CSS" value="54" />
           <entry key="HTML" value="114" />
           <entry key="Image" value="8" />
-          <entry key="JavaScript" value="811" />
+          <entry key="JavaScript" value="812" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="3" />
         </counts>
@@ -85,6 +83,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechFunc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="547" lean-forward="true" selection-start-line="547" selection-end-line="547" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/keyword_hold/copyCircle.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,20 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechFunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="597" column="9" lean-forward="true" selection-start-line="597" selection-start-column="9" selection-end-line="597" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="704">
+              <caret line="594" selection-start-line="594" selection-end-line="594" />
             </state>
           </provider>
         </entry>
@@ -173,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>log</find>
       <find>px</find>
       <find>solid</find>
       <find>staus</find>
@@ -203,6 +200,7 @@
       <find>svg</find>
       <find>input.b</find>
       <find>black</find>
+      <find>shapeformat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -254,7 +252,6 @@
         <option value="$PROJECT_DIR$/UI/keyword_hold/queryProcess.js" />
         <option value="$PROJECT_DIR$/UI/keyword_button/keywords.js" />
         <option value="$PROJECT_DIR$/UI/keyword_button/index.html" />
-        <option value="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/index.html" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/styles.css" />
         <option value="$PROJECT_DIR$/UI/keywords/speechFunc.js" />
@@ -262,6 +259,7 @@
         <option value="$PROJECT_DIR$/UI/keyword_hold/keywords.js" />
         <option value="$PROJECT_DIR$/UI/keyword_button/styles.css" />
         <option value="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" />
       </list>
     </option>
   </component>
@@ -297,6 +295,12 @@
               <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="keyword_button" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="keyword_hold" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -443,12 +447,12 @@
       <workItem from="1568386067207" duration="319000" />
       <workItem from="1568397933394" duration="7308000" />
       <workItem from="1568503757153" duration="2134000" />
-      <workItem from="1568569716643" duration="249000" />
+      <workItem from="1568569716643" duration="537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="448584000" />
+    <option name="totallyTimeSpent" value="448872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechFunc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9240">
-          <caret line="616" column="64" selection-start-line="616" selection-start-column="64" selection-end-line="616" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keywords/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1455">
@@ -784,8 +781,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechFunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="597" column="9" lean-forward="true" selection-start-line="597" selection-start-column="9" selection-end-line="597" selection-end-column="9" />
+        <state relative-caret-position="704">
+          <caret line="594" selection-start-line="594" selection-end-line="594" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="547" lean-forward="true" selection-start-line="547" selection-end-line="547" />
         </state>
       </provider>
     </entry>
