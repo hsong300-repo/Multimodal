@@ -394,15 +394,30 @@ function NoSelectCopy(count, shape, color){
                     for (i = 0; i < count; i++) {
                         new copyCircle();
                     }//for loop
-                    $("#output").text("Copied").css("color","white");
+                    $("#output").text("Copied");
 
                 } else {
                     new copyCircle();
-                    $("#output").text("Copied").css("color","white");
+                    $("#output").text("Copied");
                 }
             }
         }else if(color === undefined){
-            $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+            // $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+            d3.selectAll('ellipse').each(function(d,i){
+                var elt = d3.select(this);
+                shapeId = elt.attr("id");
+            });// iterate on ellipses
+
+            if (count) {
+                for (i = 0; i < count; i++) {
+                    new copyCircle();
+                }//for loop
+                $("#output").text("Copied");
+
+            } else {
+                new copyCircle();
+                $("#output").text("Copied");
+            }
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if(color){// when specify color and shape
@@ -423,22 +438,38 @@ function NoSelectCopy(count, shape, color){
             });// iterate on ellipses
 
             if(checkColor === false){
-                $("#output").text("No matching color circles").css("color","green");
+                $("#output").text("No matching color squares").css("color","green");
 
             }else if(checkColor === true){
                 if (count) {
                     for (i = 0; i < count; i++) {
                         new copyRect();
                     }//for loop
-                    $("#output").text("Copied").css("color","white");
+                    $("#output").text("Copied");
                 } else {
                     new copyRect();
-                    $("#output").text("Copied").css("color","white");
+                    $("#output").text("Copied");
                 }
             }
         }else if(color === undefined){
-            $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+            // $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+            d3.selectAll('rect').each(function(d,i){
+                var elt = d3.select(this);
+                shapeId = elt.attr("id");
+            });// iterate on ellipses
+
+            if (count) {
+                for (i = 0; i < count; i++) {
+                    new copyRect();
+                }//for loop
+                $("#output").text("Copied");
+            } else {
+                new copyRect();
+                $("#output").text("Copied");
+            }
         }
+    } else{
+        $("#output").text("Specify a color or shape to copy or select and copy").css("color","green");
     }
 
 }
