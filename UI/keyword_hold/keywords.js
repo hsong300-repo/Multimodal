@@ -94,6 +94,8 @@ window.addEventListener('load', function(){
     var dist = 0;
 
     box1.addEventListener('touchstart', function(e){
+        clearTimeout(timer);
+
         annyang.start();
         // statusdiv.innerHTML = 'Status: touchstart';
         $("#output").text("Recognition active").css("color","white");
@@ -109,7 +111,7 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         // statusdiv.innerHTML = 'Status: touchmove';
-        $("#output").text("Recognition active").css("color","white");;
+        $("#output").text("Recognition active").css("color","white");
 
         $('input.b').addClass("flash");
 
@@ -123,13 +125,21 @@ window.addEventListener('load', function(){
         console.log('touchend endSentence', endSentence);
         console.log('touchend final trancript',final_transcript);
 
+        timer = setTimeout(function(){
+            QueryProcess(query);
+            query='';
+            $('input.b').removeClass("flash");
+            e.preventDefault();
+            annyang.abort();
+        },1000);
 
-        QueryProcess(query);
-        query ='';
 
-        $('input.b').removeClass("flash");
-        e.preventDefault();
-        annyang.abort();
+        // QueryProcess(query);
+        // query ='';
+        //
+        // $('input.b').removeClass("flash");
+        // e.preventDefault();
+        // annyang.abort();
 
         // annyang.abort();
 
