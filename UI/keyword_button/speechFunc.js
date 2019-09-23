@@ -217,7 +217,7 @@ function removeThisShape(){
             }
         });
 
-        $("#output").text("Removal completed");
+        $("#output").text("Removal completed").css("color","white");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -231,7 +231,7 @@ function removeThisShape(){
         });
     }
 
-    $("#output").text("Removal completed");
+    $("#output").text("Removal completed").css("color","white");
 
 }
 
@@ -265,7 +265,7 @@ function orderShape(){
             }
         });
 
-        $("#output").text("Bring to front");
+        $("#output").text("Bring to front").css("color","white");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -278,7 +278,7 @@ function orderShape(){
             }
         });
     }
-    $("#output").text("Bring to front");
+    $("#output").text("Bring to front").css("color","white");
 }
 
 function orderShapeBack(){
@@ -299,7 +299,7 @@ function orderShapeBack(){
             }
         });
 
-        $("#output").text("Sent to back");
+        $("#output").text("Sent to back").css("color","white");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -314,7 +314,7 @@ function orderShapeBack(){
             }
         });
     }
-    $("#output").text("Sent to back");
+    $("#output").text("Sent to back").css("color","white");
 }
 
 function updateShapes(color, stroke){
@@ -348,7 +348,7 @@ function updateShapes(color, stroke){
                 }
             });
 
-            $("#output").text("Style updated");
+            $("#output").text("Style updated").css("color","white");
         }
     }else if(id === "circle"){
         if(color_flag === false && stroke_flag == false){
@@ -394,11 +394,11 @@ function NoSelectCopy(count, shape, color){
                     for (i = 0; i < count; i++) {
                         new copyCircle();
                     }//for loop
-                    $("#output").text("Copied");
+                    $("#output").text("Copied").css("color","white");
 
                 } else {
                     new copyCircle();
-                    $("#output").text("Copied");
+                    $("#output").text("Copied").css("color","white");
                 }
             }
         }else if(color === undefined){
@@ -412,11 +412,11 @@ function NoSelectCopy(count, shape, color){
                 for (i = 0; i < count; i++) {
                     new copyCircle();
                 }//for loop
-                $("#output").text("Copied");
+                $("#output").text("Copied").css("color","white");
 
             } else {
                 new copyCircle();
-                $("#output").text("Copied");
+                $("#output").text("Copied").css("color","white");
             }
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
@@ -445,10 +445,10 @@ function NoSelectCopy(count, shape, color){
                     for (i = 0; i < count; i++) {
                         new copyRect();
                     }//for loop
-                    $("#output").text("Copied");
+                    $("#output").text("Copied").css("color","white");
                 } else {
                     new copyRect();
-                    $("#output").text("Copied");
+                    $("#output").text("Copied").css("color","white");
                 }
             }
         }else if(color === undefined){
@@ -462,10 +462,10 @@ function NoSelectCopy(count, shape, color){
                 for (i = 0; i < count; i++) {
                     new copyRect();
                 }//for loop
-                $("#output").text("Copied");
+                $("#output").text("Copied").css("color","white");
             } else {
                 new copyRect();
-                $("#output").text("Copied");
+                $("#output").text("Copied").css("color","white");
             }
         }
     } else{
@@ -486,23 +486,23 @@ function SelectCopy(count, shape, color){
             for (i = 0; i < count; i++) {
                 new copyCircle();
             }//for loop
-            $("#output").text("Copied");
+            $("#output").text("Copied").css("color","white");
 
         } else {
             new copyCircle();
-            $("#output").text("Copied");
+            $("#output").text("Copied").css("color","white");
         }
     }else if(id === "rect"){
         if (count) {
             for (i = 0; i < count; i++) {
                 new copyRect();
             }//for loop
-            $("#output").text("Copied");
+            $("#output").text("Copied").css("color","white");
         } else {
             new copyRect();
         }
 
-        $("#output").text("Copied");
+        $("#output").text("Copied").css("color","white");
     }
 
 }

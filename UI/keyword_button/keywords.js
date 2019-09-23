@@ -85,7 +85,7 @@ function EnableSpeech(){
     // document.getElementById('listen').style.display = "block";
     $('input.b').addClass("flash");
     // $("#output").text("Recognition active").css("color","black");
-    $("#output").text("Recognition active").css("color","white");
+    // $("#output").text("Recognition active").css("color","white");
 
 
     // blink($('#log'));    // $("#log").addClass("input.blink");

@@ -110,7 +110,7 @@ window.addEventListener('load', function(){
 
         annyang.start();
         // statusdiv.innerHTML = 'Status: touchstart';
-        $("#output").text("Recognition active").css("color","white");
+        // $("#output").text("Recognition active").css("color","white");
 
 
         $('input.b').addClass("flash");
