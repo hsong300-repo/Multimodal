@@ -5,9 +5,11 @@ d3.select('#touchCircle').on('click', function () {
     new Ellipse();
 });
 
+
 function Ellipse() {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
+
 
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
@@ -45,7 +47,7 @@ function Ellipse() {
     })
         .on('touchmove', function () {
         // .on('mousemove', function () {
-            console.log('circle touchmove');
+        //     console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
             if (isDown && !isDragging && click == 2) {
@@ -55,7 +57,7 @@ function Ellipse() {
                 self.eData[0].b = Math.abs(m2[1] - m1[1]);
                 updateEllipse();
             }else{
-                console.log('touch more than two');
+                // console.log('touch more than two');
             }
         });
 

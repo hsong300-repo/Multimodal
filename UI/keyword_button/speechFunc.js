@@ -10,7 +10,7 @@ function drawShapes(shape, color,count,stroke,here) {
                 }
             }//for loop
 
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","white");
 
         } else {
             if(here === true){
@@ -18,7 +18,7 @@ function drawShapes(shape, color,count,stroke,here) {
             }else{
                 new putCircle(color,stroke);
             }
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","white");
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
@@ -29,14 +29,14 @@ function drawShapes(shape, color,count,stroke,here) {
                     new putRect(color,stroke);
                 }
             }//for loop
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","white");
         } else {
             if(here === true){
                 new putRectHere(color,stroke);
             }else{
                 new putRect(color,stroke);
             }
-            $("#output").text("Drawing completed");
+            $("#output").text("Drawing completed").css("color","white");
         }
 
     }//else if rect
