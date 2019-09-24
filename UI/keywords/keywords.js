@@ -82,7 +82,7 @@ recognition.onresult = function(event) {
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         console.log('=======only when system is called');
                         $('input.b').addClass("flash");
-                        // $("#output").text("Listening").css("color","red");
+                        $("#output").text("Listening").css("color","red");
                         //this is the case only when system is called
                     }else{
                         // final_transcript = final_transcript.replace(/system/g,'');
@@ -118,10 +118,10 @@ recognition.onresult = function(event) {
                 interim_transcript += event.results[i][0].transcript;
                 console.log('not givePass interim',interim_transcript);
                 var trueStr = interim_transcript.split(" ");
-                if(trueStr[0] === "system" ){
+                if(trueStr[0] === "system" && interim_transcript.length === 1 ){
                     command_flag = true;
                     $('input.b').addClass("flash");
-                }else if(trueStr[1] === "system" ){
+                }else if(trueStr[1] === "system" && interim_transcript.length === 1){
                     command_flag = true;
                     $('input.b').addClass("flash");
                 }else{
