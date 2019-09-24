@@ -361,7 +361,7 @@ function updateShapes(color, stroke){
                     elt.style("fill",color);
                     elt.style("stroke",stroke);        }
             });
-            $("#output").text("Style updated");
+            $("#output").text("Style updated").css("color","white");
         }
     }else{
         $("#output").text("Command did not work. Try again.");
@@ -509,7 +509,7 @@ function SelectCopy(count, shape, color){
 
 function copyShapes(count,shape,color){
     console.log('shapeId',shapeId);
-    console.log('count,color,shape',count, color,shape);
+    console.log('###function count,color,shape',count, color,shape);
 
     if(shapeId === "svg"){// shape not select
         NoSelectCopy(count, shape, color);
@@ -545,7 +545,6 @@ function idProcess(script){
     }
 }
 
-
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
@@ -575,6 +574,7 @@ d3.select('svg').on('touchend', function(d, i) {
 
         var id = idProcess(tempId);
         if(id ==="rect"){
+            console.log('*rect');
             // d3.select("#"+tempId).transition()
             //     .style("stroke-width", "6px");
 
@@ -596,6 +596,7 @@ d3.select('svg').on('touchend', function(d, i) {
             d3.selectAll("ellipse").style("stroke-width","2px");
 
         }else if(id==="circle"){
+            console.log("*circle");
             // d3.select("#"+tempId).transition()
             //     .style("stroke-width", "6px");
 
@@ -618,7 +619,7 @@ d3.select('svg').on('touchend', function(d, i) {
             d3.selectAll("rect").style("stroke-width","2px");
 
         }else{
-            console.log('svg');
+            console.log('*svg');
             d3.selectAll("rect").style('stroke-width',"2px");
             d3.selectAll("ellipse").style('stroke-width',"2px");
             d3.selectAll("circle").style("opacity",0);

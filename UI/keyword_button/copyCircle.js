@@ -3,7 +3,9 @@ function copyCircle() {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
 
-    // svg.on('mousedown', function () {
+
+
+        // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
         m1 = d3.mouse(this);
@@ -80,11 +82,16 @@ function copyCircle() {
         }];
         cId++;
         count++;
-        self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy"+count).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragE);
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy"+count).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragE);
         self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' +" "+shapeId + "_copy"+count).call(dragP);
         self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
         self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
+
+        //deselect the object original as well
+        d3.select('#'+shapeId).style("stroke-width","2px");
+        d3.selectAll(".pointE").style("opacity",0);
+
         shapeId = shapeId + "_copy" + count;
         console.log('shapeId',shapeId);
         updateEllipse();
@@ -96,6 +103,7 @@ function copyCircle() {
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
+
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect

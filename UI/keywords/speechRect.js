@@ -3,11 +3,13 @@ function putRect(color,strokeColor) {
 
         svg.on('touchstart', function() {
             m1 = d3.mouse(this);
+            console.log('drag');
             isDrag = true;
             isDown = !isDown;
         })
 
         .on('touchmove', function() {
+            console.log('touchmove');
             m2 = d3.mouse(this);
             if(isDown && !isDrag) {
                 // self.rectData[1] = { x: m2[0], y: m2[1] };
@@ -57,13 +59,11 @@ function putRect(color,strokeColor) {
     var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
 
     function dragStart(d) {
+        console.log('dragstart');
         isDown = false;
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
-
-
-        // shapeId = d3.select(this).attr("id");
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect
@@ -91,6 +91,7 @@ function putRect(color,strokeColor) {
     }
 
     function dragEnd(d) {
+        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
@@ -116,12 +117,15 @@ function putRect(color,strokeColor) {
 
     rId++;
     self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 105+rId*20, y: 105 } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
+    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
     self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
     shapeId = "rect_" +rId;
+
+    d3.selectAll(".pointC").style("opacity",0);
+
     console.log('shapeId',shapeId);
     updateRect();
 
@@ -164,6 +168,7 @@ function putRectHere(color,strokeColor) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
       svg.on('touchmove', function() {
+            console.log('touchmove');
             m2 = d3.mouse(this);
             if(isDown && !isDrag) {
                 self.rectData[1] = { x: m2[0], y: m2[1] };
@@ -175,6 +180,7 @@ function putRectHere(color,strokeColor) {
 
     function updateRect() {
         rect = d3.select(self.rectangleElement[0][0]);
+        console.log('rect values',rect);
         rect.attr({
             x: self.rectData[1].x - self.rectData[0].x > 0 ? self.rectData[0].x :  self.rectData[1].x,
             y: self.rectData[1].y - self.rectData[0].y > 0 ? self.rectData[0].y :  self.rectData[1].y,
@@ -206,13 +212,11 @@ function putRectHere(color,strokeColor) {
     var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
 
     function dragStart(d) {
+        console.log('dragstart');
         isDown = false;
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
-
-
-        // shapeId = d3.select(this).attr("id");
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect
@@ -240,6 +244,7 @@ function putRectHere(color,strokeColor) {
     }
 
     function dragEnd(d) {
+        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");

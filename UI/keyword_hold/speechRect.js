@@ -1,10 +1,7 @@
-
 function putRect(color,strokeColor) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
-
-
-    svg.on('touchstart', function() {
+        svg.on('touchstart', function() {
             m1 = d3.mouse(this);
             console.log('drag');
             isDrag = true;
@@ -67,7 +64,6 @@ function putRect(color,strokeColor) {
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
-
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect
@@ -121,12 +117,15 @@ function putRect(color,strokeColor) {
 
     rId++;
     self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 105+rId*20, y: 105 } ];
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
+    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
     self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
     shapeId = "rect_" +rId;
+
+    d3.selectAll(".pointC").style("opacity",0);
+
     console.log('shapeId',shapeId);
     updateRect();
 
@@ -168,8 +167,7 @@ function putRect(color,strokeColor) {
 function putRectHere(color,strokeColor) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
-
-    svg.on('touchmove', function() {
+      svg.on('touchmove', function() {
             console.log('touchmove');
             m2 = d3.mouse(this);
             if(isDown && !isDrag) {
@@ -219,7 +217,6 @@ function putRectHere(color,strokeColor) {
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
-
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect

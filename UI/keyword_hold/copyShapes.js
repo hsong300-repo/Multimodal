@@ -2,7 +2,6 @@ var count = 0;
 function copyRect() {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false,click = 1;
 
-
     svg.on('touchstart', function() {
         m1 = d3.mouse(this);
         console.log('drag');
@@ -127,12 +126,16 @@ function copyRect() {
         y: globY + parseInt(shapeHeight, 10)
     }];
     self.rectangleElement = d3.select('svg').append('rect').attr("id", shapeId + "_copy" + count).attr('class', 'rectangle').style("fill", color)
-        .style("stroke", strokeColor).style("stroke-width","6px").attr("width", shapeWidth).attr("height", shapeHeight).call(dragR);
+        .style("stroke", strokeColor).style("stroke-width","2px").attr("width", shapeWidth).attr("height", shapeHeight).call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC3);
     self.pointElement4 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC4);
     shapeId = shapeId + "_copy" + count;
+
+    d3.select("#"+shapeId).style("stroke-width","2px");
+    d3.selectAll(".pointC").style("opacity",0);
+
     console.log('shapeId',shapeId);
     updateRect();
 
