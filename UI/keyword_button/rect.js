@@ -1,8 +1,10 @@
 var rId = 0;
 
 // d3.select('#touchRect').on('click', function(){ new Rectangle(); });
-d3.select('#touchRect').on('click', function(){ new Rectangle(); });
-
+d3.select('#touchRect').on('click', function(){
+    // Rectangle();
+   new Rectangle();
+});
 
 var w = 800, h = 600;
 var svg = d3.select('#container').append('svg').attr('id','svg').attr({width: w, height: h});
@@ -17,7 +19,7 @@ function Rectangle() {
         m1 = d3.mouse(this);
         // m1 = d3.touch(this);
         // if (!isDown && !isDrag) {
-        if (!isDown && !isDrag && click == 1) {
+        if (!isDown && !isDrag && click === 1) {
             rId++;
             self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
             self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("stroke-width","6px").call(dragR);
@@ -28,7 +30,6 @@ function Rectangle() {
             shapeId = "rect_" +rId;
             console.log('shapeId',shapeId);
             updateRect();
-            // isDrag = false;
         } else{
             console.log('drag');
             isDrag = true;

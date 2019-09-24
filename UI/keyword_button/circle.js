@@ -1,10 +1,11 @@
 // var svg = d3.select('body').append('svg');
 var cId = 0;
 
+
 d3.select('#touchCircle').on('click', function () {
+    // Ellipse();
     new Ellipse();
 });
-
 
 function Ellipse() {
     var self = this;
@@ -15,7 +16,7 @@ function Ellipse() {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
             m1 = d3.mouse(this);
-        if (!isDown && click == 1) {
+        if (!isDown && click === 1) {
         // if (!isDown) {
                 if(!isDragging){
                 self.eData = [{
@@ -61,7 +62,9 @@ function Ellipse() {
             }
         });
 
+
     function updateEllipse() {
+        console.log("updateEllipses");
         ellipse = d3.select(self.ellipseElement[0][0]).data(self.eData);
         ellipse.attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1; })

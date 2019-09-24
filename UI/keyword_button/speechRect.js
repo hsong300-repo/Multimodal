@@ -221,6 +221,7 @@ function putRectHere(color,strokeColor) {
 
         if(check.length === 0){// when clicked on small circles for rect
             console.log("small circle click for rect");
+
             return;
         }else if(check === "1" || check === "2" || check === "3" || check === "4"){// when click on small circles for ellipses
             console.log("small circle click for ellipse");

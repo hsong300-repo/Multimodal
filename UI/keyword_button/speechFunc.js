@@ -388,7 +388,7 @@ function NoSelectCopy(count, shape, color){
             });// iterate on ellipses
 
             if(checkColor === false){
-                $("#output").text("No matching color circles").css("color","green");
+                $("#output").text("No matching color circles").css("color","red");
             }else if(checkColor === true){
                 if (count) {
                     for (i = 0; i < count; i++) {
@@ -438,7 +438,7 @@ function NoSelectCopy(count, shape, color){
             });// iterate on ellipses
 
             if(checkColor === false){
-                $("#output").text("No matching color squares").css("color","green");
+                $("#output").text("No matching color squares").css("color","red");
 
             }else if(checkColor === true){
                 if (count) {
@@ -469,7 +469,7 @@ function NoSelectCopy(count, shape, color){
             }
         }
     } else{
-        $("#output").text("Specify a color or shape to copy or select and copy").css("color","green");
+        $("#output").text("Specify a color or shape to copy or select and copy").css("color","red");
     }
 
 }
@@ -548,6 +548,8 @@ function idProcess(script){
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
+
+
     // if (d3.event.defaultPrevented) return; // dragged
     // Somehow console.log the ID of the circle clicked on (if any).
     // console.log("Clicked ID: " + d3.event.target.id);

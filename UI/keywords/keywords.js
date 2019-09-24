@@ -12,6 +12,7 @@ if (annyang) {
         $("#output").text(userSaid);
         console.log(commandText); // sample output: 'hello (there)'
         console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+        console.log('result match printout');
     });
 
     // Add our commands to annyang
@@ -23,139 +24,150 @@ if (annyang) {
 
 var recognition = annyang.getSpeechRecognizer();
 var final_transcript = '';
+var track = '';
 recognition.interimResults = true;
+
 annyang.start();
 count = 0;
 command_flag = false;
+system_flag = false;
+givePass = false;
+pass_count = 0;
+
 recognition.onresult = function(event) {
     var interim_transcript = '';
     final_transcript = '';
-    for (var i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
-            final_transcript += event.results[i][0].transcript;
-            //this is where I call a query processer, when the speech input ends
-            if(command_flag === true){
-                QueryProcess(final_transcript);
-                $("#log").val(final_transcript);
-                // document.getElementById('listen').style.display = "none";
-                // $('input.b').removeClass("flash");
+    var ret = '';
+    var temp_flag = system_flag;
 
-            }
+    console.log('track before', track, track.length);
 
-            // annyang.start(); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
-        }
-        interim_transcript += event.results[i][0].transcript;
-        var magic_word = interim_transcript.split(' ');
-        command_flag = false;
-        if(count === 0){
-            if(magic_word[0] === "system" || magic_word[0] === " system"){
-                command_flag =true;
-            }
+    if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){// system was called ready to listen
+        console.log('system true');
+        system_flag = true;
 
-        }else{
-            if(magic_word[1] === "system" || magic_word[1] === " system" ){
-                command_flag =true;
+        pass_count = -1;
+        command_flag = true;
+        givePass = true;
+        $("#log").val(ret);
 
-            }
-
-        }
-
+    }else{// saying something else
+        system_flag = false;
 
     }
+
+    console.log('givePass', givePass);
+    //it should be executed while true, false change to true,
+
+    // final_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+        console.log('####results');
+        if (event.results[i].isFinal) {
+            final_transcript += event.results[i][0].transcript;
+            count++;
+            pass_count++;
+            if(command_flag === true){
+                if(pass_count === 0 ){
+                    final_transcript = final_transcript.replace(/system/g,'');
+                    final_transcript = final_transcript.replace(/france/g,'front');
+                    final_transcript = final_transcript.replace(/France/g,'front');
+                    final_transcript = final_transcript.replace(/friends/g,'front');
+                    final_transcript = final_transcript.replace(/block/g,'black');
+                    final_transcript = final_transcript.replace(/hair/g,'here');
+                    final_transcript = final_transcript.replace(/year/g,'here');
+                    final_transcript = final_transcript.replace(/coffee/g,'copy');
+                    final_transcript = final_transcript.replace(/to/g,'two');
+                    final_transcript = final_transcript.replace(/things/g,'change');
+
+                    if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
+                        console.log('=======only when system is called');
+                        $('input.b').addClass("flash");
+                        // $("#output").text("Listening").css("color","red");
+                        //this is the case only when system is called
+                    }else{
+                        // final_transcript = final_transcript.replace(/system/g,'');
+                        console.log('=======sentence over and final trancript',final_transcript);
+                        $("#log").val(final_transcript);
+                        QueryProcess(final_transcript);
+
+                        console.log('system+pause+command');
+                        $('input.b').removeClass("flash");// I think this is a problem
+                        $("#output").text("").css("color","black");
+                    }
+                    givePass = false;
+                } else{// this case is system and command continus
+                    console.log('=======pass count **not0',final_transcript);
+                    $("#log").val(final_transcript);
+                    QueryProcess(final_transcript);
+
+                    console.log('system+command');
+                    givePass = false;
+                    $('input.b').removeClass("flash");// I think this is a problem
+                    $("#output").text("").css("color","black");
+
+                    // $("#output").text("Recognition stopped").css("color","black");
+
+                }
+            }
+        } else {// not final
+            if(givePass === true){
+                interim_transcript += event.results[i][0].transcript;
+                console.log('givePass interim not final',interim_transcript);
+                // command_flag = true;
+            }else{// saying something else
+                interim_transcript += event.results[i][0].transcript;
+                console.log('not givePass interim',interim_transcript);
+                var trueStr = interim_transcript.split(" ");
+                if(trueStr[0] === "system" ){
+                    command_flag = true;
+                    $('input.b').addClass("flash");
+                }else if(trueStr[1] === "system" ){
+                    command_flag = true;
+                    $('input.b').addClass("flash");
+                }else{
+                    command_flag = false;
+                }
+            }
+
+        }//end of else
+    }// end of for loop
+
     if(interim_transcript!='') {
+        console.log('######interim_transcript',interim_transcript);
+        console.log('system flag',system_flag,"temp_flag", temp_flag,"command_flag",command_flag);
+        var trueStr = interim_transcript.split(" ");
+        track = trueStr;
+        interim_transcript = interim_transcript.replace(/france/g,'front');
+        interim_transcript = interim_transcript.replace(/France/g,'front');
+        interim_transcript = interim_transcript.replace(/friends/g,'front');
+        interim_transcript = interim_transcript.replace(/block/g,'black');
+        interim_transcript = interim_transcript.replace(/hair/g,'here');
+        interim_transcript = interim_transcript.replace(/year/g,'here');
+        interim_transcript = interim_transcript.replace(/coffee/g,'copy');
+        interim_transcript = interim_transcript.replace(/to/g,'two');
+        interim_transcript = interim_transcript.replace(/things/g,'change');
+        var temp = interim_transcript;
+        ret = temp.replace(/system/g,'');
         if(command_flag === true){
-            // document.getElementById('listen').style.display = "block";
-            $('input.b').addClass("flash");
-
-            $("#log").val(interim_transcript);
-        }else{
-            // document.getElementById('listen').style.display = "none";
-            $('input.b').removeClass("flash");
-
+            // $('input.b').addClass("flash");
+            // $("#output").text("Listening").css("color","red");
+            // $('input.b').addClass("flash");
+            $("#log").val(ret);
         }
-
-
+    }else{
+        console.log('#####end of sentence');
     }
 
 };
 
-// recognition.onresult = function(event) {
-//     var interim_transcript = '';
-//     final_transcript = '';
-//     for (var i = event.resultIndex; i < event.results.length; ++i) {
-//         if (event.results[i].isFinal) {
-//             final_transcript += event.results[i][0].transcript;
-//             count++;
-//             //this is where I call a query processer, when the speech input ends
-//             if(command_flag === true){
-//                 QueryProcess(final_transcript);
-//                 $("#log").val(final_transcript);
-//                 // document.getElementById('listen').style.display = "none";
-//                 // $('input.b').removeClass("flash");
-//
-//             }
-//             annyang.start();
-//
-//             // annyang.start(); //If the sentence is "final" for the Web Speech API, we can try to trigger the sentence
-//         } else {
-//             interim_transcript += event.results[i][0].transcript;
-//             var magic_word = interim_transcript.split(' ');
-//             command_flag = false;
-//             if(count === 0){
-//                 if(magic_word[0] === "system" || magic_word[0] === " system"){
-//                     command_flag =true;
-//                     annyang.abort();
-//                 }
-//
-//             }else{
-//                 if(magic_word[1] === "system" || magic_word[1] === " system" ){
-//                     command_flag =true;
-//                     annyang.abort();
-//
-//                 }
-//
-//             }
-//
-//         }
-//     }
-//     if(interim_transcript!='') {
-//         if(command_flag === true){
-//             // document.getElementById('listen').style.display = "block";
-//             $('input.b').addClass("flash");
-//
-//             $("#log").val(interim_transcript);
-//         }else{
-//             // document.getElementById('listen').style.display = "none";
-//             $('input.b').removeClass("flash");
-//
-//         }
-//
-//
-//     }
-//
-// };
-
-
-
 
 // this is to track the position
 window.addEventListener('load', function(){
-
-    // annyang.start();
-
-
-    // var box1 = document.getElementById('box1')
     var box1 = document.getElementById('container');
-    var statusdiv = document.getElementById('statusdiv');
     var startx = 0;
     var starty = 0;
-    var dist = 0;
 
     box1.addEventListener('pointerdown', function(e){
-        // var touchobj = e.changedTouches[0] ;// reference first touch point (ie: first finger)
-        // startx = parseInt(touchobj.clientX) ;// get x position of touch point relative to left edge of browser
-        // startx = e.clientX;// get x position of touch point relative to left edge of browser
-        // starty = e.clientY;
         startx = e.pageX;// get x position of touch point relative to left edge of browser
         starty = e.pageY;
         console.log('pointer down tract', startx - box1.offsetLeft, starty - box1.offsetTop);
@@ -163,7 +175,6 @@ window.addEventListener('load', function(){
         globX = startx - box1.offsetLeft-12;
         globY = starty - box1.offsetTop-12;
 
-        // statusdiv.innerHTML = 'Status: touchtracj<br> Client_xy: ' + globX + 'px' + globY + 'px';
         e.preventDefault();
     }, false);
 
