@@ -114,16 +114,14 @@ recognition.onresult = function(event) {
                 interim_transcript += event.results[i][0].transcript;
                 console.log('givePass interim not final',interim_transcript);
                 // command_flag = true;
-            }else{// saying something else
+            } else{// saying something else
                 interim_transcript += event.results[i][0].transcript;
                 console.log('not givePass interim',interim_transcript);
                 var trueStr = interim_transcript.split(" ");
-                if(trueStr[0] === "system" && interim_transcript.length === 1 ){
+                if(trueStr[0] === "system" ){
                     command_flag = true;
-                    $('input.b').addClass("flash");
-                }else if(trueStr[1] === "system" && interim_transcript.length === 1){
+                }else if(trueStr[1] === "system"){
                     command_flag = true;
-                    $('input.b').addClass("flash");
                 }else{
                     command_flag = false;
                 }
