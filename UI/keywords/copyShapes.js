@@ -10,7 +10,6 @@ function copyRect() {
         click++;
 
     })
-
         .on('touchmove', function() {
             console.log('touchmove');
             m2 = d3.mouse(this);
@@ -131,8 +130,8 @@ function copyRect() {
     // }];
 
     self.rectData =
-        [{x: xPosition + rId * 10, y: yPosition}, {
-            x: xPosition + rId * 10 + parseInt(shapeWidth, 10),
+        [{x: xPosition + rId * 5, y: yPosition}, {
+            x: xPosition + rId * 5 + parseInt(shapeWidth, 10),
             y: yPosition + parseInt(shapeHeight, 10)
         }];
 

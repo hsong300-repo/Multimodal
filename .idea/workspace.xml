@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/UI/keyword_button/img/trail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI/keyword_hold/img/toy-background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI/keywords/img/village.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keyword_button/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/copyCircle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keyword_button/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/copyShapes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/circle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_button/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keyword_hold/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/copyCircle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keyword_hold/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/copyShapes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keywords/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/copyCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keywords/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/copyShapes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keywords/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,10 +49,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="62" />
-          <entry key="html" value="122" />
+          <entry key="css" value="65" />
+          <entry key="html" value="123" />
           <entry key="jpg" value="5" />
-          <entry key="js" value="881" />
+          <entry key="js" value="887" />
           <entry key="png" value="5" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="3" />
@@ -53,26 +60,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="62" />
-          <entry key="HTML" value="122" />
+          <entry key="CSS" value="65" />
+          <entry key="HTML" value="123" />
           <entry key="Image" value="10" />
-          <entry key="JavaScript" value="881" />
+          <entry key="JavaScript" value="887" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2203" />
+          <entry key="css" value="2222" />
           <entry key="html" value="3822" />
-          <entry key="js" value="53947" />
+          <entry key="js" value="54031" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2203" />
+          <entry key="CSS" value="2222" />
           <entry key="HTML" value="3822" />
-          <entry key="JavaScript" value="53947" />
+          <entry key="JavaScript" value="54031" />
         </counts>
       </usages-collector>
     </session>
@@ -80,19 +87,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/circle.js">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyCircle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/rect.js">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/copyCircle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+            <state relative-caret-position="318">
+              <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -107,71 +123,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyCircle.js">
+        <entry file="file://$PROJECT_DIR$/UI/keywords/copyCircle.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
+            <state relative-caret-position="251">
+              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keywords/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keywords/copyShapes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyShapes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="330">
+              <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechFunc.js">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_button/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2655">
-              <caret line="403" column="85" selection-start-line="403" selection-start-column="81" selection-end-line="403" selection-end-column="85" />
-              <folding>
-                <element signature="n#!!block;n#drawShapes#0" />
-                <element signature="n#!!block;n#pointEProcess#0" />
-                <element signature="n#!!block;n#pointCProcess#0" />
-                <element signature="n#!!block;n#removeShapes#0" />
-                <element signature="n#!!block;n#removeThisShape#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_button/keywords.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="85" column="22" selection-start-line="85" selection-end-line="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechRect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="72" column="14" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/copyCircle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="91" column="11" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="91" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/keywords.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="106" column="12" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+            <state relative-caret-position="252">
+              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -227,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tablet/keyword_hold/copyShapes.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/rect.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/speechCircle.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/speechRect.js" />
@@ -256,13 +251,8 @@
         <option value="$PROJECT_DIR$/UI/keywords/queryProcess.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/queryProcess.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/rect.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_button/styles.css" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/index.html" />
-        <option value="$PROJECT_DIR$/UI/keywords/styles.css" />
         <option value="$PROJECT_DIR$/UI/keywords/keywords_tablet.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_hold/styles.css" />
-        <option value="$PROJECT_DIR$/UI/keyword_button/copyCircle.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_button/copyShapes.js" />
         <option value="$PROJECT_DIR$/UI/keyword_button/speechCircle.js" />
         <option value="$PROJECT_DIR$/UI/keywords/index.html" />
         <option value="$PROJECT_DIR$/UI/keyword_button/speechRect.js" />
@@ -276,8 +266,14 @@
         <option value="$PROJECT_DIR$/UI/keyword_hold/keywords.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/circle.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_hold/copyCircle.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/copyShapes.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_button/copyShapes.js" />
+        <option value="$PROJECT_DIR$/UI/keywords/copyShapes.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_hold/copyCircle.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_button/copyCircle.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_hold/styles.css" />
+        <option value="$PROJECT_DIR$/UI/keywords/styles.css" />
+        <option value="$PROJECT_DIR$/UI/keyword_button/styles.css" />
       </list>
     </option>
   </component>
@@ -318,7 +314,14 @@
               <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
               <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="keyword_hold" type="462c0819:PsiDirectoryNode" />
+              <item name="keywords" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="keywords" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -339,11 +342,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/UI/keyword_button" />
-      <recent name="$PROJECT_DIR$/UI/keyword_hold" />
-      <recent name="$PROJECT_DIR$/UI/keywords" />
-      <recent name="$PROJECT_DIR$/UI/keyword_hold/img" />
+      <recent name="$PROJECT_DIR$/UI/keyword_button/img" />
       <recent name="$PROJECT_DIR$/UI/keywords/img" />
+      <recent name="$PROJECT_DIR$/UI/keyword_hold/img" />
+      <recent name="$PROJECT_DIR$/UI/keywords" />
+      <recent name="$PROJECT_DIR$/UI/keyword_hold" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/UI/keyword_button" />
@@ -469,12 +472,12 @@
       <workItem from="1568605339576" duration="37000" />
       <workItem from="1569255894210" duration="2136000" />
       <workItem from="1569292737793" duration="2463000" />
-      <workItem from="1569332917377" duration="20068000" />
+      <workItem from="1569332917377" duration="21327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478494000" />
+    <option name="totallyTimeSpent" value="479753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -487,6 +490,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14587738" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -616,16 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keywords/copyShapes.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keywords/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="246" column="5" selection-start-line="246" selection-start-column="5" selection-end-line="246" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_hold/img/rail-train.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -639,22 +633,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechCircle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-62">
           <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keywords/copyCircle.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keywords/speechCircle.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -673,20 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-814">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="9" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -804,10 +774,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/copyCircle.js">
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="91" column="11" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="91" selection-end-column="11" />
+        <state relative-caret-position="252">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keywords/copyCircle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keywords/copyShapes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -818,17 +798,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyCircle.js">
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/copyCircle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
+        <state relative-caret-position="318">
+          <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyShapes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        <state relative-caret-position="330">
+          <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keywords/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>

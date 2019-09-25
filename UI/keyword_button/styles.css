@@ -35,7 +35,9 @@ body {
 /*rectangle*/
 svg {
     border: solid 1px lightgrey;
-    background-image:url("./img/background.png");
+    /*background-image:url("./img/background.png");*/
+    background-image:url("./img/trail.png");
+
 
     /*border: solid 1px black;*/
     /*background-image:url("./img/flowers.jpg");*/

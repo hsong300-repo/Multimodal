@@ -83,10 +83,10 @@ function copyCircle() {
             // y1: globY,
             // x2: globX+cId*30,
             // y2: globY+cId*30,
-            x1: xPosition+cId*10,
+            x1: xPosition+cId*7,
             y1: yPosition,
-            x2: xPosition+cId*10,
-            y2: yPosition+cId*10,
+            x2: xPosition+cId*7,
+            y2: yPosition+cId*7,
             a: parseInt(shapeWidth,10),
             b: parseInt(shapeHeight,10)
         }];
