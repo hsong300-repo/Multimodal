@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- USE DEVELOPMENT VERSION -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.1.0.js"></script>-->
+    <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<!--added for js panel-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <meta charset="utf-8">
+    <title>Multimodal Simple Canvas Button</title>
+
+</head>
+
+<body>
+
+<div class="w3-panel w3-gray listen_center">
+    <div class="panel-body">
+        <input class ="b" type="text" id="log" size="50">
+        <input class ="speech" onClick="EnableSpeech();" type="image" id ="speech" src="./img/microphone_panel_2.png"  width="50" height="50" />
+        <h4 class ="b" id="output"></h4></div>
+</div>
+
+
+<div class="center" id="container"></div>
+
+<div class="d" id="profile_leftPanel">
+    <input class = "c"  autofocus type="image" id ="touchRect" src="./img/rect_panel_2.png"  width="66" height="66" />
+    <!--<input class = "c"  type="image" id ="touchRect" src="./img/rect_panel_2.png"  width="66" height="66" />-->
+    <input class = "c"  type="image" id="touchCircle" src="./img/circle_panel_2.png"  width="66" height="66"/>
+</div>
+
+</body>
+
+<script src="rect.js"></script>
+<script src="circle.js"></script>
+<script src="keywords.js"></script>
+<script src="queryProcess.js"></script>
+<script src="speechFunc.js"></script>
+<script src="speechRect.js"></script>
+<script src="speechCircle.js"></script>
+<script src="copyShapes.js"></script>
+<script src="copyCircle.js"></script>
+<script src="textProcess.js"></script>
+
+
+</html>
