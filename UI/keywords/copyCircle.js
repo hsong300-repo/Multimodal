@@ -1,9 +1,9 @@
 var count = 0;
+
+
 function copyCircle() {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
-
-
 
         // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
@@ -72,11 +72,21 @@ function copyCircle() {
 
     if(!isDragging){
         console.log('***first but not dragging');
+        console.log('****copy cId*****',cId);
+        var xPosition = parseInt(d3.select("#"+shapeId).attr("cx"));
+        var yPosition = parseInt(d3.select("#"+shapeId).attr("cy"));
+
+        console.log("glob x Y and xPosition and yPosition",globX,globY,xPosition,yPosition);
+
         self.eData = [{
-            x1: globX+cId*30,
-            y1: globY,
-            x2: globX+cId*30,
-            y2: globY+cId*30,
+            // x1: globX+cId*30,
+            // y1: globY,
+            // x2: globX+cId*30,
+            // y2: globY+cId*30,
+            x1: xPosition+cId*10,
+            y1: yPosition,
+            x2: xPosition+cId*10,
+            y2: yPosition+cId*10,
             a: parseInt(shapeWidth,10),
             b: parseInt(shapeHeight,10)
         }];
