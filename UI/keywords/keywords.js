@@ -105,7 +105,7 @@ recognition.onresult = function(event) {
                 // }
             }
         } else {// not final
-            if(givePass === true && final_flag === true){
+            if(givePass === true){
                 interim_transcript += event.results[i][0].transcript;
                 console.log('givePass interim not final',interim_transcript);
                 // command_flag = true;
