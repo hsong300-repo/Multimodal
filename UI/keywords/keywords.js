@@ -92,17 +92,6 @@ recognition.onresult = function(event) {
                     }
                     givePass = false;
                 }
-
-                // else{// this case is system and command continus
-                //     console.log('=======pass count **not0',final_transcript);
-                //     $("#log").val(final_transcript);
-                //     QueryProcess(final_transcript);
-                //
-                //     console.log('system+command');
-                //     givePass = false;
-                //     $('input.b').removeClass("flash");// I think this is a problem
-                //     $("#output").text("").css("color","black");
-                // }
             }
         } else {// not final
             if(givePass === true){
@@ -114,10 +103,8 @@ recognition.onresult = function(event) {
                 console.log('not givePass interim',interim_transcript);
                 var trueStr = interim_transcript.split(" ");
                 if(trueStr[0] === "system" ){
-                    console.log('*****system+sentece no pause****');
                     command_flag = true;
                 }else if(trueStr[1] === "system"){
-                    console.log('*****system+sentece no pause****');
                     command_flag = true;
                 }else{
                     command_flag = false;
