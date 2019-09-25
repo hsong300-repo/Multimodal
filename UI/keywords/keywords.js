@@ -6,7 +6,6 @@ if (annyang) {
     };
 
     annyang.interimResults = true;
-
     annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
         console.log(userSaid); // sample output: 'hello'
         $("#output").text(userSaid);
@@ -17,9 +16,6 @@ if (annyang) {
 
     // Add our commands to annyang
     annyang.addCommands(commands);
-
-    // Start listening.
-    // annyang.start();
 }
 
 var recognition = annyang.getSpeechRecognizer();
@@ -41,7 +37,6 @@ recognition.onresult = function(event) {
     var temp_flag = system_flag;
 
     console.log('track before', track, track.length);
-
     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){// system was called ready to listen
         console.log('system true');
         system_flag = true;
@@ -50,6 +45,7 @@ recognition.onresult = function(event) {
         command_flag = true;
         givePass = true;
         $("#log").val(ret);
+        $('input.b').addClass("flash");
 
     }else{// saying something else
         system_flag = false;
@@ -95,22 +91,21 @@ recognition.onresult = function(event) {
                         $("#output").text("").css("color","black");
                     }
                     givePass = false;
-                } else{// this case is system and command continus
-                    console.log('=======pass count **not0',final_transcript);
-                    $("#log").val(final_transcript);
-                    QueryProcess(final_transcript);
-
-                    console.log('system+command');
-                    givePass = false;
-                    $('input.b').removeClass("flash");// I think this is a problem
-                    $("#output").text("").css("color","black");
-
-                    // $("#output").text("Recognition stopped").css("color","black");
-
                 }
+
+                // else{// this case is system and command continus
+                //     console.log('=======pass count **not0',final_transcript);
+                //     $("#log").val(final_transcript);
+                //     QueryProcess(final_transcript);
+                //
+                //     console.log('system+command');
+                //     givePass = false;
+                //     $('input.b').removeClass("flash");// I think this is a problem
+                //     $("#output").text("").css("color","black");
+                // }
             }
         } else {// not final
-            if(givePass === true){
+            if(givePass === true && final_flag === true){
                 interim_transcript += event.results[i][0].transcript;
                 console.log('givePass interim not final',interim_transcript);
                 // command_flag = true;
@@ -119,8 +114,10 @@ recognition.onresult = function(event) {
                 console.log('not givePass interim',interim_transcript);
                 var trueStr = interim_transcript.split(" ");
                 if(trueStr[0] === "system" ){
+                    console.log('*****system+sentece no pause****');
                     command_flag = true;
                 }else if(trueStr[1] === "system"){
+                    console.log('*****system+sentece no pause****');
                     command_flag = true;
                 }else{
                     command_flag = false;
