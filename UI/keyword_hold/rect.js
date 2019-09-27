@@ -17,9 +17,11 @@ function Rectangle() {
     // svg.on('mousedown', function() {
     svg.on('touchstart', function() {
         m1 = d3.mouse(this);
+        var check = d3.event.target.id;// this is to check if object is being drawn over a shape or on canvas
+
         // m1 = d3.touch(this);
         // if (!isDown && !isDrag) {
-        if (!isDown && !isDrag && click == 1) {
+        if (!isDown && !isDrag && click == 1 && check === "svg") {
             rId++;
             self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
             self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("stroke-width","6px").call(dragR);

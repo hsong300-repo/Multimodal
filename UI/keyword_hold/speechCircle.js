@@ -91,6 +91,8 @@ function putCircle(color,strokeColor) {
         console.log('dragstart');
         isDown = false;
         isDragging = true;
+        // d3.event.preventDefault();
+
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
 

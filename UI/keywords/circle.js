@@ -1,7 +1,9 @@
 // var svg = d3.select('body').append('svg');
 var cId = 0;
 
+
 d3.select('#touchCircle').on('click', function () {
+    // Ellipse();
     new Ellipse();
 });
 
@@ -11,10 +13,12 @@ function Ellipse() {
 
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
-            m1 = d3.mouse(this);
-        if (!isDown && click == 1) {
+        console.log('circle touchstart');
+        m1 = d3.mouse(this);
+        var check = d3.event.target.id;// this is to check if object is being drawn over a shape or on canvas
+        if (!isDown && click === 1 && check === "svg") {
         // if (!isDown) {
-                if(!isDragging){
+            if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -34,15 +38,17 @@ function Ellipse() {
                 updateEllipse();
             }
         } else {
+            console.log('drag');
             isDragging = true;
         }
         isDown = !isDown;
         click++;
         // cId++;
-        // console.log('outside');
+        console.log('outside');
     })
         .on('touchmove', function () {
         // .on('mousemove', function () {
+        //     console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
             if (isDown && !isDragging && click == 2) {
@@ -52,11 +58,13 @@ function Ellipse() {
                 self.eData[0].b = Math.abs(m2[1] - m1[1]);
                 updateEllipse();
             }else{
-                console.log('touch more than two');
+                // console.log('touch more than two');
             }
         });
 
+
     function updateEllipse() {
+        console.log("updateEllipses");
         ellipse = d3.select(self.ellipseElement[0][0]).data(self.eData);
         ellipse.attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1; })
@@ -93,12 +101,12 @@ function Ellipse() {
     var dragP = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragPoint);
 
     function dragStart(d) {
+        console.log('dragstart');
         isDown = false;
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
 
-        // shapeId = d3.select(this).attr("id");
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect
@@ -122,12 +130,10 @@ function Ellipse() {
                 .style("stroke-width", "6px");
 
         }
-
-        // d3.event.sourceEvent.stopPropagation();
-        // d3.event.sourceEvent.preventDefault();
     }
 
     function dragEnd(d) {
+        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");
@@ -137,6 +143,7 @@ function Ellipse() {
     }
 
     function dragEllipse(d) {
+        console.log('dragelipse');
         isDragging = true;
         var e = d3.event;
         d.x1 += e.dx;
@@ -148,6 +155,7 @@ function Ellipse() {
     }
 
     function dragPoint(d) {
+        console.log('drag point');
         var e = d3.event;
         var id = d3.select(this).attr('id');
         if(id == 3 || id == 4) {

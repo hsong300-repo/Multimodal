@@ -11,14 +11,14 @@ function Ellipse() {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
 
-
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
-            m1 = d3.mouse(this);
-        if (!isDown && click === 1) {
+        m1 = d3.mouse(this);
+        var check = d3.event.target.id;// this is to check if object is being drawn over a shape or on canvas
+        if (!isDown && click === 1 && check === "svg") {
         // if (!isDown) {
-                if(!isDragging){
+            if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
