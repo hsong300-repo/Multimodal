@@ -1,4 +1,3 @@
-
 function drawShapes(shape, color,count,stroke,here) {
     if (shape === "circle" || shape === "circles") {
         if (count) {
@@ -6,7 +5,7 @@ function drawShapes(shape, color,count,stroke,here) {
                 if(here === true){
                     new putCircleHere(color,stroke);
                 }else{
-                    new putCircle(color,stroke);
+                    new putCircleHere(color,stroke);
                 }
             }//for loop
 
@@ -16,7 +15,7 @@ function drawShapes(shape, color,count,stroke,here) {
             if(here === true){
                 new putCircleHere(color,stroke);
             }else{
-                new putCircle(color,stroke);
+                new putCircleHere(color,stroke);
             }
             $("#output").text("Drawing completed").css("color","white");
         }
@@ -26,7 +25,7 @@ function drawShapes(shape, color,count,stroke,here) {
                 if(here === true){
                     new putRectHere(color,stroke);
                 }else{
-                    new putRect(color,stroke);
+                    new putRectHere(color,stroke);
                 }
             }//for loop
             $("#output").text("Drawing completed").css("color","white");
@@ -34,7 +33,7 @@ function drawShapes(shape, color,count,stroke,here) {
             if(here === true){
                 new putRectHere(color,stroke);
             }else{
-                new putRect(color,stroke);
+                new putRectHere(color,stroke);
             }
             $("#output").text("Drawing completed").css("color","white");
         }
@@ -548,8 +547,6 @@ function idProcess(script){
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
-
-
     // if (d3.event.defaultPrevented) return; // dragged
     // Somehow console.log the ID of the circle clicked on (if any).
     // console.log("Clicked ID: " + d3.event.target.id);
@@ -561,15 +558,16 @@ d3.select('svg').on('touchend', function(d, i) {
     }else if(check === "1" || check === "2" || check === "3" || check === "4"){// when click on small circles for ellipses
         console.log("small circle click for ellipse");
         return;
+    }else if(check === "svg"){
+        console.log('*svg');
+        d3.selectAll("rect").style('stroke-width',"2px");
+        d3.selectAll("ellipse").style('stroke-width',"2px");
+        d3.selectAll("circle").style("opacity",0);
+        return;
     }else{
         shapeId = d3.event.target.id;
 
         console.log("shapeId click",shapeId);
-        if(shapeId === "svg"){
-            console.log('background selected');
-        }else{
-            console.log('shape selected');
-        }
 
         var tempId = d3.event.target.id;
         shape = d3.select("#"+tempId);
@@ -619,12 +617,6 @@ d3.select('svg').on('touchend', function(d, i) {
 
             d3.selectAll(".pointC").style("opacity",0);
             d3.selectAll("rect").style("stroke-width","2px");
-
-        }else{
-            console.log('*svg');
-            d3.selectAll("rect").style('stroke-width',"2px");
-            d3.selectAll("ellipse").style('stroke-width',"2px");
-            d3.selectAll("circle").style("opacity",0);
 
         }
 

@@ -5,7 +5,7 @@ function drawShapes(shape, color,count,stroke,here) {
                 if(here === true){
                     new putCircleHere(color,stroke);
                 }else{
-                    new putCircle(color,stroke);
+                    new putCircleHere(color,stroke);
                 }
             }//for loop
 
@@ -15,7 +15,7 @@ function drawShapes(shape, color,count,stroke,here) {
             if(here === true){
                 new putCircleHere(color,stroke);
             }else{
-                new putCircle(color,stroke);
+                new putCircleHere(color,stroke);
             }
             $("#output").text("Drawing completed").css("color","white");
         }
@@ -25,7 +25,7 @@ function drawShapes(shape, color,count,stroke,here) {
                 if(here === true){
                     new putRectHere(color,stroke);
                 }else{
-                    new putRect(color,stroke);
+                    new putRectHere(color,stroke);
                 }
             }//for loop
             $("#output").text("Drawing completed").css("color","white");
@@ -33,7 +33,7 @@ function drawShapes(shape, color,count,stroke,here) {
             if(here === true){
                 new putRectHere(color,stroke);
             }else{
-                new putRect(color,stroke);
+                new putRectHere(color,stroke);
             }
             $("#output").text("Drawing completed").css("color","white");
         }
