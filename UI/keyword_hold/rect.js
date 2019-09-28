@@ -1,7 +1,13 @@
 var rId = 0;
+var rect_button = false;
+
 
 // d3.select('#touchRect').on('click', function(){ new Rectangle(); });
-d3.select('#touchRect').on('click', function(){ new Rectangle(); });
+d3.select('#touchRect').on('click', function(){
+    new Rectangle();
+    rect_button = true;
+    circle_button = false;
+});
 
 
 var w = 800, h = 600;

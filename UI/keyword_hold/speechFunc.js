@@ -544,6 +544,7 @@ function idProcess(script){
     }
 }
 
+
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
@@ -560,6 +561,12 @@ d3.select('svg').on('touchend', function(d, i) {
         return;
     }else if(check === "svg"){
         console.log('*svg');
+        console.log('circle button',circle_button);
+        if(circle_button === true){
+            new Ellipse();
+        }else if(rect_button === true){
+            new Rectangle();
+        }
         d3.selectAll("rect").style('stroke-width',"2px");
         d3.selectAll("ellipse").style('stroke-width',"2px");
         d3.selectAll("circle").style("opacity",0);

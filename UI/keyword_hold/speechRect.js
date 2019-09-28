@@ -221,7 +221,6 @@ function putRectHere(color,strokeColor) {
 
         if(check.length === 0){// when clicked on small circles for rect
             console.log("small circle click for rect");
-
             return;
         }else if(check === "1" || check === "2" || check === "3" || check === "4"){// when click on small circles for ellipses
             console.log("small circle click for ellipse");
@@ -276,7 +275,11 @@ function putRectHere(color,strokeColor) {
     var dragC4 = d3.behavior.drag().on('drag', dragPoint4);
 
     rId++;
-    self.rectData = [ { x: globX, y: globY }, { x: globX + 100, y: globY + 100 } ];
+    if(typeof globX === "undefined" && typeof globY === "undefined"){
+        self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 105+rId*20, y: 105 } ];
+    }else{
+        self.rectData = [ { x: globX, y: globY }, { x: globX + 100, y: globY + 100 } ];
+    }
     self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);

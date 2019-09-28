@@ -1,7 +1,13 @@
 var rId = 0;
+var rect_button = false;
+
 
 // d3.select('#touchRect').on('click', function(){ new Rectangle(); });
-d3.select('#touchRect').on('click', function(){ new Rectangle(); });
+d3.select('#touchRect').on('click', function(){
+    new Rectangle();
+    rect_button = true;
+    circle_button = false;
+});
 
 
 var w = 800, h = 600;
@@ -9,14 +15,19 @@ var svg = d3.select('#container').append('svg').attr('id','svg').attr({width: w,
 // var svg = d3.select('body').append('svg').attr({width: w, height: h});
 
 function Rectangle() {
+    console.log('in this rect function');
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false,click=1;
+
+
 
     // svg.on('mousedown', function() {
     svg.on('touchstart', function() {
         m1 = d3.mouse(this);
+        var check = d3.event.target.id;// this is to check if object is being drawn over a shape or on canvas
+
         // m1 = d3.touch(this);
         // if (!isDown && !isDrag) {
-        if (!isDown && !isDrag && click == 1) {
+        if (!isDown && !isDrag && click == 1 && check === "svg") {
             rId++;
             self.rectData = [ { x: m1[0], y: m1[1] }, { x: m1[0], y: m1[1] } ];
             self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("stroke-width","6px").call(dragR);
@@ -29,6 +40,7 @@ function Rectangle() {
             updateRect();
             // isDrag = false;
         } else{
+            console.log('drag');
             isDrag = true;
         }
         isDown = !isDown;
@@ -36,13 +48,14 @@ function Rectangle() {
         })
         .on('touchmove', function() {
         // .on('mousemove', function() {
+        //     console.log('touch move');
             m2 = d3.mouse(this);
             // m2 = d3.touch(this);
             if(isDown && !isDrag && click == 2) {
                 self.rectData[1] = { x: m2[0], y: m2[1] };
                 updateRect();
             }else{
-                console.log('touch more than one');
+                // console.log('touch more than one');
             }
         });
 
@@ -76,13 +89,11 @@ function Rectangle() {
     var dragR = d3.behavior.drag().on('dragstart',dragStart).on('dragend',dragEnd).on('drag', dragRect);
 
     function dragStart(d) {
+        console.log('dragstart');
         isDown = false;
         isDragging = true;
         // d3.select(this).transition()
         //     .style("stroke-width", "6px");
-
-
-
 
         var check =  d3.select(this).attr("id");
 
@@ -108,12 +119,10 @@ function Rectangle() {
 
         }
 
-        // console.log('drag check',check);
-
-        // console.log('rect id',d3.select(this).attr('id'));
     }
 
     function dragEnd(d) {
+        console.log('dragend');
         isDown = isDragging = false;
         d3.select(this).transition()
             .style("stroke-width", "2px");

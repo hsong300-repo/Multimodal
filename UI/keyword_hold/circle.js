@@ -1,11 +1,17 @@
 // var svg = d3.select('body').append('svg');
 var cId = 0;
-
+var circle_button = false;
 
 d3.select('#touchCircle').on('click', function () {
     // Ellipse();
     new Ellipse();
+    circle_button = true;
+    rect_button = false;
+
 });
+
+
+
 
 function Ellipse() {
     var self = this;

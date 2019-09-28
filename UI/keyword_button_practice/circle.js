@@ -1,10 +1,17 @@
 // var svg = d3.select('body').append('svg');
 var cId = 0;
+var circle_button = false;
 
 d3.select('#touchCircle').on('click', function () {
     // Ellipse();
     new Ellipse();
+    circle_button = true;
+    rect_button = false;
+
 });
+
+
+
 
 function Ellipse() {
     var self = this;
@@ -12,14 +19,11 @@ function Ellipse() {
 
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
-
         console.log('circle touchstart');
         m1 = d3.mouse(this);
-        // if(isDown){
-        if (!isDown && click === 1) {
-            // if(!isDown){
-        // if (isDown) {
-                // if (!isDown) {
+        var check = d3.event.target.id;// this is to check if object is being drawn over a shape or on canvas
+        if (!isDown && click === 1 && check === "svg") {
+        // if (!isDown) {
             if(!isDragging){
                 self.eData = [{
                     x1: m1[0],
@@ -50,7 +54,7 @@ function Ellipse() {
     })
         .on('touchmove', function () {
         // .on('mousemove', function () {
-            console.log('circle touchmove');
+        //     console.log('circle touchmove');
             m2 = d3.mouse(this);
             // if (isDown && !isDragging) {
             if (isDown && !isDragging && click == 2) {
@@ -60,13 +64,13 @@ function Ellipse() {
                 self.eData[0].b = Math.abs(m2[1] - m1[1]);
                 updateEllipse();
             }else{
-                console.log('touch more than two');
+                // console.log('touch more than two');
             }
         });
 
 
     function updateEllipse() {
-        // console.log("updateEllipses");
+        console.log("updateEllipses");
         ellipse = d3.select(self.ellipseElement[0][0]).data(self.eData);
         ellipse.attr('cx', function (d) { return d.x1; })
             .attr('cy', function (d) { return d.y1; })
@@ -93,6 +97,7 @@ function Ellipse() {
             .attr('cx', function (d) { return d.x1 - d.a; })
             .attr('cy', function (d) { return d.y1; });
 
+
     }
 
     // var dragE = d3.behavior.drag().on('dragstart', dragStart).on('dragend', dragEnd).on('drag', dragEllipse);
@@ -111,8 +116,10 @@ function Ellipse() {
         var check =  d3.select(this).attr("id");
 
         if(check.length === 0){// when clicked on small circles for rect
+            console.log("small circle click for rect");
             return;
         }else if(check === "1" || check === "2" || check === "3" || check === "4"){// when click on small circles for ellipses
+            console.log("small circle click for ellipse");
             return;
         }else{
             shapeId = check;
@@ -128,7 +135,6 @@ function Ellipse() {
             d3.select(this).transition()
                 .style("stroke-width", "6px");
 
-            // return;
         }
     }
 

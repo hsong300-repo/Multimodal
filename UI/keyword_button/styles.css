@@ -122,6 +122,10 @@ div.d {
 
 }
 
+.button-clicked {
+    background: blue;
+}
+
 
 
 input.c {
