@@ -1,40 +1,38 @@
+
 function drawShapes(shape, color,count,stroke,here) {
+    var single_count = false;
+    if(count === 1){
+        console.log('single count true');
+        single_count = true
+    }else{
+        single_count = false;
+    }
     if (shape === "circle" || shape === "circles") {
+        console.log('circle count and type',count, typeof count);
+        // count type is number
         if (count) {
             for (i = 0; i < count; i++) {
-                if(here === true){
-                    new putCircleHere(color,stroke);
-                }else{
-                    new putCircleHere(color,stroke);
-                }
+                new putCircleHere(color,stroke,single_count);
             }//for loop
 
             $("#output").text("Drawing completed").css("color","white");
 
         } else {
-            if(here === true){
-                new putCircleHere(color,stroke);
-            }else{
-                new putCircleHere(color,stroke);
-            }
+            single_count = true;
+            new putCircleHere(color,stroke,single_count);
+
             $("#output").text("Drawing completed").css("color","white");
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
             for (i = 0; i < count; i++) {
-                if(here === true){
-                    new putRectHere(color,stroke);
-                }else{
-                    new putRectHere(color,stroke);
-                }
+                new putRectHere(color,stroke,single_count);
             }//for loop
             $("#output").text("Drawing completed").css("color","white");
         } else {
-            if(here === true){
-                new putRectHere(color,stroke);
-            }else{
-                new putRectHere(color,stroke);
-            }
+            single_count = true;
+            new putRectHere(color,stroke,single_count);
+
             $("#output").text("Drawing completed").css("color","white");
         }
 
@@ -544,6 +542,7 @@ function idProcess(script){
     }
 }
 
+
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
@@ -560,6 +559,12 @@ d3.select('svg').on('touchend', function(d, i) {
         return;
     }else if(check === "svg"){
         console.log('*svg');
+        console.log('circle button',circle_button);
+        if(circle_button === true){
+            new Ellipse();
+        }else if(rect_button === true){
+            new Rectangle();
+        }
         d3.selectAll("rect").style('stroke-width',"2px");
         d3.selectAll("ellipse").style('stroke-width',"2px");
         d3.selectAll("circle").style("opacity",0);

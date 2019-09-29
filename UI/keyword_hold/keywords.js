@@ -178,6 +178,6 @@ document.oncontextmenu = function() {
 };
 
 //drawing rectangle pre-selected
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("touchRect").click();
-});
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     document.getElementById("touchRect").click();
+// });

@@ -164,7 +164,7 @@ function putRect(color,strokeColor) {
 }//end Rectangle
 
 
-function putRectHere(color,strokeColor) {
+function putRectHere(color,strokeColor,single_count) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
       svg.on('touchmove', function() {
@@ -280,11 +280,36 @@ function putRectHere(color,strokeColor) {
     }else{
         self.rectData = [ { x: globX+rId*20, y: globY }, { x: globX +rId*20 + 100, y: globY + 100 } ];
     }
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragR);
-    self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
-    self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
-    self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
-    self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
+
+    if(single_count === true){
+        self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
+        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
+        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
+        self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
+        self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
+
+        d3.selectAll("ellipse").style("stroke-width","2px");
+        d3.selectAll(".pointE").style("opacity",0);
+
+
+    }else if(single_count === false){
+        self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragR);
+        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
+        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
+        self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
+        self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
+
+        d3.selectAll(".pointC").style("opacity",0);
+        d3.selectAll(".pointE").style("opacity",0);
+
+
+        d3.selectAll("rect").style("stroke-width","2px");
+        d3.selectAll("ellipse").style("stroke-width","2px");
+
+
+
+    }
+
     shapeId = "rect_" +rId;
     console.log('shapeId',shapeId);
     updateRect();

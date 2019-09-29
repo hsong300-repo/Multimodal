@@ -158,7 +158,7 @@ function putCircle(color,strokeColor) {
 }//end Ellipse
 
 
-function putCircleHere(color,strokeColor) {
+function putCircleHere(color,strokeColor,single_count) {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
 
@@ -193,13 +193,31 @@ function putCircleHere(color,strokeColor) {
     // console.log("globx and goby",globX,globY);
 
     cId++;
-    self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragE);
-    self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
-    self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
-    self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
-    self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
-    // shapeId = "circle_" + cId;
-    d3.selectAll(".pointE").style("opacity",0);
+    if(single_count === true){
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragE);
+        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+        self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+        self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+
+        d3.selectAll("rect").style("stroke-width","2px");
+        d3.selectAll(".pointC").style("opacity",0);
+
+    }else if(single_count === false){
+        self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragE);
+        self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+        self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointE' + " circle_" +cId).call(dragP);
+        self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+        self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
+        // shapeId = "circle_" + cId;
+        d3.selectAll("ellipse").style("stroke-width","2px");
+        d3.selectAll("rect").style("stroke-width","2px");
+
+        d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll(".pointC").style("opacity",0);
+
+    }
+
 
     updateEllipse();
     isDragging = true;
