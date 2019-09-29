@@ -1,5 +1,9 @@
+var rect_count_one = false;
+
 function drawShapes(shape, color,count,stroke,here) {
     if (shape === "circle" || shape === "circles") {
+        console.log('circle count and type',count, typeof count);
+        // count type is number
         if (count) {
             for (i = 0; i < count; i++) {
                 if(here === true){

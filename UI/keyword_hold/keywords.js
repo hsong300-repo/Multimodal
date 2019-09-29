@@ -94,7 +94,12 @@ window.addEventListener('load', function(){
     var dist = 0;
 
     box1.addEventListener('touchstart', function(e){
-        clearTimeout(timer);
+        if(typeof timer === "undefined"){
+
+        }else{
+            clearTimeout(timer);
+
+        }
 
         console.log('######e touchstart',e.target.id);
 
@@ -120,6 +125,7 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         // statusdiv.innerHTML = 'Status: touchmove';
+        console.log('###touchmove');
         $("#output").text("Recognition active").css("color","white");
 
         $('input.b').addClass("flash");
@@ -129,6 +135,7 @@ window.addEventListener('load', function(){
     }, false);
 
     box1.addEventListener('touchend', function(e){
+        console.log('###touchend');
 
         // $("#output").text("Recognition stopped").css("color","black");
         console.log('touchend endSentence', endSentence);

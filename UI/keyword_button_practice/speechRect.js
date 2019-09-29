@@ -278,9 +278,9 @@ function putRectHere(color,strokeColor) {
     if(typeof globX === "undefined" && typeof globY === "undefined"){
         self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 105+rId*20, y: 105 } ];
     }else{
-        self.rectData = [ { x: globX, y: globY }, { x: globX + 100, y: globY + 100 } ];
+        self.rectData = [ { x: globX+rId*20, y: globY }, { x: globX +rId*20 + 100, y: globY + 100 } ];
     }
-    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","6px").call(dragR);
+    self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragR);
     self.pointElement1 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC1);
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);

@@ -2,23 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/rect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_button/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/speechCircle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button_practice/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button_practice/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button_practice/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button_practice/rect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_button_practice/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button_practice/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/rect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keywords/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keywords/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/rect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keywords/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keywords_practice/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords_practice/circle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keywords_practice/rect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords_practice/rect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_button/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/speechRect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_button_practice/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button_practice/speechCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_button_practice/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button_practice/speechRect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/keywords.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/keywords.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/speechCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold/speechRect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/speechCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/speechRect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keywords/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/speechCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/keywords/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords/speechRect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keywords_practice/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords_practice/speechCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keywords_practice/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords_practice/speechFunc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/keywords_practice/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keywords_practice/speechRect.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,7 +31,7 @@
     <session id="-291044497">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="102" />
+          <entry key="project.closed" value="103" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="28" />
           <entry key="project.open.time.10" value="1" />
@@ -46,10 +43,10 @@
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="6" />
           <entry key="project.open.time.6" value="23" />
-          <entry key="project.open.time.7" value="24" />
+          <entry key="project.open.time.7" value="25" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="103" />
+          <entry key="project.opened" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -57,7 +54,7 @@
           <entry key="css" value="69" />
           <entry key="html" value="127" />
           <entry key="jpg" value="6" />
-          <entry key="js" value="929" />
+          <entry key="js" value="960" />
           <entry key="png" value="21" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="4" />
@@ -68,7 +65,7 @@
           <entry key="CSS" value="69" />
           <entry key="HTML" value="127" />
           <entry key="Image" value="27" />
-          <entry key="JavaScript" value="929" />
+          <entry key="JavaScript" value="960" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="4" />
         </counts>
@@ -77,14 +74,14 @@
         <counts>
           <entry key="css" value="2275" />
           <entry key="html" value="3929" />
-          <entry key="js" value="55369" />
+          <entry key="js" value="55711" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2275" />
           <entry key="HTML" value="3929" />
-          <entry key="JavaScript" value="55369" />
+          <entry key="JavaScript" value="55711" />
         </counts>
       </usages-collector>
     </session>
@@ -92,77 +89,57 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/circle.js">
+        <entry file="file://$PROJECT_DIR$/UI/keywords/speechCircle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-end-line="18" />
+            <state relative-caret-position="220">
+              <caret line="202" selection-start-line="202" selection-end-line="202" />
+              <folding>
+                <element signature="n#!!block;n#putCircle#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords/circle.js">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_hold_practice/speechCircle.js">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords/rect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="160" column="5" lean-forward="true" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords/speechFunc.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords_practice/circle.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords_practice/rect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="62" column="54" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UI/keywords_practice/speechRect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="278" column="79" selection-start-line="278" selection-start-column="79" selection-end-line="278" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords_practice/speechFunc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-456" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UI/keywords_practice/keywords.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1978" />
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/keywords_practice/speechCircle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="190" column="5" lean-forward="true" selection-start-line="169" selection-start-column="4" selection-end-line="190" selection-end-column="5" />
+            <state relative-caret-position="145">
+              <caret line="81" column="46" lean-forward="true" selection-start-line="81" selection-end-line="82" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechCircle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_button_practice/speechCircle.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechCircle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="188" column="17" lean-forward="true" selection-start-line="188" selection-start-column="17" selection-end-line="188" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI/keywords/speechRect.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -178,7 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nosel</find>
       <find>left</find>
       <find>body</find>
       <find>listen_center</find>
@@ -200,14 +176,15 @@
       <find>green</find>
       <find>shape</find>
       <find>copy</find>
-      <find>count</find>
       <find>cid</find>
-      <find>cId</find>
       <find>isdown</find>
       <find>shapeid</find>
       <find>enable</find>
       <find>dragend</find>
       <find>drawshapes</find>
+      <find>count</find>
+      <find>timer</find>
+      <find>cId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,8 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tablet/keywords/speechFunc.js" />
-        <option value="$PROJECT_DIR$/Tablet/keyword_hold/speechFunc.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_button/speechFunc.js" />
         <option value="$PROJECT_DIR$/Tablet/keyword_hold/keywords.js" />
         <option value="$PROJECT_DIR$/Tablet/keywords/keywords_stable.js" />
@@ -235,12 +210,9 @@
         <option value="$PROJECT_DIR$/UI/keywords/queryProcess.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/index.html" />
         <option value="$PROJECT_DIR$/UI/keywords/keywords_tablet.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_button/speechCircle.js" />
         <option value="$PROJECT_DIR$/UI/keywords/index.html" />
-        <option value="$PROJECT_DIR$/UI/keyword_button/speechRect.js" />
         <option value="$PROJECT_DIR$/UI/keywords/speechFunc.js" />
         <option value="$PROJECT_DIR$/UI/keywords/keywords.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_hold/keywords.js" />
         <option value="$PROJECT_DIR$/UI/keyword_hold/copyShapes.js" />
         <option value="$PROJECT_DIR$/UI/keyword_button/copyShapes.js" />
         <option value="$PROJECT_DIR$/UI/keywords/copyShapes.js" />
@@ -264,9 +236,14 @@
         <option value="$PROJECT_DIR$/UI/keyword_button/styles.css" />
         <option value="$PROJECT_DIR$/UI/keyword_button/circle.js" />
         <option value="$PROJECT_DIR$/UI/keyword_button/rect.js" />
-        <option value="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" />
         <option value="$PROJECT_DIR$/UI/keywords_practice/speechCircle.js" />
         <option value="$PROJECT_DIR$/UI/keywords_practice/speechRect.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_hold/keywords.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_button/speechFunc.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_button/speechRect.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_button/speechCircle.js" />
+        <option value="$PROJECT_DIR$/UI/keyword_hold_practice/speechRect.js" />
+        <option value="$PROJECT_DIR$/UI/keywords/speechCircle.js" />
       </list>
     </option>
   </component>
@@ -309,24 +286,6 @@
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="keyword_button_practice" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="keyword_hold" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="keywords" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Multimodal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Multimodal" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="keywords_practice" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -345,15 +304,15 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/UI/keyword_button" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/UI/keywords_practice" />
       <recent name="$PROJECT_DIR$/UI/keywords" />
+      <recent name="$PROJECT_DIR$/UI/keyword_hold_practice" />
       <recent name="$PROJECT_DIR$/UI/keyword_hold" />
       <recent name="$PROJECT_DIR$/UI/keyword_button_practice" />
-      <recent name="$PROJECT_DIR$/UI/keyword_button" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/UI/keyword_button" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -480,12 +439,13 @@
       <workItem from="1569527868106" duration="485000" />
       <workItem from="1569595523538" duration="2457000" />
       <workItem from="1569610689419" duration="634000" />
-      <workItem from="1569679503741" duration="3221000" />
+      <workItem from="1569679503741" duration="4101000" />
+      <workItem from="1569721693217" duration="1701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="491535000" />
+    <option name="totallyTimeSpent" value="494116000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,7 +458,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14587738" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -545,44 +504,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/UI/practice/keyword_button/speechFunc.js" />
-    <entry file="file://$PROJECT_DIR$/UI/practice/keyword_button/circle.js" />
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/copyCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keywords/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/img/trail.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/img/speech.svg" />
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/img/speech.png" />
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/img/square.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/img/speaker_white.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -617,13 +538,6 @@
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/img/circle.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/keywords.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="78" column="2" lean-forward="true" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button_practice/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -631,20 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/keywords.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
-          <caret line="106" column="12" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -672,24 +572,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/circle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/rect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechFunc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="566" column="37" selection-start-line="566" selection-start-column="37" selection-end-line="566" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -701,13 +587,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button_practice/speechFunc.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechFunc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_hold/rect.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -749,13 +628,6 @@
         <state relative-caret-position="-1978" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/keywords_practice/speechCircle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="190" column="5" lean-forward="true" selection-start-line="169" selection-start-column="4" selection-end-line="190" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keywords_practice/rect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -763,10 +635,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/keywords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="2" lean-forward="true" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="568" column="9" lean-forward="true" selection-start-line="568" selection-start-column="9" selection-end-line="568" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/keywords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/circle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/queryProcess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="282" column="181" selection-start-line="282" selection-start-column="181" selection-end-line="282" selection-end-column="181" />
+          <folding>
+            <element signature="n#!!block;n#putRect#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button_practice/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keywords/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/UI/keywords_practice/speechRect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="278" column="79" selection-start-line="278" selection-start-column="79" selection-end-line="278" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold_practice/speechRect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="287" column="25" selection-start-line="287" selection-start-column="25" selection-end-line="287" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!block;n#putRect#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keywords/speechCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
+          <folding>
+            <element signature="n#!!block;n#putCircle#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold_practice/speechCircle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keywords_practice/speechCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="81" column="46" lean-forward="true" selection-start-line="81" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_hold/speechCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button_practice/speechCircle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/keyword_button/speechCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="188" column="17" lean-forward="true" selection-start-line="188" selection-start-column="17" selection-end-line="188" selection-end-column="17" />
         </state>
       </provider>
     </entry>
