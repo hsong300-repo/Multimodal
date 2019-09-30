@@ -164,7 +164,7 @@ function putRect(color,strokeColor) {
 }//end Rectangle
 
 
-function putRectHere(color,strokeColor,single_count) {
+function putRectHere(color,strokeColor,single_count,count) {
     var self = this, rect, rectData = [], isDown = false, m1, m2, isDrag = false;
 
       svg.on('touchmove', function() {
@@ -278,7 +278,9 @@ function putRectHere(color,strokeColor,single_count) {
     if(typeof globX === "undefined" && typeof globY === "undefined"){
         self.rectData = [ { x: 15+rId*20, y: 15 }, { x: 105+rId*20, y: 105 } ];
     }else{
-        self.rectData = [ { x: globX+rId*20, y: globY }, { x: globX +rId*20 + 100, y: globY + 100 } ];
+        // self.rectData = [ { x: globX-50+rId*10, y: globY-50 }, { x: globX-50 +rId*10 + 100, y: globY-50 + 100 } ];
+        self.rectData = [ { x: globX-50+count*20, y: globY-50 }, { x: globX-50 +count*20 + 100, y: globY-50 + 100 } ];
+
     }
 
     if(single_count === true){

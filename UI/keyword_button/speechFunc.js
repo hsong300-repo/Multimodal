@@ -11,27 +11,29 @@ function drawShapes(shape, color,count,stroke,here) {
         console.log('circle count and type',count, typeof count);
         // count type is number
         if (count) {
-            for (i = 0; i < count; i++) {
-                new putCircleHere(color,stroke,single_count);
+            for (var i = 0; i < count; i++) {
+                new putCircleHere(color,stroke,single_count,i);
             }//for loop
 
             $("#output").text("Added circle(s) to the canvas.").css("color","white");
 
         } else {
             single_count = true;
-            new putCircleHere(color,stroke,single_count);
+            count = 0;
+            new putCircleHere(color,stroke,single_count,count);
 
             $("#output").text("Added 1 circle to the canvas.").css("color","white");
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
-            for (i = 0; i < count; i++) {
-                new putRectHere(color,stroke,single_count);
+            for (var i = 0; i < count; i++) {
+                new putRectHere(color,stroke,single_count,i);
             }//for loop
             $("#output").text("Added square(s) to the canvas.").css("color","white");
         } else {
             single_count = true;
-            new putRectHere(color,stroke,single_count);
+            count = 0;
+            new putRectHere(color,stroke,single_count,count);
 
             $("#output").text("Added 1 square to the canvas.").css("color","white");
         }

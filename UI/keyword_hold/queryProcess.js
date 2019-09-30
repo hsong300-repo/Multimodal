@@ -8,11 +8,11 @@ const updateCommands = ["change","update","apply","fill","set","color"];
 //shapes
 const shapes = ["circle","rectangle","square","circles","rectangles","squares"];
 //colors
-const colors = ["red","brown","green","orange","yellow","pink","blue","purple","gray","grey","white","pink","black","wheat","violet","plum","tomato","silver","yellow","aqua"];
+const colors = ["red","brown","green","yellow","orange","pink","blue","purple","gray","grey","white","pink","black","wheat","violet","plum","tomato","silver","yellow","aqua"];
 //counts
 const counts = ["one","two","three","four","five","six","seven","eight","nine","ten","1","2","3","4","5","6","7","8","9","10"];
-const order = ["front","raise","bring"];
-const orderBack = ["back","low","lower","below","send"];
+const order = ["front","raise","top","up"];
+const orderBack = ["back","low","lower","below","backwards","bottom"];
 var all_flag = false;
 
 // this is the function that process query that detects keywords and lead to certain function
@@ -56,6 +56,8 @@ function QueryProcess(script){
             });
         }
 
+        // console.log('stroke color',strokeColor);
+
     }else{
         console.log('normal');
         var tokenStr = myStr.split(" ");
@@ -95,7 +97,6 @@ function QueryProcess(script){
 
     if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
         console.log('copy');
-        console.log('####copy command', n, shape[0],color[0]);
 
         copyShapes(n,shape[0],color[0]);
     }else if(drawCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0){
@@ -132,7 +133,7 @@ function QueryProcess(script){
         $("#log").val(final_transcript);
         orderShapeBack();
     }else{
-        // $("#output").text("A command did not work. Try again.");
+        $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
     }
 }
 

@@ -158,7 +158,7 @@ function putCircle(color,strokeColor) {
 }//end Ellipse
 
 
-function putCircleHere(color,strokeColor,single_count) {
+function putCircleHere(color,strokeColor,single_count,count) {
     var self = this;
     var ellipse, eData = [], isDown = false, isDragging = false, m1, m2, radiusX, radiusY, click = 1;
 
@@ -181,10 +181,16 @@ function putCircleHere(color,strokeColor,single_count) {
     }else{
         self.eData = [{
 
-            x1: globX+cId*30,
+            // x1: globX+cId*30,
+            // y1: globY,
+            // x2: globX+cId*30,
+            // y2: globY+cId*30,
+            // a: 50,
+            // b: 50
+            x1: globX+count*30,
             y1: globY,
-            x2: globX+cId*30,
-            y2: globY+cId*30,
+            x2: globX+count*30,
+            y2: globY+count*30,
             a: 50,
             b: 50
         }];
