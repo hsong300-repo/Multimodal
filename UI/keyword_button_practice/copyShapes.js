@@ -143,10 +143,11 @@ function copyRect() {
     self.pointElement2 = d3.select('svg').append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC2);
     self.pointElement3 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC3);
     self.pointElement4 = svg.append('circle').attr('class', 'pointC' + " " + shapeId + "_copy" + count).call(dragC4);
-    shapeId = shapeId + "_copy" + count;
 
     d3.select("#"+shapeId).style("stroke-width","2px");
     d3.selectAll(".pointC").style("opacity",0);
+    shapeId = shapeId + "_copy" + count;
+
 
     console.log('shapeId',shapeId);
     updateRect();

@@ -78,7 +78,7 @@ recognition.onresult = function(event) {
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         console.log('=======only when system is called');
                         $('input.b').addClass("flash");
-                        $("#output").text("Listening").css("color","red");
+                        // $("#output").text("Listening").css("color","red");
                         //this is the case only when system is called
                     }else{
                         // final_transcript = final_transcript.replace(/system/g,'');
@@ -88,7 +88,7 @@ recognition.onresult = function(event) {
 
                         console.log('system+pause+command');
                         $('input.b').removeClass("flash");// I think this is a problem
-                        $("#output").text("").css("color","black");
+                        // $("#output").text("").css("color","black");
                     }
                     givePass = false;
                 }

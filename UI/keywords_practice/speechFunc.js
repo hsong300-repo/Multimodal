@@ -15,27 +15,29 @@ function drawShapes(shape, color,count,stroke,here) {
                 new putCircleHere(color,stroke,single_count);
             }//for loop
 
-            $("#output").text("Drawing completed").css("color","white");
+            $("#output").text("Added circle(s) to the canvas.").css("color","white");
 
         } else {
             single_count = true;
             new putCircleHere(color,stroke,single_count);
 
-            $("#output").text("Drawing completed").css("color","white");
+            $("#output").text("Added 1 circle to the canvas.").css("color","white");
         }
     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if (count) {
             for (i = 0; i < count; i++) {
                 new putRectHere(color,stroke,single_count);
             }//for loop
-            $("#output").text("Drawing completed").css("color","white");
+            $("#output").text("Added square(s) to the canvas.").css("color","white");
         } else {
             single_count = true;
             new putRectHere(color,stroke,single_count);
 
-            $("#output").text("Drawing completed").css("color","white");
+            $("#output").text("Added 1 square to the canvas.").css("color","white");
         }
 
+    }else{
+        $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
     }//else if rect
 }
 
@@ -67,8 +69,9 @@ function removeShapes(shape, color,stroke) {
 
     if(stroke_flag === false && color_flag === false && all_flag === false){// "delete" command delete the selected shape
         removeThisShape();
+        return;
     }
-    console.log('color & stroke flag',color_flag, stroke_flag);
+
     if (shape === "circle" || shape === "circles") {
         if(color && stroke === "n"){// when specify color and shape
             var inColor = d3.rgb(color);
@@ -90,45 +93,23 @@ function removeShapes(shape, color,stroke) {
                 }
             });// iterate on ellipses
             if(checkColor === false){
-                $("#output").text("No matching color circles").css("color","white");
+                $("#output").text("Sorry, there is no matching color.").css("color","white");
             }else if(checkColor === true){
-                $("#output").text("Removal completed").css("color","white");
+                $("#output").text("Deleted.").css("color","white");
             }
             // $("#output").text("Removal completed").css("color","black");
-        }else if(color && stroke !== "n"){
-            var inColor = d3.rgb(color);
-            var strokeColor = d3.rgb(stroke);
-            d3.selectAll('ellipse').each(function(d,i){
-                var elt = d3.select(this);
-                var slt = d3.select(this);
-
-                console.log(elt.style("fill"));
-                console.log("id",elt.attr("id"));
-
-                var color = d3.rgb(elt.style("fill"));
-                var scolor = d3.rgb(slt.style("stroke"));
-
-                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b && scolor.r === strokeColor.r && scolor.g === strokeColor.g && scolor.b === strokeColor.b){
-                    var temp = d3.select(this);
-                    var tempId = pointEProcess(temp.attr("id"));
-                    temp.remove();
-                    d3.selectAll(tempId).remove();
-                }
-            });// iterate on ellipses
-            $("#output").text("Removal completed").css("color","white");
-
         }else if(stroke_flag === false && color_flag === false && all_flag === true){
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
-            $("#output").text("Removal completed").css("color","white");
+            $("#output").text("Deleted.").css("color","white");
         } else{// when specify shape
             console.log('***remove all circles');
             d3.selectAll("ellipse").remove();
             d3.selectAll(".pointE").remove();
 
-            $("#output").text("Removal completed").css("color","white");
+            $("#output").text("Deleted.").css("color","white");
         }
     }else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
         if(color && stroke === "n"){// when specify color and shape
@@ -151,48 +132,34 @@ function removeShapes(shape, color,stroke) {
                 }
             });// iterate on ellipses
             if(checkColor === false){
-                $("#output").text("No matching color rectangles").css("color","white");
+                $("#output").text("Sorry, there is no matching color.").css("color","white");
             }else if(checkColor === true){
-                $("#output").text("Removal completed").css("color","white");
+                $("#output").text("Deleted.").css("color","white");
             }
 
-        }else if(color && stroke !== "n"){
-            console.log('***both color and  stroke');
-            var inColor = d3.rgb(color);
-            var strokeColor = d3.rgb(stroke);
-
-            d3.selectAll('rect').each(function(d,i){
-                var elt = d3.select(this);
-                var slt = d3.select(this);
-
-                console.log(elt.style("fill"));
-                var color = d3.rgb(elt.style("fill"));
-                var scolor = d3.rgb(slt.style("stroke"));
-
-                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b && scolor.r === strokeColor.r && scolor.g === strokeColor.g && scolor.b === strokeColor.b){
-                    var temp = d3.select(this);
-                    var tempId = pointCProcess(temp.attr("id"));
-                    temp.remove();
-                    d3.selectAll(tempId).remove();
-                }
-            });// iterate on ellipses
-            $("#output").text("Removal completed").css("color","white");
-
-        } else if(stroke_flag === false && color_flag === false && all_flag === true){
+        }else if(stroke_flag === false && color_flag === false && all_flag === true){
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
-            $("#output").text("Removal completed").css("color","white");
+            $("#output").text("Deleted.").css("color","white");
 
         } else{
             d3.selectAll("rect").remove();
             d3.selectAll(".pointC").remove();
 
-            $("#output").text("Removal completed").css("color","white");
+            $("#output").text("Deleted.").css("color","white");
 
         }
 
-    }//else if rect
+    }else{
+        if(color){
+            $("#output").text("Specify a shape (circle,square) to remove.").css("color","white");
+        }else if(shape){
+            $("#output").text("Specify a color to remove.").css("color","white");
+        }else{
+            $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
+        }
+    }
 }// end of remove shapes
 
 function removeThisShape(){
@@ -214,7 +181,8 @@ function removeThisShape(){
             }
         });
 
-        $("#output").text("Removal completed").css("color","white");
+        $("#output").text("Deleted.").css("color","white");
+        shapeId= "svg";
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -226,9 +194,13 @@ function removeThisShape(){
                 temp.remove();
                 d3.selectAll(tempId).remove();            }
         });
-    }
 
-    $("#output").text("Removal completed").css("color","white");
+        $("#output").text("Deleted.").css("color","white");
+        shapeId= "svg";
+
+    }else if(typeof id === "undefined"){
+        $("#output").text("Select an object to remove.").css("color","white");
+    }
 
 }
 
@@ -262,7 +234,7 @@ function orderShape(){
             }
         });
 
-        $("#output").text("Bring to front").css("color","white");
+        $("#output").text("Object is brought to front.").css("color","white");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -274,8 +246,11 @@ function orderShape(){
                 d3.selectAll(tempId).moveToFront();
             }
         });
+        $("#output").text("Object is brought to front.").css("color","white");
+
+    }else{
+        $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
     }
-    $("#output").text("Bring to front").css("color","white");
 }
 
 function orderShapeBack(){
@@ -295,8 +270,7 @@ function orderShapeBack(){
 
             }
         });
-
-        $("#output").text("Sent to back").css("color","white");
+        $("#output").text("Object is sent to back.").css("color","white");
 
     }else if(id === "circle"){
         d3.selectAll("ellipse").each(function(d,i){
@@ -310,8 +284,10 @@ function orderShapeBack(){
 
             }
         });
+        $("#output").text("Object is sent to back.").css("color","white");
+    }else{
+        $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
     }
-    $("#output").text("Sent to back").css("color","white");
 }
 
 function updateShapes(color, stroke){
@@ -335,7 +311,7 @@ function updateShapes(color, stroke){
 
     if(id === "rect"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Command did not work. Try again.");
+            $("#output").text("Specify a color.");
         }else{
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
@@ -345,131 +321,144 @@ function updateShapes(color, stroke){
                 }
             });
 
-            $("#output").text("Style updated").css("color","white");
+            $("#output").text("Color updated.").css("color","white");
         }
     }else if(id === "circle"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Command did not work. Try again.");
+            $("#output").text("Specify a color.");
 
         }else{
             d3.selectAll("ellipse").each(function(d,i){
                 var elt = d3.select(this);
                 if(elt.attr("id") === shapeId) {
                     elt.style("fill",color);
-                    elt.style("stroke",stroke);        }
+                    elt.style("stroke",stroke);
+                }
             });
-            $("#output").text("Style updated").css("color","white");
+            $("#output").text("Color updated.").css("color","white");
         }
     }else{
-        $("#output").text("Command did not work. Try again.");
+        if(color_flag === true){
+            $("#output").text("Select an object to change a color.").css("color","white");
+        }else{
+            $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
+        }
     }
 }
 
-function NoSelectCopy(count, shape, color){
-    if (shape === "circle" || shape === "circles") {
-        console.log('circle');
-        if(color){// when specify color and shape
-            var inColor = d3.rgb(color);
-            var checkColor = false;
-
-            console.log('her color check');
-            d3.selectAll('ellipse').each(function(d,i){
-                var elt = d3.select(this);
-                var color = d3.rgb(elt.style("fill"));
-                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
-                    checkColor = true;
-                    var temp = d3.select(this);
-                    shapeId = temp.attr("id");
-
-                }
-            });// iterate on ellipses
-
-            if(checkColor === false){
-                $("#output").text("No matching color circles").css("color","red");
-            }else if(checkColor === true){
-                if (count) {
-                    for (i = 0; i < count; i++) {
-                        new copyCircle();
-                    }//for loop
-                    $("#output").text("Copied").css("color","white");
-
-                } else {
-                    new copyCircle();
-                    $("#output").text("Copied").css("color","white");
-                }
-            }
-        }else if(color === undefined){
-            // $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
-            d3.selectAll('ellipse').each(function(d,i){
-                var elt = d3.select(this);
-                shapeId = elt.attr("id");
-            });// iterate on ellipses
-
-            if (count) {
-                for (i = 0; i < count; i++) {
-                    new copyCircle();
-                }//for loop
-                $("#output").text("Copied").css("color","white");
-
-            } else {
-                new copyCircle();
-                $("#output").text("Copied").css("color","white");
-            }
-        }
-    } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
-        if(color){// when specify color and shape
-            var inColor = d3.rgb(color);
-            var checkColor = false;
-
-            d3.selectAll('rect').each(function(d,i){
-                var elt = d3.select(this);
-                var color = d3.rgb(elt.style("fill"));
-                if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
-                    checkColor = true;
-                    var temp = d3.select(this);
-                    shapeId = temp.attr("id");
-
-                    // new copyRect();
-                    // $("#output").text("Copied");
-                }
-            });// iterate on ellipses
-
-            if(checkColor === false){
-                $("#output").text("No matching color squares").css("color","red");
-
-            }else if(checkColor === true){
-                if (count) {
-                    for (i = 0; i < count; i++) {
-                        new copyRect();
-                    }//for loop
-                    $("#output").text("Copied").css("color","white");
-                } else {
-                    new copyRect();
-                    $("#output").text("Copied").css("color","white");
-                }
-            }
-        }else if(color === undefined){
-            // $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
-            d3.selectAll('rect').each(function(d,i){
-                var elt = d3.select(this);
-                shapeId = elt.attr("id");
-            });// iterate on ellipses
-
-            if (count) {
-                for (i = 0; i < count; i++) {
-                    new copyRect();
-                }//for loop
-                $("#output").text("Copied").css("color","white");
-            } else {
-                new copyRect();
-                $("#output").text("Copied").css("color","white");
-            }
-        }
-    } else{
-        $("#output").text("Specify a color or shape to copy or select and copy").css("color","red");
-    }
-
-}
+// function NoSelectCopy(count, shape, color){
+//     if (shape === "circle" || shape === "circles") {
+//         console.log('circle');
+//         if(color){// when specify color and shape
+//             var inColor = d3.rgb(color);
+//             var checkColor = false;
+//
+//             console.log('her color check');
+//             d3.selectAll('ellipse').each(function(d,i){
+//                 var elt = d3.select(this);
+//                 var color = d3.rgb(elt.style("fill"));
+//                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+//                     checkColor = true;
+//                     var temp = d3.select(this);
+//                     shapeId = temp.attr("id");
+//
+//                 }
+//             });// iterate on ellipses
+//
+//             if(checkColor === false){
+//                 $("#output").text("Sorry, there is no matching color.").css("color","white");
+//             }else if(checkColor === true){
+//                 if (count) {
+//                     for (i = 0; i < count; i++) {
+//                         new copyCircle();
+//                     }//for loop
+//                     $("#output").text("Copied.").css("color","white");
+//                     shapeId = "svg";
+//
+//                 } else {
+//                     new copyCircle();
+//                     $("#output").text("Copied.").css("color","white");
+//                     shapeId = "svg";
+//                 }
+//             }
+//         }else if(color === undefined){
+//             // $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+//             d3.selectAll('ellipse').each(function(d,i){
+//                 var elt = d3.select(this);
+//                 shapeId = elt.attr("id");
+//             });// iterate on ellipses
+//
+//             if (count) {
+//                 for (i = 0; i < count; i++) {
+//                     new copyCircle();
+//                 }//for loop
+//                 $("#output").text("Copied.").css("color","white");
+//                 shapeId = "svg";
+//
+//             } else {
+//                 new copyCircle();
+//                 $("#output").text("Copied.").css("color","white");
+//                 shapeId = "svg";
+//             }
+//         }
+//     } else if (shape === "rectangle" || shape === "square" || shape === "rectangles" || shape === "squares") {
+//         if(color){// when specify color and shape
+//             var inColor = d3.rgb(color);
+//             var checkColor = false;
+//
+//             d3.selectAll('rect').each(function(d,i){
+//                 var elt = d3.select(this);
+//                 var color = d3.rgb(elt.style("fill"));
+//                 if(color.r === inColor.r && color.g === inColor.g && color.b === inColor.b){
+//                     checkColor = true;
+//                     var temp = d3.select(this);
+//                     shapeId = temp.attr("id");
+//
+//                     // new copyRect();
+//                     // $("#output").text("Copied");
+//                 }
+//             });// iterate on ellipses
+//
+//             if(checkColor === false){
+//                 $("#output").text("Sorry, there is no matching color squares.").css("color","red");
+//
+//             }else if(checkColor === true){
+//                 if (count) {
+//                     for (i = 0; i < count; i++) {
+//                         new copyRect();
+//                     }//for loop
+//                     $("#output").text("Copied.").css("color","white");
+//                     shapeId = "svg";
+//                 } else {
+//                     new copyRect();
+//                     $("#output").text("Copied.").css("color","white");
+//                     shapeId = "svg";
+//                 }
+//             }
+//         }else if(color === undefined){
+//             // $("#output").text("Specify a color of shape to copy or select and copy").css("color","green");
+//             d3.selectAll('rect').each(function(d,i){
+//                 var elt = d3.select(this);
+//                 shapeId = elt.attr("id");
+//             });// iterate on ellipses
+//
+//             if (count) {
+//                 for (i = 0; i < count; i++) {
+//                     new copyRect();
+//                 }//for loop
+//                 $("#output").text("Copied.").css("color","white");
+//                 shapeId = "svg";
+//             } else {
+//                 new copyRect();
+//                 $("#output").text("Copied.").css("color","white");
+//                 shapeId = "svg";
+//             }
+//         }
+//     } else{
+//         $("#output").text("Sorry, select an object to copy.").css("color","white");
+//     }
+//
+// }
 
 function SelectCopy(count, shape, color){
 
@@ -483,23 +472,31 @@ function SelectCopy(count, shape, color){
             for (i = 0; i < count; i++) {
                 new copyCircle();
             }//for loop
-            $("#output").text("Copied").css("color","white");
+            $("#output").text("Copied.").css("color","white");
+            shapeId = "svg";
 
         } else {
             new copyCircle();
-            $("#output").text("Copied").css("color","white");
+            $("#output").text("Copied.").css("color","white");
+            shapeId = "svg";
+
         }
     }else if(id === "rect"){
         if (count) {
             for (i = 0; i < count; i++) {
                 new copyRect();
             }//for loop
-            $("#output").text("Copied").css("color","white");
+            $("#output").text("Copied.").css("color","white");
+            shapeId = "svg";
+
         } else {
             new copyRect();
+            $("#output").text("Copied.").css("color","white");
+            shapeId = "svg";
         }
 
-        $("#output").text("Copied").css("color","white");
+    }else{
+        $("#output").text("Select an object to copy.").css("color","white");
     }
 
 }
@@ -508,24 +505,12 @@ function copyShapes(count,shape,color){
     console.log('shapeId',shapeId);
     console.log('###function count,color,shape',count, color,shape);
 
-    if(shapeId === "svg"){// shape not select
-        NoSelectCopy(count, shape, color);
-    }else{// shape selected
-        SelectCopy(count, shape, color);
-    }
-}
-
-function shapeFill(){
-    console.log('shape fill');
-    var fillColor = $("#color option:selected").text();
-
-    return fillColor;
-}
-
-function strokeFill(){
-    var fillColor = $("#border_color option:selected").text();
-
-    return fillColor;
+    // if(shapeId === "svg"){// shape not select
+    //     NoSelectCopy(count, shape, color);
+    // }else{// shape selected
+    //     SelectCopy(count, shape, color);
+    // }
+    SelectCopy(count, shape, color);
 }
 
 function idProcess(script){
@@ -559,6 +544,7 @@ d3.select('svg').on('touchend', function(d, i) {
         return;
     }else if(check === "svg"){
         console.log('*svg');
+        shapeId = "svg";
         console.log('circle button',circle_button);
         if(circle_button === true){
             new Ellipse();
