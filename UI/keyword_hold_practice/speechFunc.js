@@ -546,6 +546,9 @@ function idProcess(script){
 //when click on a object those objects will have thicker width
 // d3.select('svg').on('pointerdown', function(d, i) {
 d3.select('svg').on('touchend', function(d, i) {
+
+    if(pressTimer)
+        clearTimeout(pressTimer);
     // if (d3.event.defaultPrevented) return; // dragged
     // Somehow console.log the ID of the circle clicked on (if any).
     // console.log("Clicked ID: " + d3.event.target.id);

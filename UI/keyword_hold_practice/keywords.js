@@ -1,3 +1,9 @@
+// variables to detect tap and hold
+var onlongtouch;
+var timer;
+var touchduration = 500;// length of time we want the user to touch before we do something
+
+
 if (annyang) {
     // Let's define a command.
     var commands = {
@@ -94,9 +100,15 @@ window.addEventListener('load', function(){
     var dist = 0;
 
     box1.addEventListener('touchstart', function(e){
-        clearTimeout(timer);
+        console.log('###touchstart');
+        if(typeof timer === "undefined"){
 
-        console.log('######e touchstart',e.target.id);
+        }else{
+            clearTimeout(timer);
+        }
+
+        pressTimer = setTimeout(onlongtouch,touchduration);
+
 
         // var tempId = e.target.id;
         //
@@ -105,12 +117,12 @@ window.addEventListener('load', function(){
         //     d3.selectAll("ellipse").style('stroke-width',"2px");
         //     d3.selectAll("circle").style("opacity",0);
         // }
-        annyang.start();
+
         // statusdiv.innerHTML = 'Status: touchstart';
         // $("#output").text("Recognition active").css("color","white");
 
-
-        $('input.b').addClass("flash");
+        // annyang.start();
+        // $('input.b').addClass("flash");
 
         e.preventDefault();
 
@@ -120,15 +132,21 @@ window.addEventListener('load', function(){
 
     box1.addEventListener('touchmove', function(e){
         // statusdiv.innerHTML = 'Status: touchmove';
-        $("#output").text("Recognition active").css("color","white");
+        console.log('###touchmove');
+        if(pressTimer)
+            clearTimeout(pressTimer);
 
-        $('input.b').addClass("flash");
+        // $("#output").text("Recognition active").css("color","white");
+
+        // $('input.b').addClass("flash");
 
         e.preventDefault();
 
     }, false);
 
     box1.addEventListener('touchend', function(e){
+        console.log('###touchend');
+
 
         // $("#output").text("Recognition stopped").css("color","black");
         console.log('touchend endSentence', endSentence);
@@ -141,6 +159,10 @@ window.addEventListener('load', function(){
             e.preventDefault();
             annyang.abort();
         },1000);
+
+        if(pressTimer)
+            clearTimeout(pressTimer);
+
 
         // QueryProcess(query);
         // query ='';
@@ -166,11 +188,19 @@ window.addEventListener('load', function(){
 
 }, false);
 
+// tap and hold and start listening
+onlongtouch = function(){
+    annyang.start();
+    $('input.b').addClass("flash");
+
+
+};
+
 document.oncontextmenu = function() {
     return false;
 };
 
-// //drawing rectangle pre-selected
+//drawing rectangle pre-selected
 // document.addEventListener("DOMContentLoaded", function(event) {
 //     document.getElementById("touchRect").click();
 // });
