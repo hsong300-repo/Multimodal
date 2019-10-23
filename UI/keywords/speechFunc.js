@@ -201,7 +201,7 @@ function removeThisShape(){
         shapeId= "svg";
 
     }else if(typeof id === "undefined"){
-        $("#output").text("Select an object to remove.").css("color","white");
+        $("#output").text("To remove, please select an object to remove or specify a color.").css("color","white");
     }
 
 }

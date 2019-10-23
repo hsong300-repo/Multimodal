@@ -201,7 +201,7 @@ function removeThisShape(){
         shapeId= "svg";
 
     }else if(typeof id === "undefined"){
-        $("#output").text("Select an object to remove.").css("color","white");
+        $("#output").text("To remove, please select an object to remove or specify a color.").css("color","white");
     }
 
 }
@@ -546,6 +546,7 @@ d3.select('svg').on('touchend', function(d, i) {
         return;
     }else if(check === "svg"){
         console.log('*svg');
+        shapeId = "svg";
         console.log('circle button',circle_button);
         if(circle_button === true){
             new Ellipse();

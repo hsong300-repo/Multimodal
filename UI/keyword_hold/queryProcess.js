@@ -132,8 +132,6 @@ function QueryProcess(script){
         final_transcript = final_transcript.replace(/two/g,'to');
         $("#log").val(final_transcript);
         orderShapeBack();
-    }else{
-        $("#output").text("I am not sure I understand, please try saying it again.").css("color","white");
     }
 }
 
