@@ -1,11 +1,17 @@
 // var svg = d3.select('body').append('svg');
 var cId = 0;
-
+var circle_button = false;
 
 d3.select('#touchCircle').on('click', function () {
     // Ellipse();
     new Ellipse();
+    circle_button = true;
+    rect_button = false;
+
 });
+
+
+
 
 function Ellipse() {
     var self = this;
@@ -14,10 +20,12 @@ function Ellipse() {
     // svg.on('mousedown', function () {
     svg.on('touchstart', function () {
         console.log('circle touchstart');
-            m1 = d3.mouse(this);
-        if (!isDown && click === 1) {
+        m1 = d3.mouse(this);
+        var check = d3.event.target.id;// this is to check if object is being drawn over a shape or on canvas
+        if (!isDown && click === 1 && check === "svg") {
         // if (!isDown) {
             if(!isDragging){
+                console.log('circle not is dragging');
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -34,6 +42,7 @@ function Ellipse() {
                 self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
                 shapeId = "circle_" + cId;
                 console.log('shapeId',shapeId);
+                shapeId = "svg";// this was added to differentiate when a object is not drawn when trying to initiate speech recognition
                 updateEllipse();
             }
         } else {

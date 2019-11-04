@@ -37,6 +37,7 @@ function Rectangle() {
             self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
             shapeId = "rect_" +rId;
             console.log('shapeId',shapeId);
+            shapeId = "svg";// this was added to differentiate when a object is not drawn when trying to initiate speech recognition
             updateRect();
             // isDrag = false;
         } else{

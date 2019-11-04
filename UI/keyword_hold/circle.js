@@ -25,6 +25,7 @@ function Ellipse() {
         if (!isDown && click === 1 && check === "svg") {
         // if (!isDown) {
             if(!isDragging){
+                console.log('circle not is dragging');
                 self.eData = [{
                     x1: m1[0],
                     y1: m1[1],
@@ -41,6 +42,7 @@ function Ellipse() {
                 self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
                 shapeId = "circle_" + cId;
                 console.log('shapeId',shapeId);
+                shapeId = "svg";// this was added to differentiate when a object is not drawn when trying to initiate speech recognition
                 updateEllipse();
             }
         } else {
