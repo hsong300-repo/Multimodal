@@ -153,6 +153,7 @@ window.addEventListener('load', function(){
         console.log('touchend final trancript',final_transcript);
 
         timer = setTimeout(function(){
+            query = query.replace(/to/g,'two');
             QueryProcess(query);
             query='';
             $('input.b').removeClass("flash");
