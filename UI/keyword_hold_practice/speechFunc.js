@@ -95,7 +95,7 @@ function removeShapes(shape, color,stroke) {
                 }
             });// iterate on ellipses
             if(checkColor === false){
-                $("#output").text("Sorry, there is no matching color.").css("color","white");
+                $("#output").text("Sorry, there is no matching object with that color.").css("color","white");
             }else if(checkColor === true){
                 $("#output").text("Deleted.").css("color","white");
             }
@@ -134,7 +134,7 @@ function removeShapes(shape, color,stroke) {
                 }
             });// iterate on ellipses
             if(checkColor === false){
-                $("#output").text("Sorry, there is no matching color.").css("color","white");
+                $("#output").text("Sorry, there is no matching object with that color.").css("color","white");
             }else if(checkColor === true){
                 $("#output").text("Deleted.").css("color","white");
             }
