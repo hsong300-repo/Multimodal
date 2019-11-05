@@ -104,20 +104,23 @@ function QueryProcess(script){
         console.log('copy');
         copyShapes(n,shape[0],color[0]);
     }else if(makeCommands.filter(n=>tokenStr.indexOf(n)>-1).length>0){
-        if(This_flag === true && color !== "none" && !shape[0]){
-            // console.log('------change color 1');
+        if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
+            console.log('copy');
+            copyShapes(n, shape[0], color[0]);
+        }else if(This_flag === true && color !== "none" && !shape[0]){
+            console.log('------change color 1');
             updateShapes(color[0],strokeColor[0]);
         }else if(This_flag === true && color !== "none" && shape[0]){
-            // console.log('------change color 2');
+            console.log('------change color 2');
             updateShapes(color[0],strokeColor[0]);
         }else if(This_flag === false && color !== "none" && !shape[0]){
-            // console.log('------change color, make blue');
+            console.log('------change color, make blue');
             updateShapes(color[0],strokeColor[0]);
         }else if(This_flag === false && color === "none" && shape[0]){
-            // console.log('------draw shapes 1');
+            console.log('------draw shapes 1');
             drawShapes(shape[0],color[0],n,strokeColor[0],here);
         }else if(This_flag === false && color !== "none" && shape[0]){
-            // console.log('------draw shapes 2');
+            console.log('------draw shapes 2');
             drawShapes(shape[0],color[0],n,strokeColor[0],here);
         }
 
