@@ -313,7 +313,7 @@ function updateShapes(color, stroke){
 
     if(id === "rect"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Specify a color.");
+            $("#output").text("Specify a color.").css("color","white");
         }else{
             d3.selectAll("rect").each(function(d,i){
                 var elt = d3.select(this);
@@ -327,7 +327,7 @@ function updateShapes(color, stroke){
         }
     }else if(id === "circle"){
         if(color_flag === false && stroke_flag == false){
-            $("#output").text("Specify a color.");
+            $("#output").text("Specify a color.").css("color","white");
 
         }else{
             d3.selectAll("ellipse").each(function(d,i){
