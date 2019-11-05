@@ -106,7 +106,10 @@ function QueryProcess(script){
         console.log('copy');
         copyShapes(n,shape[0],color[0]);
     }else if(makeCommands.filter(n=>tokenStr.indexOf(n)>-1).length>0){
-        if(This_flag === true && color !== "none" && !shape[0]){
+        if(copyCommands.filter(n => tokenStr.indexOf(n) > -1).length > 0) {
+            console.log('copy');
+            copyShapes(n, shape[0], color[0]);
+        }else if(This_flag === true && color !== "none" && !shape[0]){
             // console.log('------change color 1');
             updateShapes(color[0],strokeColor[0]);
         }else if(This_flag === true && color !== "none" && shape[0]){
