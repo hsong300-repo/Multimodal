@@ -480,7 +480,7 @@ function SelectCopy(count, shape, color){
         } else {
             new copyCircle();
             $("#output").text("Copied.").css("color","white");
-            shapeId = "svg";
+            // shapeId = "svg";
 
         }
     }else if(id === "rect"){
@@ -494,7 +494,7 @@ function SelectCopy(count, shape, color){
         } else {
             new copyRect();
             $("#output").text("Copied.").css("color","white");
-            shapeId = "svg";
+            // shapeId = "svg";
         }
 
     }else{
@@ -504,8 +504,8 @@ function SelectCopy(count, shape, color){
 }
 
 function copyShapes(count,shape,color){
-    console.log('shapeId',shapeId);
-    console.log('###function count,color,shape',count, color,shape);
+    // console.log('shapeId',shapeId);
+    // console.log('###function count,color,shape',count, color,shape);
 
     // if(shapeId === "svg"){// shape not select
     //     NoSelectCopy(count, shape, color);

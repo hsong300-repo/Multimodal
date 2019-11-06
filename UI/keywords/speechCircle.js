@@ -206,8 +206,18 @@ function putCircleHere(color,strokeColor,single_count,count) {
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
         self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+ " circle_" +cId).call(dragP);
 
+        //de-select all
+        d3.selectAll("ellipse").style("stroke-width","2px");
         d3.selectAll("rect").style("stroke-width","2px");
+        d3.selectAll(".pointE").style("opacity",0);
         d3.selectAll(".pointC").style("opacity",0);
+
+        // d3.selectAll("rect").style("stroke-width","2px");
+        // d3.selectAll(".pointC").style("opacity",0);
+        shapeId = "circle_" + cId;
+        d3.select('#'+shapeId).style("stroke-width","6px");
+        var tempId = pointEProcess(shapeId);
+        d3.selectAll(tempId).style("opacity",1);
 
     }else if(single_count === false){
         self.ellipseElement = d3.select('svg').append('ellipse').attr("id","circle_" + cId).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragE);
