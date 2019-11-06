@@ -290,9 +290,18 @@ function putRectHere(color,strokeColor,single_count,count) {
         self.pointElement3 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC3);
         self.pointElement4 = svg.append('circle').attr('class', 'pointC'+" rect_"+rId).call(dragC4);
 
+        //de-select all
         d3.selectAll("ellipse").style("stroke-width","2px");
+        d3.selectAll("rect").style("stroke-width","2px");
         d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll(".pointC").style("opacity",0);
 
+        // d3.selectAll("rect").style("stroke-width","2px");
+        // d3.selectAll(".pointC").style("opacity",0);
+        shapeId = "rect_" +rId;
+        d3.select('#'+shapeId).style("stroke-width","6px");
+        var tempId = pointCProcess(shapeId);
+        d3.selectAll(tempId).style("opacity",1);
 
     }else if(single_count === false){
         self.rectangleElement = d3.select('svg').append('rect').attr("id","rect_"+rId).attr('class', 'rectangle').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragR);
@@ -312,7 +321,7 @@ function putRectHere(color,strokeColor,single_count,count) {
 
     }
 
-    shapeId = "rect_" +rId;
+    // shapeId = "rect_" +rId;
     console.log('shapeId',shapeId);
     updateRect();
 
