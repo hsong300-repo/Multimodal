@@ -73,10 +73,11 @@ function copyCircle() {
     if(!isDragging){
         console.log('***first but not dragging');
         console.log('****copy cId*****',cId);
+        console.log('shapeId',shapeId);
         var xPosition = parseInt(d3.select("#"+shapeId).attr("cx"));
         var yPosition = parseInt(d3.select("#"+shapeId).attr("cy"));
 
-        console.log("glob x Y and xPosition and yPosition",globX,globY,xPosition,yPosition);
+        // console.log("glob x Y and xPosition and yPosition",globX,globY,xPosition,yPosition);
 
         self.eData = [{
             // x1: globX+cId*30,
@@ -89,7 +90,9 @@ function copyCircle() {
             y2: yPosition+cId*7,
             a: parseInt(shapeWidth,10),
             b: parseInt(shapeHeight,10)
+
         }];
+        console.log('$$data position', self.eData.x1,self.eData.y1,self.eData.x2,self.eData.y2);
         cId++;
         count++;
         self.ellipseElement = d3.select('svg').append('ellipse').attr("id",shapeId + "_copy"+count).attr('class', 'ellipse').style("fill",color).style("stroke",strokeColor).style("stroke-width","2px").call(dragE);
@@ -98,11 +101,19 @@ function copyCircle() {
         self.pointElement3 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
         self.pointElement4 = d3.select('svg').append('circle').attr('class', 'pointE'+" "+shapeId + "_copy"+count).call(dragP);
 
-        //deselect the object original as well
-        d3.select('#'+shapeId).style("stroke-width","2px");
+        // de-select all objects
+        d3.selectAll("ellipse").style("stroke-width","2px");
+        d3.selectAll("rect").style("stroke-width","2px");
         d3.selectAll(".pointE").style("opacity",0);
+        d3.selectAll(".pointC").style("opacity",0);
 
-        shapeId = shapeId + "_copy" + count;
+        //leave a original object being copied selected
+        d3.select('#'+shapeId).style("stroke-width","6px");
+        d3.selectAll(".pointE").style("opacity",0);
+        var tempId = pointEProcess(shapeId);
+        d3.selectAll(tempId).style("opacity",1);
+
+        // shapeId = shapeId + "_copy" + count;
         console.log('shapeId',shapeId);
         updateEllipse();
     }

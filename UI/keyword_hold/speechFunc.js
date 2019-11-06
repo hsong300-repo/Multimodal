@@ -480,7 +480,7 @@ function SelectCopy(count, shape, color){
         } else {
             new copyCircle();
             $("#output").text("Copied.").css("color","white");
-            shapeId = "svg";
+            // shapeId = "svg";
 
         }
     }else if(id === "rect"){
@@ -494,7 +494,7 @@ function SelectCopy(count, shape, color){
         } else {
             new copyRect();
             $("#output").text("Copied.").css("color","white");
-            shapeId = "svg";
+            // shapeId = "svg";
         }
 
     }else{
@@ -504,20 +504,15 @@ function SelectCopy(count, shape, color){
 }
 
 function copyShapes(count,shape,color){
-    console.log('shapeId',shapeId);
-    console.log('###function count,color,shape',count, color,shape);
+    // console.log('shapeId',shapeId);
+    // console.log('###function count,color,shape',count, color,shape);
 
     // if(shapeId === "svg"){// shape not select
     //     NoSelectCopy(count, shape, color);
     // }else{// shape selected
     //     SelectCopy(count, shape, color);
     // }
-    if(shapeId === "svg"){
-        $("#output").text("Select an object to copy.").css("color","white");
-    }else{
-        SelectCopy(count, shape, color);
-    }
-
+    SelectCopy(count, shape, color);
 }
 
 function idProcess(script){
@@ -551,6 +546,7 @@ d3.select('svg').on('touchend', function(d, i) {
         return;
     }else if(check === "svg"){
         console.log('*svg');
+        shapeId = "svg";
         console.log('circle button',circle_button);
         if(circle_button === true){
             new Ellipse();
@@ -560,8 +556,6 @@ d3.select('svg').on('touchend', function(d, i) {
         d3.selectAll("rect").style('stroke-width',"2px");
         d3.selectAll("ellipse").style('stroke-width',"2px");
         d3.selectAll("circle").style("opacity",0);
-        // shapeId = "svg";
-
         return;
     }else{
         shapeId = d3.event.target.id;
