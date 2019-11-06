@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/copyCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/copyCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/copyShapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/copyShapes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/speechCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/speechCircle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/speechFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/speechFunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/keyword_hold_practice/speechRect.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_hold_practice/speechRect.js" afterDir="false" />
-    </list>
+    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +15,7 @@
     <session id="-291044497">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="116" />
+          <entry key="project.closed" value="117" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="30" />
           <entry key="project.open.time.10" value="1" />
@@ -264,10 +258,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-244" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -485,12 +477,12 @@
       <workItem from="1572879462081" duration="10463000" />
       <workItem from="1572965823550" duration="4136000" />
       <workItem from="1572973152743" duration="1402000" />
-      <workItem from="1573008393202" duration="4244000" />
+      <workItem from="1573008393202" duration="4408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="538325000" />
+    <option name="totallyTimeSpent" value="538489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,7 +496,7 @@
   <component name="ToolWindowManager">
     <frame x="-244" y="-1080" width="1920" height="1080" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13533439" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13533439" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -516,7 +508,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" visible="true" weight="0.23564357" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" visible="true" weight="0.23564357" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5017618" side_tool="true" weight="0.16867469" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

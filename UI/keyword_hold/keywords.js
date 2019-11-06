@@ -61,7 +61,7 @@ recognition.onresult = function(event) {
             $("#log").val(final_transcript);
             // command = final_transcript;
             endSentence = true;
-            $("#output").text("Query understood").css("color","white");
+            // $("#output").text("Query understood").css("color","white");
             // query process was here
             // QueryProcess(final_transcript);
             // $('input.b').removeClass("flash");
