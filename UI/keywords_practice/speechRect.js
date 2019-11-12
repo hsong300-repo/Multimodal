@@ -126,7 +126,7 @@ function putRect(color,strokeColor) {
 
     d3.selectAll(".pointC").style("opacity",0);
 
-    console.log('shapeId',shapeId);
+    // console.log('shapeId',shapeId);
     updateRect();
 
     function dragPoint1() {
@@ -322,7 +322,7 @@ function putRectHere(color,strokeColor,single_count,count) {
     }
 
     // shapeId = "rect_" +rId;
-    console.log('shapeId',shapeId);
+    // console.log('shapeId',shapeId);
     updateRect();
 
     function dragPoint1() {

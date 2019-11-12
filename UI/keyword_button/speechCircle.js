@@ -83,7 +83,7 @@ function putCircle(color,strokeColor) {
 
 
         shapeId = "circle_" + cId;
-        console.log('shapeId',shapeId);
+        // console.log('shapeId',shapeId);
         updateEllipse();
     }
 
