@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="" />
+    <list default="true" id="26ad154f-e149-436e-8a13-1ff97e85b0fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/UI/keyword_button/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/keyword_button/styles.css" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -56,14 +58,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2277" />
+          <entry key="css" value="2282" />
           <entry key="html" value="3930" />
           <entry key="js" value="61086" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2277" />
+          <entry key="CSS" value="2282" />
           <entry key="HTML" value="3930" />
           <entry key="JavaScript" value="61086" />
         </counts>
@@ -138,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="244">
+              <caret line="73" column="23" lean-forward="true" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -502,12 +504,12 @@
       <workItem from="1573008393202" duration="4408000" />
       <workItem from="1573056708016" duration="1164000" />
       <workItem from="1573227776010" duration="10000" />
-      <workItem from="1573532485902" duration="803000" />
+      <workItem from="1573532485902" duration="867000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="540466000" />
+    <option name="totallyTimeSpent" value="540530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,8 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/keyword_button/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="244">
+          <caret line="73" column="23" lean-forward="true" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
         </state>
       </provider>
     </entry>
