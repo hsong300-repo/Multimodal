@@ -74,6 +74,9 @@ recognition.onresult = function(event) {
                     final_transcript = final_transcript.replace(/coffee/g,'copy');
                     final_transcript = final_transcript.replace(/to/g,'two');
                     final_transcript = final_transcript.replace(/things/g,'change');
+                    final_transcript = final_transcript.replace(/puppy/g,'copy');
+                    final_transcript = final_transcript.replace(/drop/g,'draw');
+                    final_transcript = final_transcript.replace(/weather/g,'white');
 
                     if((track[0] === "system" && track.length === 1) || (track[1] === "system" && track.length === 2)){
                         console.log('=======only when system is called');
@@ -128,6 +131,9 @@ recognition.onresult = function(event) {
         interim_transcript = interim_transcript.replace(/coffee/g,'copy');
         interim_transcript = interim_transcript.replace(/to/g,'two');
         interim_transcript = interim_transcript.replace(/things/g,'change');
+        final_transcript = final_transcript.replace(/puppy/g,'copy');
+        final_transcript = final_transcript.replace(/drop/g,'draw');
+        final_transcript = final_transcript.replace(/weather/g,'white');
         var temp = interim_transcript;
         ret = temp.replace(/system/g,'');
         if(command_flag === true){

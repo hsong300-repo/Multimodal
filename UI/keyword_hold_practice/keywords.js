@@ -56,6 +56,9 @@ recognition.onresult = function(event) {
             final_transcript = final_transcript.replace(/coffee/g,'copy');
             final_transcript = final_transcript.replace(/to/g,'two');
             final_transcript = final_transcript.replace(/things/g,'change');
+            final_transcript = final_transcript.replace(/puppy/g,'copy');
+            final_transcript = final_transcript.replace(/drop/g,'draw');
+            final_transcript = final_transcript.replace(/weather/g,'white');
 
             query = final_transcript;
             $("#log").val(final_transcript);
@@ -82,6 +85,9 @@ recognition.onresult = function(event) {
         interim_transcript = interim_transcript.replace(/coffee/g,'copy');
         interim_transcript = interim_transcript.replace(/to/g,'two');
         interim_transcript = interim_transcript.replace(/things/g,'change');
+        final_transcript = final_transcript.replace(/puppy/g,'copy');
+        final_transcript = final_transcript.replace(/drop/g,'draw');
+        final_transcript = final_transcript.replace(/weather/g,'white');
 
         $("#log").val(interim_transcript);
 
